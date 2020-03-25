@@ -1,0 +1,37 @@
+- file: source/index
+- file: source/about_lectures
+  pages:
+    - file: source/about_py
+      not_numbered: true
+    # # Binder link settings
+    #   use_binder_button: true  # If 'true', add a binder button for interactive links
+    #   use_thebelab_button: true  # If 'true', display a button to allow in-page running code cells with Thebelab
+    #   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub.
+    #   binder_repo_base: "https://github.com/"  # The site on which the textbook repository is hosted
+    #   binder_repo_org: "jupyter"  # The username or organization that owns this repository
+    #   binder_repo_name: "jupyter-book"  # The name of the repository on the web
+    #   binder_repo_branch: "master"  # The branch on which your textbook is hosted.
+    #   binderhub_interact_text: "Interact"  # The text that interact buttons will contain.
+      title: Why wont the title change? # ???
+      author: John Doe # ??? 
+    - file: source/getting_started
+    - file: source/python_by_example
+    - file: source/functions
+    - file: source/python_essentials
+    - file: source/oop_intro
+    - file: source/python_oop
+- file: source/index_python_scientific_libraries
+  pages:
+    - file: source/need_for_speed
+    - file: source/numpy
+    - file: source/matplotlib
+    - file: source/scipy
+    - file: source/numba
+    - file: source/parallelization
+    - file: source/pandas
+- file: source/index_advanced_python_programming
+  pages:
+    - file: source/writing_good_code
+    - file: source/python_advanced_features
+    - file: source/debugging
+- file: source/troubleshooting

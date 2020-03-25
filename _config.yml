@@ -1,0 +1,6 @@
+# Book settings
+title : Programming for Quantitative Economics
+author : QuantEcon
+html_logo : 'qe-logo-large.png'
+page_titles: true
+page_authors: true
