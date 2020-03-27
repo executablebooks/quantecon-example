@@ -1,0 +1,1817 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>More Language Features &#8212; My Jupyter Book  documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/jupyterbook.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging" href="debugging.html" />
+    <link rel="prev" title="Writing Good Code" href="writing_good_code.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+<div class='top'>
+<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-arrow-up"></i>
+</button>
+</div>
+
+    <div class="container-fluid">
+      <div class="row">
+          
+<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/qe-logo-large.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">My Jupyter Book  documentation</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="index_learning_python.html">Intro to Python</a>
+  </li>
+  <li class="">
+    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
+  </li>
+  <li class="active">
+    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="writing_good_code.html">Writing Good Code</a>
+    </li>
+    <li class="active">
+      <a href="">More Language Features</a>
+    </li>
+    <li class="">
+      <a href="debugging.html">Debugging</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="troubleshooting.html">Troubleshooting</a>
+  </li>
+</ul>
+</nav>
+<p class="sidebar_footer">Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></p>
+</div>
+
+          
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#overview" class="nav-link">Overview</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#iterables-and-iterators" class="nav-link">Iterables and Iterators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#iterators" class="nav-link">Iterators</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#iterators-in-for-loops" class="nav-link">Iterators in For Loops</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#iterables" class="nav-link">Iterables</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#iterators-and-built-ins" class="nav-link">Iterators and built-ins</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#names-and-name-resolution" class="nav-link">Names and Name Resolution</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#variable-names-in-python" class="nav-link">Variable Names in Python</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#namespaces" class="nav-link">Namespaces</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#viewing-namespaces" class="nav-link">Viewing Namespaces</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#interactive-sessions" class="nav-link">Interactive Sessions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-global-namespace" class="nav-link">The Global Namespace</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#local-namespaces" class="nav-link">Local Namespaces</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-builtins-namespace" class="nav-link">The __builtins__ Namespace</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#name-resolution" class="nav-link">Name Resolution</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#mutable-versus-immutable-parameters" class="nav-link">Mutable Versus Immutable Parameters</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#handling-errors" class="nav-link">Handling Errors</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#assertions" class="nav-link">Assertions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#handling-errors-during-runtime" class="nav-link">Handling Errors During Runtime</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#exceptions" class="nav-link">Exceptions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#catching-exceptions" class="nav-link">Catching Exceptions</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#decorators-and-descriptors" class="nav-link">Decorators and Descriptors</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#decorators" class="nav-link">Decorators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#an-example" class="nav-link">An Example</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#enter-decorators" class="nav-link">Enter Decorators</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#descriptors" class="nav-link">Descriptors</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#a-solution" class="nav-link">A Solution</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#how-it-works" class="nav-link">How it Works</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#decorators-and-properties" class="nav-link">Decorators and Properties</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#generators" class="nav-link">Generators</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#generator-expressions" class="nav-link">Generator Expressions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#generator-functions" class="nav-link">Generator Functions</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#example-1" class="nav-link">Example 1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#example-2" class="nav-link">Example 2</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#advantages-of-iterators" class="nav-link">Advantages of Iterators</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#recursive-function-calls" class="nav-link">Recursive Function Calls</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#exercises" class="nav-link">Exercises</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#exercise-1" class="nav-link">Exercise 1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#exercise-2" class="nav-link">Exercise 2</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#exercise-3" class="nav-link">Exercise 3</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#solutions" class="nav-link">Solutions</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id1" class="nav-link">Exercise 1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id2" class="nav-link">Exercise 2</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id3" class="nav-link">Exercise 3</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+</div>
+
+
+          
+<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar sticky-top">
+    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <a class="download-buttons" href="../_sources/source/python_advanced_features.md.txt"><button type="button" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i>.md</button></a>
+    
+</div>
+    <div class="row">
+        <div class="col-12 ">
+        
+              <div>
+                
+  <div class="section" id="more-language-features">
+<h1><span class="target" id="python-advanced-features"></span>More Language Features<a class="headerlink" href="#more-language-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>With this last lecture, our advice is to <strong>skip it on first pass</strong>,
+unless you have a burning desire to read it.</p>
+<p>It’s here</p>
+<ol class="simple">
+<li><p>as a reference, so we can link back to it when required, and</p></li>
+<li><p>for those who have worked through a number of applications, and now
+want to learn more about the Python language</p></li>
+</ol>
+<p>A variety of topics are treated in the lecture, including generators,
+exceptions and descriptors.</p>
+</div>
+<div class="section" id="iterables-and-iterators">
+<h2>Iterables and Iterators<a class="headerlink" href="#iterables-and-iterators" title="Permalink to this headline">¶</a></h2>
+<p>We’ve <a class="reference internal" href="python_essentials.html#iterating-version-1"><span class="std std-ref">already said something</span></a> about iterating in Python.</p>
+<p>Now let’s look more closely at how it all works, focusing in Python’s
+implementation of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="section" id="iterators">
+<h3>Iterators<a class="headerlink" href="#iterators" title="Permalink to this headline">¶</a></h3>
+<p>Iterators are a uniform interface to stepping through elements in a
+collection.</p>
+<p>Here we’ll talk about using iterators—later we’ll learn how to
+build our own.</p>
+<p>Formally, an <em>iterator</em> is an object with a <code class="docutils literal notranslate"><span class="pre">__next__</span></code> method.</p>
+<p>For example, file objects are iterators .</p>
+<p>To see this, let’s have another look at the
+<a class="reference internal" href="python_essentials.html#us-cities-data"><span class="std std-ref">US cities data</span></a>, which
+is written to the present working directory in the following cell</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> us_cities.txt
+<span class="n">new</span> <span class="n">york</span><span class="p">:</span> <span class="mi">8244910</span>
+<span class="n">los</span> <span class="n">angeles</span><span class="p">:</span> <span class="mi">3819702</span>
+<span class="n">chicago</span><span class="p">:</span> <span class="mi">2707120</span>
+<span class="n">houston</span><span class="p">:</span> <span class="mi">2145146</span>
+<span class="n">philadelphia</span><span class="p">:</span> <span class="mi">1536471</span>
+<span class="n">phoenix</span><span class="p">:</span> <span class="mi">1469471</span>
+<span class="n">san</span> <span class="n">antonio</span><span class="p">:</span> <span class="mi">1359758</span>
+<span class="n">san</span> <span class="n">diego</span><span class="p">:</span> <span class="mi">1326179</span>
+<span class="n">dallas</span><span class="p">:</span> <span class="mi">1223229</span> 
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;us_cities.txt&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We see that file objects do indeed have a <code class="docutils literal notranslate"><span class="pre">__next__</span></code> method, and that
+calling this method returns the next line in the file.</p>
+<p>The next method can also be accessed via the builtin function <code class="docutils literal notranslate"><span class="pre">next()</span></code>,
+which directly calls this method</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The objects returned by <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> are also iterators</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>as are the reader objects from the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module .</p>
+<p>Let’s create a small csv file that contains data from the NIKKEI index</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> test_table.csv
+<span class="n">Date</span><span class="p">,</span><span class="n">Open</span><span class="p">,</span><span class="n">High</span><span class="p">,</span><span class="n">Low</span><span class="p">,</span><span class="n">Close</span><span class="p">,</span><span class="n">Volume</span><span class="p">,</span><span class="n">Adj</span> <span class="n">Close</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span><span class="mf">9280.35</span><span class="p">,</span><span class="mf">9286.35</span><span class="p">,</span><span class="mf">9189.92</span><span class="p">,</span><span class="mf">9264.15</span><span class="p">,</span><span class="mi">133200</span><span class="p">,</span><span class="mf">9264.15</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mf">9372.72</span><span class="p">,</span><span class="mf">9399.40</span><span class="p">,</span><span class="mf">9311.61</span><span class="p">,</span><span class="mf">9344.64</span><span class="p">,</span><span class="mi">143200</span><span class="p">,</span><span class="mf">9344.64</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">19</span><span class="p">,</span><span class="mf">9172.56</span><span class="p">,</span><span class="mf">9326.75</span><span class="p">,</span><span class="mf">9166.97</span><span class="p">,</span><span class="mf">9290.29</span><span class="p">,</span><span class="mi">167000</span><span class="p">,</span><span class="mf">9290.29</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mf">9167.05</span><span class="p">,</span><span class="mf">9167.82</span><span class="p">,</span><span class="mf">8997.74</span><span class="p">,</span><span class="mf">9038.69</span><span class="p">,</span><span class="mi">147800</span><span class="p">,</span><span class="mf">9038.69</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mf">9150.21</span><span class="p">,</span><span class="mf">9272.08</span><span class="p">,</span><span class="mf">9140.90</span><span class="p">,</span><span class="mf">9265.02</span><span class="p">,</span><span class="mi">172000</span><span class="p">,</span><span class="mf">9265.02</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span><span class="mf">9212.30</span><span class="p">,</span><span class="mf">9223.77</span><span class="p">,</span><span class="mf">9052.41</span><span class="p">,</span><span class="mf">9093.73</span><span class="p">,</span><span class="mi">169400</span><span class="p">,</span><span class="mf">9093.73</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">13</span><span class="p">,</span><span class="mf">9305.79</span><span class="p">,</span><span class="mf">9379.47</span><span class="p">,</span><span class="mf">9278.89</span><span class="p">,</span><span class="mf">9340.49</span><span class="p">,</span><span class="mi">176000</span><span class="p">,</span><span class="mf">9340.49</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="mf">9358.25</span><span class="p">,</span><span class="mf">9389.61</span><span class="p">,</span><span class="mf">9298.61</span><span class="p">,</span><span class="mf">9298.61</span><span class="p">,</span><span class="mi">188400</span><span class="p">,</span><span class="mf">9298.61</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="mf">9460.72</span><span class="p">,</span><span class="mf">9503.91</span><span class="p">,</span><span class="mf">9342.75</span><span class="p">,</span><span class="mf">9451.98</span><span class="p">,</span><span class="mi">230800</span><span class="p">,</span><span class="mf">9451.98</span>
+<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">08</span><span class="p">,</span><span class="mf">9351.40</span><span class="p">,</span><span class="mf">9464.43</span><span class="p">,</span><span class="mf">9349.57</span><span class="p">,</span><span class="mf">9432.83</span><span class="p">,</span><span class="mi">220200</span><span class="p">,</span><span class="mf">9432.83</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_table.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>  
+<span class="n">nikkei_data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+<span class="nb">next</span><span class="p">(</span><span class="n">nikkei_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">nikkei_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="iterators-in-for-loops">
+<h3>Iterators in For Loops<a class="headerlink" href="#iterators-in-for-loops" title="Permalink to this headline">¶</a></h3>
+<p>All iterators can be placed to the right of the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword in <code class="docutils literal notranslate"><span class="pre">for</span></code>
+loop statements.</p>
+<p>In fact this is how the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop works: If we write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
+<span class="o">---</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>then the interpreter</p>
+<ul class="simple">
+<li><p>calls <code class="docutils literal notranslate"><span class="pre">iterator.___next___()</span></code> and binds <code class="docutils literal notranslate"><span class="pre">x</span></code> to the result</p></li>
+<li><p>executes the code block</p></li>
+<li><p>repeats until a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error occurs</p></li>
+</ul>
+<p>So now you know how this magical looking syntax works</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
+<span class="o">---</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;somefile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># do something</span>
+</pre></div>
+</div>
+<p>The interpreter just keeps</p>
+<ol class="simple">
+<li><p>calling <code class="docutils literal notranslate"><span class="pre">f.__next__()</span></code> and binding <code class="docutils literal notranslate"><span class="pre">line</span></code> to the result</p></li>
+<li><p>executing the body of the loop</p></li>
+</ol>
+<p>This continues until a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error occurs.</p>
+</div>
+<div class="section" id="iterables">
+<h3>Iterables<a class="headerlink" href="#iterables" title="Permalink to this headline">¶</a></h3>
+<p>You already know that we can put a Python list to the right of <code class="docutils literal notranslate"><span class="pre">in</span></code> in a
+<code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So does that mean that a list is an iterator?</p>
+<p>The answer is no</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So why can we iterate over a list in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop?</p>
+<p>The reason is that a list is <em>iterable</em> (as opposed to an iterator).</p>
+<p>Formally, an object is iterable if it can be converted to an iterator
+using the built-in function <code class="docutils literal notranslate"><span class="pre">iter()</span></code>.</p>
+<p>Lists are one such object</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="nb">next</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>    
+</pre></div>
+</div>
+<p>Many other objects are iterable, such as dictionaries and tuples.</p>
+<p>Of course, not all objects are iterable</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="nb">iter</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To conclude our discussion of <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops work on either iterators or iterables.</p></li>
+<li><p>In the second case, the iterable is converted into an iterator
+before the loop starts.</p></li>
+</ul>
+</div>
+<div class="section" id="iterators-and-built-ins">
+<h3>Iterators and built-ins<a class="headerlink" href="#iterators-and-built-ins" title="Permalink to this headline">¶</a></h3>
+<p>Some built-in functions that act on sequences also work with iterables</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">all()</span></code>, <code class="docutils literal notranslate"><span class="pre">any()</span></code></p></li>
+</ul>
+<p>For example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">]</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>    
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>One thing to remember about iterators is that they are depleted by use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="names-and-name-resolution">
+<h2><span class="target" id="name-res"></span>Names and Name Resolution<a class="headerlink" href="#names-and-name-resolution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variable-names-in-python">
+<h3>Variable Names in Python<a class="headerlink" href="#variable-names-in-python" title="Permalink to this headline">¶</a></h3>
+<p>Consider the Python statement</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>We now know that when this statement is executed, Python creates an
+object of type <code class="docutils literal notranslate"><span class="pre">int</span></code> in your computer’s memory, containing</p>
+<ul class="simple">
+<li><p>the value <code class="docutils literal notranslate"><span class="pre">42</span></code></p></li>
+<li><p>some associated attributes</p></li>
+</ul>
+<p>But what is <code class="docutils literal notranslate"><span class="pre">x</span></code> itself?</p>
+<p>In Python, <code class="docutils literal notranslate"><span class="pre">x</span></code> is called a <em>name</em>, and the statement <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">42</span></code> <em>binds</em>
+the name <code class="docutils literal notranslate"><span class="pre">x</span></code> to the integer object we have just discussed.</p>
+<p>Under the hood, this process of binding names to objects is implemented
+as a dictionary—more about this in a moment.</p>
+<p>There is no problem binding two or more names to the one object,
+regardless of what that object is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>      <span class="c1"># Create a function called f</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>   <span class="c1"># that prints any string it&#39;s passed</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">f</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the first step, a function object is created, and the name <code class="docutils literal notranslate"><span class="pre">f</span></code> is
+bound to it.</p>
+<p>After binding the name <code class="docutils literal notranslate"><span class="pre">g</span></code> to the same object, we can use it anywhere we
+would use <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<p>What happens when the number of names bound to an object goes to zero?</p>
+<p>Here’s an example of this situation, where the name <code class="docutils literal notranslate"><span class="pre">x</span></code> is first bound
+to one object and then rebound to another</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span>  <span class="c1"># No names bound to the first object</span>
+</pre></div>
+</div>
+<p>What happens here is that the first object is garbage collected.</p>
+<p>In other words, the memory slot that stores that object is deallocated,
+and returned to the operating system.</p>
+</div>
+<div class="section" id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
+<p>Recall from the preceding discussion that the statement</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>binds the name <code class="docutils literal notranslate"><span class="pre">x</span></code> to the integer object on the right-hand side.</p>
+<p>We also mentioned that this process of binding <code class="docutils literal notranslate"><span class="pre">x</span></code> to the correct object
+is implemented as a dictionary.</p>
+<p>This dictionary is called a <em>namespace</em>.</p>
+<p><strong>Definition:</strong> A namespace is a symbol table that maps names to objects
+in memory.</p>
+<p>Python uses multiple namespaces, creating them on the fly as necessary .</p>
+<p>For example, every time we import a module, Python creates a namespace
+for that module.</p>
+<p>To see this in action, suppose we write a script <code class="docutils literal notranslate"><span class="pre">math2.py</span></code> with a
+single line</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">math2</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="s1">&#39;foobar&#39;</span>
+</pre></div>
+</div>
+<p>Now we start the Python interpreter and import it</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math2</span>
+</pre></div>
+</div>
+<p>Next let’s import the <code class="docutils literal notranslate"><span class="pre">math</span></code> module from the standard library</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+<p>Both of these modules have an attribute called <code class="docutils literal notranslate"><span class="pre">pi</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math2</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<p>These two different bindings of <code class="docutils literal notranslate"><span class="pre">pi</span></code> exist in different namespaces, each
+one implemented as a dictionary.</p>
+<p>We can look at the dictionary directly, using <code class="docutils literal notranslate"><span class="pre">module_name.__dict__</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">math</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math2</span>
+
+<span class="n">math2</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>As you know, we access elements of the namespace using the dotted
+attribute notation</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<p>In fact this is entirely equivalent to <code class="docutils literal notranslate"><span class="pre">math.__dict__['pi']</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;pi&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="viewing-namespaces">
+<h3>Viewing Namespaces<a class="headerlink" href="#viewing-namespaces" title="Permalink to this headline">¶</a></h3>
+<p>As we saw above, the <code class="docutils literal notranslate"><span class="pre">math</span></code> namespace can be printed by typing
+<code class="docutils literal notranslate"><span class="pre">math.__dict__</span></code>.</p>
+<p>Another way to see its contents is to type <code class="docutils literal notranslate"><span class="pre">vars(math)</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">vars</span><span class="p">(</span><span class="n">math</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If you just want to see the names, you can type</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Notice the special names <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> and <code class="docutils literal notranslate"><span class="pre">__name__</span></code>.</p>
+<p>These are initialized in the namespace when any module is imported</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__doc__</span></code> is the doc string of the module</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> is the name of the module</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="vm">__name__</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="interactive-sessions">
+<h3>Interactive Sessions<a class="headerlink" href="#interactive-sessions" title="Permalink to this headline">¶</a></h3>
+<p>In Python, <strong>all</strong> code executed by the interpreter runs in some module.</p>
+<p>What about commands typed at the prompt?</p>
+<p>These are also regarded as being executed within a module — in this
+case, a module called <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</p>
+<p>To check this, we can look at the current module name via the value of
+<code class="docutils literal notranslate"><span class="pre">__name__</span></code> given at the prompt</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When we run a script using IPython’s <code class="docutils literal notranslate"><span class="pre">run</span></code> command, the contents of the
+file are executed as part of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> too.</p>
+<p>To see this, let’s create a file <code class="docutils literal notranslate"><span class="pre">mod.py</span></code> that prints its own
+<code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> mod.py
+<span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now let’s look at two different ways of running it in IPython</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mod</span>  <span class="c1"># Standard import</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> mod.py  # Run interactively
+</pre></div>
+</div>
+<p>In the second case, the code is executed as part of <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, so
+<code class="docutils literal notranslate"><span class="pre">__name__</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</p>
+<p>To see the contents of the namespace of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> we use <code class="docutils literal notranslate"><span class="pre">vars()</span></code>
+rather than <code class="docutils literal notranslate"><span class="pre">vars(__main__)</span></code> .</p>
+<p>If you do this in IPython, you will see a whole lot of variables that
+IPython needs, and has initialized when you started up your session.</p>
+<p>If you prefer to see only the variables you have initialized, use <code class="docutils literal notranslate"><span class="pre">whos</span></code></p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-global-namespace">
+<h3>The Global Namespace<a class="headerlink" href="#the-global-namespace" title="Permalink to this headline">¶</a></h3>
+<p>Python documentation often makes reference to the “global namespace”.</p>
+<p>The global namespace is <em>the namespace of the module currently being
+executed</em>.</p>
+<p>For example, suppose that we start the interpreter and begin making
+assignments .</p>
+<p>We are now working in the module <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, and hence the namespace for
+<code class="docutils literal notranslate"><span class="pre">__main__</span></code> is the global namespace.</p>
+<p>Next, we import a module called <code class="docutils literal notranslate"><span class="pre">amodule</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
+<span class="o">---</span>
+
+<span class="kn">import</span> <span class="nn">amodule</span>
+</pre></div>
+</div>
+<p>At this point, the interpreter creates a namespace for the module
+<code class="docutils literal notranslate"><span class="pre">amodule</span></code> and starts executing commands in the module.</p>
+<p>While this occurs, the namespace <code class="docutils literal notranslate"><span class="pre">amodule.__dict__</span></code> is the global
+namespace.</p>
+<p>Once execution of the module finishes, the interpreter returns to the
+module from where the import statement was made.</p>
+<p>In this case it’s <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, so the namespace of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> again
+becomes the global namespace.</p>
+</div>
+<div class="section" id="local-namespaces">
+<h3>Local Namespaces<a class="headerlink" href="#local-namespaces" title="Permalink to this headline">¶</a></h3>
+<p>Important fact: When we call a function, the interpreter creates a
+<em>local namespace</em> for that function, and registers the variables in that
+namespace.</p>
+<p>The reason for this will be explained in just a moment.</p>
+<p>Variables in the local namespace are called <em>local variables</em>.</p>
+<p>After the function returns, the namespace is deallocated and lost.</p>
+<p>While the function is executing, we can view the contents of the local
+namespace with <code class="docutils literal notranslate"><span class="pre">locals()</span></code>.</p>
+<p>For example, consider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Now let’s call the function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can see the local namespace of <code class="docutils literal notranslate"><span class="pre">f</span></code> before it is destroyed.</p>
+</div>
+<div class="section" id="the-builtins-namespace">
+<h3>The <code class="docutils literal notranslate"><span class="pre">__builtins__</span></code> Namespace<a class="headerlink" href="#the-builtins-namespace" title="Permalink to this headline">¶</a></h3>
+<p>We have been using various built-in functions, such as
+<code class="docutils literal notranslate"><span class="pre">max(),</span> <span class="pre">dir(),</span> <span class="pre">str(),</span> <span class="pre">list(),</span> <span class="pre">len(),</span> <span class="pre">range(),</span> <span class="pre">type()</span></code>, etc.</p>
+<p>How does access to these names work?</p>
+<ul class="simple">
+<li><p>These definitions are stored in a module called <code class="docutils literal notranslate"><span class="pre">__builtin__</span></code>.</p></li>
+<li><p>They have there own namespace called <code class="docutils literal notranslate"><span class="pre">__builtins__</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We can access elements of the namespace as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">__builtins__</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">__builtins__</span></code> is special, because we can always access them
+directly as well</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">__builtins__</span><span class="o">.</span><span class="n">max</span> <span class="o">==</span> <span class="nb">max</span>
+</pre></div>
+</div>
+<p>The next section explains how this works …</p>
+</div>
+<div class="section" id="name-resolution">
+<h3>Name Resolution<a class="headerlink" href="#name-resolution" title="Permalink to this headline">¶</a></h3>
+<p>Namespaces are great because they help us organize variable names.</p>
+<p>(Type <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> at the prompt and look at the last item that’s
+printed)</p>
+<p>However, we do need to understand how the Python interpreter works with
+multiple namespaces .</p>
+<p>At any point of execution, there are in fact at least two namespaces
+that can be accessed directly.</p>
+<p>(“Accessed directly” means without using a dot, as in <code class="docutils literal notranslate"><span class="pre">pi</span></code> rather than
+<code class="docutils literal notranslate"><span class="pre">math.pi</span></code>)</p>
+<p>These namespaces are</p>
+<ul class="simple">
+<li><p>The global namespace (of the module being executed)</p></li>
+<li><p>The builtin namespace</p></li>
+</ul>
+<p>If the interpreter is executing a function, then the directly accessible
+namespaces are</p>
+<ul class="simple">
+<li><p>The local namespace of the function</p></li>
+<li><p>The global namespace (of the module being executed)</p></li>
+<li><p>The builtin namespace</p></li>
+</ul>
+<p>Sometimes functions are defined within other functions, like so</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">g</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">f</span></code> is the <em>enclosing function</em> for <code class="docutils literal notranslate"><span class="pre">g</span></code>, and each function gets its
+own namespaces.</p>
+<p>Now we can give the rule for how namespace resolution works:</p>
+<p>The order in which the interpreter searches for names is</p>
+<ol class="simple">
+<li><p>the local namespace (if it exists)</p></li>
+<li><p>the hierarchy of enclosing namespaces (if they exist)</p></li>
+<li><p>the global namespace</p></li>
+<li><p>the builtin namespace</p></li>
+</ol>
+<p>If the name is not in any of these namespaces, the interpreter raises a
+<code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p>
+<p>This is called the <strong>LEGB rule</strong> (local, enclosing, global, builtin).</p>
+<p>Here’s an example that helps to illustrate .</p>
+<p>Consider a script <code class="docutils literal notranslate"><span class="pre">test.py</span></code> that looks as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What happens when we run this script?</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> test.py
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="n">x</span>
+</pre></div>
+</div>
+<p>First,</p>
+<ul class="simple">
+<li><p>The global namespace <code class="docutils literal notranslate"><span class="pre">{}</span></code> is created.</p></li>
+<li><p>The function object is created, and <code class="docutils literal notranslate"><span class="pre">g</span></code> is bound to it within the
+global namespace.</p></li>
+<li><p>The name <code class="docutils literal notranslate"><span class="pre">a</span></code> is bound to <code class="docutils literal notranslate"><span class="pre">0</span></code>, again in the global namespace.</p></li>
+</ul>
+<p>Next <code class="docutils literal notranslate"><span class="pre">g</span></code> is called via <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">g(10)</span></code>, leading to the following sequence of
+actions</p>
+<ul class="simple">
+<li><p>The local namespace for the function is created.</p></li>
+<li><p>Local names <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code> are bound, so that the local namespace
+becomes <code class="docutils literal notranslate"><span class="pre">{'x':</span> <span class="pre">10,</span> <span class="pre">'a':</span> <span class="pre">1}</span></code>.</p></li>
+<li><p>Statement <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">a</span></code> uses the local <code class="docutils literal notranslate"><span class="pre">a</span></code> and local <code class="docutils literal notranslate"><span class="pre">x</span></code> to compute
+<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">a</span></code>, and binds local name <code class="docutils literal notranslate"><span class="pre">x</span></code> to the result.</p></li>
+<li><p>This value is returned, and <code class="docutils literal notranslate"><span class="pre">y</span></code> is bound to it in the global
+namespace.</p></li>
+<li><p>Local <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code> are discarded (and the local namespace is
+deallocated).</p></li>
+</ul>
+<p>Note that the global <code class="docutils literal notranslate"><span class="pre">a</span></code> was not affected by the local <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+</div>
+<div class="section" id="mutable-versus-immutable-parameters">
+<h3><span class="target" id="mutable-vs-immutable"></span>Mutable Versus Immutable Parameters<a class="headerlink" href="#mutable-versus-immutable-parameters" title="Permalink to this headline">¶</a></h3>
+<p>This is a good time to say a little more about mutable vs immutable
+objects.</p>
+<p>Consider the code segment</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We now understand what will happen here: The code prints <code class="docutils literal notranslate"><span class="pre">2</span></code> as the
+value of <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> as the value of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>First <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code> are registered in the global namespace.</p>
+<p>The call <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> creates a local namespace and adds <code class="docutils literal notranslate"><span class="pre">x</span></code> to it, bound to
+<code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Next, this local <code class="docutils literal notranslate"><span class="pre">x</span></code> is rebound to the new integer object <code class="docutils literal notranslate"><span class="pre">2</span></code>, and this
+value is returned.</p>
+<p>None of this affects the global <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>However, it’s a different story when we use a <strong>mutable</strong> data type
+such as a list</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This prints <code class="docutils literal notranslate"><span class="pre">[2]</span></code> as the value of <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> and <em>same</em> for <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Here’s what happens</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> is registered as a function in the global namespace</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> bound to <code class="docutils literal notranslate"><span class="pre">[1]</span></code> in the global namespace</p></li>
+<li><p>The call <code class="docutils literal notranslate"><span class="pre">f(x)</span></code></p>
+<ul>
+<li><p>Creates a local namespace</p></li>
+<li><p>Adds <code class="docutils literal notranslate"><span class="pre">x</span></code> to local namespace, bound to <code class="docutils literal notranslate"><span class="pre">[1]</span></code></p></li>
+<li><p>The list <code class="docutils literal notranslate"><span class="pre">[1]</span></code> is modified to <code class="docutils literal notranslate"><span class="pre">[2]</span></code></p></li>
+<li><p>Returns the list <code class="docutils literal notranslate"><span class="pre">[2]</span></code></p></li>
+<li><p>The local namespace is deallocated, and local <code class="docutils literal notranslate"><span class="pre">x</span></code> is lost</p></li>
+</ul>
+</li>
+<li><p>Global <code class="docutils literal notranslate"><span class="pre">x</span></code> has been modified</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="handling-errors">
+<h2>Handling Errors<a class="headerlink" href="#handling-errors" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it’s possible to anticipate errors as we’re writing code.</p>
+<p>For example, the unbiased sample variance of sample <span class="math notranslate nohighlight">\(y_1, \ldots, y_n\)</span>
+is defined as</p>
+<p><div class="math notranslate nohighlight">
+\[
+s^2 := \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2
+\qquad \bar y = \text{ sample mean}
+\]</div>
+</p>
+<p>This can be calculated in NumPy using <code class="docutils literal notranslate"><span class="pre">np.var</span></code>.</p>
+<p>But if you were writing a function to handle such a calculation, you
+might anticipate a divide-by-zero error when the sample size is one.</p>
+<p>One possible action is to do nothing — the program will just crash,
+and spit out an error message.</p>
+<p>But sometimes it’s worth writing your code in a way that anticipates
+and deals with runtime errors that you think might arise.</p>
+<p>Why?</p>
+<ul class="simple">
+<li><p>Because the debugging information provided by the interpreter is
+often less useful than the information on possible errors you have
+in your head when writing code.</p></li>
+<li><p>Because errors causing execution to stop are frustrating if you’re
+in the middle of a large computation.</p></li>
+<li><p>Because it’s reduces confidence in your code on the part of your
+users (if you are writing for others).</p></li>
+</ul>
+<div class="section" id="assertions">
+<h3>Assertions<a class="headerlink" href="#assertions" title="Permalink to this headline">¶</a></h3>
+<p>A relatively easy way to handle checks is with the <code class="docutils literal notranslate"><span class="pre">assert</span></code> keyword.</p>
+<p>For example, pretend for a moment that the <code class="docutils literal notranslate"><span class="pre">np.var</span></code> function doesn’t
+exist and we need to write our own</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Sample size must be greater than one.&#39;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we run this with an array of length one, the program will terminate
+and print our error message</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="n">var</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The advantage is that we can</p>
+<ul class="simple">
+<li><p>fail early, as soon as we know there will be a problem</p></li>
+<li><p>supply specific information on why a program is failing</p></li>
+</ul>
+</div>
+<div class="section" id="handling-errors-during-runtime">
+<h3>Handling Errors During Runtime<a class="headerlink" href="#handling-errors-during-runtime" title="Permalink to this headline">¶</a></h3>
+<p>The approach used above is a bit limited, because it always leads to
+termination.</p>
+<p>Sometimes we can handle errors more gracefully, by treating special
+cases.</p>
+<p>Let’s look at how this is done.</p>
+<div class="section" id="exceptions">
+<h4>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h4>
+<p>Here’s an example of a common error type</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Since illegal syntax cannot be executed, a syntax error terminates
+execution of the program.</p>
+<p>Here’s a different kind of error, unrelated to syntax</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Here’s another</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">y1</span>
+</pre></div>
+</div>
+<p>And another</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="s1">&#39;foo&#39;</span> <span class="o">+</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>And another</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>On each occasion, the interpreter informs us of the error type</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NameError</span></code>, <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>, <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>, etc.</p></li>
+</ul>
+<p>In Python, these errors are called <em>exceptions</em>.</p>
+</div>
+<div class="section" id="catching-exceptions">
+<h4>Catching Exceptions<a class="headerlink" href="#catching-exceptions" title="Permalink to this headline">¶</a></h4>
+<p>We can catch and deal with exceptions using <code class="docutils literal notranslate"><span class="pre">try</span></code> – <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks.</p>
+<p>Here’s a simple example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: division by zero.  Returned None&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>When we call <code class="docutils literal notranslate"><span class="pre">f</span></code> we get the following output</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The error is caught and execution of the program is not terminated.</p>
+<p>Note that other error types are not caught.</p>
+<p>If we are worried the user might pass in a string, we can catch that
+error too</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: Division by zero.  Returned None&#39;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: Unsupported operation.  Returned None&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Here’s what happens</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we feel lazy we can catch these errors together</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ZeroDivisionError</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: Unsupported operation.  Returned None&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Here’s what happens</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we feel extra lazy we can catch all error types as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error.  Returned None&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>In general it’s better to be specific.</p>
+</div>
+</div>
+</div>
+<div class="section" id="decorators-and-descriptors">
+<h2>Decorators and Descriptors<a class="headerlink" href="#decorators-and-descriptors" title="Permalink to this headline">¶</a></h2>
+<p>Let’s look at some special syntax elements that are routinely used by
+Python developers.</p>
+<p>You might not need the following concepts immediately, but you will see
+them in other people’s code.</p>
+<p>Hence you need to understand them at some stage of your Python
+education.</p>
+<div class="section" id="decorators">
+<h3>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h3>
+<p>Decorators are a bit of syntactic sugar that, while easily avoided, have
+turned out to be popular.</p>
+<p>It’s very easy to say what decorators do.</p>
+<p>On the other hand it takes a bit of effort to explain <em>why</em> you might
+use them.</p>
+<div class="section" id="an-example">
+<h4>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h4>
+<p>Suppose we are working on a program that looks something like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Program continues with various calculations using f and g</span>
+</pre></div>
+</div>
+<p>Now suppose there’s a problem: occasionally negative numbers get fed to
+<code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> in the calculations that follow.</p>
+<p>If you try it, you’ll see that when these functions are called with
+negative numbers they return a NumPy object called <code class="docutils literal notranslate"><span class="pre">nan</span></code> .</p>
+<p>This stands for “not a number” (and indicates that you are trying to
+evaluate a mathematical function at a point where it is not defined).</p>
+<p>Perhaps this isn’t what we want, because it causes other problems that
+are hard to pick up later on.</p>
+<p>Suppose that instead we want the program to terminate whenever this
+happens, with a sensible error message.</p>
+<p>This change is easy enough to implement</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Argument must be nonnegative&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Argument must be nonnegative&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Program continues with various calculations using f and g</span>
+</pre></div>
+</div>
+<p>Notice however that there is some repetition here, in the form of two
+identical lines of code.</p>
+<p>Repetition makes our code longer and harder to maintain, and hence is
+something we try hard to avoid.</p>
+<p>Here it’s not a big deal, but imagine now that instead of just <code class="docutils literal notranslate"><span class="pre">f</span></code> and
+<code class="docutils literal notranslate"><span class="pre">g</span></code>, we have 20 such functions that we need to modify in exactly the
+same way.</p>
+<p>This means we need to repeat the test logic (i.e., the <code class="docutils literal notranslate"><span class="pre">assert</span></code> line
+testing nonnegativity) 20 times.</p>
+<p>The situation is still worse if the test logic is longer and more
+complicated.</p>
+<p>In this kind of scenario the following approach would be neater</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">check_nonneg</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">safe_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Argument must be nonnegative&quot;</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">safe_function</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">check_nonneg</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">check_nonneg</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="c1"># Program continues with various calculations using f and g</span>
+</pre></div>
+</div>
+<p>This looks complicated so let’s work through it slowly.</p>
+<p>To unravel the logic, consider what happens when we say
+<code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">check_nonneg(f)</span></code>.</p>
+<p>This calls the function <code class="docutils literal notranslate"><span class="pre">check_nonneg</span></code> with parameter <code class="docutils literal notranslate"><span class="pre">func</span></code> set equal
+to <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<p>Now <code class="docutils literal notranslate"><span class="pre">check_nonneg</span></code> creates a new function called <code class="docutils literal notranslate"><span class="pre">safe_function</span></code> that
+verifies <code class="docutils literal notranslate"><span class="pre">x</span></code> as nonnegative and then calls <code class="docutils literal notranslate"><span class="pre">func</span></code> on it (which is the
+same as <code class="docutils literal notranslate"><span class="pre">f</span></code>).</p>
+<p>Finally, the global name <code class="docutils literal notranslate"><span class="pre">f</span></code> is then set equal to <code class="docutils literal notranslate"><span class="pre">safe_function</span></code>.</p>
+<p>Now the behavior of <code class="docutils literal notranslate"><span class="pre">f</span></code> is as we desire, and the same is true of <code class="docutils literal notranslate"><span class="pre">g</span></code>.</p>
+<p>At the same time, the test logic is written only once.</p>
+</div>
+<div class="section" id="enter-decorators">
+<h4>Enter Decorators<a class="headerlink" href="#enter-decorators" title="Permalink to this headline">¶</a></h4>
+<p>The last version of our code is still not ideal.</p>
+<p>For example, if someone is reading our code and wants to know how <code class="docutils literal notranslate"><span class="pre">f</span></code>
+works, they will be looking for the function definition, which is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>They may well miss the line <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">check_nonneg(f)</span></code>.</p>
+<p>For this and other reasons, decorators were introduced to Python.</p>
+<p>With decorators, we can replace the lines</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">check_nonneg</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">check_nonneg</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@check_nonneg</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="nd">@check_nonneg</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These two pieces of code do exactly the same thing.</p>
+<p>If they do the same thing, do we really need decorator syntax?</p>
+<p>Well, notice that the decorators sit right on top of the function
+definitions.</p>
+<p>Hence anyone looking at the definition of the function will see them and
+be aware that the function is modified.</p>
+<p>In the opinion of many people, this makes the decorator syntax a
+significant improvement to the language.</p>
+</div>
+</div>
+<div class="section" id="descriptors">
+<h3>Descriptors<a class="headerlink" href="#descriptors" title="Permalink to this headline">¶</a></h3>
+<p>Descriptors solve a common problem regarding management of variables.</p>
+<p>To understand the issue, consider a <code class="docutils literal notranslate"><span class="pre">Car</span></code> class, that simulates a car.</p>
+<p>Suppose that this class defines the variables <code class="docutils literal notranslate"><span class="pre">miles</span></code> and <code class="docutils literal notranslate"><span class="pre">kms</span></code>, which
+give the distance traveled in miles and kilometers respectively.</p>
+<p>A highly simplified version of the class might look as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miles</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kms</span> <span class="o">=</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.61</span>
+
+    <span class="c1"># Some other functionality, details omitted</span>
+</pre></div>
+</div>
+<p>One potential problem we might have here is that a user alters one of
+these variables but not the other</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
+<span class="n">car</span><span class="o">.</span><span class="n">miles</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span><span class="o">.</span><span class="n">kms</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="mi">6000</span>
+<span class="n">car</span><span class="o">.</span><span class="n">kms</span>
+</pre></div>
+</div>
+<p>In the last two lines we see that <code class="docutils literal notranslate"><span class="pre">miles</span></code> and <code class="docutils literal notranslate"><span class="pre">kms</span></code> are out of sync.</p>
+<p>What we really want is some mechanism whereby each time a user sets one
+of these variables, <em>the other is automatically updated</em>.</p>
+<div class="section" id="a-solution">
+<h4>A Solution<a class="headerlink" href="#a-solution" title="Permalink to this headline">¶</a></h4>
+<p>In Python, this issue is solved using <em>descriptors</em>.</p>
+<p>A descriptor is just a Python object that implements certain methods.</p>
+<p>These methods are triggered when the object is accessed through dotted
+attribute notation.</p>
+<p>The best way to understand this is to see it in action.</p>
+<p>Consider this alternative version of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miles</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span> <span class="o">=</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.61</span>
+
+    <span class="k">def</span> <span class="nf">set_miles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mf">1.61</span>
+
+    <span class="k">def</span> <span class="nf">set_kms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="mf">1.61</span>
+
+    <span class="k">def</span> <span class="nf">get_miles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span>
+
+    <span class="k">def</span> <span class="nf">get_kms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span>
+
+    <span class="n">miles</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_miles</span><span class="p">,</span> <span class="n">set_miles</span><span class="p">)</span>
+    <span class="n">kms</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_kms</span><span class="p">,</span> <span class="n">set_kms</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>First let’s check that we get the desired behavior</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
+<span class="n">car</span><span class="o">.</span><span class="n">miles</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="mi">6000</span>
+<span class="n">car</span><span class="o">.</span><span class="n">kms</span>
+</pre></div>
+</div>
+<p>Yep, that’s what we want — <code class="docutils literal notranslate"><span class="pre">car.kms</span></code> is automatically updated.</p>
+</div>
+<div class="section" id="how-it-works">
+<h4>How it Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h4>
+<p>The names <code class="docutils literal notranslate"><span class="pre">_miles</span></code> and <code class="docutils literal notranslate"><span class="pre">_kms</span></code> are arbitrary names we are using to store
+the values of the variables.</p>
+<p>The objects <code class="docutils literal notranslate"><span class="pre">miles</span></code> and <code class="docutils literal notranslate"><span class="pre">kms</span></code> are <em>properties</em>, a common kind of
+descriptor.</p>
+<p>The methods <code class="docutils literal notranslate"><span class="pre">get_miles</span></code>, <code class="docutils literal notranslate"><span class="pre">set_miles</span></code>, <code class="docutils literal notranslate"><span class="pre">get_kms</span></code> and <code class="docutils literal notranslate"><span class="pre">set_kms</span></code> define
+what happens when you get (i.e. access) or set (bind) these variables</p>
+<ul class="simple">
+<li><p>So-called “getter” and “setter” methods.</p></li>
+</ul>
+<p>The builtin Python function <code class="docutils literal notranslate"><span class="pre">property</span></code> takes getter and setter methods
+and creates a property.</p>
+<p>For example, after <code class="docutils literal notranslate"><span class="pre">car</span></code> is created as an instance of <code class="docutils literal notranslate"><span class="pre">Car</span></code>, the object
+<code class="docutils literal notranslate"><span class="pre">car.miles</span></code> is a property.</p>
+<p>Being a property, when we set its value via <code class="docutils literal notranslate"><span class="pre">car.miles</span> <span class="pre">=</span> <span class="pre">6000</span></code> its
+setter method is triggered — in this case <code class="docutils literal notranslate"><span class="pre">set_miles</span></code>.</p>
+</div>
+<div class="section" id="decorators-and-properties">
+<h4>Decorators and Properties<a class="headerlink" href="#decorators-and-properties" title="Permalink to this headline">¶</a></h4>
+<p>These days its very common to see the <code class="docutils literal notranslate"><span class="pre">property</span></code> function used via a
+decorator.</p>
+<p>Here’s another version of our <code class="docutils literal notranslate"><span class="pre">Car</span></code> class that works as before but now
+uses decorators to set up the properties</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miles</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span> <span class="o">=</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.61</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">miles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">kms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span>
+
+    <span class="nd">@miles</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">miles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mf">1.61</span>
+
+    <span class="nd">@kms</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">kms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kms</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="mf">1.61</span>
+</pre></div>
+</div>
+<p>We won’t go through all the details here.</p>
+<p>For further information you can refer to the <a class="reference external" href="https://docs.python.org/3/howto/descriptor.html">descriptor documentation</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="generators">
+<h2><span class="target" id="paf-generators"></span>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
+<p>A generator is a kind of iterator (i.e., it works with a <code class="docutils literal notranslate"><span class="pre">next</span></code>
+function).</p>
+<p>We will study two ways to build generators: generator expressions and
+generator functions.</p>
+<div class="section" id="generator-expressions">
+<h3>Generator Expressions<a class="headerlink" href="#generator-expressions" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to build generators is using <em>generator expressions</em>.</p>
+<p>Just like a list comprehension, but with round brackets.</p>
+<p>Here is the list comprehension:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">singular</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">singular</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plural</span> <span class="o">=</span> <span class="p">[</span><span class="n">string</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span> <span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">singular</span><span class="p">]</span>
+<span class="n">plural</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">plural</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And here is the generator expression</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">singular</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">)</span>
+<span class="n">plural</span> <span class="o">=</span> <span class="p">(</span><span class="n">string</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span> <span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">singular</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">plural</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">plural</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">plural</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">plural</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">sum()</span></code> can be called on iterators, we can do this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">sum()</span></code> calls <code class="docutils literal notranslate"><span class="pre">next()</span></code> to get the items, adds successive
+terms.</p>
+<p>In fact, we can omit the outer brackets in this case</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generator-functions">
+<h3>Generator Functions<a class="headerlink" href="#generator-functions" title="Permalink to this headline">¶</a></h3>
+<p>The most flexible way to create generator objects is to use generator
+functions.</p>
+<p>Let’s look at some examples.</p>
+<div class="section" id="example-1">
+<h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h4>
+<p>Here’s a very simple example of a generator function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">yield</span> <span class="s1">&#39;start&#39;</span>
+    <span class="k">yield</span> <span class="s1">&#39;middle&#39;</span>
+    <span class="k">yield</span> <span class="s1">&#39;end&#39;</span>
+</pre></div>
+</div>
+<p>It looks like a function, but uses a keyword <code class="docutils literal notranslate"><span class="pre">yield</span></code> that we haven’t
+met before.</p>
+<p>Let’s see how it works after running this code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+<span class="n">gen</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The generator function <code class="docutils literal notranslate"><span class="pre">f()</span></code> is used to create generator objects (in
+this case <code class="docutils literal notranslate"><span class="pre">gen</span></code>).</p>
+<p>Generators are iterators, because they support a <code class="docutils literal notranslate"><span class="pre">next</span></code> method.</p>
+<p>The first call to <code class="docutils literal notranslate"><span class="pre">next(gen)</span></code></p>
+<ul class="simple">
+<li><p>Executes code in the body of <code class="docutils literal notranslate"><span class="pre">f()</span></code> until it meets a <code class="docutils literal notranslate"><span class="pre">yield</span></code>
+statement.</p></li>
+<li><p>Returns that value to the caller of <code class="docutils literal notranslate"><span class="pre">next(gen)</span></code>.</p></li>
+</ul>
+<p>The second call to <code class="docutils literal notranslate"><span class="pre">next(gen)</span></code> starts executing <em>from the next line</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">yield</span> <span class="s1">&#39;start&#39;</span>
+    <span class="k">yield</span> <span class="s1">&#39;middle&#39;</span>  <span class="c1"># This line!</span>
+    <span class="k">yield</span> <span class="s1">&#39;end&#39;</span>
+</pre></div>
+</div>
+<p>and continues until the next <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement.</p>
+<p>At that point it returns the value following <code class="docutils literal notranslate"><span class="pre">yield</span></code> to the caller of
+<code class="docutils literal notranslate"><span class="pre">next(gen)</span></code>, and so on.</p>
+<p>When the code block ends, the generator throws a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error.</p>
+</div>
+<div class="section" id="example-2">
+<h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h4>
+<p>Our next example receives an argument <code class="docutils literal notranslate"><span class="pre">x</span></code> from the caller</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Let’s see how it works</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The call <code class="docutils literal notranslate"><span class="pre">gen</span> <span class="pre">=</span> <span class="pre">g(2)</span></code> binds <code class="docutils literal notranslate"><span class="pre">gen</span></code> to a generator.</p>
+<p>Inside the generator, the name <code class="docutils literal notranslate"><span class="pre">x</span></code> is bound to <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<p>When we call <code class="docutils literal notranslate"><span class="pre">next(gen)</span></code></p>
+<ul class="simple">
+<li><p>The body of <code class="docutils literal notranslate"><span class="pre">g()</span></code> executes until the line <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">x</span></code>, and the value
+of <code class="docutils literal notranslate"><span class="pre">x</span></code> is returned.</p></li>
+</ul>
+<p>Note that value of <code class="docutils literal notranslate"><span class="pre">x</span></code> is retained inside the generator.</p>
+<p>When we call <code class="docutils literal notranslate"><span class="pre">next(gen)</span></code> again, execution continues <em>from where it left
+off</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>  <span class="c1"># execution continues from here</span>
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code> fails, the generator throws a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error.</p>
+<p>Incidentally, the loop inside the generator can be infinite</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="advantages-of-iterators">
+<h3>Advantages of Iterators<a class="headerlink" href="#advantages-of-iterators" title="Permalink to this headline">¶</a></h3>
+<p>What’s the advantage of using an iterator here?</p>
+<p>Suppose we want to sample a binomial(n,0.5).</p>
+<p>One way to do it is as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">draws</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">draws</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But we are creating two huge lists here, <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> and <code class="docutils literal notranslate"><span class="pre">draws</span></code>.</p>
+<p>This uses lots of memory and is very slow.</p>
+<p>If we make <code class="docutils literal notranslate"><span class="pre">n</span></code> even bigger then this happens</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
+<span class="o">---</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100000000</span>
+<span class="n">draws</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>We can avoid these problems using iterators.</p>
+<p>Here is the generator function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Now let’s do the sum</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">draws</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">draws</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">draws</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In summary, iterables</p>
+<ul class="simple">
+<li><p>avoid the need to create big lists/tuples, and</p></li>
+<li><p>provide a uniform interface to iteration that can be used
+transparently in <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="recursive-function-calls">
+<h2><span class="target" id="recursive-functions"></span>Recursive Function Calls<a class="headerlink" href="#recursive-function-calls" title="Permalink to this headline">¶</a></h2>
+<p>This is not something that you will use every day, but it is still
+useful — you should learn it at some stage.</p>
+<p>Basically, a recursive function is a function that calls itself.</p>
+<p>For example, consider the problem of computing <span class="math notranslate nohighlight">\(x_t\)</span> for some t when</p>
+<p><div class="math notranslate nohighlight">
+\[
+x_{t+1} = 2 x_t, \quad x_0 = 1
+\]</div>
+</p>
+<p>Obviously the answer is <span class="math notranslate nohighlight">\(2^t\)</span>.</p>
+<p>We can compute this easily enough with a loop</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">x_loop</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>We can also use a recursive solution, as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What happens here is that each successive call uses it’s own <em>frame</em> in
+the <em>stack</em></p>
+<ul class="simple">
+<li><p>a frame is where the local variables of a given function call are held</p></li>
+<li><p>stack is memory used to process function calls</p>
+<ul>
+<li><p>a First In Last Out (FILO) queue</p></li>
+</ul>
+</li>
+</ul>
+<p>This example is somewhat contrived, since the first (iterative) solution
+would usually be preferred to the recursive solution.</p>
+<p>We’ll meet less contrived applications of recursion later on.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>The Fibonacci numbers are defined by</p>
+<p><div class="math notranslate nohighlight">
+\[
+x_{t+1} = x_t + x_{t-1}, \quad x_0 = 0, \; x_1 = 1
+\]</div>
+</p>
+<p>The first few numbers in the sequence are
+<span class="math notranslate nohighlight">\(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55\)</span>.</p>
+<p>Write a function to recursively compute the <span class="math notranslate nohighlight">\(t\)</span>-th Fibonacci number for
+any <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Complete the following code, and test it using <a class="reference external" href="https://raw.githubusercontent.com/QuantEcon/lecture-source-py/master/source/_static/lecture_specific/python_advanced_features/test_table.csv">this csv
+file</a>,
+which we assume that you’ve put in your current working directory</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
+<span class="o">---</span>
+<span class="k">def</span> <span class="nf">column_iterator</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">column_number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A generator function for CSV files.</span>
+<span class="sd">    When called with a file name target_file (string) and column number</span>
+<span class="sd">    column_number (integer), the generator function returns a generator</span>
+<span class="sd">    that steps through the elements of column column_number in file</span>
+<span class="sd">    target_file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># put your code here</span>
+
+<span class="n">dates</span> <span class="o">=</span> <span class="n">column_iterator</span><span class="p">(</span><span class="s1">&#39;test_table.csv&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we have a text file <code class="docutils literal notranslate"><span class="pre">numbers.txt</span></code> containing the following lines</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>prices
+3
+8
+
+7
+21
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">try</span></code> – <code class="docutils literal notranslate"><span class="pre">except</span></code>, write a program to read in the contents of the
+file and sum the numbers, ignoring lines without numbers.</p>
+</div>
+</div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Exercise 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Here’s the standard solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s test it</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Exercise 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>One solution is as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">column_iterator</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">column_number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A generator function for CSV files.</span>
+<span class="sd">    When called with a file name target_file (string) and column number </span>
+<span class="sd">    column_number (integer), the generator function returns a generator </span>
+<span class="sd">    which steps through the elements of column column_number in file</span>
+<span class="sd">    target_file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="n">column_number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">dates</span> <span class="o">=</span> <span class="n">column_iterator</span><span class="p">(</span><span class="s1">&#39;test_table.csv&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Exercise 3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Let’s save the data first</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">numbers</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">prices</span>
+<span class="mi">3</span>
+<span class="mi">8</span>
+
+<span class="mi">7</span>
+<span class="mi">21</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;numbers.txt&#39;</span><span class="p">)</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span> 
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="writing_good_code.html" title="previous page">Writing Good Code</a>
+    <a class='right-next' id="next-link" href="debugging.html" title="next page">Debugging</a>
+
+    </div>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.<br/>
+    </p>
+  </div>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
