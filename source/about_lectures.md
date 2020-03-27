@@ -1,3 +1,0 @@
-# About Lectures
-
-TBD
