@@ -1,31 +1,31 @@
 # - file: README
-- file: source/index
+- file: docs/index
   # pages:
-- file: source/index_learning_python
+- file: docs/index_learning_python
   title: Intro to Python
   # not_numbered: true # Do not number the pages in that chapter
   pages:
-    - file: source/about_py
+    - file: docs/about_py
       # divider: true # when included it throws WARNING: document isn't included in any toctree
-    - file: source/getting_started
-    - file: source/python_by_example
-    - file: source/functions
-    - file: source/python_essentials
-    - file: source/oop_intro
-    - file: source/python_oop
-- file: source/index_python_scientific_libraries
+    - file: docs/getting_started
+    - file: docs/python_by_example
+    - file: docs/functions
+    - file: docs/python_essentials
+    - file: docs/oop_intro
+    - file: docs/python_oop
+- file: docs/index_python_scientific_libraries
   pages:
-    - file: source/need_for_speed
-    - file: source/numpy
-    - file: source/matplotlib
-    - file: source/scipy
-    - file: source/numba
-    - file: source/parallelization
-    - file: source/pandas
-- file: source/index_advanced_python_programming
+    - file: docs/need_for_speed
+    - file: docs/numpy
+    - file: docs/matplotlib
+    - file: docs/scipy
+    - file: docs/numba
+    - file: docs/parallelization
+    - file: docs/pandas
+- file: docs/index_advanced_python_programming
   # expand_sections: true # Example of always displaying the
   pages:
-    - file: source/writing_good_code
-    - file: source/python_advanced_features
-    - file: source/debugging
-- file: source/troubleshooting
+    - file: docs/writing_good_code
+    - file: docs/python_advanced_features
+    - file: docs/debugging
+- file: docs/troubleshooting
