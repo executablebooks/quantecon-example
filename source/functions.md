@@ -1,9 +1,5 @@
 # (functions)=Functions
 
-``` {contents}
-:depth: 2
-```
-
 ## Overview
 
 One construct that\'s extremely useful and provided by almost all

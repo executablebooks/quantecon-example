@@ -1,11 +1,5 @@
 # (matplotlib)=Matplotlib
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 We\'ve already generated quite a few figures in these lectures using

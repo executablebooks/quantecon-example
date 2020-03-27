@@ -1,9 +1,5 @@
 # (getting_started)=Setting up Your Python Environment
 
-``` {contents}
-:depth: 2
-```
-
 ## Overview
 
 In this lecture, you will learn how to

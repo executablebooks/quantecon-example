@@ -1,11 +1,5 @@
 # (oop_intro)=OOP I: Introduction to Object Oriented Programming
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming) is one

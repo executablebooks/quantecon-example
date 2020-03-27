@@ -1,11 +1,5 @@
 # (sp)=SciPy
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 [SciPy](http://www.scipy.org) builds on top of NumPy to provide common

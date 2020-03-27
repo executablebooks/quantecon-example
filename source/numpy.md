@@ -1,11 +1,5 @@
 # (np)=NumPy
 
-``` {contents}
----
-depth: 2
----
-```
-
 > \"Let\'s be clear: the work of science has nothing whatever to do with
 > consensus. Consensus is the business of politics. Science, on the
 > contrary, requires only one investigator who happens to be right,

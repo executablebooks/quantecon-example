@@ -1,11 +1,5 @@
 # (python_advanced_features)=More Language Features
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 With this last lecture, our advice is to **skip it on first pass**,
