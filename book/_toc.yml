@@ -6,7 +6,7 @@
   # not_numbered: true # Do not number the pages in that chapter
   pages:
     - file: source/about_py
-      divider: true
+      # divider: true # when included it throws WARNING: document isn't included in any toctree
     - file: source/getting_started
     - file: source/python_by_example
     - file: source/functions
@@ -14,7 +14,6 @@
     - file: source/oop_intro
     - file: source/python_oop
 - file: source/index_python_scientific_libraries
-  # divider: true
   pages:
     - file: source/need_for_speed
     - file: source/numpy
