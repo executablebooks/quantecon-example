@@ -1,0 +1,15 @@
+# Jupyter Book settings
+title : Programming for Quantitative Economics
+author : Thomas J. Sargent and John Stachurski
+html_logo : 'qe-logo-large.png'
+
+description: >-
+  This book presents a set of lectures on python programming for quantitative economics, designed and written by **Thomas J. Sargent** and **John Stachurski**.
+
+# # currently not supported
+# exclude:
+#   - file: README
+
+# # Download settings
+# use_download_button: true # display a button to download a zip file for the notebook
+# download_button_text: Download # text download buttons will contain
