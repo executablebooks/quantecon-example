@@ -1,11 +1,5 @@
 # (python_done_right)=Python Essentials
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 We have covered a lot of material quite quickly, with a focus on

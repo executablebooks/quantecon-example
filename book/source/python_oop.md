@@ -1,11 +1,5 @@
 # (python_oop)=OOP II: Building Classes
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 In an {ref}`earlier lecture <oop_intro>`, we

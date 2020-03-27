@@ -1,11 +1,5 @@
 # (writing_good_code)=Writing Good Code
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 When computer programs are small, poorly written code is not overly

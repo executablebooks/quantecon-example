@@ -1,11 +1,5 @@
 # (python_by_example)=An Introductory Example
 
-``` {contents}
----
-depth: 2
----
-```
-
 ## Overview
 
 We\'re now ready to start learning the Python language itself.
