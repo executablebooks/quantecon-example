@@ -37,3 +37,7 @@ Follow [these](https://beta.jupyterbook.org/intro.html) instructions closely.
 
 * Removing h1 title from file messes up the display on sidebar. Needs further testing
 * key `divider` removes doc from `sidebar`
+
+## To do:
+- [ ] Add ipynbs
+- [ ] Add features: note, warning, tip
