@@ -184,7 +184,7 @@ Compiled languages avoid these overheads with explicit, static types.
 For example, consider the following C code, which sums the integers from
 1 to 10
 
-```c
+```{code-block} c
 ---
 class: no-execute
 ---

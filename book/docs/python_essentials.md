@@ -135,7 +135,7 @@ x
 
 But tuples are not
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -291,7 +291,7 @@ this call to `open()` fails.
 In this case, you can shift the file to the pwd or specify the [full
 path](https://en.wikipedia.org/wiki/Path_%28computing%29) to the file
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---
@@ -686,7 +686,7 @@ it was never given a name.
 
 In a {ref}`previous lecture <python_by_example>`, you came across the statement
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---
