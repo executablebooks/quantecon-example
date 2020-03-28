@@ -449,11 +449,7 @@ which directly calls this method</p>
 <p>All iterators can be placed to the right of the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword in <code class="docutils literal notranslate"><span class="pre">for</span></code>
 loop statements.</p>
 <p>In fact this is how the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop works: If we write</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -464,11 +460,7 @@ loop statements.</p>
 <li><p>repeats until a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error occurs</p></li>
 </ul>
 <p>So now you know how this magical looking syntax works</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;somefile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;somefile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
     <span class="c1"># do something</span>
 </pre></div>
@@ -494,10 +486,7 @@ loop statements.</p>
 <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-<span class="nb">next</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>So why can we iterate over a list in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop?</p>
@@ -519,20 +508,12 @@ using the built-in function <code class="docutils literal notranslate"><span cla
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="nb">next</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>    
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>    
 </pre></div>
 </div>
 <p>Many other objects are iterable, such as dictionaries and tuples.</p>
 <p>Of course, not all objects are iterable</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="nb">iter</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">iter</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To conclude our discussion of <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p>
@@ -566,11 +547,7 @@ before the loop starts.</p></li>
 <span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -760,11 +737,7 @@ assignments .</p>
 <p>We are now working in the module <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, and hence the namespace for
 <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is the global namespace.</p>
 <p>Next, we import a module called <code class="docutils literal notranslate"><span class="pre">amodule</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="kn">import</span> <span class="nn">amodule</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">amodule</span>
 </pre></div>
 </div>
 <p>At this point, the interpreter creates a namespace for the module
@@ -890,11 +863,7 @@ own namespaces.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> test.py
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="n">x</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
 </pre></div>
 </div>
 <p>First,</p>
@@ -1009,11 +978,7 @@ exist and we need to write our own</p>
 </div>
 <p>If we run this with an array of length one, the program will terminate
 and print our error message</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="n">var</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>The advantage is that we can</p>
@@ -1032,45 +997,25 @@ cases.</p>
 <div class="section" id="exceptions">
 <h4>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h4>
 <p>Here’s an example of a common error type</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="k">def</span> <span class="nf">f</span><span class="p">:</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">:</span>
 </pre></div>
 </div>
 <p>Since illegal syntax cannot be executed, a syntax error terminates
 execution of the program.</p>
 <p>Here’s a different kind of error, unrelated to syntax</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>Here’s another</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="n">x1</span> <span class="o">=</span> <span class="n">y1</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">y1</span>
 </pre></div>
 </div>
 <p>And another</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="s1">&#39;foo&#39;</span> <span class="o">+</span> <span class="mi">6</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;foo&#39;</span> <span class="o">+</span> <span class="mi">6</span>
 </pre></div>
 </div>
 <p>And another</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1506,11 +1451,7 @@ met before.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The generator function <code class="docutils literal notranslate"><span class="pre">f()</span></code> is used to create generator objects (in
@@ -1560,11 +1501,7 @@ statement.</p></li>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The call <code class="docutils literal notranslate"><span class="pre">gen</span> <span class="pre">=</span> <span class="pre">g(2)</span></code> binds <code class="docutils literal notranslate"><span class="pre">gen</span></code> to a generator.</p>
@@ -1607,11 +1544,7 @@ off</em></p>
 <p>But we are creating two huge lists here, <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> and <code class="docutils literal notranslate"><span class="pre">draws</span></code>.</p>
 <p>This uses lots of memory and is very slow.</p>
 <p>If we make <code class="docutils literal notranslate"><span class="pre">n</span></code> even bigger then this happens</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100000000</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">100000000</span>
 <span class="n">draws</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -1703,10 +1636,7 @@ any <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>Complete the following code, and test it using <a class="reference external" href="https://raw.githubusercontent.com/QuantEcon/lecture-source-py/master/source/_static/lecture_specific/python_advanced_features/test_table.csv">this csv
 file</a>,
 which we assume that you’ve put in your current working directory</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-<span class="k">def</span> <span class="nf">column_iterator</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">column_number</span><span class="p">):</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">column_iterator</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">column_number</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A generator function for CSV files.</span>
 <span class="sd">    When called with a file name target_file (string) and column number</span>
 <span class="sd">    column_number (integer), the generator function returns a generator</span>

@@ -79,7 +79,7 @@ On the other hand, between two numbers it means ordinary addition
 
 Consider the following expression
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---

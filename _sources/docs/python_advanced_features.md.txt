@@ -118,7 +118,7 @@ loop statements.
 
 In fact this is how the `for` loop works: If we write
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---
@@ -135,7 +135,7 @@ then the interpreter
 
 So now you know how this magical looking syntax works
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---
@@ -171,7 +171,7 @@ x = ['foo', 'bar']
 type(x)
 ```
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -205,7 +205,7 @@ next(y)
 next(y)
 ```
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -217,7 +217,7 @@ Many other objects are iterable, such as dictionaries and tuples.
 
 Of course, not all objects are iterable
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -261,7 +261,7 @@ y = iter(x)
 max(y)
 ```
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -520,7 +520,7 @@ We are now working in the module `__main__`, and hence the namespace for
 
 Next, we import a module called `amodule`
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---
@@ -687,7 +687,7 @@ What happens when we run this script?
 %run test.py
 ```
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -822,7 +822,7 @@ def var(y):
 If we run this with an array of length one, the program will terminate
 and print our error message
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -849,7 +849,7 @@ Let\'s look at how this is done.
 
 Here\'s an example of a common error type
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -862,7 +862,7 @@ execution of the program.
 
 Here\'s a different kind of error, unrelated to syntax
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -872,7 +872,7 @@ class: skip-test
 
 Here\'s another
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -882,7 +882,7 @@ x1 = y1
 
 And another
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -892,7 +892,7 @@ class: skip-test
 
 And another
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -1448,7 +1448,7 @@ next(gen)
 next(gen)
 ```
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -1517,7 +1517,7 @@ next(gen)
 next(gen)
 ```
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -1578,7 +1578,7 @@ This uses lots of memory and is very slow.
 
 If we make `n` even bigger then this happens
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -1686,7 +1686,7 @@ Complete the following code, and test it using [this csv
 file](https://raw.githubusercontent.com/QuantEcon/lecture-source-py/master/source/_static/lecture_specific/python_advanced_features/test_table.csv),
 which we assume that you\'ve put in your current working directory
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---

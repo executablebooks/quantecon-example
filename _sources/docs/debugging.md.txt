@@ -81,7 +81,7 @@ Let\'s try doing it a different way.
 
 We run the first cell block again, generating the same error
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -173,7 +173,7 @@ The preceding approach is handy but sometimes insufficient.
 
 Consider the following modified version of our function above
 
-```python
+```{code-block} python
 ---
 class: skip-test
 ---
@@ -198,7 +198,7 @@ To investigate, it would be helpful if we could inspect variables like
 To this end, we add a \"break point\" by inserting `breakpoint()` inside
 the function code block
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---

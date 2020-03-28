@@ -119,6 +119,17 @@ var css_paths = [
   </li>
   <li class="">
     <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="writing_good_code.html">Writing Good Code</a>
+    </li>
+    <li class="">
+      <a href="python_advanced_features.html">More Language Features</a>
+    </li>
+    <li class="">
+      <a href="debugging.html">Debugging</a>
+    </li>
+  </ul>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -385,13 +396,9 @@ correct operation.</p>
 <p>Compiled languages avoid these overheads with explicit, static types.</p>
 <p>For example, consider the following C code, which sums the integers from
 1 to 10</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="nl">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
+<div class="no-execute highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>

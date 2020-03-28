@@ -771,7 +771,7 @@ Implement $F_n$ as a class called `ECDF`, where
 
 Your code should work as follows (modulo randomness)
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---
@@ -783,7 +783,7 @@ F = ECDF(samples)
 F(0.5)  # Evaluate ecdf at x = 0.5
 ```
 
-```python
+```{code-block} python
 ---
 class: no-execute
 ---

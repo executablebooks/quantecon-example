@@ -119,6 +119,17 @@ var css_paths = [
   </li>
   <li class="">
     <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="writing_good_code.html">Writing Good Code</a>
+    </li>
+    <li class="">
+      <a href="python_advanced_features.html">More Language Features</a>
+    </li>
+    <li class="">
+      <a href="debugging.html">Debugging</a>
+    </li>
+  </ul>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -440,11 +451,7 @@ creation.</p>
 </pre></div>
 </div>
 <p>But tuples are not</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
@@ -561,11 +568,7 @@ writing</p>
 this call to <code class="docutils literal notranslate"><span class="pre">open()</span></code> fails.</p>
 <p>In this case, you can shift the file to the pwd or specify the <a class="reference external" href="https://en.wikipedia.org/wiki/Path_%28computing%29">full
 path</a> to the file</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;insert_full_path_to_file/newfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;insert_full_path_to_file/newfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -876,11 +879,7 @@ it was never given a name.</p>
 <div class="section" id="keyword-arguments">
 <h3>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p>In a <a class="reference internal" href="python_by_example.html#python-by-example"><span class="std std-ref">previous lecture</span></a>, you came across the statement</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;white noise&quot;</span><span class="p">)</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;white noise&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In this call to Matplotlib’s <code class="docutils literal notranslate"><span class="pre">plot</span></code> function, notice that the last

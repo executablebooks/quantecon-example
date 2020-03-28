@@ -119,6 +119,17 @@ var css_paths = [
   </li>
   <li class="">
     <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="writing_good_code.html">Writing Good Code</a>
+    </li>
+    <li class="">
+      <a href="python_advanced_features.html">More Language Features</a>
+    </li>
+    <li class="">
+      <a href="debugging.html">Debugging</a>
+    </li>
+  </ul>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -916,22 +927,14 @@ IID, the ecdf <span class="math notranslate nohighlight">\(F_n\)</span> converge
 any <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ul>
 <p>Your code should work as follows (modulo randomness)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
 
 <span class="n">samples</span> <span class="o">=</span> <span class="p">[</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="n">F</span> <span class="o">=</span> <span class="n">ECDF</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
 <span class="n">F</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Evaluate ecdf at x = 0.5</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="n">F</span><span class="o">.</span><span class="n">observations</span> <span class="o">=</span> <span class="p">[</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">.</span><span class="n">observations</span> <span class="o">=</span> <span class="p">[</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
 <span class="n">F</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>

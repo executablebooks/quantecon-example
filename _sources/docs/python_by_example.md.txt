@@ -124,6 +124,7 @@ On this machine, it\'s located in
 ---
 class: no-execute
 ---
+
 anaconda3/lib/python3.7/site-packages/numpy
 ```
 
@@ -334,7 +335,7 @@ for animal in animals:
 This example helps to clarify how the `for` loop works: When we execute
 a loop of the form
 
-```python
+```{code-block}
 ---
 class: no-execute
 ---

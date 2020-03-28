@@ -164,11 +164,13 @@ var css_paths = [
         <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
         <div class="download-buttons">
             <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/debugging.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+            <a class="download-buttons" href="../_sources/docs/debugging.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn">.ipynb</button></a>
             <!-- Download PDF via PrintJS -->
             <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
         </div>
     </div>
+    
+    <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/cli/master?filepath=/docs/debugging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">binder</button></a>
     
 </div>
     <div id="main-content" class="row">
@@ -233,11 +235,7 @@ investigate this object, we get the following exception:</p>
 is lost once that function terminates.</p>
 <p>Let’s try doing it a different way.</p>
 <p>We run the first cell block again, generating the same error</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="k">def</span> <span class="nf">plot_log</span><span class="p">():</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_log</span><span class="p">():</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -297,11 +295,7 @@ online help</p>
 <h3>Setting a Break Point<a class="headerlink" href="#setting-a-break-point" title="Permalink to this headline">¶</a></h3>
 <p>The preceding approach is handy but sometimes insufficient.</p>
 <p>Consider the following modified version of our function above</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">skip</span><span class="o">-</span><span class="n">test</span>
-<span class="o">---</span>
-
-<span class="k">def</span> <span class="nf">plot_log</span><span class="p">():</span>
+<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_log</span><span class="p">():</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -317,11 +311,7 @@ online help</p>
 <code class="docutils literal notranslate"><span class="pre">x</span></code> during execution of the function.</p>
 <p>To this end, we add a “break point” by inserting <code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code> inside
 the function code block</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
-<span class="n">class</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">execute</span>
-<span class="o">---</span>
-
-<span class="k">def</span> <span class="nf">plot_log</span><span class="p">():</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_log</span><span class="p">():</span>
     <span class="n">breakpoint</span><span class="p">()</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
