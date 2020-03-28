@@ -36,10 +36,11 @@ Anaconda is
 -   comprehensive
 -   completely unrelated to the Nicki Minaj song of the same name
 
-Anaconda also comes with a great package management system to organize
+```{note} Anaconda also comes with a great package management system to organize
 your code libraries.
 
 **All of what follows assumes that you adopt this recommendation!**
+```
 
 ### (install_anaconda)=Installing Anaconda
 
