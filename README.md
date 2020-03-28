@@ -41,3 +41,5 @@ Follow [these](https://beta.jupyterbook.org/intro.html) instructions closely.
 ## To do:
 - [ ] Add ipynbs
 - [ ] Add features: note, warning, tip
+- [ ] references.bib
+- [ ] fix quote in `about_py`
