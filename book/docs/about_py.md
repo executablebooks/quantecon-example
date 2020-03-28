@@ -411,7 +411,7 @@ consider
     [PyOpenCL](https://mathema.tician.de/software/pyopencl/),
     [Theano](http://deeplearning.net/software/theano/) or similar.
 
-### Other Developments {#intfc}
+### (intfc)=Other Developments
 
 There are many other interesting developments with scientific
 programming in Python.

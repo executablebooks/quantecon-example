@@ -691,7 +691,7 @@ documentation](https://docs.scipy.org/doc/numpy/reference/routines.html).
 
 ## Exercises
 
-### Exercise 1 {#np_ex1}
+### (np_ex1)=Exercise 1
 
 Consider the polynomial expression
 

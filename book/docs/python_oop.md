@@ -112,7 +112,7 @@ x.__class__
 -   `x.sort()` and `x.__class__` are two attributes of `x`.
 -   `dir(x)` can be used to view all the attributes of `x`.
 
-### Why is OOP Useful? {#why_oop}
+### (why_oop)=Why is OOP Useful?
 
 OOP is useful for the same reason that abstraction is useful: for
 recognizing and exploiting the common structure.
