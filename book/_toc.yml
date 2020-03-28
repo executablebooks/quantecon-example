@@ -4,10 +4,8 @@
 - header: Learning Python
 - file: docs/index_learning_python
   title: Intro to Python
-  # not_numbered: true # Do not number the pages in that chapter
   pages:
-    - file: docs/about_py.md
-      # divider: true # when included it throws WARNING: document isn't included in any toctree
+    - file: docs/about_py
     - file: docs/getting_started
     - file: docs/python_by_example
     - file: docs/functions
@@ -26,7 +24,7 @@
     - file: docs/pandas
 
 - file: docs/index_advanced_python_programming
-  # expand_sections: true # Example of always displaying the
+  expand_sections: true
   pages:
     - file: docs/writing_good_code
     - file: docs/python_advanced_features
