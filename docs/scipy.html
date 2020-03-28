@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>SciPy &#8212; Programming for Quantitative Economics  documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/jupyterbook.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="../_static/print.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="../_static/print.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Numba" href="numba.html" />
+    <link rel="prev" title="Matplotlib" href="matplotlib.html" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+var css_paths = [
+    "../_static/css/index.css",
+    "../_static/copybutton.css",
+    "../_static/jupyterbook.css",
+    "../_static/mystnb.css",
+    "../_static/pygments.css",
+    "../_static/togglebutton.css",
+    "../_static/bootstrap.min.css"
+]
+</script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+<div class='top'>
+<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-arrow-up"></i>
+</button>
+</div>
+
+    <div class="container-fluid">
+      <div class="row">
+          
+<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/qe-logo-large.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Quantitative Economics  documentation</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="index_learning_python.html">Intro to Python</a>
+  </li>
+  <li class="active">
+    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="need_for_speed.html">Python for Scientific Computing</a>
+    </li>
+    <li class="">
+      <a href="numpy.html">NumPy</a>
+    </li>
+    <li class="">
+      <a href="matplotlib.html">Matplotlib</a>
+    </li>
+    <li class="active">
+      <a href="">SciPy</a>
+    </li>
+    <li class="">
+      <a href="numba.html">Numba</a>
+    </li>
+    <li class="">
+      <a href="parallelization.html">Parallelization</a>
+    </li>
+    <li class="">
+      <a href="pandas.html">Pandas</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
+  </li>
+  <li class="">
+    <a href="troubleshooting.html">Troubleshooting</a>
+  </li>
+</ul>
+</nav>
+<p class="sidebar_footer">Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></p>
+</div>
+
+          
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#overview" class="nav-link">Overview</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#scipy-versus-numpy" class="nav-link">SciPy versus NumPy</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#statistics" class="nav-link">Statistics</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#random-variables-and-distributions" class="nav-link">Random Variables and Distributions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#alternative-syntax" class="nav-link">Alternative Syntax</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#other-goodies-in-scipy-stats" class="nav-link">Other Goodies in scipy.stats</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#roots-and-fixed-points" class="nav-link">Roots and Fixed Points</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#bisection" class="nav-link">Bisection</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#the-newton-raphson-method" class="nav-link">The Newton-Raphson Method</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#hybrid-methods" class="nav-link">Hybrid Methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#multivariate-root-finding" class="nav-link">Multivariate Root-Finding</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#fixed-points" class="nav-link">Fixed Points</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#optimization" class="nav-link">Optimization</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#multivariate-optimization" class="nav-link">Multivariate Optimization</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#integration" class="nav-link">Integration</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#linear-algebra" class="nav-link">Linear Algebra</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#exercises" class="nav-link">Exercises</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#exercise-1" class="nav-link">Exercise 1</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#solutions" class="nav-link">Solutions</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id1" class="nav-link">Exercise 1</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+</div>
+
+
+          
+<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar sticky-top">
+    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <div class="download-buttons-dropdown">
+        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+        <div class="download-buttons">
+            <!-- Download raw file -->
+            <a class="download-buttons" href="../_sources/docs/scipy.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+            <!-- Download PDF via PrintJS -->
+            <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
+        </div>
+    </div>
+    
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 ">
+        
+              <div>
+                
+  <div class="section" id="scipy">
+<h1><span class="target" id="sp"></span>SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.scipy.org">SciPy</a> builds on top of NumPy to provide common
+tools for scientific programming such as</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/linalg.html">linear algebra</a></p></li>
+<li><p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/integrate.html">numerical
+integration</a></p></li>
+<li><p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/interpolate.html">interpolation</a></p></li>
+<li><p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/optimize.html">optimization</a></p></li>
+<li><p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html">distributions and random number generation</a></p></li>
+<li><p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/signal.html">signal processing</a></p></li>
+<li><p>etc., etc</p></li>
+</ul>
+<p>Like NumPy, SciPy is stable, mature and widely used.</p>
+<p>Many SciPy routines are thin wrappers around industry-standard Fortran
+libraries such as <a class="reference external" href="https://en.wikipedia.org/wiki/LAPACK">LAPACK</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms">BLAS</a>,
+etc.</p>
+<p>It’s not really necessary to “learn” SciPy as a whole.</p>
+<p>A more common approach is to get some idea of what’s in the library and
+then look up
+<a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/index.html">documentation</a> as
+required.</p>
+<p>In this lecture, we aim only to highlight some useful parts of the
+package.</p>
+</div>
+<div class="section" id="scipy-versus-numpy">
+<h2>SciPy versus NumPy<a class="headerlink" href="#scipy-versus-numpy" title="Permalink to this headline">¶</a></h2>
+<p>SciPy is a package that contains various tools that are built on top of
+NumPy, using its array data type and related functionality.</p>
+<p>In fact, when we import SciPy we also get NumPy, as can be seen from
+this excerpt the SciPy initialization file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import numpy symbols to scipy namespace</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">rand</span><span class="p">,</span> <span class="n">randn</span>
+<span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
+<span class="kn">from</span> <span class="nn">numpy.lib.scimath</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>However, it’s more common and better practice to use NumPy
+functionality explicitly</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What is useful in SciPy is the functionality in its sub-packages</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, etc.</p></li>
+</ul>
+<p>Let’s explore some of the major sub-packages.</p>
+</div>
+<div class="section" id="statistics">
+<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> subpackage supplies</p>
+<ul class="simple">
+<li><p>numerous random variable objects (densities, cumulative
+distributions, random sampling, etc.)</p></li>
+<li><p>some estimation procedures</p></li>
+<li><p>some statistical tests</p></li>
+</ul>
+<div class="section" id="random-variables-and-distributions">
+<h3>Random Variables and Distributions<a class="headerlink" href="#random-variables-and-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> provides functions for generating random
+variables</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This generates a draw from the distribution with the density function
+below when <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">5,</span> <span class="pre">5</span></code></p>
+<p><div class="math notranslate nohighlight">
+\[
+f(x; a, b) = \frac{x^{(a - 1)} (1 - x)^{(b - 1)}}
+{\int_0^1 u^{(a - 1)} (1 - u)^{(b - 1)} du}
+\qquad (0 \leq x \leq 1)
+\]</div>
+</p>
+<p>Sometimes we need access to the density itself, or the cdf, the
+quantiles, etc.</p>
+<p>For this, we can use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, which provides all of this
+functionality as well as random number generation in a single consistent
+interface.</p>
+<p>Here’s an example of usage</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">beta</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>      <span class="c1"># Beta(a, b), with a = b = 5</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>   <span class="c1"># 2000 observations</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">grid</span><span class="p">),</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The object <code class="docutils literal notranslate"><span class="pre">q</span></code> that represents the distribution has additional useful
+methods, including</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">q</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>      <span class="c1"># Cumulative distribution function</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">q</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>      <span class="c1"># Quantile (inverse cdf) function</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">q</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The general syntax for creating these objects that represent
+distributions (of type <code class="docutils literal notranslate"><span class="pre">rv_frozen</span></code>) is</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">scipy.stats.distribution_name(shape_parameters,</span> <span class="pre">loc=c,</span> <span class="pre">scale=d)</span></code></p>
+</div></blockquote>
+<p>Here <code class="docutils literal notranslate"><span class="pre">distribution_name</span></code> is one of the distribution names in
+<a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/stats.html">scipy.stats</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code> parameters transform the original random variable
+<span class="math notranslate nohighlight">\(X\)</span> into <span class="math notranslate nohighlight">\(Y = c + d X\)</span>.</p>
+</div>
+<div class="section" id="alternative-syntax">
+<h3>Alternative Syntax<a class="headerlink" href="#alternative-syntax" title="Permalink to this headline">¶</a></h3>
+<p>There is an alternative way of calling the methods described above.</p>
+<p>For example, the code that generates the figure above can be replaced by</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="other-goodies-in-scipy-stats">
+<h3>Other Goodies in scipy.stats<a class="headerlink" href="#other-goodies-in-scipy-stats" title="Permalink to this headline">¶</a></h3>
+<p>There are a variety of statistical functions in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">scipy.stats.linregress</span></code> implements simple linear
+regression</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">gradient</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">gradient</span><span class="p">,</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+<p>To see the full list, consult the
+<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#statistical-functions-scipy-stats">documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="roots-and-fixed-points">
+<h2>Roots and Fixed Points<a class="headerlink" href="#roots-and-fixed-points" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>root</strong> or <strong>zero</strong> of a real function <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a,b]\)</span> is an
+<span class="math notranslate nohighlight">\(x \in [a, b]\)</span> such that <span class="math notranslate nohighlight">\(f(x)=0\)</span>.</p>
+<p>For example, if we plot the function</p>
+<div class="math notranslate nohighlight" id="equation-root-f">
+<span class="eqno">(7)<a class="headerlink" href="#equation-root-f" title="Permalink to this equation">¶</a></span>\[f(x) = \sin(4 (x - 1/4)) + x + x^{20} - 1\]</div>
+<p>with <span class="math notranslate nohighlight">\(x \in [0,1]\)</span> we get</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$f(x)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The unique root is approximately 0.408.</p>
+<p>Let’s consider some numerical techniques for finding roots.</p>
+<div class="section" id="bisection">
+<h3>Bisection<a class="headerlink" href="#bisection" title="Permalink to this headline">¶</a></h3>
+<p>One of the most common algorithms for numerical root-finding is
+<em>bisection</em>.</p>
+<p>To understand the idea, recall the well-known game where</p>
+<ul>
+<li><p>Player A thinks of a secret number between 1 and 100</p></li>
+<li><p>Player B asks if it’s less than 50</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If yes, B asks if it’s less than 25</p></li>
+<li><p>If no, B asks if it’s less than 75</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>And so on.</p>
+<p>This is bisection.</p>
+<p>Here’s a simplistic implementation of the algorithm in Python.</p>
+<p>It works for all sufficiently well behaved increasing continuous
+functions with <span class="math notranslate nohighlight">\(f(a) &lt; 0 &lt; f(b)\)</span></p>
+<div class="highlight-python notranslate" id="bisect-func"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">10e-5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implements the bisection root finding algorithm, assuming that f is a</span>
+<span class="sd">    real-valued function on [a, b] satisfying f(a) &lt; 0 &lt; f(b).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+
+    <span class="k">while</span> <span class="n">upper</span> <span class="o">-</span> <span class="n">lower</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">middle</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1"># root is between lower and middle </span>
+            <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">lower</span><span class="p">,</span> <span class="n">middle</span>
+        <span class="k">else</span><span class="p">:</span>               <span class="c1"># root is between middle and upper </span>
+            <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">middle</span><span class="p">,</span> <span class="n">upper</span>
+
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s test it using the function <span class="math notranslate nohighlight">\(f\)</span> defined in
+<a class="reference internal" href="#equation-root-f">(7)</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Not surprisingly, SciPy provides its own bisection function.</p>
+<p>Let’s test it using the same function <span class="math notranslate nohighlight">\(f\)</span> defined in
+<a class="reference internal" href="#equation-root-f">(7)</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">bisect</span>
+
+<span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-newton-raphson-method">
+<h3>The Newton-Raphson Method<a class="headerlink" href="#the-newton-raphson-method" title="Permalink to this headline">¶</a></h3>
+<p>Another very common root-finding algorithm is the <a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_method">Newton-Raphson
+method</a>.</p>
+<p>In SciPy this algorithm is implemented by <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code>.</p>
+<p>Unlike bisection, the Newton-Raphson method uses local slope information
+in an attempt to increase the speed of convergence.</p>
+<p>Let’s investigate this using the same function <span class="math notranslate nohighlight">\(f\)</span> defined above.</p>
+<p>With a suitable initial condition for the search we get convergence:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">newton</span>
+
+<span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>   <span class="c1"># Start the search at initial condition x = 0.2</span>
+</pre></div>
+</div>
+<p>But other initial conditions lead to failure of convergence:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>   <span class="c1"># Start the search at x = 0.7 instead</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hybrid-methods">
+<h3>Hybrid Methods<a class="headerlink" href="#hybrid-methods" title="Permalink to this headline">¶</a></h3>
+<p>A general principle of numerical methods is as follows:</p>
+<ul class="simple">
+<li><p>If you have specific knowledge about a given problem, you might be
+able to exploit it to generate efficiency.</p></li>
+<li><p>If not, then the choice of algorithm involves a trade-off between
+speed and robustness.</p></li>
+</ul>
+<p>In practice, most default algorithms for root-finding, optimization and
+fixed points use <em>hybrid</em> methods.</p>
+<p>These methods typically combine a fast method with a robust method in
+the following manner:</p>
+<ol class="simple">
+<li><p>Attempt to use a fast method</p></li>
+<li><p>Check diagnostics</p></li>
+<li><p>If diagnostics are bad, then switch to a more robust algorithm</p></li>
+</ol>
+<p>In <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, the function <code class="docutils literal notranslate"><span class="pre">brentq</span></code> is such a hybrid method and a
+good default</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brentq</span>
+
+<span class="n">brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the correct solution is found and the speed is better than
+bisection:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> brentq(f, 0, 1)
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> bisect(f, 0, 1)
+</pre></div>
+</div>
+</div>
+<div class="section" id="multivariate-root-finding">
+<h3>Multivariate Root-Finding<a class="headerlink" href="#multivariate-root-finding" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code>, a wrapper for a hybrid method in MINPACK.</p>
+<p>See the
+<a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fsolve.html">documentation</a>
+for details.</p>
+</div>
+<div class="section" id="fixed-points">
+<h3>Fixed Points<a class="headerlink" href="#fixed-points" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>fixed point</strong> of a real function <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a,b]\)</span> is an <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>
+such that <span class="math notranslate nohighlight">\(f(x)=x\)</span>.</p>
+<p>SciPy has a function for finding (scalar) fixed points too</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fixed_point</span>
+
+<span class="n">fixed_point</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>  <span class="c1"># 10.0 is an initial guess</span>
+</pre></div>
+</div>
+<p>If you don’t get good results, you can always switch back to the
+<code class="docutils literal notranslate"><span class="pre">brentq</span></code> root finder, since the fixed point of a function <span class="math notranslate nohighlight">\(f\)</span> is the
+root of <span class="math notranslate nohighlight">\(g(x) := x - f(x)\)</span>.</p>
+</div>
+</div>
+<div class="section" id="optimization">
+<h2>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h2>
+<p>Most numerical packages provide only functions for <em>minimization</em>.</p>
+<p>Maximization can be performed by recalling that the maximizer of a
+function <span class="math notranslate nohighlight">\(f\)</span> on domain <span class="math notranslate nohighlight">\(D\)</span> is the minimizer of <span class="math notranslate nohighlight">\(-f\)</span> on <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<p>Minimization is closely related to root-finding: For smooth functions,
+interior optima correspond to roots of the first derivative.</p>
+<p>The speed/robustness trade-off described above is present with numerical
+optimization too.</p>
+<p>Unless you have some prior information you can exploit, it’s usually
+best to use hybrid methods.</p>
+<p>For constrained, univariate (i.e., scalar) minimization, a good hybrid
+option is <code class="docutils literal notranslate"><span class="pre">fminbound</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fminbound</span>
+
+<span class="n">fminbound</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Search in [-1, 2]</span>
+</pre></div>
+</div>
+<div class="section" id="multivariate-optimization">
+<h3>Multivariate Optimization<a class="headerlink" href="#multivariate-optimization" title="Permalink to this headline">¶</a></h3>
+<p>Multivariate local optimizers include <code class="docutils literal notranslate"><span class="pre">minimize</span></code>, <code class="docutils literal notranslate"><span class="pre">fmin</span></code>, <code class="docutils literal notranslate"><span class="pre">fmin_powell</span></code>,
+<code class="docutils literal notranslate"><span class="pre">fmin_cg</span></code>, <code class="docutils literal notranslate"><span class="pre">fmin_bfgs</span></code>, and <code class="docutils literal notranslate"><span class="pre">fmin_ncg</span></code>.</p>
+<p>Constrained multivariate local optimizers include <code class="docutils literal notranslate"><span class="pre">fmin_l_bfgs_b</span></code>,
+<code class="docutils literal notranslate"><span class="pre">fmin_tnc</span></code>, <code class="docutils literal notranslate"><span class="pre">fmin_cobyla</span></code>.</p>
+<p>See the
+<a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/optimize.html">documentation</a>
+for details.</p>
+</div>
+</div>
+<div class="section" id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<p>Most numerical integration methods work by computing the integral of an
+approximating polynomial.</p>
+<p>The resulting error depends on how well the polynomial fits the
+integrand, which in turn depends on how “regular” the integrand is.</p>
+<p>In SciPy, the relevant module for numerical integration is
+<code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>.</p>
+<p>A good default for univariate integration is <code class="docutils literal notranslate"><span class="pre">quad</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+
+<span class="n">integral</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">integral</span>
+</pre></div>
+</div>
+<p>In fact, <code class="docutils literal notranslate"><span class="pre">quad</span></code> is an interface to a very standard numerical integration
+routine in the Fortran library QUADPACK.</p>
+<p>It uses <a class="reference external" href="https://en.wikipedia.org/wiki/Clenshaw-Curtis_quadrature">Clenshaw-Curtis
+quadrature</a>,
+based on expansion in terms of Chebychev polynomials.</p>
+<p>There are other options for univariate integration—a useful one is
+<code class="docutils literal notranslate"><span class="pre">fixed_quad</span></code>, which is fast and hence works well inside <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p>
+<p>There are also functions for multivariate integration.</p>
+<p>See the
+<a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/integrate.html">documentation</a>
+for more details.</p>
+</div>
+<div class="section" id="linear-algebra">
+<h2>Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this headline">¶</a></h2>
+<p>We saw that NumPy provides a module for linear algebra called <code class="docutils literal notranslate"><span class="pre">linalg</span></code>.</p>
+<p>SciPy also provides a module for linear algebra with the same name.</p>
+<p>The latter is not an exact superset of the former, but overall it has
+more functionality.</p>
+<p>We leave you to investigate the <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/linalg.html">set of available
+routines</a>.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3><span class="target" id="sp-ex1"></span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Previously we discussed the concept of
+<a class="reference internal" href="python_advanced_features.html#recursive-functions"><span class="std std-ref">recursive function calls</span></a>.</p>
+<p>Try to write a recursive implementation of homemade bisection function
+<a class="reference internal" href="#bisect-func"><span class="std std-ref">described above</span></a>.</p>
+<p>Test it on the function <a class="reference internal" href="#equation-root-f">(7)</a>.</p>
+</div>
+</div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Exercise 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Here’s a reasonable solution:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">10e-5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implements the bisection root-finding algorithm, assuming that f is a</span>
+<span class="sd">    real-valued function on [a, b] satisfying f(a) &lt; 0 &lt; f(b).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+    <span class="k">if</span> <span class="n">upper</span> <span class="o">-</span> <span class="n">lower</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current mid point = </span><span class="si">{</span><span class="n">middle</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">middle</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1"># Implies root is between lower and middle</span>
+            <span class="k">return</span> <span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">middle</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>               <span class="c1"># Implies root is between middle and upper</span>
+            <span class="k">return</span> <span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">middle</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can test it as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">))</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="matplotlib.html" title="previous page">Matplotlib</a>
+    <a class='right-next' id="next-link" href="numba.html" title="next page">Numba</a>
+
+    </div>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright .<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

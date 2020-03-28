@@ -1,0 +1,728 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pandas &#8212; Programming for Quantitative Economics  documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/jupyterbook.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="../_static/print.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="../_static/print.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced Python Programming" href="index_advanced_python_programming.html" />
+    <link rel="prev" title="Parallelization" href="parallelization.html" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+var css_paths = [
+    "../_static/css/index.css",
+    "../_static/copybutton.css",
+    "../_static/jupyterbook.css",
+    "../_static/mystnb.css",
+    "../_static/pygments.css",
+    "../_static/togglebutton.css",
+    "../_static/bootstrap.min.css"
+]
+</script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+<div class='top'>
+<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-arrow-up"></i>
+</button>
+</div>
+
+    <div class="container-fluid">
+      <div class="row">
+          
+<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/qe-logo-large.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Programming for Quantitative Economics  documentation</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="index_learning_python.html">Intro to Python</a>
+  </li>
+  <li class="active">
+    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="need_for_speed.html">Python for Scientific Computing</a>
+    </li>
+    <li class="">
+      <a href="numpy.html">NumPy</a>
+    </li>
+    <li class="">
+      <a href="matplotlib.html">Matplotlib</a>
+    </li>
+    <li class="">
+      <a href="scipy.html">SciPy</a>
+    </li>
+    <li class="">
+      <a href="numba.html">Numba</a>
+    </li>
+    <li class="">
+      <a href="parallelization.html">Parallelization</a>
+    </li>
+    <li class="active">
+      <a href="">Pandas</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
+  </li>
+  <li class="">
+    <a href="troubleshooting.html">Troubleshooting</a>
+  </li>
+</ul>
+</nav>
+<p class="sidebar_footer">Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></p>
+</div>
+
+          
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#overview" class="nav-link">Overview</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#series" class="nav-link">Series</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#dataframes" class="nav-link">DataFrames</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#on-line-data-sources" class="nav-link">On-Line Data Sources</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#accessing-data-with-requests" class="nav-link">Accessing Data with requests</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#using-pandas-datareader-to-access-data" class="nav-link">Using pandas_datareader to Access Data</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#exercises" class="nav-link">Exercises</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#exercise-1" class="nav-link">Exercise 1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#exercise-2" class="nav-link">Exercise 2</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#solutions" class="nav-link">Solutions</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id2" class="nav-link">Exercise 1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id3" class="nav-link">Exercise 2</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+</div>
+
+
+          
+<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar sticky-top">
+    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <div class="download-buttons-dropdown">
+        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+        <div class="download-buttons">
+            <!-- Download raw file -->
+            <a class="download-buttons" href="../_sources/docs/pandas.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+            <!-- Download PDF via PrintJS -->
+            <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
+        </div>
+    </div>
+    
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 ">
+        
+              <div>
+                
+  <div class="section" id="pandas">
+<h1><span class="target" id="pd"></span>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+<p>In addition to what’s in Anaconda, this lecture will need the following
+libraries:</p>
+<div class="hide-output highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --upgrade pandas-datareader
+</pre></div>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://pandas.pydata.org/">Pandas</a> is a package of fast, efficient data
+analysis tools for Python.</p>
+<p>Its popularity has surged in recent years, coincident with the rise of
+fields such as data science and machine learning.</p>
+<p>Here’s a popularity comparison over time against STATA, SAS, and
+<a class="reference external" href="https://dplyr.tidyverse.org/">dplyr</a> courtesy of Stack Overflow Trends</p>
+<p><img alt="" src="../_images/pandas_vs_rest.png" /></p>
+<p>Just as <a class="reference external" href="http://www.numpy.org/">NumPy</a> provides the basic array data
+type plus core array operations, pandas</p>
+<ol class="simple">
+<li><p>defines fundamental structures for working with data and</p></li>
+<li><p>endows them with methods that facilitate operations such as</p></li>
+</ol>
+<ul class="simple">
+<li><p>reading in data</p></li>
+<li><p>adjusting indices</p></li>
+<li><p>working with dates and time series</p></li>
+<li><p>sorting, grouping, re-ordering and general data munging<a class="footnote-reference brackets" href="#id4" id="id1">2</a></p></li>
+<li><p>dealing with missing values, etc., etc.</p></li>
+</ul>
+<p>More sophisticated statistical functionality is left to other packages,
+such as <a class="reference external" href="http://www.statsmodels.org/">statsmodels</a> and
+<a class="reference external" href="http://scikit-learn.org/">scikit-learn</a>, which are built on top of
+pandas.</p>
+<p>This lecture will provide a basic introduction to pandas.</p>
+<p>Throughout the lecture, we will assume that the following imports have
+taken place</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="series">
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
+<p>Two important data types defined by pandas are <code class="docutils literal notranslate"><span class="pre">Series</span></code> and <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>You can think of a <code class="docutils literal notranslate"><span class="pre">Series</span></code> as a “column” of data, such as a
+collection of observations on a single variable.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is an object for storing related columns of data.</p>
+<p>Let’s start with <code class="docutils literal notranslate"><span class="pre">Series</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;daily returns&#39;</span><span class="p">)</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+<p>Here you can imagine the indices <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3</span></code> as indexing four listed
+companies, and the values being daily returns on their shares.</p>
+<p>Pandas <code class="docutils literal notranslate"><span class="pre">Series</span></code> are built on top of NumPy arrays and support many
+similar operations</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">Series</span></code> provide more than NumPy arrays.</p>
+<p>Not only do they have some additional (statistically oriented) methods</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>But their indices are more flexible</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMZN&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;MSFT&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">]</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+<p>Viewed in this way, <code class="docutils literal notranslate"><span class="pre">Series</span></code> are like fast, efficient Python
+dictionaries (with the restriction that the items in the dictionary all
+have the same type—in this case, floats).</p>
+<p>In fact, you can use much of the same syntax as Python dictionaries</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;AMZN&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;AMZN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;AAPL&#39;</span> <span class="ow">in</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dataframes">
+<h2>DataFrames<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h2>
+<p>While a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a single column of data, a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is several
+columns, one for each variable.</p>
+<p>In essence, a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> in pandas is analogous to a (highly optimized)
+Excel spreadsheet.</p>
+<p>Thus, it is a powerful tool for representing and analyzing data that are
+naturally organized into rows and columns, often with descriptive
+indexes for individual rows and individual columns.</p>
+<p>Let’s look at an example that reads data from the CSV file
+<code class="docutils literal notranslate"><span class="pre">pandas/data/test_pwt.csv</span></code> that can be downloaded
+<a class="reference external" href="https://lectures.quantecon.org/_downloads/pandas/data/test_pwt.csv">here</a>.</p>
+<p>Here’s the content of <code class="docutils literal notranslate"><span class="pre">test_pwt.csv</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;country&quot;,&quot;country isocode&quot;,&quot;year&quot;,&quot;POP&quot;,&quot;XRAT&quot;,&quot;tcgdp&quot;,&quot;cc&quot;,&quot;cg&quot;
+&quot;Argentina&quot;,&quot;ARG&quot;,&quot;2000&quot;,&quot;37335.653&quot;,&quot;0.9995&quot;,&quot;295072.21869&quot;,&quot;75.716805379&quot;,&quot;5.5788042896&quot;
+&quot;Australia&quot;,&quot;AUS&quot;,&quot;2000&quot;,&quot;19053.186&quot;,&quot;1.72483&quot;,&quot;541804.6521&quot;,&quot;67.759025993&quot;,&quot;6.7200975332&quot;
+&quot;India&quot;,&quot;IND&quot;,&quot;2000&quot;,&quot;1006300.297&quot;,&quot;44.9416&quot;,&quot;1728144.3748&quot;,&quot;64.575551328&quot;,&quot;14.072205773&quot;
+&quot;Israel&quot;,&quot;ISR&quot;,&quot;2000&quot;,&quot;6114.57&quot;,&quot;4.07733&quot;,&quot;129253.89423&quot;,&quot;64.436450847&quot;,&quot;10.266688415&quot;
+&quot;Malawi&quot;,&quot;MWI&quot;,&quot;2000&quot;,&quot;11801.505&quot;,&quot;59.543808333&quot;,&quot;5026.2217836&quot;,&quot;74.707624181&quot;,&quot;11.658954494&quot;
+&quot;South Africa&quot;,&quot;ZAF&quot;,&quot;2000&quot;,&quot;45064.098&quot;,&quot;6.93983&quot;,&quot;227242.36949&quot;,&quot;72.718710427&quot;,&quot;5.7265463933&quot;
+&quot;United States&quot;,&quot;USA&quot;,&quot;2000&quot;,&quot;282171.957&quot;,&quot;1&quot;,&quot;9898700&quot;,&quot;72.347054303&quot;,&quot;6.0324539789&quot;
+&quot;Uruguay&quot;,&quot;URY&quot;,&quot;2000&quot;,&quot;3219.793&quot;,&quot;12.099591667&quot;,&quot;25255.961693&quot;,&quot;78.978740282&quot;,&quot;5.108067988&quot;
+</pre></div>
+</div>
+<p>Supposing you have this data saved as <code class="docutils literal notranslate"><span class="pre">test_pwt.csv</span></code> in the present
+working directory (type <code class="docutils literal notranslate"><span class="pre">%pwd</span></code> in Jupyter to see what this is), it can
+be read in as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/QuantEcon/lecture-source-py/master/source/_static/lecture_specific/pandas/data/test_pwt.csv&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+<p>We can select particular rows using standard Python array slicing
+notation</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To select columns, we can pass a list containing the names of the
+desired columns represented as strings</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;tcgdp&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>To select both rows and columns using integers, the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> attribute
+should be used with the format <code class="docutils literal notranslate"><span class="pre">.iloc[rows,</span> <span class="pre">columns]</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To select rows and columns using a mixture of integers and labels, the
+<code class="docutils literal notranslate"><span class="pre">loc</span></code> attribute can be used in a similar way</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;tcgdp&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Let’s imagine that we’re only interested in population (<code class="docutils literal notranslate"><span class="pre">POP</span></code>) and
+total GDP (<code class="docutils literal notranslate"><span class="pre">tcgdp</span></code>).</p>
+<p>One way to strip the data frame <code class="docutils literal notranslate"><span class="pre">df</span></code> down to only these variables is to
+overwrite the dataframe using the selection method described above</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;POP&#39;</span><span class="p">,</span> <span class="s1">&#39;tcgdp&#39;</span><span class="p">]]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Here the index <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,...,</span> <span class="pre">7</span></code> is redundant because we can use the country
+names as an index.</p>
+<p>To do this, we set the index to be the <code class="docutils literal notranslate"><span class="pre">country</span></code> variable in the
+dataframe</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Let’s give the columns slightly better names</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;total GDP&#39;</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Population is in thousands, let’s revert to single units</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e3</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Next, we’re going to add a column showing real GDP per capita,
+multiplying by 1,000,000 as we go because total GDP is in millions</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;GDP percap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;total GDP&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e6</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>One of the nice things about pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects is
+that they have methods for plotting and visualization that work through
+Matplotlib.</p>
+<p>For example, we can easily generate a bar plot of GDP per capita</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;GDP percap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>At the moment the data frame is ordered alphabetically on the
+countries—let’s change it to GDP per capita</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;GDP percap&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Plotting as before now yields</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;GDP percap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-line-data-sources">
+<h2>On-Line Data Sources<a class="headerlink" href="#on-line-data-sources" title="Permalink to this headline">¶</a></h2>
+<p>Python makes it straightforward to query online databases
+programmatically.</p>
+<p>An important database for economists is
+<a class="reference external" href="https://research.stlouisfed.org/fred2/">FRED</a> — a vast collection
+of time series data maintained by the St. Louis Fed.</p>
+<p>For example, suppose that we are interested in the <a class="reference external" href="https://research.stlouisfed.org/fred2/series/UNRATE">unemployment
+rate</a>.</p>
+<p>Via FRED, the entire series for the US civilian unemployment rate can be
+downloaded directly by entering this URL into your browser (note that
+this requires an internet connection)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv
+</pre></div>
+</div>
+<p>(Equivalently, click here:
+https://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv)</p>
+<p>This request returns a CSV file, which will be handled by your default
+application for this class of files.</p>
+<p>Alternatively, we can access the CSV file from within a Python program.</p>
+<p>This can be done with a variety of methods.</p>
+<p>We start with a relatively low-level method and then return to pandas.</p>
+<div class="section" id="accessing-data-with-requests">
+<h3>Accessing Data with requests<a class="headerlink" href="#accessing-data-with-requests" title="Permalink to this headline">¶</a></h3>
+<p>One option is to use
+<a class="reference external" href="https://requests.readthedocs.io/en/master/">requests</a>, a standard
+Python library for requesting data over the Internet.</p>
+<p>To begin, try the following code on your computer</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If there’s no error message, then the call has succeeded.</p>
+<p>If you do get an error, then there are two likely causes</p>
+<ol class="simple">
+<li><p>You are not connected to the Internet — hopefully, this isn’t
+the case.</p></li>
+<li><p>Your machine is accessing the Internet through a proxy server, and
+Python isn’t aware of this.</p></li>
+</ol>
+<p>In the second case, you can either</p>
+<ul class="simple">
+<li><p>switch to another machine</p></li>
+<li><p>solve your proxy problem by reading <a class="reference external" href="https://requests.readthedocs.io/en/master/">the
+documentation</a></p></li>
+</ul>
+<p>Assuming that all is working, you can now proceed to use the <code class="docutils literal notranslate"><span class="pre">source</span></code>
+object returned by the call
+<code class="docutils literal notranslate"><span class="pre">requests.get('http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv')</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv&#39;</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">source</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We could now write some additional code to parse this text and store it
+as an array.</p>
+<p>But this is unnecessary — pandas’ <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> function can handle
+the task for us.</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">parse_dates=True</span></code> so that pandas recognizes our dates column,
+allowing for simple date filtering</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The data has been read into a pandas DataFrame called <code class="docutils literal notranslate"><span class="pre">data</span></code> that we can
+now manipulate in the usual way</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># A useful method to get a quick look at a data frame</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;precision&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>  <span class="c1"># Your output might differ slightly</span>
+</pre></div>
+</div>
+<p>We can also plot the unemployment rate from 2006 to 2012 as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;2006&#39;</span><span class="p">:</span><span class="s1">&#39;2012&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;US Unemployment Rate&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that pandas offers many other file type alternatives.</p>
+<p>Pandas has <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">a wide
+variety</a>
+of top-level methods that we can use to read, excel, json, parquet or
+plug straight into a database server.</p>
+</div>
+<div class="section" id="using-pandas-datareader-to-access-data">
+<h3>Using pandas_datareader to Access Data<a class="headerlink" href="#using-pandas-datareader-to-access-data" title="Permalink to this headline">¶</a></h3>
+<p>The maker of pandas has also authored a library called
+<code class="docutils literal notranslate"><span class="pre">pandas_datareader</span></code> that gives programmatic access to many
+data sources straight from the Jupyter notebook.</p>
+<p>While some sources require an access key, many of the most important
+(e.g., FRED, <a class="reference external" href="https://data.oecd.org/">OECD</a>,
+<a class="reference external" href="https://ec.europa.eu/eurostat/data/database">EUROSTAT</a> and the World
+Bank) are free to use.</p>
+<p>For now let’s work through one example of downloading and plotting data
+— this time from the World Bank.</p>
+<p>The World Bank <a class="reference external" href="http://data.worldbank.org/indicator">collects and organizes
+data</a> on a huge range of
+indicators.</p>
+<p>For example,
+<a class="reference external" href="http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries">here’s</a>
+some data on government debt as a ratio to GDP.</p>
+<p>The next code example fetches the data for you and plots time series for
+the US and Australia</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="kn">import</span> <span class="n">wb</span>
+
+<span class="n">govt_debt</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">indicator</span><span class="o">=</span><span class="s1">&#39;GC.DOD.TOTL.GD.ZS&#39;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;AU&#39;</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">2005</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2016</span><span class="p">)</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">govt_debt</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">govt_debt</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">ind</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">govt_debt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Government Debt to GDP (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The
+<a class="reference external" href="https://pandas-datareader.readthedocs.io/en/latest/index.html">documentation</a>
+provides more details on how to access various data sources.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3><span class="target" id="pd-ex1"></span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>With these imports:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span> 
+<span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="kn">import</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>Write a program to calculate the percentage price change over 2019 for
+the following shares:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ticker_list</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;INTC&#39;</span><span class="p">:</span> <span class="s1">&#39;Intel&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;MSFT&#39;</span><span class="p">:</span> <span class="s1">&#39;Microsoft&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;IBM&#39;</span><span class="p">:</span> <span class="s1">&#39;IBM&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;BHP&#39;</span><span class="p">:</span> <span class="s1">&#39;BHP&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;TM&#39;</span><span class="p">:</span> <span class="s1">&#39;Toyota&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;AAPL&#39;</span><span class="p">:</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;AMZN&#39;</span><span class="p">:</span> <span class="s1">&#39;Amazon&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;BA&#39;</span><span class="p">:</span> <span class="s1">&#39;Boeing&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;QCOM&#39;</span><span class="p">:</span> <span class="s1">&#39;Qualcomm&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;KO&#39;</span><span class="p">:</span> <span class="s1">&#39;Coca-Cola&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;GOOG&#39;</span><span class="p">:</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;SNE&#39;</span><span class="p">:</span> <span class="s1">&#39;Sony&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;PTR&#39;</span><span class="p">:</span> <span class="s1">&#39;PetroChina&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Here’s the first part of the program</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">ticker_list</span><span class="p">,</span>
+          <span class="n">start</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+          <span class="n">end</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)):</span> 
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function reads in closing price data from Yahoo </span>
+<span class="sd">    for each tick in the ticker_list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">tick</span> <span class="ow">in</span> <span class="n">ticker_list</span><span class="p">:</span>
+        <span class="n">prices</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="n">tick</span><span class="p">,</span> <span class="s1">&#39;yahoo&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="n">closing_prices</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span>
+        <span class="n">ticker</span><span class="p">[</span><span class="n">tick</span><span class="p">]</span> <span class="o">=</span> <span class="n">closing_prices</span>
+
+    <span class="k">return</span> <span class="n">ticker</span>
+
+<span class="n">ticker</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="n">ticker_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Complete the program to plot the result as a bar graph like this one:</p>
+<p><img alt="" src="../_images/pandas_share_prices.png" /></p>
+</div>
+<div class="section" id="exercise-2">
+<h3><span class="target" id="pd-ex2"></span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Using the method <code class="docutils literal notranslate"><span class="pre">read_data</span></code> introduced in
+<a class="reference internal" href="#pd-ex1"><span class="std std-ref">Exercise 1</span></a>, write a program to
+obtain year-on-year percentage change for the following indices:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">indices_list</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;^GSPC&#39;</span><span class="p">:</span> <span class="s1">&#39;S&amp;P 500&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;^IXIC&#39;</span><span class="p">:</span> <span class="s1">&#39;NASDAQ&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;^DJI&#39;</span><span class="p">:</span> <span class="s1">&#39;Dow Jones&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;^N225&#39;</span><span class="p">:</span> <span class="s1">&#39;Nikkei&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Complete the program to show summary statistics and plot the result as a
+time series graph like this one:</p>
+<p><img alt="" src="../_images/pandas_indices_pctchange.png" /></p>
+</div>
+</div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Exercise 1<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>There are a few ways to approach this problem using Pandas to calculate
+the percentage change.</p>
+<p>First, you can extract the data and perform the calculation such as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">ticker</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="c1">#Get the first set of prices as a Series</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">ticker</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="c1">#Get the last set of prices as a Series</span>
+<span class="n">price_change</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">/</span> <span class="n">p1</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">price_change</span>
+</pre></div>
+</div>
+<p>Alternatively you can use an inbuilt method <code class="docutils literal notranslate"><span class="pre">pct_change</span></code> and configure
+it to perform the correct calculation using <code class="docutils literal notranslate"><span class="pre">periods</span></code> argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">change</span> <span class="o">=</span> <span class="n">ticker</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">price_change</span> <span class="o">=</span> <span class="n">change</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">price_change</span>
+</pre></div>
+</div>
+<p>Then to plot the chart</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">price_change</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">price_change</span> <span class="o">=</span> <span class="n">price_change</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">ticker_list</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;percentage change in price&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">price_change</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Exercise 2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Following the work you did in <a class="reference internal" href="#pd-ex1"><span class="std std-ref">Exercise 1</span></a>, you can query the data using <code class="docutils literal notranslate"><span class="pre">read_data</span></code> by updating the
+start and end dates accordingly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">indices_data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span>
+        <span class="n">indices_list</span><span class="p">,</span>
+        <span class="n">start</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1928</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="n">end</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, extract the first and last set of prices per year as DataFrames
+and calculate the yearly returns such as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">yearly_returns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">indices_list</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">indices_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">indices_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>  <span class="c1"># Get the first set of returns as a DataFrame</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">indices_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">indices_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>   <span class="c1"># Get the last set of returns as a DataFrame</span>
+    <span class="n">returns</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">/</span> <span class="n">p1</span>
+    <span class="n">yearly_returns</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">returns</span>
+
+<span class="n">yearly_returns</span>
+</pre></div>
+</div>
+<p>Next, you can obtain summary statistics by using the method <code class="docutils literal notranslate"><span class="pre">describe</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">yearly_returns</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then, to plot the chart</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">iter_</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>            <span class="c1"># Flatten 2-D array to 1-D array</span>
+    <span class="n">index_name</span> <span class="o">=</span> <span class="n">yearly_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">iter_</span><span class="p">]</span>         <span class="c1"># Get index name per iteration</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yearly_returns</span><span class="p">[</span><span class="n">index_name</span><span class="p">])</span>                <span class="c1"># Plot pct change of yearly returns per index</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;percent change&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">index_name</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> 
+</pre></div>
+</div>
+<p><strong>Footnotes</strong></p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>Wikipedia defines munging as cleaning data from one raw form into a structured, purged one.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="parallelization.html" title="previous page">Parallelization</a>
+    <a class='right-next' id="next-link" href="index_advanced_python_programming.html" title="next page">Advanced Python Programming</a>
+
+    </div>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright .<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
