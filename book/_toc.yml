@@ -1,7 +1,6 @@
 # - file: README
 - file: docs/index
 
-- header: Learning Python
 - file: docs/index_learning_python
   expand_sections: true
   title: Learning Python
