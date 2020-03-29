@@ -32,7 +32,7 @@ type plus core array operations, pandas
   -   reading in data
   -   adjusting indices
   -   working with dates and time series
-  -   sorting, grouping, re-ordering and general data munging[^1]
+  -   sorting, grouping, re-ordering and general data munging[^2]
   -   dealing with missing values, etc., etc.
 
 More sophisticated statistical functionality is left to other packages,
@@ -594,4 +594,4 @@ plt.tight_layout()
 
 **Footnotes**
 
-[^1]: Wikipedia defines munging as cleaning data from one raw form into a structured, purged one.
+[^2]: Wikipedia defines munging as cleaning data from one raw form into a structured, purged one.
