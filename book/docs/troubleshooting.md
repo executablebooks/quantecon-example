@@ -1,7 +1,8 @@
 # (troubleshooting)=Troubleshooting
 
-This page is for readers experiencing errors when running the code from
+```{note} This page is for readers experiencing errors when running the code from
 the lectures.
+```
 
 ## Fixing Your Local Environment
 
