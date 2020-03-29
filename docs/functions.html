@@ -89,7 +89,7 @@ var css_paths = [
   
   <ul class="nav sidenav_l1">
   <li class="active">
-    <a href="index_learning_python.html">Intro to Python</a>
+    <a href="index_learning_python.html">Learning Python</a>
   <ul class="nav sidenav_l2">
     <li class="">
       <a href="about_py.html">About Python</a>
@@ -487,10 +487,13 @@ code by</p>
 <li><p>separating different strands of logic</p></li>
 <li><p>facilitating code reuse</p></li>
 </ul>
+<div class="alert alert-primary">
+<p class="admonition-title">Tip</p>
 <p>(Writing the same thing twice is <a class="reference external" href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">almost always a bad
 idea</a>)</p>
 <p>We will say more about this
 <a class="reference internal" href="writing_good_code.html#writing-good-code"><span class="std std-ref">later</span></a>.</p>
+</div>
 </div>
 </div>
 <div class="section" id="applications">
@@ -582,7 +585,6 @@ required.</p>
 indentation again delimiting the extent of the code blocks.</p>
 <div class="alert alert-info">
 <p class="admonition-title">Note</p>
-<p>Notes</p>
 <ul class="simple">
 <li><p>We are passing the argument <code class="docutils literal notranslate"><span class="pre">U</span></code> as a string, which is why we write it as <code class="docutils literal notranslate"><span class="pre">'U'</span></code>.</p></li>
 <li><p>Notice that equality is tested with the <code class="docutils literal notranslate"><span class="pre">==</span></code> syntax, not <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
@@ -742,22 +744,31 @@ dollar.</p></li>
 <div class="section" id="id4">
 <h3>Exercise 3<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Here’s a function for the first random device.</p>
-<p>from numpy.random import uniform</p>
-<p>def draw(k):  # pays if k consecutive successes in a sequence</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>payoff = 0
-count = 0
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">uniform</span>
 
-for i in range(10):
-    U = uniform()
-    count = count + 1 if U &lt; 0.5 else 0
-    print(count)    # print counts for clarity
-    if count == k:
-        payoff = 1
+<span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>  <span class="c1"># pays if k consecutive successes in a sequence</span>
 
-return payoff
+    <span class="n">payoff</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">U</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">()</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">U</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>    <span class="c1"># print counts for clarity</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">payoff</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">payoff</span>
+
+<span class="n">draw</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>draw(3)</p>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Here’s another function for the second random device.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

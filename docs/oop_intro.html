@@ -89,7 +89,7 @@ var css_paths = [
   
   <ul class="nav sidenav_l1">
   <li class="active">
-    <a href="index_learning_python.html">Intro to Python</a>
+    <a href="index_learning_python.html">Learning Python</a>
   <ul class="nav sidenav_l2">
     <li class="">
       <a href="about_py.html">About Python</a>
@@ -224,11 +224,13 @@ var css_paths = [
         <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
         <div class="download-buttons">
             <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/oop_intro.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+            <a class="download-buttons" href="../_sources/docs/oop_intro.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn">.ipynb</button></a>
             <!-- Download PDF via PrintJS -->
             <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
         </div>
     </div>
+    
+    <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?filepath=/docs/oop_intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">binder</button></a>
     
 </div>
     <div id="main-content" class="row">
@@ -282,27 +284,57 @@ computer memory that consists of</p>
 <p>Python provides for different types of objects, to accommodate different
 categories of data.</p>
 <p>For example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;This is a string&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;This is a string&#39;</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>   <span class="c1"># Now let&#39;s create an integer</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>   <span class="c1"># Now let&#39;s create an integer</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>The type of an object matters for many expressions.</p>
 <p>For example, the addition operator between two strings means
 concatenation</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;300&#39;</span> <span class="o">+</span> <span class="s1">&#39;cc&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;300&#39;</span> <span class="o">+</span> <span class="s1">&#39;cc&#39;</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>On the other hand, between two numbers it means ordinary addition</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">300</span> <span class="o">+</span> <span class="mi">400</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">300</span> <span class="o">+</span> <span class="mi">400</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Consider the following expression</p>
-<div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;300&#39;</span> <span class="o">+</span> <span class="mi">400</span>
+<div class="cell tag_skip-test tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;300&#39;</span> <span class="o">+</span> <span class="mi">400</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>Here we are mixing types, and it’s unclear to Python whether the user
 wants to</p>
@@ -317,8 +349,14 @@ wants to</p>
 </ul>
 <p>To avoid the error, you need to clarify by changing the relevant type.</p>
 <p>For example,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;300&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">400</span>   <span class="c1"># To add as numbers, change the string to an integer</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;300&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">400</span>   <span class="c1"># To add as numbers, change the string to an integer</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 </div>
 <div class="section" id="identity">
@@ -326,13 +364,25 @@ wants to</p>
 <p>In Python, each object has a unique identifier, which helps Python (and
 us) keep track of the object.</p>
 <p>The identity of an object can be obtained via the <code class="docutils literal notranslate"><span class="pre">id()</span></code> function</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">2.5</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">2.5</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mf">2.5</span>
 <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> happen to have the same value (i.e.,
 <code class="docutils literal notranslate"><span class="pre">2.5</span></code>), but they are not the same object.</p>
@@ -344,15 +394,33 @@ memory.</p>
 <p>If we set <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">42</span></code> then we create an object of type <code class="docutils literal notranslate"><span class="pre">int</span></code> that contains
 the data <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
 <p>In fact, it contains more, as the following example shows</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">x</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">imag</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">imag</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="vm">__class__</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="vm">__class__</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>When Python creates this integer object, it stores with it various
 auxiliary information, such as the imaginary part, and the type.</p>
@@ -371,43 +439,85 @@ auxiliary information.</p>
 <p>Methods are <em>functions that are bundled with objects</em>.</p>
 <p>Formally, methods are attributes of objects that are callable (i.e., can
 be called as functions)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">]</span>
 <span class="n">callable</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">callable</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">callable</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>Methods typically act on the data contained in the object they belong
 to, or combine that data with other data</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;This is a string&#39;</span>
 <span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;This&#39;</span><span class="p">,</span> <span class="s1">&#39;That&#39;</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;This&#39;</span><span class="p">,</span> <span class="s1">&#39;That&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>A great deal of Python functionality is organized around method calls.</p>
 <p>For example, consider the following piece of code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;aa&#39;</span>  <span class="c1"># Item assignment using square bracket notation</span>
 <span class="n">x</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>It doesn’t look like there are any methods used here, but in fact the
 square bracket assignment notation is just a convenient interface to a
 method call.</p>
 <p>What actually happens is that Python calls the <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> method, as
 follows</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">)</span>  <span class="c1"># Equivalent to x[0] = &#39;aa&#39;</span>
 <span class="n">x</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>(If you wanted to you could modify the <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> method, so that
 square bracket assignment does something totally different)</p>
@@ -428,32 +538,68 @@ things, such as</p>
 <p>When Python reads a function definition, it creates a <strong>function
 object</strong> and stores it in memory.</p>
 <p>The following code illustrates</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>We can see that <code class="docutils literal notranslate"><span class="pre">f</span></code> has type, identity, attributes and so on—just
 like any other object.</p>
 <p>It also has methods.</p>
 <p>One example is the <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method, which just evaluates the function</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>Another is the <code class="docutils literal notranslate"><span class="pre">__dir__</span></code> method, which returns a list of attributes.</p>
 <p>Modules loaded into memory are also treated as objects</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="nb">id</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>This uniform treatment of data in Python (everything is an object) helps
 keep the language simple and consistent.</p>

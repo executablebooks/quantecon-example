@@ -89,7 +89,30 @@ var css_paths = [
   
   <ul class="nav sidenav_l1">
   <li class="">
-    <a href="index_learning_python.html">Intro to Python</a>
+    <a href="index_learning_python.html">Learning Python</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="about_py.html">About Python</a>
+    </li>
+    <li class="">
+      <a href="getting_started.html">Setting up Your Python Environment</a>
+    </li>
+    <li class="">
+      <a href="python_by_example.html">An Introductory Example</a>
+    </li>
+    <li class="">
+      <a href="functions.html">Functions</a>
+    </li>
+    <li class="">
+      <a href="python_essentials.html">Python Essentials</a>
+    </li>
+    <li class="">
+      <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+    </li>
+    <li class="">
+      <a href="python_oop.html">OOP II: Building Classes</a>
+    </li>
+  </ul>
   </li>
   <li class="active">
     <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
@@ -257,11 +280,13 @@ var css_paths = [
         <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
         <div class="download-buttons">
             <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/numba.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+            <a class="download-buttons" href="../_sources/docs/numba.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn">.ipynb</button></a>
             <!-- Download PDF via PrintJS -->
             <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
         </div>
     </div>
+    
+    <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?filepath=/docs/numba.ipynb"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">binder</button></a>
     
 </div>
     <div id="main-content" class="row">
@@ -273,19 +298,31 @@ var css_paths = [
 <h1><span class="target" id="speed"></span>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">¶</a></h1>
 <p>In addition to what’s in Anaconda, this lecture will need the following
 libraries:</p>
-<div class="hide-output highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --upgrade quantecon
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install --upgrade quantecon
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>Please also make sure that you have the latest version of Anaconda,
 since old versions are a
 <a class="reference internal" href="troubleshooting.html#troubleshooting"><span class="std std-ref">common source of errors</span></a>.</p>
 <p>Let’s start with some imports:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">quantecon</span> <span class="k">as</span> <span class="nn">qe</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -329,12 +366,20 @@ x_{t+1} = \alpha x_t (1 - x_t)
 \]</div>
 </p>
 <p>In what follows we set</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">4.0</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">4.0</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>Here’s the plot of a typical trajectory, starting from <span class="math notranslate nohighlight">\(x_0 = 0.1\)</span>,
 with <span class="math notranslate nohighlight">\(t\)</span> on the x-axis</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">qm</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">qm</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span> 
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -349,40 +394,74 @@ with <span class="math notranslate nohighlight">\(t\)</span> on the x-axis</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>To speed the function <code class="docutils literal notranslate"><span class="pre">qm</span></code> up using Numba, our first step is</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jit</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jit</span>
 
 <span class="n">qm_numba</span> <span class="o">=</span> <span class="n">jit</span><span class="p">(</span><span class="n">qm</span><span class="p">)</span>  
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">qm_numba</span></code> is a version of <code class="docutils literal notranslate"><span class="pre">qm</span></code> that is “targeted” for
 JIT-compilation.</p>
 <p>We will explain what this means momentarily.</p>
 <p>Let’s time and compare identical function calls across these two
 versions, starting with the original function <code class="docutils literal notranslate"><span class="pre">qm</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10_000_000</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10_000_000</span>
 
 <span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
 <span class="n">qm</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 <span class="n">time1</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Now let’s try <code class="docutils literal notranslate"><span class="pre">qm\_numba</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
 <span class="n">qm_numba</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 <span class="n">time2</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>This is already a massive speed gain.</p>
 <p>In fact, the next time and all subsequent times it runs even faster as
 the function has been compiled and is in memory:</p>
-<div class="highlight-python notranslate" id="qm-numba-result"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<div class="cell docutils container" id="qm-numba-result">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
 <span class="n">qm_numba</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 <span class="n">time3</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time1</span> <span class="o">/</span> <span class="n">time3</span>  <span class="c1"># Calculate speed gain</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time1</span> <span class="o">/</span> <span class="n">time3</span>  <span class="c1"># Calculate speed gain</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>This kind of speed gain is huge relative to how simple and clear the
 implementation is.</p>
@@ -418,8 +497,14 @@ this moment, and <em>then</em> compile the function.</p></li>
 <div class="section" id="decorators-and-nopython-mode">
 <h2>Decorators and “nopython” Mode<a class="headerlink" href="#decorators-and-nopython-mode" title="Permalink to this headline">¶</a></h2>
 <p>In the code above we created a JIT compiled version of <code class="docutils literal notranslate"><span class="pre">qm</span></code> via the call</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">qm_numba</span> <span class="o">=</span> <span class="n">jit</span><span class="p">(</span><span class="n">qm</span><span class="p">)</span>  
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qm_numba</span> <span class="o">=</span> <span class="n">jit</span><span class="p">(</span><span class="n">qm</span><span class="p">)</span>  
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>In practice this would typically be done using an alternative
 <em>decorator</em> syntax.</p>
@@ -432,7 +517,9 @@ but you can skip the details at this stage.)</p>
 <p>To target a function for JIT compilation we can put <code class="docutils literal notranslate"><span class="pre">&#64;jit</span></code> before the
 function definition.</p>
 <p>Here’s what this looks like for <code class="docutils literal notranslate"><span class="pre">qm</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@jit</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@jit</span>
 <span class="k">def</span> <span class="nf">qm</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
@@ -441,10 +528,20 @@ function definition.</p>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">qm</span> <span class="pre">=</span> <span class="pre">jit(qm)</span></code>.</p>
 <p>The following now uses the jitted version:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">qm</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qm</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 </div>
 <div class="section" id="type-inference-and-nopython-mode">
@@ -467,7 +564,9 @@ effective compilation is failing.</p>
 <p>This is done by using either <code class="docutils literal notranslate"><span class="pre">&#64;jit(nopython=True)</span></code> or, equivalently,
 <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&#64;jit</span></code>.</p>
 <p>For example,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
 
 <span class="nd">@njit</span>
 <span class="k">def</span> <span class="nf">qm</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
@@ -477,6 +576,10 @@ effective compilation is failing.</p>
         <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 </div>
 </div>
@@ -491,15 +594,23 @@ JIT-compiled functions.</p>
 <p>To give one example, let’s consider the class for analyzing the Solow
 growth model we created in <a class="reference internal" href="python_oop.html#python-oop"><span class="std std-ref">this lecture</span></a>.</p>
 <p>To compile this class we use the <code class="docutils literal notranslate"><span class="pre">&#64;jitclass</span></code> decorator:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jitclass</span><span class="p">,</span> <span class="n">float64</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jitclass</span><span class="p">,</span> <span class="n">float64</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>Notice that we also imported something called <code class="docutils literal notranslate"><span class="pre">float64</span></code>.</p>
 <p>This is a data type representing standard floating point numbers.</p>
 <p>We are importing it here because Numba needs a bit of extra help with
 types when it trys to deal with classes.</p>
 <p>Here’s our code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solow_data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solow_data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">float64</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">float64</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;δ&#39;</span><span class="p">,</span> <span class="n">float64</span><span class="p">),</span>
@@ -553,13 +664,19 @@ types when it trys to deal with classes.</p>
         <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>First we specified the types of the instance data for the class in
 <code class="docutils literal notranslate"><span class="pre">solow_data</span></code>.</p>
 <p>After that, targeting the class for JIT compilation only requires adding
 <code class="docutils literal notranslate"><span class="pre">&#64;jitclass(solow_data)</span></code> before the class definition.</p>
 <p>When we call the methods in the class, the methods are compiled just
 like functions.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">()</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mf">8.0</span><span class="p">)</span>
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">60</span>
@@ -577,6 +694,10 @@ like functions.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 </div>
 <div class="section" id="alternatives-to-numba">
@@ -636,7 +757,9 @@ programs with <code class="docutils literal notranslate"><span class="pre">&#64;
 <h3>A Gotcha: Global Variables<a class="headerlink" href="#a-gotcha-global-variables" title="Permalink to this headline">¶</a></h3>
 <p>Here’s another thing to be careful about when using Numba.</p>
 <p>Consider the following example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="nd">@jit</span>
 <span class="k">def</span> <span class="nf">add_a</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -645,10 +768,20 @@ programs with <code class="docutils literal notranslate"><span class="pre">&#64;
 <span class="nb">print</span><span class="p">(</span><span class="n">add_a</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">add_a</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>Notice that changing the global had no effect on the value returned by
 the function.</p>
@@ -703,7 +836,9 @@ in the low state.</p>
 <div class="section" id="id1">
 <h3>Exercise 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Here is one solution:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
 
 <span class="nd">@njit</span>
 <span class="k">def</span> <span class="nf">calculate_pi</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1_000_000</span><span class="p">):</span>
@@ -718,12 +853,28 @@ in the low state.</p>
     <span class="k">return</span> <span class="n">area_estimate</span> <span class="o">*</span> <span class="mi">4</span>  <span class="c1"># dividing by radius**2</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Now let’s see how fast it runs:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> calculate_pi()
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">calculate_pi</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> calculate_pi()
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">calculate_pi</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>If we switch of JIT compilation by removing <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code>, the code takes
 around 150 times as long on our machine.</p>
@@ -737,11 +888,18 @@ adding four characters.</p>
 <li><p>0 represent “low”</p></li>
 <li><p>1 represent “high”</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span>  <span class="c1"># Prob of leaving low and high state respectively</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span>  <span class="c1"># Prob of leaving low and high state respectively</span>
 </pre></div>
 </div>
-<p>Here’s a pure Python version of the function</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_series</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_series</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span>
     <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Start in state 1</span>
     <span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
@@ -754,36 +912,70 @@ adding four characters.</p>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Let’s run this code and check that the fraction of time spent in the
 low state is about 0.666</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1_000_000</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">compute_series</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Fraction of time x is in state 0</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>This is (approximately) the right output.</p>
 <p>Now let’s time it:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
 <span class="n">compute_series</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Next let’s implement a Numba version, which is easy</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jit</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jit</span>
 
 <span class="n">compute_series_numba</span> <span class="o">=</span> <span class="n">jit</span><span class="p">(</span><span class="n">compute_series</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Let’s check we still get the right numbers</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">compute_series_numba</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">compute_series_numba</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Let’s see the time</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
 <span class="n">compute_series_numba</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 <p>This is a nice speed improvement for one line of code!</p>
 </div>

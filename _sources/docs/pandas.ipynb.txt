@@ -1,0 +1,1032 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# (pd)=Pandas\n",
+    "\n",
+    "In addition to what's in Anaconda, this lecture will need the following\n",
+    "libraries:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "tags": [
+     "hide-output"
+    ]
+   },
+   "outputs": [],
+   "source": [
+    "!pip install --upgrade pandas-datareader"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "## Overview\n",
+    "\n",
+    "[Pandas](http://pandas.pydata.org/) is a package of fast, efficient data\n",
+    "analysis tools for Python.\n",
+    "\n",
+    "Its popularity has surged in recent years, coincident with the rise of\n",
+    "fields such as data science and machine learning.\n",
+    "\n",
+    "Here\\'s a popularity comparison over time against STATA, SAS, and\n",
+    "[dplyr](https://dplyr.tidyverse.org/) courtesy of Stack Overflow Trends\n",
+    "\n",
+    "![](/_static/lecture_specific/pandas/pandas_vs_rest.png)\n",
+    "\n",
+    "Just as [NumPy](http://www.numpy.org/) provides the basic array data\n",
+    "type plus core array operations, pandas\n",
+    "\n",
+    "1.  defines fundamental structures for working with data and\n",
+    "2.  endows them with methods that facilitate operations such as\n",
+    "  -   reading in data\n",
+    "  -   adjusting indices\n",
+    "  -   working with dates and time series\n",
+    "  -   sorting, grouping, re-ordering and general data munging[^2]\n",
+    "  -   dealing with missing values, etc., etc.\n",
+    "\n",
+    "More sophisticated statistical functionality is left to other packages,\n",
+    "such as [statsmodels](http://www.statsmodels.org/) and\n",
+    "[scikit-learn](http://scikit-learn.org/), which are built on top of\n",
+    "pandas.\n",
+    "\n",
+    "This lecture will provide a basic introduction to pandas.\n",
+    "\n",
+    "Throughout the lecture, we will assume that the following imports have\n",
+    "taken place"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "%matplotlib inline\n",
+    "import requests"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Series\n",
+    "\n",
+    "Two important data types defined by pandas are `Series` and `DataFrame`.\n",
+    "\n",
+    "You can think of a `Series` as a \\\"column\\\" of data, such as a\n",
+    "collection of observations on a single variable.\n",
+    "\n",
+    "A `DataFrame` is an object for storing related columns of data.\n",
+    "\n",
+    "Let\\'s start with `Series`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s = pd.Series(np.random.randn(4), name='daily returns')\n",
+    "s"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Here you can imagine the indices `0, 1, 2, 3` as indexing four listed\n",
+    "companies, and the values being daily returns on their shares.\n",
+    "\n",
+    "Pandas `Series` are built on top of NumPy arrays and support many\n",
+    "similar operations"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s * 100"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "np.abs(s)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "But `Series` provide more than NumPy arrays.\n",
+    "\n",
+    "Not only do they have some additional (statistically oriented) methods"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s.describe()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "But their indices are more flexible"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s.index = ['AMZN', 'AAPL', 'MSFT', 'GOOG']\n",
+    "s"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Viewed in this way, `Series` are like fast, efficient Python\n",
+    "dictionaries (with the restriction that the items in the dictionary all\n",
+    "have the same type---in this case, floats).\n",
+    "\n",
+    "In fact, you can use much of the same syntax as Python dictionaries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s['AMZN']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s['AMZN'] = 0\n",
+    "s"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "'AAPL' in s"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## DataFrames\n",
+    "\n",
+    "While a `Series` is a single column of data, a `DataFrame` is several\n",
+    "columns, one for each variable.\n",
+    "\n",
+    "In essence, a `DataFrame` in pandas is analogous to a (highly optimized)\n",
+    "Excel spreadsheet.\n",
+    "\n",
+    "Thus, it is a powerful tool for representing and analyzing data that are\n",
+    "naturally organized into rows and columns, often with descriptive\n",
+    "indexes for individual rows and individual columns.\n",
+    "\n",
+    "Let\\'s look at an example that reads data from the CSV file\n",
+    "`pandas/data/test_pwt.csv` and can be downloaded\n",
+    "[here](https://lectures.quantecon.org/_downloads/pandas/data/test_pwt.csv).\n",
+    "\n",
+    "Here\\'s the content of `test_pwt.csv`"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```text\n",
+    "\"country\",\"country isocode\",\"year\",\"POP\",\"XRAT\",\"tcgdp\",\"cc\",\"cg\"\n",
+    "\"Argentina\",\"ARG\",\"2000\",\"37335.653\",\"0.9995\",\"295072.21869\",\"75.716805379\",\"5.5788042896\"\n",
+    "\"Australia\",\"AUS\",\"2000\",\"19053.186\",\"1.72483\",\"541804.6521\",\"67.759025993\",\"6.7200975332\"\n",
+    "\"India\",\"IND\",\"2000\",\"1006300.297\",\"44.9416\",\"1728144.3748\",\"64.575551328\",\"14.072205773\"\n",
+    "\"Israel\",\"ISR\",\"2000\",\"6114.57\",\"4.07733\",\"129253.89423\",\"64.436450847\",\"10.266688415\"\n",
+    "\"Malawi\",\"MWI\",\"2000\",\"11801.505\",\"59.543808333\",\"5026.2217836\",\"74.707624181\",\"11.658954494\"\n",
+    "\"South Africa\",\"ZAF\",\"2000\",\"45064.098\",\"6.93983\",\"227242.36949\",\"72.718710427\",\"5.7265463933\"\n",
+    "\"United States\",\"USA\",\"2000\",\"282171.957\",\"1\",\"9898700\",\"72.347054303\",\"6.0324539789\"\n",
+    "\"Uruguay\",\"URY\",\"2000\",\"3219.793\",\"12.099591667\",\"25255.961693\",\"78.978740282\",\"5.108067988\"\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Supposing you have this data saved as `test_pwt.csv` in the present\n",
+    "working directory (type `%pwd` in Jupyter to see what this is), it can\n",
+    "be read in as follows:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = pd.read_csv('https://raw.githubusercontent.com/QuantEcon/lecture-source-py/master/source/_static/lecture_specific/pandas/data/test_pwt.csv')\n",
+    "type(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We can select particular rows using standard Python array slicing\n",
+    "notation"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[2:5]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "To select columns, we can pass a list containing the names of the\n",
+    "desired columns represented as strings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[['country', 'tcgdp']]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "To select both rows and columns using integers, the `iloc` attribute\n",
+    "should be used with the format `.iloc[rows, columns]`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.iloc[2:5, 0:4]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "To select rows and columns using a mixture of integers and labels, the\n",
+    "`loc` attribute can be used in a similar way"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.loc[df.index[2:5], ['country', 'tcgdp']]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Let\\'s imagine that we\\'re only interested in population (`POP`) and\n",
+    "total GDP (`tcgdp`).\n",
+    "\n",
+    "One way to strip the data frame `df` down to only these variables is to\n",
+    "overwrite the dataframe using the selection method described above"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = df[['country', 'POP', 'tcgdp']]\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Here the index `0, 1,..., 7` is redundant because we can use the country\n",
+    "names as an index.\n",
+    "\n",
+    "To do this, we set the index to be the `country` variable in the\n",
+    "dataframe"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = df.set_index('country')\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Let\\'s give the columns slightly better names"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.columns = 'population', 'total GDP'\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Population is in thousands, let\\'s revert to single units"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df['population'] = df['population'] * 1e3\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Next, we\\'re going to add a column showing real GDP per capita,\n",
+    "multiplying by 1,000,000 as we go because total GDP is in millions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df['GDP percap'] = df['total GDP'] * 1e6 / df['population']\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "One of the nice things about pandas `DataFrame` and `Series` objects is\n",
+    "that they have methods for plotting and visualization that work through\n",
+    "Matplotlib.\n",
+    "\n",
+    "For example, we can easily generate a bar plot of GDP per capita"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ax = df['GDP percap'].plot(kind='bar')\n",
+    "ax.set_xlabel('country', fontsize=12)\n",
+    "ax.set_ylabel('GDP per capita', fontsize=12)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "At the moment the data frame is ordered alphabetically on the\n",
+    "countries---let\\'s change it to GDP per capita"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = df.sort_values(by='GDP percap', ascending=False)\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Plotting as before now yields"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ax = df['GDP percap'].plot(kind='bar')\n",
+    "ax.set_xlabel('country', fontsize=12)\n",
+    "ax.set_ylabel('GDP per capita', fontsize=12)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## On-Line Data Sources\n",
+    "\n",
+    "Python makes it straightforward to query online databases\n",
+    "programmatically.\n",
+    "\n",
+    "An important database for economists is\n",
+    "[FRED](https://research.stlouisfed.org/fred2/) --- a vast collection\n",
+    "of time series data maintained by the St. Louis Fed.\n",
+    "\n",
+    "For example, suppose that we are interested in the [unemployment\n",
+    "rate](https://research.stlouisfed.org/fred2/series/UNRATE).\n",
+    "\n",
+    "Via FRED, the entire series for the US civilian unemployment rate can be\n",
+    "downloaded directly by entering this URL into your browser (note that\n",
+    "this requires an internet connection)\n",
+    "\n",
+    "```text\n",
+    "https://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv\n",
+    "```\n",
+    "\n",
+    "(Equivalently, click here:\n",
+    "https://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv)\n",
+    "\n",
+    "This request returns a CSV file, which will be handled by your default\n",
+    "application for this class of files.\n",
+    "\n",
+    "Alternatively, we can access the CSV file from within a Python program.\n",
+    "\n",
+    "This can be done with a variety of methods.\n",
+    "\n",
+    "We start with a relatively low-level method and then return to pandas.\n",
+    "\n",
+    "### Accessing Data with requests\n",
+    "\n",
+    "One option is to use\n",
+    "[requests](https://requests.readthedocs.io/en/master/), a standard\n",
+    "Python library for requesting data over the Internet.\n",
+    "\n",
+    "To begin, try the following code on your computer"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "r = requests.get('http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "If there\\'s no error message, then the call has succeeded.\n",
+    "\n",
+    "If you do get an error, then there are two likely causes\n",
+    "\n",
+    "1.  You are not connected to the Internet --- hopefully, this isn\\'t\n",
+    "    the case.\n",
+    "2.  Your machine is accessing the Internet through a proxy server, and\n",
+    "    Python isn\\'t aware of this.\n",
+    "\n",
+    "In the second case, you can either\n",
+    "\n",
+    "-   switch to another machine\n",
+    "-   solve your proxy problem by reading [the\n",
+    "    documentation](https://requests.readthedocs.io/en/master/)\n",
+    "\n",
+    "Assuming that all is working, you can now proceed to use the `source`\n",
+    "object returned by the call\n",
+    "`requests.get('http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv')`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "url = 'http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv'\n",
+    "source = requests.get(url).content.decode().split(\"\\n\")\n",
+    "source[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "source[1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "source[2]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We could now write some additional code to parse this text and store it\n",
+    "as an array.\n",
+    "\n",
+    "But this is unnecessary --- pandas\\' `read_csv` function can handle\n",
+    "the task for us.\n",
+    "\n",
+    "We use `parse_dates=True` so that pandas recognizes our dates column,\n",
+    "allowing for simple date filtering"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data = pd.read_csv(url, index_col=0, parse_dates=True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The data has been read into a pandas DataFrame called `data` that we can\n",
+    "now manipulate in the usual way"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "type(data)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.head()  # A useful method to get a quick look at a data frame"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pd.set_option('precision', 1)\n",
+    "data.describe()  # Your output might differ slightly"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We can also plot the unemployment rate from 2006 to 2012 as follows"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ax = data['2006':'2012'].plot(title='US Unemployment Rate', legend=False)\n",
+    "ax.set_xlabel('year', fontsize=12)\n",
+    "ax.set_ylabel('%', fontsize=12)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Note that pandas offers many other file type alternatives.\n",
+    "\n",
+    "Pandas has [a wide\n",
+    "variety](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)\n",
+    "of top-level methods that we can use to read, excel, json, parquet or\n",
+    "plug straight into a database server.\n",
+    "\n",
+    "### Using pandas_datareader to Access Data\n",
+    "\n",
+    "The maker of pandas has also authored a library called\n",
+    "`pandas_datareader` that gives programmatic access to many\n",
+    "data sources straight from the Jupyter notebook.\n",
+    "\n",
+    "While some sources require an access key, many of the most important\n",
+    "(e.g., FRED, [OECD](https://data.oecd.org/),\n",
+    "[EUROSTAT](https://ec.europa.eu/eurostat/data/database) and the World\n",
+    "Bank) are free to use.\n",
+    "\n",
+    "For now let\\'s work through one example of downloading and plotting data\n",
+    "--- this time from the World Bank.\n",
+    "\n",
+    "The World Bank [collects and organizes\n",
+    "data](http://data.worldbank.org/indicator) on a huge range of\n",
+    "indicators.\n",
+    "\n",
+    "For example,\n",
+    "[here\\'s](http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries)\n",
+    "some data on government debt as a ratio to GDP.\n",
+    "\n",
+    "The next code example fetches the data for you and plots time series for\n",
+    "the US and Australia"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from pandas_datareader import wb\n",
+    "\n",
+    "govt_debt = wb.download(indicator='GC.DOD.TOTL.GD.ZS', country=['US', 'AU'], start=2005, end=2016).stack().unstack(0)\n",
+    "ind = govt_debt.index.droplevel(-1)\n",
+    "govt_debt.index = ind\n",
+    "ax = govt_debt.plot(lw=2)\n",
+    "ax.set_xlabel('year', fontsize=12)\n",
+    "plt.title(\"Government Debt to GDP (%)\")\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The\n",
+    "[documentation](https://pandas-datareader.readthedocs.io/en/latest/index.html)\n",
+    "provides more details on how to access various data sources.\n",
+    "\n",
+    "## Exercises\n",
+    "\n",
+    "### (pd_ex1)=Exercise 1\n",
+    "\n",
+    "With these imports:\n",
+    "\n",
+    "```python\n",
+    "import datetime as dt \n",
+    "from pandas_datareader import data\n",
+    "```\n",
+    "\n",
+    "Write a program to calculate the percentage price change over 2019 for\n",
+    "the following shares:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ticker_list = {'INTC': 'Intel',\n",
+    "               'MSFT': 'Microsoft',\n",
+    "               'IBM': 'IBM',\n",
+    "               'BHP': 'BHP',\n",
+    "               'TM': 'Toyota',\n",
+    "               'AAPL': 'Apple',\n",
+    "               'AMZN': 'Amazon',\n",
+    "               'BA': 'Boeing',\n",
+    "               'QCOM': 'Qualcomm',\n",
+    "               'KO': 'Coca-Cola',\n",
+    "               'GOOG': 'Google',\n",
+    "               'SNE': 'Sony',\n",
+    "               'PTR': 'PetroChina'}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Here\\'s the first part of the program"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def read_data(ticker_list,\n",
+    "          start=dt.datetime(2019, 1, 2),\n",
+    "          end=dt.datetime(2019, 12, 31)): \n",
+    "    \"\"\"\n",
+    "    This function reads in closing price data from Yahoo \n",
+    "    for each tick in the ticker_list.\n",
+    "    \"\"\"\n",
+    "    ticker = pd.DataFrame()\n",
+    "\n",
+    "    for tick in ticker_list:\n",
+    "        prices = data.DataReader(tick, 'yahoo', start, end)\n",
+    "        closing_prices = prices['Close']\n",
+    "        ticker[tick] = closing_prices\n",
+    "\n",
+    "    return ticker\n",
+    "\n",
+    "ticker = read_data(ticker_list)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Complete the program to plot the result as a bar graph like this one:\n",
+    "\n",
+    "![](/_static/lecture_specific/pandas/pandas_share_prices.png)\n",
+    "\n",
+    "### (pd_ex2)=Exercise 2\n",
+    "\n",
+    "Using the method `read_data` introduced in\n",
+    "{ref}`Exercise 1 <pd_ex1>`, write a program to\n",
+    "obtain year-on-year percentage change for the following indices:\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "indices_list = {'^GSPC': 'S&P 500',\n",
+    "               '^IXIC': 'NASDAQ',\n",
+    "               '^DJI': 'Dow Jones',\n",
+    "               '^N225': 'Nikkei'}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Complete the program to show summary statistics and plot the result as a\n",
+    "time series graph like this one:\n",
+    "\n",
+    "![](/_static/lecture_specific/pandas/pandas_indices_pctchange.png)\n",
+    "\n",
+    "## Solutions\n",
+    "\n",
+    "### Exercise 1\n",
+    "\n",
+    "There are a few ways to approach this problem using Pandas to calculate\n",
+    "the percentage change.\n",
+    "\n",
+    "First, you can extract the data and perform the calculation such as:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p1 = ticker.iloc[0]    #Get the first set of prices as a Series\n",
+    "p2 = ticker.iloc[-1]   #Get the last set of prices as a Series\n",
+    "price_change = (p2 - p1) / p1 * 100\n",
+    "price_change"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Alternatively you can use an inbuilt method `pct_change` and configure\n",
+    "it to perform the correct calculation using `periods` argument."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "change = ticker.pct_change(periods=len(ticker)-1, axis='rows')*100\n",
+    "price_change = change.iloc[-1]\n",
+    "price_change"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Then to plot the chart"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "price_change.sort_values(inplace=True)\n",
+    "price_change = price_change.rename(index=ticker_list)\n",
+    "fig, ax = plt.subplots(figsize=(10,8))\n",
+    "ax.set_xlabel('stock', fontsize=12)\n",
+    "ax.set_ylabel('percentage change in price', fontsize=12)\n",
+    "price_change.plot(kind='bar', ax=ax)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Exercise 2\n",
+    "\n",
+    "Following the work you did in {ref}`Exercise 1 <pd_ex1>`, you can query the data using `read_data` by updating the\n",
+    "start and end dates accordingly."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "indices_data = read_data(\n",
+    "        indices_list,\n",
+    "        start=dt.datetime(1928, 1, 2),\n",
+    "        end=dt.datetime(2020, 12, 31)\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Then, extract the first and last set of prices per year as DataFrames\n",
+    "and calculate the yearly returns such as:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "yearly_returns = pd.DataFrame()\n",
+    "\n",
+    "for index, name in indices_list.items():\n",
+    "    p1 = indices_data.groupby(indices_data.index.year)[index].first()  # Get the first set of returns as a DataFrame\n",
+    "    p2 = indices_data.groupby(indices_data.index.year)[index].last()   # Get the last set of returns as a DataFrame\n",
+    "    returns = (p2 - p1) / p1\n",
+    "    yearly_returns[name] = returns\n",
+    "\n",
+    "yearly_returns"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Next, you can obtain summary statistics by using the method `describe`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "yearly_returns.describe()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Then, to plot the chart"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fig, axes = plt.subplots(2, 2, figsize=(10, 6))\n",
+    "\n",
+    "for iter_, ax in enumerate(axes.flatten()):            # Flatten 2-D array to 1-D array\n",
+    "    index_name = yearly_returns.columns[iter_]         # Get index name per iteration\n",
+    "    ax.plot(yearly_returns[index_name])                # Plot pct change of yearly returns per index\n",
+    "    ax.set_ylabel(\"percent change\", fontsize = 12)\n",
+    "    ax.set_title(index_name)\n",
+    "\n",
+    "plt.tight_layout() "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Footnotes**\n",
+    "\n",
+    "[^2]: Wikipedia defines munging as cleaning data from one raw form into a structured, purged one."
+   ]
+  }
+ ],
+ "metadata": {
+  "celltoolbar": "Tags",
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

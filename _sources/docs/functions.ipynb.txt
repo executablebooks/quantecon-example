@@ -259,14 +259,26 @@
     "code by\n",
     "\n",
     "-   separating different strands of logic\n",
-    "-   facilitating code reuse\n",
-    "\n",
+    "-   facilitating code reuse"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```{tip}\n",
     "(Writing the same thing twice is [almost always a bad\n",
     "idea](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))\n",
     "\n",
     "We will say more about this\n",
     "{ref}`later <writing_good_code>`.\n",
-    "\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## Applications\n",
     "\n",
     "### Random Draws\n",
@@ -377,7 +389,7 @@
     "Hopefully, the syntax of the if/else clause is self-explanatory, with\n",
     "indentation again delimiting the extent of the code blocks.\n",
     "\n",
-    "```{note} Notes\n",
+    "```{note}\n",
     "\n",
     "-   We are passing the argument `U` as a string, which is why we write it as `'U'`.\n",
     "-   Notice that equality is tested with the `==` syntax, not `=`.\n",
@@ -567,8 +579,10 @@
    ]
   },
   {
-   "cell_type": "markdown",
+   "cell_type": "code",
+   "execution_count": null,
    "metadata": {},
+   "outputs": [],
    "source": [
     "from numpy.random import uniform\n",
     "\n",
@@ -636,7 +650,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.6"
+   "version": "3.8.2"
   }
  },
  "nbformat": 4,
