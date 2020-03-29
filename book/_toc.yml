@@ -3,7 +3,8 @@
 
 - header: Learning Python
 - file: docs/index_learning_python
-  title: Intro to Python
+  expand_sections: true
+  title: Learning Python
   pages:
     - file: docs/about_py
     - file: docs/getting_started
@@ -14,6 +15,7 @@
     - file: docs/python_oop
 
 - file: docs/index_python_scientific_libraries
+  expand_sections: true
   pages:
     - file: docs/need_for_speed
     - file: docs/numpy
