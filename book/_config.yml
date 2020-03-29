@@ -5,14 +5,18 @@ author: Thomas J. Sargent and John Stachurski
 logo: 'qe-logo-large.png'
 # exclude_files: [writing_good_code]
 
-# # Information about where the book exists on the web
-# repository:
-#   url                       : https://executablebookproject.github.io/quantecon-example/source/getting_started.html
-
+# Information about where the book exists on the web
 description: >-
   This book presents a set of lectures on python programming for quantitative economics, designed and written by **Thomas J. Sargent** and **John Stachurski**.
-
 
 # #######################################################################################
 # Interact link settings
 notebook_interface          : "notebook"
+
+repository:
+  url                       : https://github.com/ExecutableBookProject/quantecon-example/tree/master/book/docs
+  path_to_book              : ""
+
+binder:
+  binderhub_url             : "https://mybinder.org"
+  text                      : "Launch binder"
