@@ -8,7 +8,7 @@ logo: 'qe-logo-large.png'
 description: >-
   This book presents a set of lectures on python programming for quantitative economics, designed and written by **Thomas J. Sargent** and **John Stachurski**.
 
-execute_notebooks: cache
+execute_notebooks : "auto"
 
 # #######################################################################################
 # Interact link settings
