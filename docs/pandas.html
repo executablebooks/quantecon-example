@@ -264,27 +264,9 @@ var css_paths = [
 <h1><span class="target" id="pd"></span>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
 <p>In addition to what’s in Anaconda, this lecture will need the following
 libraries:</p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install --upgrade pandas-datareader
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already up-to-date: pandas-datareader in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (0.8.1)
-Requirement already satisfied, skipping upgrade: lxml in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from pandas-datareader) (4.5.0)
-Requirement already satisfied, skipping upgrade: pandas&gt;=0.21 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from pandas-datareader) (1.0.3)
-Requirement already satisfied, skipping upgrade: requests&gt;=2.3.0 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from pandas-datareader) (2.23.0)
-Requirement already satisfied, skipping upgrade: python-dateutil&gt;=2.6.1 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from pandas&gt;=0.21-&gt;pandas-datareader) (2.8.1)
-Requirement already satisfied, skipping upgrade: numpy&gt;=1.13.3 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from pandas&gt;=0.21-&gt;pandas-datareader) (1.18.2)
-Requirement already satisfied, skipping upgrade: pytz&gt;=2017.2 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from pandas&gt;=0.21-&gt;pandas-datareader) (2019.3)
-Requirement already satisfied, skipping upgrade: idna&lt;3,&gt;=2.5 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests&gt;=2.3.0-&gt;pandas-datareader) (2.9)
-Requirement already satisfied, skipping upgrade: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests&gt;=2.3.0-&gt;pandas-datareader) (1.25.7)
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied, skipping upgrade: certifi&gt;=2017.4.17 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests&gt;=2.3.0-&gt;pandas-datareader) (2019.11.28)
-Requirement already satisfied, skipping upgrade: chardet&lt;4,&gt;=3.0.2 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests&gt;=2.3.0-&gt;pandas-datareader) (3.0.4)
-Requirement already satisfied, skipping upgrade: six&gt;=1.5 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from python-dateutil&gt;=2.6.1-&gt;pandas&gt;=0.21-&gt;pandas-datareader) (1.14.0)
 </pre></div>
 </div>
 </div>
@@ -347,10 +329,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.535805
-1    0.283396
-2   -0.639974
-3    0.321045
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.378495
+1   -1.599498
+2   -0.909497
+3   -2.351574
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -367,10 +349,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    53.580518
-1    28.339577
-2   -63.997419
-3    32.104541
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     37.849455
+1   -159.949764
+2    -90.949732
+3   -235.157438
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -383,10 +365,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.535805
-1    0.283396
-2    0.639974
-3    0.321045
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.378495
+1    1.599498
+2    0.909497
+3    2.351574
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -402,13 +384,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.125068
-std      0.522006
-min     -0.639974
-25%      0.052553
-50%      0.302221
-75%      0.374735
-max      0.535805
+mean    -1.120519
+std      1.159955
+min     -2.351574
+25%     -1.787517
+50%     -1.254497
+75%     -0.587499
+max      0.378495
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -423,10 +405,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.535805
-AAPL    0.283396
-MSFT   -0.639974
-GOOG    0.321045
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.378495
+AAPL   -1.599498
+MSFT   -0.909497
+GOOG   -2.351574
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -443,7 +425,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5358051807747461
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.3784945508979256
 </pre></div>
 </div>
 </div>
@@ -457,9 +439,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL    0.283396
-MSFT   -0.639974
-GOOG    0.321045
+AAPL   -1.599498
+MSFT   -0.909497
+GOOG   -2.351574
 Name: daily returns, dtype: float64
 </pre></div>
 </div>

@@ -27,9 +27,11 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "```{note}\n",
     "Please also make sure that you have the latest version of Anaconda,\n",
     "since old versions are a\n",
     "{ref}`common source of errors <troubleshooting>`.\n",
+    "```\n",
     "\n",
     "Let\\'s start with some imports:"
    ]

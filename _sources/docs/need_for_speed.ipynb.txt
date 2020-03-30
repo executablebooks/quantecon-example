@@ -15,7 +15,7 @@
    "execution_count": null,
    "metadata": {
     "tags": [
-     "hide-output"
+     "remove_output"
     ]
    },
    "outputs": [],
