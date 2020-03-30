@@ -4,12 +4,13 @@ title : Programming for Quantitative Economics
 author: Thomas J. Sargent and John Stachurski
 logo: 'qe-logo-large.png'
 
+# exclude_files               : []
+
 # Information about where the book exists on the web
 description: >-
   This book presents a set of lectures on python programming for quantitative economics, designed and written by **Thomas J. Sargent** and **John Stachurski**.
 
-execute_notebooks : "force"
-execute_notebooks : "cache"
+execute_notebooks           : auto
 
 # #######################################################################################
 # Interact link settings
