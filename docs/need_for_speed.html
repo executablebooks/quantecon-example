@@ -287,6 +287,21 @@ libraries:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already up-to-date: quantecon in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (0.4.6)
+Requirement already satisfied, skipping upgrade: requests in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (2.23.0)
+Requirement already satisfied, skipping upgrade: scipy&gt;=1.0.0 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (1.4.1)
+Requirement already satisfied, skipping upgrade: sympy in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (1.5.1)
+Requirement already satisfied, skipping upgrade: numba&gt;=0.38 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (0.48.0)
+Requirement already satisfied, skipping upgrade: numpy in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (1.18.2)
+Requirement already satisfied, skipping upgrade: idna&lt;3,&gt;=2.5 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (2.9)
+Requirement already satisfied, skipping upgrade: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (1.25.7)
+Requirement already satisfied, skipping upgrade: certifi&gt;=2017.4.17 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (2019.11.28)
+Requirement already satisfied, skipping upgrade: chardet&lt;4,&gt;=3.0.2 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (3.0.4)
+Requirement already satisfied, skipping upgrade: mpmath&gt;=0.19 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from sympy-&gt;quantecon) (1.1.0)
+Requirement already satisfied, skipping upgrade: llvmlite&lt;0.32.0,&gt;=0.31.0dev0 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from numba&gt;=0.38-&gt;quantecon) (0.31.0)
+Requirement already satisfied, skipping upgrade: setuptools in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from numba&gt;=0.38-&gt;quantecon) (46.1.3.post20200325)
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="overview">
@@ -410,6 +425,9 @@ vanilla Python is slower than C or Fortran.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
 </div>
 </div>
 <p>Even for this simple operation, the Python interpreter has a fair bit of
@@ -425,6 +443,9 @@ operation to invoke.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;foobar&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are lists, then <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> requires list concatenation</p>
@@ -436,6 +457,9 @@ operation to invoke.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;foo&#39;, &#39;bar&#39;]
+</pre></div>
+</div>
 </div>
 </div>
 <p>(We say that the operator <code class="docutils literal notranslate"><span class="pre">+</span></code> is <em>overloaded</em> — its action depends
@@ -564,6 +588,10 @@ variables:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 365 ms, sys: 4.2 ms, total: 369 ms
+Wall time: 373 ms
+</pre></div>
+</div>
 </div>
 </div>
 <p>The following vectorized code achieves the same thing.</p>
@@ -577,6 +605,10 @@ variables:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.5 ms, sys: 4.38 ms, total: 17.9 ms
+Wall time: 18.1 ms
+</pre></div>
+</div>
 </div>
 </div>
 <p>As you can see, the second code block runs much faster. Why?</p>
@@ -614,6 +646,9 @@ be vectorized.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5403023058681398
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -623,6 +658,9 @@ be vectorized.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.        , 0.87758256, 0.54030231])
+</pre></div>
+</div>
 </div>
 </div>
 <p>By exploiting ufuncs, many operations can be vectorized.</p>
@@ -668,6 +706,7 @@ a = 3
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/need_for_speed_21_0.png" src="../_images/need_for_speed_21_0.png" />
 </div>
 </div>
 <p>To maximize it, we’re going to use a naive grid search:</p>
@@ -701,6 +740,10 @@ a = 3
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.42 s, sys: 24 ms, total: 3.45 s
+Wall time: 3.13 s
+</pre></div>
+</div>
 </div>
 </div>
 <p>And here’s a vectorized version</p>
@@ -714,6 +757,13 @@ a = 3
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 21.2 ms, sys: 6.42 ms, total: 27.6 ms
+Wall time: 27.5 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9999819641085747
+</pre></div>
+</div>
 </div>
 </div>
 <p>In the vectorized version, all the looping takes place in compiled code.</p>

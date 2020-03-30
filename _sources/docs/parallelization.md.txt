@@ -3,7 +3,7 @@
 In addition to what\'s in Anaconda, this lecture will need the following
 libraries:
 
-```{code-block} ipython
+```{code-block} python
 ---
 class: hide-output
 ---
@@ -42,7 +42,7 @@ with a focus on
 
 Let\'s start with some imports:
 
-```{code-block} ipython
+```python
 import numpy as np
 import quantecon as qe
 import matplotlib.pyplot as plt
@@ -159,7 +159,7 @@ grid = np.linspace(-3, 3, 5000)
 x, y = np.meshgrid(grid, grid)
 ```
 
-```{code-block} ipython
+```python
 %timeit np.max(f(x, y))
 ```
 
@@ -194,7 +194,7 @@ def f_vec(x, y):
 np.max(f_vec(x, y))  # Run once to compile
 ```
 
-```{code-block} ipython
+```python
 %timeit np.max(f_vec(x, y))
 ```
 
@@ -248,7 +248,7 @@ def f_vec(x, y):
 np.max(f_vec(x, y))  # Run once to compile
 ```
 
-```{code-block} ipython
+```python
 %timeit np.max(f_vec(x, y))
 ```
 
@@ -285,7 +285,7 @@ distribution.
 
 Here\'s the code:
 
-```{code-block} ipython
+```python
 from numpy.random import randn
 from numba import njit
 
@@ -306,7 +306,7 @@ def h(w, r=0.1, s=0.3, v1=0.1, v2=1.0):
 
 Let\'s have a look at how wealth evolves under this rule.
 
-```{code-block} ipython
+```python
 fig, ax = plt.subplots()
 
 T = 100
@@ -340,7 +340,7 @@ to median wealth of the group at the end of a long simulation.
 Moreover, provided the simulation period is long enough, initial
 conditions don\'t matter.
 
--   This is due to something called ergodicity, which we will discuss [later on](https://python.quantecon.org/finite_markov.html#Ergodicity).
+-   This is due to something called ergodicity, which we will discuss [later on](https://python-intro.quantecon.org/finite_markov.html#Ergodicity).
 
 So, in summary, we are going to simulate 50,000 households by
 
@@ -351,7 +351,7 @@ Then we\'ll calculate median wealth at the end period.
 
 Here\'s the code:
 
-```{code-block} ipython
+```python
 @njit
 def compute_long_run_median(w0=1, T=1000, num_reps=50_000):
 
@@ -367,7 +367,7 @@ def compute_long_run_median(w0=1, T=1000, num_reps=50_000):
 
 Let\'s see how fast this runs:
 
-```{code-block} ipython
+```python
 %%time
 compute_long_run_median()
 ```
@@ -377,7 +377,7 @@ To speed this up, we\'re going to parallelize it via multithreading.
 To do so, we add the `parallel=True` flag and change `range` to
 `prange`:
 
-```{code-block} ipython
+```python
 from numba import prange
 
 @njit(parallel=True)
@@ -395,7 +395,7 @@ def compute_long_run_median_parallel(w0=1, T=1000, num_reps=50_000):
 
 Let\'s look at the timing:
 
-```{code-block} ipython
+```python
 %%time
 compute_long_run_median_parallel()
 ```
@@ -471,11 +471,11 @@ def calculate_pi(n=1_000_000):
 
 Now let\'s see how fast it runs:
 
-```{code-block} ipython
+```python
 %time calculate_pi()
 ```
 
-```{code-block} ipython
+```python
 %time calculate_pi()
 ```
 

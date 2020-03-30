@@ -576,7 +576,7 @@ writing</p>
 <p>Where is this file that we’ve created?</p>
 <p>Recall that Python maintains a concept of the present working directory
 (pwd) that can be located from with Jupyter or IPython via</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pwd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pwd</span>
 </pre></div>
 </div>
 <p>If a path is not specified, then this is where Python writes to.</p>
@@ -613,7 +613,7 @@ looped over.</p>
 <p>To give an example, let’s write the file <code class="docutils literal notranslate"><span class="pre">us_cities.txt</span></code>,
 which lists US cities and their population, to the present working
 directory.</p>
-<div class="highlight-ipython notranslate" id="us-cities-data"><div class="highlight"><pre><span></span><span class="o">%%file</span> us_cities.txt
+<div class="highlight-python notranslate" id="us-cities-data"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">us_cities</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">new</span> <span class="n">york</span><span class="p">:</span> <span class="mi">8244910</span>
 <span class="n">los</span> <span class="n">angeles</span><span class="p">:</span> <span class="mi">3819702</span>
 <span class="n">chicago</span><span class="p">:</span> <span class="mi">2707120</span>
@@ -847,20 +847,20 @@ called <em>docstrings</em>.</p>
 </pre></div>
 </div>
 <p>After running this code, the docstring is available</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span>f<span class="o">?</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>f?
 </pre></div>
 </div>
-<div class="no-execute highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">Type</span><span class="p">:</span>       <span class="n">function</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Type</span><span class="p">:</span>       <span class="n">function</span>
 <span class="n">String</span> <span class="n">Form</span><span class="p">:</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">f</span> <span class="n">at</span> <span class="mh">0x2223320</span><span class="o">&gt;</span>
 <span class="n">File</span><span class="p">:</span>       <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">temp</span><span class="o">/</span><span class="n">temp</span><span class="o">.</span><span class="n">py</span>
 <span class="n">Definition</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">Docstring</span><span class="p">:</span>  <span class="n">This</span> <span class="n">function</span> <span class="n">squares</span> <span class="n">its</span> <span class="n">argument</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span>f<span class="o">??</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>f??
 </pre></div>
 </div>
-<div class="no-execute highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">Type</span><span class="p">:</span>       <span class="n">function</span>
+<div class="no-execute highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Type</span><span class="p">:</span>       <span class="n">function</span>
 <span class="n">String</span> <span class="n">Form</span><span class="p">:</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">f</span> <span class="n">at</span> <span class="mh">0x2223320</span><span class="o">&gt;</span>
 <span class="n">File</span><span class="p">:</span>       <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">temp</span><span class="o">/</span><span class="n">temp</span><span class="o">.</span><span class="n">py</span>
 <span class="n">Definition</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>

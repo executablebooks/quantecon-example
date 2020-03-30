@@ -506,9 +506,9 @@ your code.</p>
 <p>Here’s an arbitrary program we can use:
 <a class="reference external" href="http://matplotlib.org/3.1.1/gallery/pie_and_polar_charts/polar_bar.html">http://matplotlib.org/3.1.1/gallery/pie_and_polar_charts/polar_bar.html</a>.</p>
 <p>On that page, you’ll see the following code</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
 <span class="c1"># Fixing random state for reproducibility</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
@@ -635,7 +635,7 @@ notebook cell.</p>
 <p>Code is first saved in a text file on a local machine</p>
 <p>By convention, these text files have a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension.</p>
 <p>We can create an example of such a file as follows:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> foo.py
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">foo</span><span class="o">.</span><span class="n">py</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foobar&quot;</span><span class="p">)</span>
 </pre></div>
@@ -723,15 +723,13 @@ later on, such as <a class="reference external" href="https://github.com/pydata/
 for example, we use it to share and synchronize all the source files for
 these lectures.</p>
 <p>There are two main flavors of Git</p>
-<ol>
+<ol class="simple">
 <li><p>the plain vanilla <a class="reference external" href="http://git-scm.com/downloads">command line Git</a>
 version</p></li>
 <li><p>the various point-and-click GUI versions</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>See, for example, the <a class="reference external" href="https://desktop.github.com/">GitHub version</a></p></li>
 </ul>
-</div></blockquote>
 </li>
 </ol>
 <p>As the 1st task, try</p>

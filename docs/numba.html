@@ -309,6 +309,23 @@ libraries:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already up-to-date: quantecon in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (0.4.6)
+Requirement already satisfied, skipping upgrade: scipy&gt;=1.0.0 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (1.4.1)
+Requirement already satisfied, skipping upgrade: numba&gt;=0.38 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (0.48.0)
+Requirement already satisfied, skipping upgrade: sympy in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (1.5.1)
+Requirement already satisfied, skipping upgrade: numpy in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (1.18.2)
+Requirement already satisfied, skipping upgrade: requests in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from quantecon) (2.23.0)
+Requirement already satisfied, skipping upgrade: llvmlite&lt;0.32.0,&gt;=0.31.0dev0 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from numba&gt;=0.38-&gt;quantecon) (0.31.0)
+Requirement already satisfied, skipping upgrade: setuptools in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from numba&gt;=0.38-&gt;quantecon) (46.1.3.post20200325)
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied, skipping upgrade: mpmath&gt;=0.19 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from sympy-&gt;quantecon) (1.1.0)
+Requirement already satisfied, skipping upgrade: idna&lt;3,&gt;=2.5 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (2.9)
+Requirement already satisfied, skipping upgrade: certifi&gt;=2017.4.17 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (2019.11.28)
+Requirement already satisfied, skipping upgrade: chardet&lt;4,&gt;=3.0.2 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (3.0.4)
+Requirement already satisfied, skipping upgrade: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/junaluzi/opt/anaconda3/envs/quant-econ-book/lib/python3.8/site-packages (from requests-&gt;quantecon) (1.25.7)
+</pre></div>
+</div>
 </div>
 </div>
 <p>Please also make sure that you have the latest version of Anaconda,
@@ -400,6 +417,7 @@ with <span class="math notranslate nohighlight">\(t\)</span> on the x-axis</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/numba_7_0.png" src="../_images/numba_7_0.png" />
 </div>
 </div>
 <p>To speed the function <code class="docutils literal notranslate"><span class="pre">qm</span></code> up using Numba, our first step is</p>
@@ -430,6 +448,9 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:7.03
+</pre></div>
+</div>
 </div>
 </div>
 <p>Now let’s try <code class="docutils literal notranslate"><span class="pre">qm\_numba</span></code></p>
@@ -442,6 +463,9 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.08
+</pre></div>
+</div>
 </div>
 </div>
 <p>This is already a massive speed gain.</p>
@@ -456,6 +480,9 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.02
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -465,6 +492,9 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>267.3644820027897
+</pre></div>
+</div>
 </div>
 </div>
 <p>This kind of speed gain is huge relative to how simple and clear the
@@ -545,6 +575,11 @@ function definition.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.1       , 0.36      , 0.9216    , 0.28901376, 0.82193923,
+       0.58542054, 0.97081333, 0.11333925, 0.40197385, 0.9615635 ,
+       0.14783656])
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -701,6 +736,7 @@ like functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/numba_30_0.png" src="../_images/numba_30_0.png" />
 </div>
 </div>
 </div>
@@ -774,6 +810,9 @@ programs with <code class="docutils literal notranslate"><span class="pre">&#64;
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -785,6 +824,9 @@ programs with <code class="docutils literal notranslate"><span class="pre">&#64;
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
 </div>
 </div>
 <p>Notice that changing the global had no effect on the value returned by
@@ -869,6 +911,13 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 130 ms, sys: 1.02 ms, total: 131 ms
+Wall time: 131 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142088
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -878,6 +927,13 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.4 ms, sys: 57 µs, total: 12.4 ms
+Wall time: 12.4 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141604
+</pre></div>
+</div>
 </div>
 </div>
 <p>If we switch of JIT compilation by removing <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code>, the code takes
@@ -931,6 +987,9 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667487
+</pre></div>
+</div>
 </div>
 </div>
 <p>This is (approximately) the right output.</p>
@@ -944,6 +1003,12 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.70
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.7042162418365479
+</pre></div>
+</div>
 </div>
 </div>
 <p>Next let’s implement a Numba version, which is easy</p>
@@ -967,6 +1032,9 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665301
+</pre></div>
+</div>
 </div>
 </div>
 <p>Let’s see the time</p>
@@ -979,6 +1047,12 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.00
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.008716106414794922
+</pre></div>
+</div>
 </div>
 </div>
 <p>This is a nice speed improvement for one line of code!</p>

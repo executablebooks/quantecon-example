@@ -433,7 +433,7 @@ build our own.</p>
 <p>To see this, let’s have another look at the
 <a class="reference internal" href="python_essentials.html#us-cities-data"><span class="std std-ref">US cities data</span></a>, which
 is written to the present working directory in the following cell</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> us_cities.txt
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">us_cities</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">new</span> <span class="n">york</span><span class="p">:</span> <span class="mi">8244910</span>
 <span class="n">los</span> <span class="n">angeles</span><span class="p">:</span> <span class="mi">3819702</span>
 <span class="n">chicago</span><span class="p">:</span> <span class="mi">2707120</span>
@@ -469,7 +469,7 @@ which directly calls this method</p>
 </div>
 <p>as are the reader objects from the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module .</p>
 <p>Let’s create a small csv file that contains data from the NIKKEI index</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> test_table.csv
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">test_table</span><span class="o">.</span><span class="n">csv</span>
 <span class="n">Date</span><span class="p">,</span><span class="n">Open</span><span class="p">,</span><span class="n">High</span><span class="p">,</span><span class="n">Low</span><span class="p">,</span><span class="n">Close</span><span class="p">,</span><span class="n">Volume</span><span class="p">,</span><span class="n">Adj</span> <span class="n">Close</span>
 <span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span><span class="mf">9280.35</span><span class="p">,</span><span class="mf">9286.35</span><span class="p">,</span><span class="mf">9189.92</span><span class="p">,</span><span class="mf">9264.15</span><span class="p">,</span><span class="mi">133200</span><span class="p">,</span><span class="mf">9264.15</span>
 <span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mf">9372.72</span><span class="p">,</span><span class="mf">9399.40</span><span class="p">,</span><span class="mf">9311.61</span><span class="p">,</span><span class="mf">9344.64</span><span class="p">,</span><span class="mi">143200</span><span class="p">,</span><span class="mf">9344.64</span>
@@ -750,7 +750,7 @@ case, a module called <code class="docutils literal notranslate"><span class="pr
 file are executed as part of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> too.</p>
 <p>To see this, let’s create a file <code class="docutils literal notranslate"><span class="pre">mod.py</span></code> that prints its own
 <code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> mod.py
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">mod</span><span class="o">.</span><span class="n">py</span>
 <span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -758,7 +758,7 @@ file are executed as part of <code class="docutils literal notranslate"><span cl
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mod</span>  <span class="c1"># Standard import</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> mod.py  # Run interactively
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">mod</span><span class="o">.</span><span class="n">py</span>  <span class="c1"># Run interactively</span>
 </pre></div>
 </div>
 <p>In the second case, the code is executed as part of <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, so
@@ -768,12 +768,12 @@ rather than <code class="docutils literal notranslate"><span class="pre">vars(__
 <p>If you do this in IPython, you will see a whole lot of variables that
 IPython needs, and has initialized when you started up your session.</p>
 <p>If you prefer to see only the variables you have initialized, use <code class="docutils literal notranslate"><span class="pre">whos</span></code></p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="o">%</span><span class="k">whos</span>
+<span class="o">%</span><span class="n">whos</span>
 </pre></div>
 </div>
 </div>
@@ -910,7 +910,7 @@ own namespaces.</p>
 </pre></div>
 </div>
 <p>What happens when we run this script?</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> test.py
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <div class="skip-test highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>

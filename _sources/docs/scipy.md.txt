@@ -98,7 +98,7 @@ interface.
 
 Here\'s an example of usage
 
-```{code-block} ipython
+```python
 from scipy.stats import beta
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -324,11 +324,11 @@ brentq(f, 0, 1)
 Here the correct solution is found and the speed is better than
 bisection:
 
-```{code-block} ipython
+```python
 %timeit brentq(f, 0, 1)
 ```
 
-```{code-block} ipython
+```python
 %timeit bisect(f, 0, 1)
 ```
 

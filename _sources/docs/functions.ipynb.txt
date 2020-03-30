@@ -22,14 +22,24 @@
     "One of the things we will learn to do is build our own user-defined\n",
     "functions\n",
     "\n",
-    "We will use the following imports.\n",
-    "\n",
-    "```{code-block} ipython\n",
+    "We will use the following imports."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
     "import numpy as np\n",
     "import matplotlib.pyplot as plt\n",
-    "%matplotlib inline\n",
-    "```\n",
-    "\n",
+    "%matplotlib inline"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## Function Basics\n",
     "\n",
     "A function is a named section of a program that implements a specific\n",

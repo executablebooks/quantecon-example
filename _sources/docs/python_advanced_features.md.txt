@@ -37,7 +37,7 @@ To see this, let\'s have another look at the
 {ref}`US cities data <us_cities_data>`, which
 is written to the present working directory in the following cell
 
-```{code-block} ipython
+```python
 %%file us_cities.txt
 new york: 8244910
 los angeles: 3819702
@@ -84,7 +84,7 @@ as are the reader objects from the `csv` module .
 
 Let\'s create a small csv file that contains data from the NIKKEI index
 
-```{code-block} ipython
+```python
 %%file test_table.csv
 Date,Open,High,Low,Close,Volume,Adj Close
 2009-05-21,9280.35,9286.35,9189.92,9264.15,133200,9264.15
@@ -470,7 +470,7 @@ file are executed as part of `__main__` too.
 To see this, let\'s create a file `mod.py` that prints its own
 `__name__` attribute
 
-```{code-block} ipython
+```python
 %%file mod.py
 print(__name__)
 ```
@@ -481,7 +481,7 @@ Now let\'s look at two different ways of running it in IPython
 import mod  # Standard import
 ```
 
-```{code-block} ipython
+```python
 %run mod.py  # Run interactively
 ```
 
@@ -496,7 +496,7 @@ IPython needs, and has initialized when you started up your session.
 
 If you prefer to see only the variables you have initialized, use `whos`
 
-```{code-block} ipython
+```python
 x = 2
 y = 3
 
@@ -683,7 +683,7 @@ print("a = ", a, "y = ", y)
 
 What happens when we run this script?
 
-```{code-block} ipython
+```python
 %run test.py
 ```
 

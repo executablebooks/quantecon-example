@@ -1366,12 +1366,9 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "```{math}\n",
-    "---\n",
-    "label: np_polynom\n",
-    "---\n",
-    "p(x) = a_0 + a_1 x + a_2 x^2 + \\cdots a_N x^N = \\sum_{n=0}^N a_n x^n\n",
-    "```"
+    "<a id='equation-np-polynom'></a>\n",
+    "\n",
+    "p(x) = a_0 + a_1 x + a_2 x^2 + \\cdots a_N x^N = \\sum_{n=0}^N a_n x^n"
    ]
   },
   {
@@ -1379,7 +1376,7 @@
    "metadata": {},
    "source": [
     "{ref}`Earlier <pyess_ex2>`, you wrote a simple\n",
-    "function `p(x, coeff)` to evaluate {math:numref}`np_polynom` without considering efficiency.\n",
+    "function `p(x, coeff)` to evaluate [(1)](#equation-np-polynom) without considering efficiency.\n",
     "\n",
     "Now write a new function that does the same job, but uses NumPy arrays\n",
     "and array operations for its computations, rather than any form of\n",

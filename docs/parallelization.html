@@ -282,7 +282,7 @@ var css_paths = [
 <h1><span class="target" id="parallel"></span>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this headline">¶</a></h1>
 <p>In addition to what’s in Anaconda, this lecture will need the following
 libraries:</p>
-<div class="hide-output highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --upgrade quantecon
+<div class="hide-output highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install --upgrade quantecon
 </pre></div>
 </div>
 <div class="section" id="overview">
@@ -310,11 +310,11 @@ with a focus on</p>
 <li><p>how these tools can be applied to quantitative economic problems.</p></li>
 </ol>
 <p>Let’s start with some imports:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">quantecon</span> <span class="k">as</span> <span class="nn">qe</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
 </div>
 </div>
@@ -403,7 +403,7 @@ multithreading out to more and more operations.</p>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> np.max(f(x, y))
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">timeit</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>If you have a system monitor such as <code class="docutils literal notranslate"><span class="pre">htop</span></code> (Linux/Mac) or
@@ -431,7 +431,7 @@ decorator.</p>
 <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_vec</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>  <span class="c1"># Run once to compile</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> np.max(f_vec(x, y))
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">timeit</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_vec</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>At least on our machine, the difference in the speed between the Numba
@@ -472,7 +472,7 @@ multithreading?</p></li>
 <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_vec</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>  <span class="c1"># Run once to compile</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> np.max(f_vec(x, y))
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">timeit</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_vec</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Now our code runs significantly faster than the NumPy version.</p>
@@ -503,7 +503,7 @@ w_{t+1} = R_{t+1} s w_t + y_{t+1}
 <p>We model both <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(y\)</span> as independent draws from a lognormal
 distribution.</p>
 <p>Here’s the code:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
 <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
 
 <span class="nd">@njit</span>
@@ -522,7 +522,7 @@ distribution.</p>
 </pre></div>
 </div>
 <p>Let’s have a look at how wealth evolves under this rule.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
@@ -550,7 +550,7 @@ to median wealth of the group at the end of a long simulation.</p>
 <p>Moreover, provided the simulation period is long enough, initial
 conditions don’t matter.</p>
 <ul class="simple">
-<li><p>This is due to something called ergodicity, which we will discuss <a class="reference external" href="https://python.quantecon.org/finite_markov.html#Ergodicity">later on</a>.</p></li>
+<li><p>This is due to something called ergodicity, which we will discuss <a class="reference external" href="https://python-intro.quantecon.org/finite_markov.html#Ergodicity">later on</a>.</p></li>
 </ul>
 <p>So, in summary, we are going to simulate 50,000 households by</p>
 <ol class="simple">
@@ -559,7 +559,7 @@ conditions don’t matter.</p>
 </ol>
 <p>Then we’ll calculate median wealth at the end period.</p>
 <p>Here’s the code:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="nd">@njit</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@njit</span>
 <span class="k">def</span> <span class="nf">compute_long_run_median</span><span class="p">(</span><span class="n">w0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_reps</span><span class="o">=</span><span class="mi">50_000</span><span class="p">):</span>
 
     <span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_reps</span><span class="p">)</span>
@@ -573,14 +573,14 @@ conditions don’t matter.</p>
 </pre></div>
 </div>
 <p>Let’s see how fast this runs:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 <span class="n">compute_long_run_median</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>To speed this up, we’re going to parallelize it via multithreading.</p>
 <p>To do so, we add the <code class="docutils literal notranslate"><span class="pre">parallel=True</span></code> flag and change <code class="docutils literal notranslate"><span class="pre">range</span></code> to
 <code class="docutils literal notranslate"><span class="pre">prange</span></code>:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">prange</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">prange</span>
 
 <span class="nd">@njit</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">compute_long_run_median_parallel</span><span class="p">(</span><span class="n">w0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_reps</span><span class="o">=</span><span class="mi">50_000</span><span class="p">):</span>
@@ -596,7 +596,7 @@ conditions don’t matter.</p>
 </pre></div>
 </div>
 <p>Let’s look at the timing:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 <span class="n">compute_long_run_median_parallel</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -659,10 +659,10 @@ such as <code class="docutils literal notranslate"><span class="pre">n</span> <s
 </pre></div>
 </div>
 <p>Now let’s see how fast it runs:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> calculate_pi()
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">calculate_pi</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> calculate_pi()
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">calculate_pi</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>By switching parallelization on and off (selecting <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> in

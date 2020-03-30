@@ -304,10 +304,16 @@ just how useful and important they are.</p>
 <p>One of the things we will learn to do is build our own user-defined
 functions</p>
 <p>We will use the following imports.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
 </div>
 </div>
 <div class="section" id="function-basics">
@@ -329,6 +335,9 @@ own.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -338,6 +347,9 @@ own.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>foobar
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -347,6 +359,9 @@ own.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;22&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -356,6 +371,9 @@ own.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
 </div>
 </div>
 <p>Two more useful built-in functions are <code class="docutils literal notranslate"><span class="pre">any()</span></code> and <code class="docutils literal notranslate"><span class="pre">all()</span></code></p>
@@ -367,6 +385,9 @@ own.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -376,6 +397,9 @@ own.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
 </div>
 </div>
 <p>The full list of Python built-ins is
@@ -397,6 +421,9 @@ import functions or create our own.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -429,6 +456,9 @@ whether it does what we expect:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -438,6 +468,9 @@ whether it does what we expect:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
 </div>
 </div>
 <p>Here’s a longer function, that computes the absolute value of a given
@@ -480,6 +513,10 @@ stored in memory.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>3
+3
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -521,6 +558,7 @@ idea</a>)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/functions_24_0.png" src="../_images/functions_24_0.png" />
 </div>
 </div>
 <p>We will break this program into two parts:</p>
@@ -550,6 +588,7 @@ idea</a>)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/functions_26_0.png" src="../_images/functions_26_0.png" />
 </div>
 </div>
 <p>When the interpreter gets to the expression <code class="docutils literal notranslate"><span class="pre">generate_data(100)</span></code>, it
@@ -583,6 +622,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/functions_28_0.png" src="../_images/functions_28_0.png" />
 </div>
 </div>
 <p>Hopefully, the syntax of the if/else clause is self-explanatory, with
@@ -619,6 +659,7 @@ passing the desired generator type <em>as a function</em>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/functions_30_0.png" src="../_images/functions_30_0.png" />
 </div>
 </div>
 <p>Now, when we call the function <code class="docutils literal notranslate"><span class="pre">generate_data()</span></code>, we pass
@@ -641,6 +682,9 @@ following piece of code</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -651,6 +695,9 @@ following piece of code</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
 </div>
 </div>
 <p>Here we created another name for the built-in function <code class="docutils literal notranslate"><span class="pre">max()</span></code>, which
@@ -720,6 +767,9 @@ dollar.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -742,6 +792,9 @@ dollar.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -771,6 +824,21 @@ dollar.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+0
+0
+0
+0
+1
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
 </div>
 </div>
 <p>Here’s another function for the second random device.</p>
@@ -795,6 +863,21 @@ dollar.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1
+2
+2
+2
+2
+3
+4
+5
+6
+7
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
 </div>
 </div>
 </div>
