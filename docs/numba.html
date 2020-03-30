@@ -254,11 +254,11 @@ var css_paths = [
             <a href="#solutions" class="nav-link">Solutions</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
-            <a href="#id1" class="nav-link">Exercise 1</a>
+            <a href="#id2" class="nav-link">Exercise 1</a>
         </li>
     
         <li class="nav-item toc-entry toc-h3">
-            <a href="#id2" class="nav-link">Exercise 2</a>
+            <a href="#id3" class="nav-link">Exercise 2</a>
         </li>
     
             </ul>
@@ -420,6 +420,7 @@ with <span class="math notranslate nohighlight">\(t\)</span> on the x-axis</p>
 <img alt="../_images/numba_7_0.png" src="../_images/numba_7_0.png" />
 </div>
 </div>
+<p>Notice the “chaotic” nature of the trajectory — an excellent discussion of these kinds of systems can be found in <a class="bibtex reference internal" href="#lasota2013chaos" id="id1">[LM13]</a>.</p>
 <p>To speed the function <code class="docutils literal notranslate"><span class="pre">qm</span></code> up using Numba, our first step is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -879,8 +880,8 @@ in the low state.</p>
 </div>
 <div class="section" id="solutions">
 <h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>Exercise 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Exercise 1<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Here is one solution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -941,8 +942,8 @@ around 150 times as long on our machine.</p>
 <p>So we get a speed gain of 2 orders of magnitude–which is huge–by
 adding four characters.</p>
 </div>
-<div class="section" id="id2">
-<h3>Exercise 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Exercise 2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>We let</p>
 <ul class="simple">
 <li><p>0 represent “low”</p></li>
@@ -1056,6 +1057,12 @@ low state is about 0.666</p>
 </div>
 </div>
 <p>This is a nice speed improvement for one line of code!</p>
+<p id="bibtex-bibliography-docs/numba-0"><dl class="citation">
+<dt class="bibtex label" id="lasota2013chaos"><span class="brackets"><a class="fn-backref" href="#id1">LM13</a></span></dt>
+<dd><p>Andrzej Lasota and Michael C Mackey. <em>Chaos, fractals, and noise: stochastic aspects of dynamics</em>. Volume 97. Springer Science &amp; Business Media, 2013.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 </div>

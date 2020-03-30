@@ -151,6 +151,8 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "Notice the \"chaotic\" nature of the trajectory --- an excellent discussion of these kinds of systems can be found in {cite}`lasota2013chaos`.\n",
+    "\n",
     "To speed the function `qm` up using Numba, our first step is"
    ]
   },
@@ -909,6 +911,14 @@
    "metadata": {},
    "source": [
     "This is a nice speed improvement for one line of code!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "```{bibliography} quant-econ.bib\n",
+    "```\n"
    ]
   }
  ],
