@@ -38,7 +38,7 @@ plenty of examples.
 
 We\'ll use the following imports:
 
-```{code-block} ipython
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -413,7 +413,7 @@ two different initial conditions.
 
 The common steady state is also plotted for comparison
 
-```{code-block} ipython
+```python
 s1 = Solow()
 s2 = Solow(k=8.0)
 

@@ -265,7 +265,7 @@ Where is this file that we\'ve created?
 Recall that Python maintains a concept of the present working directory
 (pwd) that can be located from with Jupyter or IPython via
 
-```{code-block} ipython
+```python
 %pwd
 ```
 
@@ -318,7 +318,7 @@ directory.
 
 (us_cities_data)=
 
-```{code-block} ipython
+```python
 %%file us_cities.txt
 new york: 8244910
 los angeles: 3819702
@@ -603,11 +603,11 @@ def f(x):
 
 After running this code, the docstring is available
 
-```{code-block} ipython
+```python
 f?
 ```
 
-```{code-block} ipython
+```{code-block} python
 ---
 class: no-execute
 ---
@@ -619,11 +619,11 @@ Definition: f(x)
 Docstring:  This function squares its argument
 ```
 
-```{code-block} ipython
+```python
 f??
 ```
 
-```{code-block} ipython
+```{code-block} python
 ---
 class: no-execute
 ---

@@ -207,7 +207,7 @@ Here\'s an arbitrary program we can use:
 
 On that page, you\'ll see the following code
 
-```{code-block} ipython
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -369,7 +369,7 @@ By convention, these text files have a `.py` extension.
 
 We can create an example of such a file as follows:
 
-```{code-block} ipython
+```python
 %%file foo.py
 
 print("foobar")
@@ -483,7 +483,7 @@ There are two main flavors of Git
     version
 2.  the various point-and-click GUI versions
 
-    > -   See, for example, the [GitHub version](https://desktop.github.com/)
+    -   See, for example, the [GitHub version](https://desktop.github.com/)
 
 As the 1st task, try
 

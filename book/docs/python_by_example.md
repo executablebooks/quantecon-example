@@ -34,7 +34,7 @@ more about Python.
 We run the following command first, which helps ensure that plots appear
 in the notebook if you run it on your own machine.
 
-```{code-block} ipython
+```python
 %matplotlib inline
 ```
 
@@ -43,7 +43,7 @@ in the notebook if you run it on your own machine.
 (ourfirstprog)=
 Here are a few lines of code that perform the task we set
 
-```{code-block} ipython
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -120,7 +120,7 @@ computer easily enough if you look around.
 
 On this machine, it\'s located in
 
-```{code-block} ipython
+```{code-block} python
 ---
 class: no-execute
 ---
@@ -171,7 +171,7 @@ they wish to.
 Returning to our program that plots white noise, the remaining three
 lines after the import statements are
 
-```{code-block} ipython
+```python
 ϵ_values = np.random.randn(100)
 plt.plot(ϵ_values)
 plt.show()
