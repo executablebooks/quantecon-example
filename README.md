@@ -10,7 +10,7 @@ For the purposes of this project, we are replicating the content under [Python P
 2. Update and add MyST syntax:
 	- Manual: math labels are removed during conversion through `Pandoc`. For this reason, it is essential to go over the documents and make sure no math label is missing in the newly generated markdown files.
 	- Programmatic soluiton: there are a few options by utilizing regex. Below is an example of a simple function to convert contents depth syntax from rST to MyST.
-3. [This repository](https://github.com/najuzilu/myst-parser.example-project) contains an incomplete list of issues we have run accross. As previously stated, some of these issues can be fixed programmatically if we aim to focus on conversion issues pertaining to QuantEcon lectures.
+3. [This repository](https://github.com/najuzilu/myst-parser.example-project) contains an incomplete list of issues. As previously stated, some of these issues can be fixed programmatically if we aim to focus on conversion issues pertaining to QuantEcon lectures.
 
 ```python
 def get_contents_depth(string):
@@ -33,13 +33,7 @@ def get_contents_depth(string):
 
 Follow [these](https://beta.jupyterbook.org/intro.html) instructions closely.
 
-## Potential Issues
-
-* Removing h1 title from file messes up the display on sidebar. Needs further testing
-* key `divider` removes doc from `sidebar`
 
 ## To do:
-- [ ] Add ipynbs
-- [ ] Add features: note, warning, tip
-- [ ] references.bib
-- [ ] fix quote in `about_py`
+- [ ] numbered equation submit issue
+- [ ] check numpy eq label np_polynom

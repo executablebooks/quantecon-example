@@ -34,7 +34,7 @@ more about Python.
 We run the following command first, which helps ensure that plots appear
 in the notebook if you run it on your own machine.
 
-```python
+```{execute}
 %matplotlib inline
 ```
 
@@ -43,7 +43,7 @@ in the notebook if you run it on your own machine.
 (ourfirstprog)=
 Here are a few lines of code that perform the task we set
 
-```python
+```{execute}
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -72,17 +72,17 @@ syntax `np.attribute`.
 
 Here\'s two more examples
 
-```python
+```{execute}
 np.sqrt(4)
 ```
 
-```python
+```{execute}
 np.log(4)
 ```
 
 We could also use the following syntax:
 
-```python
+```{execute}
 import numpy
 
 numpy.sqrt(4)
@@ -120,11 +120,7 @@ computer easily enough if you look around.
 
 On this machine, it\'s located in
 
-```{code-block} python
----
-class: no-execute
----
-
+```{code-block} none
 anaconda3/lib/python3.7/site-packages/numpy
 ```
 
@@ -142,7 +138,7 @@ package.
 
 Recall this code that we saw above
 
-```python
+```{execute}
 import numpy as np
 
 np.sqrt(4)
@@ -150,7 +146,7 @@ np.sqrt(4)
 
 Here\'s another way to access NumPy\'s square root function
 
-```python
+```{execute}
 from numpy import sqrt
 
 sqrt(4)
@@ -171,7 +167,7 @@ they wish to.
 Returning to our program that plots white noise, the remaining three
 lines after the import statements are
 
-```python
+```{execute}
 ϵ_values = np.random.randn(100)
 plt.plot(ϵ_values)
 plt.show()
@@ -202,7 +198,7 @@ semantics in a familiar setting.
 Here\'s a version that illustrates `for` loops and Python lists.
 
 (firstloopprog)=
-```python
+```{execute}
 ts_length = 100
 ϵ_values = []   # empty list
 
@@ -237,7 +233,7 @@ objects.
 
 For example, try
 
-```python
+```{execute}
 x = [10, 'foo', False]  
 type(x)
 ```
@@ -252,11 +248,11 @@ value](https://en.wikipedia.org/wiki/Boolean_data_type).
 When adding a value to a list, we can use the syntax
 `list_name.append(some_value)`
 
-```python
+```{execute}
 x
 ```
 
-```python
+```{execute}
 x.append(2.5)
 x
 ```
@@ -276,26 +272,26 @@ We\'ll learn all about methods later on, but just to give you some idea,
 
 Another useful list method is `pop()`
 
-```python
+```{execute}
 x
 ```
 
-```python
+```{execute}
 x.pop()
 ```
 
-```python
+```{execute}
 x
 ```
 
 Lists in Python are zero-based (as in C, Java or Go), so the first
 element is referenced by `x[0]`
 
-```python
+```{execute}
 x[0]   # first element of x
 ```
 
-```python
+```{execute}
 x[1]   # second element of x
 ```
 
@@ -305,7 +301,7 @@ Now let\'s consider the `for` loop from
 {ref}`the program above <firstloopprog>`, which
 was
 
-```python
+```{execute}
 for i in range(ts_length):
     e = np.random.randn()
     ϵ_values.append(e)
@@ -326,7 +322,7 @@ telling Python that this line marks the lower limit of the code block.
 More on indentation below---for now, let\'s look at another example of
 a `for` loop
 
-```python
+```{execute}
 animals = ['dog', 'cat', 'bird']
 for animal in animals:
     print("The plural of " + animal + " is " + animal + "s")
@@ -391,7 +387,7 @@ a `while` loop instead.
 
 (whileloopprog)=
 
-```python
+```{execute}
 ts_length = 100
 ϵ_values = []
 i = 0
@@ -428,7 +424,7 @@ $b_0, b_1, \ldots, b_T$.
 Instead of using a Python list to store this sequence, we will use a
 NumPy array.
 
-```python
+```{execute}
 r = 0.025         # interest rate 
 T = 50            # end date
 b = np.empty(T+1) # an empty NumPy array, to store all b_t
@@ -475,7 +471,7 @@ standard normal.
 
 In your solution, restrict your import statements to
 
-```python
+```{execute}
 import numpy as np
 import matplotlib.pyplot as plt
 ```
@@ -527,11 +523,11 @@ In Python, conditions are usually implemented with if--else syntax.
 Here\'s an example, that prints -1 for each negative number in an array
 and 1 for each nonnegative number
 
-```python
+```{execute}
 numbers = [-9, 2.3, -11, 0]
 ```
 
-```python
+```{execute}
 for x in numbers:
     if x < 0:
         print(-1)
@@ -553,7 +549,7 @@ Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method).
 
 Use no imports besides
 
-```python
+```{execute}
 import numpy as np
 ```
 
@@ -573,7 +569,7 @@ Your hints are as follows:
 
 Here\'s one solution.
 
-```python
+```{execute}
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -588,7 +584,7 @@ plt.show()
 
 ### Exercise 2
 
-```python
+```{execute}
 α_values = [0.0, 0.8, 0.98]
 T = 200
 x = np.empty(T+1) 
@@ -607,7 +603,7 @@ plt.show()
 
 Here\'s one solution:
 
-```python
+```{execute}
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -624,7 +620,7 @@ plt.show()
 
 Here\'s one way:
 
-```python
+```{execute}
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -643,7 +639,7 @@ plt.show()
 
 Here\'s a shorter way to write the same thing:
 
-```python
+```{execute}
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -674,7 +670,7 @@ dividing by $r^2 = (1/2)^2 = 1/4$ gives an estimate of $\pi$.
 We estimate the area by sampling bivariate uniforms and looking at the
 fraction that falls into the circle.
 
-```python
+```{execute}
 n = 100000
 
 count = 0

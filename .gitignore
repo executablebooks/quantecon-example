@@ -1,3 +1,12 @@
 _build
 .ipynb_checkpoints
 .DS_Store
+__pycache__/
+foo.py
+math2.py
+mod.py
+newfile.txt
+numbers.txt
+test.py
+test_table.csv
+us_cities.txt

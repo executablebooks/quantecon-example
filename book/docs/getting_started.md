@@ -207,7 +207,7 @@ Here\'s an arbitrary program we can use:
 
 On that page, you\'ll see the following code
 
-```python
+```{execute}
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -369,7 +369,7 @@ By convention, these text files have a `.py` extension.
 
 We can create an example of such a file as follows:
 
-```python
+```{execute}
 %%file foo.py
 
 print("foobar")
