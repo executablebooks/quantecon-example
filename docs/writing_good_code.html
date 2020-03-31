@@ -10,16 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/jupyterbook.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <link href="../_static/css/index.css" rel="stylesheet">
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
-    <script src="../_static/print.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -27,8 +23,6 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
-    <script src="../_static/print.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -37,24 +31,11 @@
     <link rel="next" title="More Language Features" href="python_advanced_features.html" />
     <link rel="prev" title="Advanced Python Programming" href="index_advanced_python_programming.html" />
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script>
-var css_paths = [
-    "../_static/css/index.css",
-    "../_static/copybutton.css",
-    "../_static/jupyterbook.css",
-    "../_static/mystnb.css",
-    "../_static/pygments.css",
-    "../_static/togglebutton.css",
-    "../_static/bootstrap.min.css"
-]
-</script>
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
@@ -258,10 +239,11 @@ var css_paths = [
         <div class="download-buttons">
             <!-- Download raw file -->
             <a class="download-buttons" href="../_sources/docs/writing_good_code.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
-            <!-- Download PDF via PrintJS -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
+            <!-- Download PDF via print -->
+            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
         </div>
     </div>
+    
     
 </div>
     
@@ -293,7 +275,7 @@ design.</p>
 <p>The job of the code is to generate and plot time series of the
 simplified Solow model</p>
 <div class="math notranslate nohighlight" id="equation-gc-solmod">
-<span class="eqno">(7)<a class="headerlink" href="#equation-gc-solmod" title="Permalink to this equation">¶</a></span>\[k_{t+1} = s k_t^{\alpha} + (1 - \delta) k_t,
+<span class="eqno">(8)<a class="headerlink" href="#equation-gc-solmod" title="Permalink to this equation">¶</a></span>\[k_{t+1} = s k_t^{\alpha} + (1 - \delta) k_t,
 \quad t = 0, 1, 2, \ldots\]</div>
 <p>Here</p>
 <ul class="simple">
@@ -304,15 +286,16 @@ parameter and depreciation)</p></li>
 <p>For each parameterization, the code</p>
 <ol class="simple">
 <li><p>sets <span class="math notranslate nohighlight">\(k_0 = 1\)</span></p></li>
-<li><p>iterates using <a class="reference internal" href="#equation-gc-solmod">(7)</a> to produce a
+<li><p>iterates using <a class="reference internal" href="#equation-gc-solmod">(8)</a> to produce a
 sequence <span class="math notranslate nohighlight">\(k_0, k_1, k_2 \ldots , k_T\)</span></p></li>
 <li><p>plots the sequence</p></li>
 </ol>
 <p>The plots will be grouped into three subfigures.</p>
 <p>In each subfigure, two parameters are held fixed while another varies</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># Allocate memory for time series</span>
 <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -372,6 +355,8 @@ sequence <span class="math notranslate nohighlight">\(k_0, k_1, k_2 \ldots , k_T
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+<img alt="../_images/writing_good_code_0_0.png" src="../_images/writing_good_code_0_0.png" />
 </div>
 <p>True, the code more or less follows
 <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>.</p>
@@ -483,7 +468,8 @@ variables.</p>
 <h2>Revisiting the Example<a class="headerlink" href="#revisiting-the-example" title="Permalink to this headline">¶</a></h2>
 <p>Here’s some code that reproduces the plot above with better coding
 style.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
 
 <span class="k">def</span> <span class="nf">plot_path</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">αs</span><span class="p">,</span> <span class="n">s_vals</span><span class="p">,</span> <span class="n">δs</span><span class="p">,</span> <span class="n">time_series_length</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -515,6 +501,8 @@ style.</p>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+<img alt="../_images/writing_good_code_1_0.png" src="../_images/writing_good_code_1_0.png" />
 </div>
 <p>If you inspect this code, you will see that</p>
 <ul class="simple">
@@ -562,7 +550,8 @@ equilibrium price by <span class="math notranslate nohighlight">\(q^* = q_s(p^*)
 <li><p><span class="math notranslate nohighlight">\(\gamma = 1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\delta = 1\)</span></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brentq</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">brentq</span>
 
 <span class="c1"># Compute equilibrium</span>
 <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
@@ -575,8 +564,14 @@ equilibrium price by <span class="math notranslate nohighlight">\(q^* = q_s(p^*)
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Equilibrium quantity is </span><span class="si">{</span><span class="n">q_star</span><span class="si">:</span><span class="s1"> .2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Equilibrium price is  2.93
+Equilibrium quantity is  0.34
+</pre></div>
+</div>
+</div>
 <p>Let’s also plot our results.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now plot</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now plot</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
@@ -594,10 +589,13 @@ equilibrium price by <span class="math notranslate nohighlight">\(q^* = q_s(p^*)
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../_images/writing_good_code_3_0.png" src="../_images/writing_good_code_3_0.png" />
+</div>
 <p>We also want to consider supply and demand shifts.</p>
 <p>For example, let’s see what happens when demand shifts up, with
 <span class="math notranslate nohighlight">\(\gamma\)</span> increasing to <span class="math notranslate nohighlight">\(1.25\)</span>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute equilibrium</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute equilibrium</span>
 <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
     <span class="k">return</span> <span class="mf">1.25</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
@@ -608,7 +606,13 @@ equilibrium price by <span class="math notranslate nohighlight">\(q^* = q_s(p^*)
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Equilibrium quantity is </span><span class="si">{</span><span class="n">q_star</span><span class="si">:</span><span class="s1"> .2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now plot</span>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Equilibrium price is  3.25
+Equilibrium quantity is  0.38
+</pre></div>
+</div>
+</div>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now plot</span>
 <span class="n">p_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
@@ -626,6 +630,8 @@ equilibrium price by <span class="math notranslate nohighlight">\(q^* = q_s(p^*)
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../_images/writing_good_code_5_0.png" src="../_images/writing_good_code_5_0.png" />
+</div>
 <p>Now we might consider supply shifts, but you already get the idea that
 there’s a lot of repeated code here.</p>
 <p>Refactor and improve clarity in the code above using the principles
@@ -637,7 +643,8 @@ discussed in this lecture.</p>
 <div class="section" id="id2">
 <h3>Exercise 1<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Here’s one solution, that uses a class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Equilibrium</span><span class="p">:</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Equilibrium</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">α</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">β</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">α</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">γ</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">δ</span> <span class="o">=</span> <span class="n">α</span><span class="p">,</span> <span class="n">β</span><span class="p">,</span> <span class="n">γ</span><span class="p">,</span> <span class="n">δ</span>
@@ -672,27 +679,50 @@ discussed in this lecture.</p>
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
 <p>Let’s create an instance at the default parameter values.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="n">Equilibrium</span><span class="p">()</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="n">Equilibrium</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 <p>Now we’ll compute the equilibrium and plot it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">compute_equilibrium</span><span class="p">()</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">compute_equilibrium</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">plot_equilibrium</span><span class="p">()</span>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Equilibrium price is  2.93
+Equilibrium quantity is  0.34
 </pre></div>
+</div>
+</div>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">plot_equilibrium</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/writing_good_code_9_0.png" src="../_images/writing_good_code_9_0.png" />
 </div>
 <p>One of the nice things about our refactored code is that, when we change
 parameters, we don’t need to repeat ourselves:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">γ</span> <span class="o">=</span> <span class="mf">1.25</span>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">γ</span> <span class="o">=</span> <span class="mf">1.25</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">compute_equilibrium</span><span class="p">()</span>
+</div>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">compute_equilibrium</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">plot_equilibrium</span><span class="p">()</span>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Equilibrium price is  3.25
+Equilibrium quantity is  0.38
 </pre></div>
+</div>
+</div>
+<div class="jupyter_container docutils container">
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span><span class="o">.</span><span class="n">plot_equilibrium</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/writing_good_code_12_0.png" src="../_images/writing_good_code_12_0.png" />
 </div>
 </div>
 </div>

@@ -39,7 +39,7 @@ To see this, let\'s have another look at the
 {ref}`US cities data <us_cities_data>`, which
 is written to the present working directory in the following cell
 
-```python
+```{execute}
 %%file us_cities.txt
 new york: 8244910
 los angeles: 3819702
@@ -52,12 +52,12 @@ san diego: 1326179
 dallas: 1223229 
 ```
 
-```python
+```{execute}
 f = open('us_cities.txt')
 f.__next__()
 ```
 
-```python
+```{execute}
 f.__next__()
 ```
 
@@ -67,18 +67,18 @@ calling this method returns the next line in the file.
 The next method can also be accessed via the builtin function `next()`,
 which directly calls this method
 
-```python
+```{execute}
 next(f)
 ```
 
 The objects returned by `enumerate()` are also iterators
 
-```python
+```{execute}
 e = enumerate(['foo', 'bar'])
 next(e)
 ```
 
-```python
+```{execute}
 next(e)
 ```
 
@@ -86,7 +86,7 @@ as are the reader objects from the `csv` module .
 
 Let\'s create a small csv file that contains data from the NIKKEI index
 
-```python
+```{execute}
 %%file test_table.csv
 Date,Open,High,Low,Close,Volume,Adj Close
 2009-05-21,9280.35,9286.35,9189.92,9264.15,133200,9264.15
@@ -101,7 +101,7 @@ Date,Open,High,Low,Close,Volume,Adj Close
 2009-05-08,9351.40,9464.43,9349.57,9432.83,220200,9432.83
 ```
 
-```python
+```{execute}
 from csv import reader
 
 f = open('test_table.csv', 'r')  
@@ -109,7 +109,7 @@ nikkei_data = reader(f)
 next(nikkei_data)
 ```
 
-```python
+```{execute}
 next(nikkei_data)
 ```
 
@@ -120,11 +120,7 @@ loop statements.
 
 In fact this is how the `for` loop works: If we write
 
-```{code-block} python
----
-class: no-execute
----
-
+```python
 for x in iterator:
     <code block>
 ```
@@ -137,11 +133,7 @@ then the interpreter
 
 So now you know how this magical looking syntax works
 
-```{code-block} python
----
-class: no-execute
----
-
+```python
 f = open('somefile.txt', 'r')
 for line in f:
     # do something
@@ -159,7 +151,7 @@ This continues until a `StopIteration` error occurs.
 You already know that we can put a Python list to the right of `in` in a
 `for` loop
 
-```python
+```{execute}
 for i in ['spam', 'eggs']:
     print(i)
 ```
@@ -168,15 +160,14 @@ So does that mean that a list is an iterator?
 
 The answer is no
 
-```python
+```{execute}
 x = ['foo', 'bar']
 type(x)
 ```
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: TypeError
+
 next(x)
 ```
 
@@ -189,28 +180,26 @@ using the built-in function `iter()`.
 
 Lists are one such object
 
-```python
+```{execute}
 x = ['foo', 'bar']
 type(x)
 ```
 
-```python
+```{execute}
 y = iter(x)
 type(y)
 ```
 
-```python
+```{execute}
 next(y)  
 ```
 
-```python
+```{execute}
 next(y)
 ```
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: StopIteration
 
 next(y)    
 ```
@@ -219,10 +208,8 @@ Many other objects are iterable, such as dictionaries and tuples.
 
 Of course, not all objects are iterable
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: TypeError
 
 iter(42)
 ```
@@ -241,32 +228,30 @@ Some built-in functions that act on sequences also work with iterables
 
 For example
 
-```python
+```{execute}
 x = [10, -10]
 max(x)
 ```
 
-```python
+```{execute}
 y = iter(x)
 type(y)    
 ```
 
-```python
+```{execute}
 max(y)
 ```
 
 One thing to remember about iterators is that they are depleted by use
 
-```python
+```{execute}
 x = [10, -10]
 y = iter(x)
 max(y)
 ```
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: ValueError
 
 max(y)
 ```
@@ -277,7 +262,7 @@ max(y)
 
 Consider the Python statement
 
-```python
+```{execute}
 x = 42
 ```
 
@@ -298,7 +283,7 @@ as a dictionary---more about this in a moment.
 There is no problem binding two or more names to the one object,
 regardless of what that object is
 
-```python
+```{execute}
 def f(string):      # Create a function called f
     print(string)   # that prints any string it's passed
 
@@ -306,7 +291,7 @@ g = f
 id(g) == id(f)
 ```
 
-```python
+```{execute}
 g('test')
 ```
 
@@ -321,12 +306,12 @@ What happens when the number of names bound to an object goes to zero?
 Here\'s an example of this situation, where the name `x` is first bound
 to one object and then rebound to another
 
-```python
+```{execute}
 x = 'foo'
 id(x)
 ```
 
-```python
+```{execute}
 x = 'bar'  # No names bound to the first object
 ```
 
@@ -339,7 +324,7 @@ and returned to the operating system.
 
 Recall from the preceding discussion that the statement
 
-```python
+```{execute}
 x = 42
 ```
 
@@ -361,30 +346,30 @@ for that module.
 To see this in action, suppose we write a script `math2.py` with a
 single line
 
-```python
+```{execute}
 %%file math2.py
 pi = 'foobar'
 ```
 
 Now we start the Python interpreter and import it
 
-```python
+```{execute}
 import math2
 ```
 
 Next let\'s import the `math` module from the standard library
 
-```python
+```{execute}
 import math
 ```
 
 Both of these modules have an attribute called `pi`
 
-```python
+```{execute}
 math.pi
 ```
 
-```python
+```{execute}
 math2.pi
 ```
 
@@ -393,13 +378,13 @@ one implemented as a dictionary.
 
 We can look at the dictionary directly, using `module_name.__dict__`
 
-```python
+```{execute}
 import math
 
 math.__dict__.items()
 ```
 
-```python
+```{execute}
 import math2
 
 math2.__dict__.items()
@@ -408,13 +393,13 @@ math2.__dict__.items()
 As you know, we access elements of the namespace using the dotted
 attribute notation
 
-```python
+```{execute}
 math.pi
 ```
 
 In fact this is entirely equivalent to `math.__dict__['pi']`
 
-```python
+```{execute}
 math.__dict__['pi'] == math.pi
 ```
 
@@ -425,13 +410,13 @@ As we saw above, the `math` namespace can be printed by typing
 
 Another way to see its contents is to type `vars(math)`
 
-```python
+```{execute}
 vars(math).items()
 ```
 
 If you just want to see the names, you can type
 
-```python
+```{execute}
 dir(math)[0:10]
 ```
 
@@ -442,11 +427,11 @@ These are initialized in the namespace when any module is imported
 -   `__doc__` is the doc string of the module
 -   `__name__` is the name of the module
 
-```python
+```{execute}
 print(math.__doc__)
 ```
 
-```python
+```{execute}
 math.__name__
 ```
 
@@ -462,7 +447,7 @@ case, a module called `__main__`.
 To check this, we can look at the current module name via the value of
 `__name__` given at the prompt
 
-```python
+```{execute}
 print(__name__)
 ```
 
@@ -472,18 +457,18 @@ file are executed as part of `__main__` too.
 To see this, let\'s create a file `mod.py` that prints its own
 `__name__` attribute
 
-```python
+```{execute}
 %%file mod.py
 print(__name__)
 ```
 
 Now let\'s look at two different ways of running it in IPython
 
-```python
+```{execute}
 import mod  # Standard import
 ```
 
-```python
+```{execute}
 %run mod.py  # Run interactively
 ```
 
@@ -498,7 +483,7 @@ IPython needs, and has initialized when you started up your session.
 
 If you prefer to see only the variables you have initialized, use `whos`
 
-```python
+```{execute}
 x = 2
 y = 3
 
@@ -522,11 +507,7 @@ We are now working in the module `__main__`, and hence the namespace for
 
 Next, we import a module called `amodule`
 
-```{code-block} python
----
-class: no-execute
----
-
+```python
 import amodule
 ```
 
@@ -559,7 +540,7 @@ namespace with `locals()`.
 
 For example, consider
 
-```python
+```{execute}
 def f(x):
     a = 2
     print(locals())
@@ -568,7 +549,7 @@ def f(x):
 
 Now let\'s call the function
 
-```python
+```{execute}
 f(1)
 ```
 
@@ -584,28 +565,28 @@ How does access to these names work?
 -   These definitions are stored in a module called `__builtin__`.
 -   They have there own namespace called `__builtins__`.
 
-```python
+```{execute}
 dir()[0:10]
 ```
 
-```python
+```{execute}
 dir(__builtins__)[0:10]
 ```
 
 We can access elements of the namespace as follows
 
-```python
+```{execute}
 __builtins__.max
 ```
 
 But `__builtins__` is special, because we can always access them
 directly as well
 
-```python
+```{execute}
 max
 ```
 
-```python
+```{execute}
 __builtins__.max == max
 ```
 
@@ -641,7 +622,7 @@ namespaces are
 
 Sometimes functions are defined within other functions, like so
 
-```python
+```{execute}
 def f():
     a = 2
     def g():
@@ -671,7 +652,7 @@ Here\'s an example that helps to illustrate .
 
 Consider a script `test.py` that looks as follows
 
-```python
+```{execute}
 %%file test.py
 def g(x):
     a = 1
@@ -685,15 +666,11 @@ print("a = ", a, "y = ", y)
 
 What happens when we run this script?
 
-```python
+```{execute}
 %run test.py
 ```
 
-```{code-block} python
----
-class: skip-test
----
-
+```python
 x
 ```
 
@@ -726,7 +703,7 @@ objects.
 
 Consider the code segment
 
-```python
+```{execute}
 def f(x):
     x = x + 1
     return x
@@ -751,7 +728,7 @@ None of this affects the global `x`.
 However, it\'s a different story when we use a **mutable** data type
 such as a list
 
-```python
+```{execute}
 def f(x):
     x[0] = x[0] + 1
     return x
@@ -814,7 +791,7 @@ A relatively easy way to handle checks is with the `assert` keyword.
 For example, pretend for a moment that the `np.var` function doesn\'t
 exist and we need to write our own
 
-```python
+```{execute}
 def var(y):
     n = len(y)
     assert n > 1, 'Sample size must be greater than one.'
@@ -824,11 +801,7 @@ def var(y):
 If we run this with an array of length one, the program will terminate
 and print our error message
 
-```{code-block} python
----
-class: skip-test
----
-
+```python
 var([1])
 ```
 
@@ -851,11 +824,7 @@ Let\'s look at how this is done.
 
 Here\'s an example of a common error type
 
-```{code-block} python
----
-class: skip-test
----
-
+```python
 def f:
 ```
 
@@ -864,40 +833,32 @@ execution of the program.
 
 Here\'s a different kind of error, unrelated to syntax
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: ZeroDivisionError
 
 1 / 0
 ```
 
 Here\'s another
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: NameError
 
 x1 = y1
 ```
 
 And another
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: TypeError
 
 'foo' + 6
 ```
 
 And another
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: IndexError
 
 X = []
 x = X[0]
@@ -915,7 +876,7 @@ We can catch and deal with exceptions using `try` -- `except` blocks.
 
 Here\'s a simple example
 
-```python
+```{execute}
 def f(x):
     try:
         return 1.0 / x
@@ -926,15 +887,15 @@ def f(x):
 
 When we call `f` we get the following output
 
-```python
+```{execute}
 f(2)
 ```
 
-```python
+```{execute}
 f(0)
 ```
 
-```python
+```{execute}
 f(0.0)
 ```
 
@@ -945,7 +906,7 @@ Note that other error types are not caught.
 If we are worried the user might pass in a string, we can catch that
 error too
 
-```python
+```{execute}
 def f(x):
     try:
         return 1.0 / x
@@ -958,21 +919,21 @@ def f(x):
 
 Here\'s what happens
 
-```python
+```{execute}
 f(2)
 ```
 
-```python
+```{execute}
 f(0)
 ```
 
-```python
+```{execute}
 f('foo')
 ```
 
 If we feel lazy we can catch these errors together
 
-```python
+```{execute}
 def f(x):
     try:
         return 1.0 / x
@@ -983,21 +944,21 @@ def f(x):
 
 Here\'s what happens
 
-```python
+```{execute}
 f(2)
 ```
 
-```python
+```{execute}
 f(0)
 ```
 
-```python
+```{execute}
 f('foo')
 ```
 
 If we feel extra lazy we can catch all error types as follows
 
-```python
+```{execute}
 def f(x):
     try:
         return 1.0 / x
@@ -1033,7 +994,7 @@ use them.
 
 Suppose we are working on a program that looks something like this
 
-```python
+```{execute}
 import numpy as np
 
 def f(x):
@@ -1062,7 +1023,7 @@ happens, with a sensible error message.
 
 This change is easy enough to implement
 
-```python
+```{execute}
 import numpy as np
 
 def f(x):
@@ -1094,7 +1055,7 @@ complicated.
 
 In this kind of scenario the following approach would be neater
 
-```python
+```{execute}
 import numpy as np
 
 def check_nonneg(func):
@@ -1139,7 +1100,7 @@ The last version of our code is still not ideal.
 For example, if someone is reading our code and wants to know how `f`
 works, they will be looking for the function definition, which is
 
-```python
+```{execute}
 def f(x):
     return np.log(np.log(x))
 ```
@@ -1150,7 +1111,7 @@ For this and other reasons, decorators were introduced to Python.
 
 With decorators, we can replace the lines
 
-```python
+```{execute}
 def f(x):
     return np.log(np.log(x))
 
@@ -1163,7 +1124,7 @@ g = check_nonneg(g)
 
 with
 
-```python
+```{execute}
 @check_nonneg
 def f(x):
     return np.log(np.log(x))
@@ -1197,7 +1158,7 @@ give the distance traveled in miles and kilometers respectively.
 
 A highly simplified version of the class might look as follows
 
-```python
+```{execute}
 class Car:
 
     def __init__(self, miles=1000):
@@ -1210,16 +1171,16 @@ class Car:
 One potential problem we might have here is that a user alters one of
 these variables but not the other
 
-```python
+```{execute}
 car = Car()
 car.miles
 ```
 
-```python
+```{execute}
 car.kms
 ```
 
-```python
+```{execute}
 car.miles = 6000
 car.kms
 ```
@@ -1242,7 +1203,7 @@ The best way to understand this is to see it in action.
 
 Consider this alternative version of the `Car` class
 
-```python
+```{execute}
 class Car:
 
     def __init__(self, miles=1000):
@@ -1269,12 +1230,12 @@ class Car:
 
 First let\'s check that we get the desired behavior
 
-```python
+```{execute}
 car = Car()
 car.miles
 ```
 
-```python
+```{execute}
 car.miles = 6000
 car.kms
 ```
@@ -1311,7 +1272,7 @@ decorator.
 Here\'s another version of our `Car` class that works as before but now
 uses decorators to set up the properties
 
-```python
+```{execute}
 class Car:
 
     def __init__(self, miles=1000):
@@ -1357,43 +1318,43 @@ Just like a list comprehension, but with round brackets.
 
 Here is the list comprehension:
 
-```python
+```{execute}
 singular = ('dog', 'cat', 'bird')
 type(singular)
 ```
 
-```python
+```{execute}
 plural = [string + 's' for string in singular]
 plural
 ```
 
-```python
+```{execute}
 type(plural)
 ```
 
 And here is the generator expression
 
-```python
+```{execute}
 singular = ('dog', 'cat', 'bird')
 plural = (string + 's' for string in singular)
 type(plural)
 ```
 
-```python
+```{execute}
 next(plural)
 ```
 
-```python
+```{execute}
 next(plural)
 ```
 
-```python
+```{execute}
 next(plural)
 ```
 
 Since `sum()` can be called on iterators, we can do this
 
-```python
+```{execute}
 sum((x * x for x in range(10)))
 ```
 
@@ -1402,7 +1363,7 @@ terms.
 
 In fact, we can omit the outer brackets in this case
 
-```python
+```{execute}
 sum(x * x for x in range(10))
 ```
 
@@ -1417,7 +1378,7 @@ Let\'s look at some examples.
 
 Here\'s a very simple example of a generator function
 
-```python
+```{execute}
 def f():
     yield 'start'
     yield 'middle'
@@ -1429,31 +1390,29 @@ met before.
 
 Let\'s see how it works after running this code
 
-```python
+```{execute}
 type(f)
 ```
 
-```python
+```{execute}
 gen = f()
 gen
 ```
 
-```python
+```{execute}
 next(gen)
 ```
 
-```python
+```{execute}
 next(gen)
 ```
 
-```python
+```{execute}
 next(gen)
 ```
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: StopIteration
 
 next(gen)
 ```
@@ -1471,7 +1430,7 @@ The first call to `next(gen)`
 
 The second call to `next(gen)` starts executing *from the next line*
 
-```python
+```{execute}
 def f():
     yield 'start'
     yield 'middle'  # This line!
@@ -1489,7 +1448,7 @@ When the code block ends, the generator throws a `StopIteration` error.
 
 Our next example receives an argument `x` from the caller
 
-```python
+```{execute}
 def g(x):
     while x < 100:
         yield x
@@ -1498,31 +1457,29 @@ def g(x):
 
 Let\'s see how it works
 
-```python
+```{execute}
 g
 ```
 
-```python
+```{execute}
 gen = g(2)
 type(gen)
 ```
 
-```python
+```{execute}
 next(gen)
 ```
 
-```python
+```{execute}
 next(gen)
 ```
 
-```python
+```{execute}
 next(gen)
 ```
 
-```{code-block} python
----
-class: skip-test
----
+```{execute}
+:raises: StopIteration
 
 next(gen)
 ```
@@ -1541,7 +1498,7 @@ Note that value of `x` is retained inside the generator.
 When we call `next(gen)` again, execution continues *from where it left
 off*
 
-```python
+```{execute}
 def g(x):
     while x < 100:
         yield x
@@ -1552,7 +1509,7 @@ When `x < 100` fails, the generator throws a `StopIteration` error.
 
 Incidentally, the loop inside the generator can be infinite
 
-```python
+```{execute}
 def g(x):
     while 1:
         yield x
@@ -1567,7 +1524,7 @@ Suppose we want to sample a binomial(n,0.5).
 
 One way to do it is as follows
 
-```python
+```{execute}
 import random
 n = 10000000
 draws = [random.uniform(0, 1) < 0.5 for i in range(n)]
@@ -1580,11 +1537,7 @@ This uses lots of memory and is very slow.
 
 If we make `n` even bigger then this happens
 
-```{code-block} python
----
-class: skip-test
----
-
+```python
 n = 100000000
 draws = [random.uniform(0, 1) < 0.5 for i in range(n)]
 ```
@@ -1593,7 +1546,7 @@ We can avoid these problems using iterators.
 
 Here is the generator function
 
-```python
+```{execute}
 def f(n):
     i = 1
     while i <= n:
@@ -1603,13 +1556,13 @@ def f(n):
 
 Now let\'s do the sum
 
-```python
+```{execute}
 n = 10000000
 draws = f(n)
 draws
 ```
 
-```python
+```{execute}
 sum(draws)
 ```
 
@@ -1636,7 +1589,7 @@ Obviously the answer is $2^t$.
 
 We can compute this easily enough with a loop
 
-```python
+```{execute}
 def x_loop(t):
     x = 1
     for i in range(t):
@@ -1646,7 +1599,7 @@ def x_loop(t):
 
 We can also use a recursive solution, as follows
 
-```python
+```{execute}
 def x(t):
     if t == 0:
         return 1
@@ -1688,10 +1641,7 @@ Complete the following code, and test it using [this csv
 file](https://raw.githubusercontent.com/QuantEcon/lecture-source-py/master/source/_static/lecture_specific/python_advanced_features/test_table.csv),
 which we assume that you\'ve put in your current working directory
 
-```{code-block} python
----
-class: no-execute
----
+```python
 def column_iterator(target_file, column_number):
     """A generator function for CSV files.
     When called with a file name target_file (string) and column number
@@ -1729,7 +1679,7 @@ file and sum the numbers, ignoring lines without numbers.
 
 Here\'s the standard solution
 
-```python
+```{execute}
 def x(t):
     if t == 0:
         return 0
@@ -1741,7 +1691,7 @@ def x(t):
 
 Let\'s test it
 
-```python
+```{execute}
 print([x(i) for i in range(10)])
 ```
 
@@ -1749,7 +1699,7 @@ print([x(i) for i in range(10)])
 
 One solution is as follows
 
-```python
+```{execute}
 def column_iterator(target_file, column_number):
     """A generator function for CSV files.
     When called with a file name target_file (string) and column number 
@@ -1776,7 +1726,7 @@ for date in dates:
 
 Let\'s save the data first
 
-```python
+```{execute}
 %%file numbers.txt
 prices
 3
@@ -1786,7 +1736,7 @@ prices
 21
 ```
 
-```python
+```{execute}
 f = open('numbers.txt')
 
 total = 0.0 

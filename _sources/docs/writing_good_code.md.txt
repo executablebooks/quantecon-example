@@ -52,7 +52,7 @@ The plots will be grouped into three subfigures.
 
 In each subfigure, two parameters are held fixed while another varies
 
-```python
+```{execute}
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -257,7 +257,7 @@ What\'s really important is that you use one or the other or both.
 Here\'s some code that reproduces the plot above with better coding
 style.
 
-```python
+```{execute}
 from itertools import product
 
 def plot_path(ax, αs, s_vals, δs, time_series_length=50):
@@ -341,7 +341,7 @@ The parameter values will be
 -   $\gamma = 1$
 -   $\delta = 1$
 
-```python
+```{execute}
 from scipy.optimize import brentq
 
 # Compute equilibrium
@@ -357,7 +357,7 @@ print(f'Equilibrium quantity is {q_star: .2f}')
 
 Let\'s also plot our results.
 
-```python
+```{execute}
 # Now plot
 grid = np.linspace(2, 4, 100)
 fig, ax = plt.subplots()
@@ -381,7 +381,7 @@ We also want to consider supply and demand shifts.
 For example, let\'s see what happens when demand shifts up, with
 $\gamma$ increasing to $1.25$:
 
-```python
+```{execute}
 # Compute equilibrium
 def h(p):
     return 1.25 * p**(-1) - (np.exp(0.1 * p) - 1)
@@ -393,7 +393,7 @@ print(f'Equilibrium price is {p_star: .2f}')
 print(f'Equilibrium quantity is {q_star: .2f}')
 ```
 
-```python
+```{execute}
 # Now plot
 p_grid = np.linspace(2, 4, 100)
 fig, ax = plt.subplots()
@@ -424,7 +424,7 @@ discussed in this lecture.
 
 Here\'s one solution, that uses a class:
 
-```python
+```{execute}
 class Equilibrium:
 
     def __init__(self, α=0.1, β=1, γ=1, δ=1):
@@ -462,31 +462,31 @@ class Equilibrium:
 
 Let\'s create an instance at the default parameter values.
 
-```python
+```{execute}
 eq = Equilibrium()
 ```
 
 Now we\'ll compute the equilibrium and plot it.
 
-```python
+```{execute}
 eq.compute_equilibrium()
 ```
 
-```python
+```{execute}
 eq.plot_equilibrium()
 ```
 
 One of the nice things about our refactored code is that, when we change
 parameters, we don\'t need to repeat ourselves:
 
-```python
+```{execute}
 eq.γ = 1.25
 ```
 
-```python
+```{execute}
 eq.compute_equilibrium()
 ```
 
-```python
+```{execute}
 eq.plot_equilibrium()
 ```
