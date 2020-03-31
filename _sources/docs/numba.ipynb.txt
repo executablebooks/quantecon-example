@@ -27,6 +27,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "\n",
     "```{note}\n",
     "Please also make sure that you have the latest version of Anaconda,\n",
     "since old versions are a\n",
@@ -926,6 +927,9 @@
  ],
  "metadata": {
   "celltoolbar": "Tags",
+  "jupytext": {
+   "formats": "ipynb,md:myst"
+  },
   "kernelspec": {
    "display_name": "Python 3",
    "language": "python",
