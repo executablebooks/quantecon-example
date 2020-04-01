@@ -40,19 +40,19 @@ ecosystem.
 
 Let\'s first import the library.
 
-```{execute}
+```{jupyter-execute}
 import numpy as np
 ```
 
 To create a NumPy array containing only zeros we use
 [np.zeros](http://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html#numpy.zeros)
 
-```{execute}
+```{jupyter-execute}
 a = np.zeros(3)
 a
 ```
 
-```{execute}
+```{jupyter-execute}
 type(a)
 ```
 
@@ -74,14 +74,14 @@ etc.
 
 On modern machines, the default dtype for arrays is `float64`
 
-```{execute}
+```{jupyter-execute}
 a = np.zeros(3)
 type(a[0])
 ```
 
 If we want to use integers we can specify as follows:
 
-```{execute}
+```{jupyter-execute}
 a = np.zeros(3, dtype=int)
 type(a[0])
 ```
@@ -90,7 +90,7 @@ type(a[0])
 
 Consider the following assignment
 
-```{execute}
+```{jupyter-execute}
 z = np.zeros(10)
 ```
 
@@ -99,7 +99,7 @@ column vector.
 
 The dimension is recorded in the `shape` attribute, which is a tuple
 
-```{execute}
+```{jupyter-execute}
 z.shape
 ```
 
@@ -108,12 +108,12 @@ array (tuples with one element end with a comma).
 
 To give it dimension, we can change the `shape` attribute
 
-```{execute}
+```{jupyter-execute}
 z.shape = (10, 1)
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 z = np.zeros(4)
 z.shape = (2, 2)
 z
@@ -131,7 +131,7 @@ You can probably guess what `np.ones` creates.
 Related is `np.empty`, which creates arrays in memory that can later be
 populated with data
 
-```{execute}
+```{jupyter-execute}
 z = np.empty(3)
 z
 ```
@@ -143,13 +143,13 @@ contents of those memory slots are interpreted as `float64` values)
 
 To set up a grid of evenly spaced numbers use `np.linspace`
 
-```{execute}
+```{jupyter-execute}
 z = np.linspace(2, 4, 5)  # From 2 to 4, with 5 elements
 ```
 
 To create an identity matrix use either `np.identity` or `np.eye`
 
-```{execute}
+```{jupyter-execute}
 z = np.identity(2)
 z
 ```
@@ -157,21 +157,21 @@ z
 In addition, NumPy arrays can be created from Python lists, tuples, etc.
 using `np.array`
 
-```{execute}
+```{jupyter-execute}
 z = np.array([10, 20])                 # ndarray from Python list
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 type(z)
 ```
 
-```{execute}
+```{jupyter-execute}
 z = np.array((10, 20), dtype=float)    # Here 'float' is equivalent to 'np.float64'
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 z = np.array([[1, 2], [3, 4]])         # 2D array from a list of lists
 z
 ```
@@ -179,12 +179,12 @@ z
 See also `np.asarray`, which performs a similar function, but does not
 make a distinct copy of data already in a NumPy array.
 
-```{execute}
+```{jupyter-execute}
 na = np.linspace(10, 20, 2)
 na is np.asarray(na)   # Does not copy NumPy arrays
 ```
 
-```{execute}
+```{jupyter-execute}
 na is np.array(na)     # Does make a new copy --- perhaps unnecessarily
 ```
 
@@ -197,35 +197,35 @@ for details.
 
 For a flat array, indexing is the same as Python sequences:
 
-```{execute}
+```{jupyter-execute}
 z = np.linspace(1, 2, 5)
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 z[0]
 ```
 
-```{execute}
+```{jupyter-execute}
 z[0:2]  # Two elements, starting at element 0
 ```
 
-```{execute}
+```{jupyter-execute}
 z[-1]
 ```
 
 For 2D arrays the index syntax is as follows:
 
-```{execute}
+```{jupyter-execute}
 z = np.array([[1, 2], [3, 4]])
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 z[0, 0]
 ```
 
-```{execute}
+```{jupyter-execute}
 z[0, 1]
 ```
 
@@ -236,38 +236,38 @@ Python sequences.
 
 Columns and rows can be extracted as follows
 
-```{execute}
+```{jupyter-execute}
 z[0, :]
 ```
 
-```{execute}
+```{jupyter-execute}
 z[:, 1]
 ```
 
 NumPy arrays of integers can also be used to extract elements
 
-```{execute}
+```{jupyter-execute}
 z = np.linspace(2, 4, 5)
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 indices = np.array((0, 2, 3))
 z[indices]
 ```
 
 Finally, an array of `dtype bool` can be used to extract elements
 
-```{execute}
+```{jupyter-execute}
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 d = np.array([0, 1, 1, 0, 0], dtype=bool)
 d
 ```
 
-```{execute}
+```{jupyter-execute}
 z[d]
 ```
 
@@ -276,12 +276,12 @@ We\'ll see why this is useful below.
 An aside: all elements of an array can be set equal to one number using
 slice notation
 
-```{execute}
+```{jupyter-execute}
 z = np.empty(3)
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 z[:] = 42
 z
 ```
@@ -290,49 +290,49 @@ z
 
 Arrays have useful methods, all of which are carefully optimized
 
-```{execute}
+```{jupyter-execute}
 a = np.array((4, 3, 2, 1))
 a
 ```
 
-```{execute}
+```{jupyter-execute}
 a.sort()              # Sorts a in place
 a
 ```
 
-```{execute}
+```{jupyter-execute}
 a.sum()               # Sum
 ```
 
-```{execute}
+```{jupyter-execute}
 a.mean()              # Mean
 ```
 
-```{execute}
+```{jupyter-execute}
 a.max()               # Max
 ```
 
-```{execute}
+```{jupyter-execute}
 a.argmax()            # Returns the index of the maximal element
 ```
 
-```{execute}
+```{jupyter-execute}
 a.cumsum()            # Cumulative sum of the elements of a
 ```
 
-```{execute}
+```{jupyter-execute}
 a.cumprod()           # Cumulative product of the elements of a
 ```
 
-```{execute}
+```{jupyter-execute}
 a.var()               # Variance
 ```
 
-```{execute}
+```{jupyter-execute}
 a.std()               # Standard deviation
 ```
 
-```{execute}
+```{jupyter-execute}
 a.shape = (2, 2)
 a.T                   # Equivalent to a.transpose()
 ```
@@ -342,27 +342,27 @@ Another method worth knowing is `searchsorted()`.
 If `z` is a nondecreasing array, then `z.searchsorted(a)` returns the
 index of the first element of `z` that is `>= a`
 
-```{execute}
+```{jupyter-execute}
 z = np.linspace(2, 4, 5)
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 z.searchsorted(2.2)
 ```
 
 Many of the methods discussed above have equivalent functions in the
 NumPy namespace
 
-```{execute}
+```{jupyter-execute}
 a = np.array((4, 3, 2, 1))
 ```
 
-```{execute}
+```{jupyter-execute}
 np.sum(a)
 ```
 
-```{execute}
+```{jupyter-execute}
 np.mean(a)
 ```
 
@@ -373,41 +373,41 @@ np.mean(a)
 The operators `+`, `-`, `*`, `/` and `**` all act *elementwise* on
 arrays
 
-```{execute}
+```{jupyter-execute}
 a = np.array([1, 2, 3, 4])
 b = np.array([5, 6, 7, 8])
 a + b
 ```
 
-```{execute}
+```{jupyter-execute}
 a * b
 ```
 
 We can add a scalar to each element as follows
 
-```{execute}
+```{jupyter-execute}
 a + 10
 ```
 
 Scalar multiplication is similar
 
-```{execute}
+```{jupyter-execute}
 a * 10
 ```
 
 The two-dimensional arrays follow the same general rules
 
-```{execute}
+```{jupyter-execute}
 A = np.ones((2, 2))
 B = np.ones((2, 2))
 A + B
 ```
 
-```{execute}
+```{jupyter-execute}
 A + 10
 ```
 
-```{execute}
+```{jupyter-execute}
 A * B
 ```
 
@@ -421,7 +421,7 @@ element-wise product.
 With Anaconda\'s scientific Python package based around Python 3.5 and
 above, one can use the `@` symbol for matrix multiplication, as follows:
 
-```{execute}
+```{jupyter-execute}
 A = np.ones((2, 2))
 B = np.ones((2, 2))
 A @ B
@@ -433,7 +433,7 @@ function)
 
 We can also use `@` to take the inner product of two flat arrays
 
-```{execute}
+```{jupyter-execute}
 A = np.array((1, 2))
 B = np.array((10, 20))
 A @ B
@@ -441,12 +441,12 @@ A @ B
 
 In fact, we can use `@` when one element is a Python list or tuple
 
-```{execute}
+```{jupyter-execute}
 A = np.array(((1, 2), (3, 4)))
 A
 ```
 
-```{execute}
+```{jupyter-execute}
 A @ (0, 1)
 ```
 
@@ -463,12 +463,12 @@ We already saw examples above.
 
 Here\'s another example:
 
-```{execute}
+```{jupyter-execute}
 a = np.array([42, 44])
 a
 ```
 
-```{execute}
+```{jupyter-execute}
 a[-1] = 0  # Change last element to 0
 a
 ```
@@ -476,12 +476,12 @@ a
 Mutability leads to the following behavior (which can be shocking to
 MATLAB programmers...)
 
-```{execute}
+```{jupyter-execute}
 a = np.random.randn(3)
 a
 ```
 
-```{execute}
+```{jupyter-execute}
 b = a
 b[0] = 0.0
 a
@@ -509,24 +509,24 @@ required.
 
 This can be done using `np.copy`
 
-```{execute}
+```{jupyter-execute}
 a = np.random.randn(3)
 a
 ```
 
-```{execute}
+```{jupyter-execute}
 b = np.copy(a)
 b
 ```
 
 Now `b` is an independent copy (called a *deep copy*)
 
-```{execute}
+```{jupyter-execute}
 b[:] = 1
 b
 ```
 
-```{execute}
+```{jupyter-execute}
 a
 ```
 
@@ -541,14 +541,14 @@ Let\'s look at some other useful things we can do with NumPy.
 NumPy provides versions of the standard functions `log`, `exp`, `sin`,
 etc. that act *element-wise* on arrays
 
-```{execute}
+```{jupyter-execute}
 z = np.array([1, 2, 3])
 np.sin(z)
 ```
 
 This eliminates the need for explicit element-by-element loops such as
 
-```{execute}
+```{jupyter-execute}
 n = len(z)
 y = np.empty(n)
 for i in range(n):
@@ -565,11 +565,11 @@ As we saw above, the usual arithmetic operations (`+`, `*`, etc.) also
 work element-wise, and combining these with the ufuncs gives a very
 large set of fast element-wise functions.
 
-```{execute}
+```{jupyter-execute}
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 (1 / np.sqrt(2 * np.pi)) * np.exp(- 0.5 * z**2)
 ```
 
@@ -578,25 +578,25 @@ Not all user-defined functions will act element-wise.
 For example, passing the function `f` defined below a NumPy array causes
 a `ValueError`
 
-```{execute}
+```{jupyter-execute}
 def f(x):
     return 1 if x > 0 else 0
 ```
 
 The NumPy function `np.where` provides a vectorized alternative:
 
-```{execute}
+```{jupyter-execute}
 x = np.random.randn(4)
 x
 ```
 
-```{execute}
+```{jupyter-execute}
 np.where(x > 0, 1, 0)  # Insert 1 if x > 0 true, otherwise 0
 ```
 
 You can also use `np.vectorize` to vectorize a given function
 
-```{execute}
+```{jupyter-execute}
 f = np.vectorize(f)
 f(x)                # Passing the same vector x as in the previous example
 ```
@@ -608,18 +608,18 @@ carefully crafted vectorized function.
 
 As a rule, comparisons on arrays are done element-wise
 
-```{execute}
+```{jupyter-execute}
 z = np.array([2, 3])
 y = np.array([2, 3])
 z == y
 ```
 
-```{execute}
+```{jupyter-execute}
 y[0] = 5
 z == y
 ```
 
-```{execute}
+```{jupyter-execute}
 z != y
 ```
 
@@ -627,29 +627,29 @@ The situation is similar for `>`, `<`, `>=` and `<=`.
 
 We can also do comparisons against scalars
 
-```{execute}
+```{jupyter-execute}
 z = np.linspace(0, 10, 5)
 z
 ```
 
-```{execute}
+```{jupyter-execute}
 z > 3
 ```
 
 This is particularly useful for *conditional extraction*
 
-```{execute}
+```{jupyter-execute}
 b = z > 3
 b
 ```
 
-```{execute}
+```{jupyter-execute}
 z[b]
 ```
 
 Of course we can---and frequently do---perform this in one step
 
-```{execute}
+```{jupyter-execute}
 z[z > 3]
 ```
 
@@ -661,7 +661,7 @@ programming through its sub-packages.
 We\'ve already seen how we can generate random variables using
 `np.random`
 
-```{execute}
+```{jupyter-execute}
 z = np.random.randn(10000)  # Generate standard normals
 y = np.random.binomial(10, 0.5, size=1000)    # 1,000 draws from Bin(10, 0.5)
 y.mean()
@@ -669,13 +669,13 @@ y.mean()
 
 Another commonly used subpackage is `np.linalg`
 
-```{execute}
+```{jupyter-execute}
 A = np.array([[1, 2], [3, 4]])
 
 np.linalg.det(A)           # Compute the determinant
 ```
 
-```{execute}
+```{jupyter-execute}
 np.linalg.inv(A)           # Compute the inverse
 ```
 
@@ -736,7 +736,7 @@ $q_i$.
 
 We can implement the algorithm as follows
 
-```{execute}
+```{jupyter-execute}
 from random import uniform
 
 def sample(q):
@@ -780,7 +780,7 @@ Your task is to
 
 ## Solutions
 
-```{execute}
+```{jupyter-execute}
 :hide-output:
 
 import matplotlib.pyplot as plt
@@ -791,7 +791,7 @@ import matplotlib.pyplot as plt
 
 This code does the job
 
-```{execute}
+```{jupyter-execute}
 def p(x, coef):
     X = np.ones_like(coef)
     X[1:] = x
@@ -801,7 +801,7 @@ def p(x, coef):
 
 Let\'s test it
 
-```{execute}
+```{jupyter-execute}
 x = 2
 coef = np.linspace(2, 4, 3)
 print(coef)
@@ -815,7 +815,7 @@ print(q(x))
 
 Here\'s our first pass at a solution:
 
-```{execute}
+```{jupyter-execute}
 from numpy import cumsum
 from numpy.random import uniform
 
@@ -849,7 +849,7 @@ There is a problem here, however.
 Suppose that `q` is altered after an instance of `discreteRV` is
 created, for example by
 
-```{execute}
+```{jupyter-execute}
 q = (0.1, 0.9)
 d = DiscreteRV(q)
 d.q = (0.5, 0.5)
@@ -876,7 +876,7 @@ An example solution is given below.
 In essence, we\'ve just taken [this code](https://github.com/QuantEcon/QuantEcon.py/blob/master/quantecon/ecdf.py)
 from QuantEcon and added in a plot method
 
-```{execute}
+```{jupyter-execute}
 """
 Modifies ecdf.py from QuantEcon to add in a plot method
 
@@ -947,7 +947,7 @@ class ECDF:
 
 Here\'s an example of usage
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 X = np.random.randn(1000)
 F = ECDF(X)

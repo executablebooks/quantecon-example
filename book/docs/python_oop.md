@@ -38,7 +38,7 @@ plenty of examples.
 
 We\'ll use the following imports:
 
-```{execute}
+```{jupyter-execute}
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -64,7 +64,7 @@ together** into \"objects\".
 An example is a Python list, which not only stores data but also knows
 how to sort itself, etc.
 
-```{execute}
+```{jupyter-execute}
 x = [1, 5, 4]
 x.sort()
 x
@@ -101,7 +101,7 @@ Attributes are accessed via \"dotted attribute notation\"
 
 In the example
 
-```{execute}
+```{jupyter-execute}
 x = [1, 5, 4]
 x.sort()
 x.__class__
@@ -160,7 +160,7 @@ internalize some new syntax.
 
 Here\'s one implementation
 
-```{execute}
+```{jupyter-execute}
 class Consumer:
 
     def __init__(self, w):
@@ -209,38 +209,38 @@ We\'ll also discuss the role of `self` just below.
 
 Here\'s an example of usage
 
-```{execute}
+```{jupyter-execute}
 c1 = Consumer(10)  # Create instance with initial wealth 10
 c1.spend(5)
 c1.wealth
 ```
 
-```{execute}
+```{jupyter-execute}
 c1.earn(15)
 c1.spend(100)
 ```
 
 We can of course create multiple instances each with its own data
 
-```{execute}
+```{jupyter-execute}
 c1 = Consumer(10)
 c2 = Consumer(12)
 c2.spend(4)
 c2.wealth
 ```
 
-```{execute}
+```{jupyter-execute}
 c1.wealth
 ```
 
 In fact, each instance stores its data in a separate namespace
 dictionary
 
-```{execute}
+```{jupyter-execute}
 c1.__dict__
 ```
 
-```{execute}
+```{jupyter-execute}
 c2.__dict__
 ```
 
@@ -279,7 +279,7 @@ and `self`
 Methods actually live inside a class object formed when the interpreter
 reads the class definition
 
-```{execute}
+```{jupyter-execute}
 print(Consumer.__dict__)  # Show __dict__ attribute of class object
 ```
 
@@ -288,7 +288,7 @@ the class object.
 
 Consider the following code
 
-```{execute}
+```{jupyter-execute}
 c1 = Consumer(10)
 c1.earn(10)
 c1.wealth
@@ -308,7 +308,7 @@ argument.
 Recall that in the definition of the `earn` method, `self` is the first
 parameter
 
-```{execute}
+```{jupyter-execute}
 def earn(self, y):
      "The consumer earns y dollars"
      self.wealth += y
@@ -363,7 +363,7 @@ Some points of interest in the code are
 The methods `steady_state` and `generate_sequence` are fairly
 self-explanatory
 
-```{execute}
+```{jupyter-execute}
 class Solow:
     r"""
     Implements the Solow growth model with the update rule
@@ -413,7 +413,7 @@ two different initial conditions.
 
 The common steady state is also plotted for comparison
 
-```{execute}
+```{jupyter-execute}
 s1 = Solow()
 s2 = Solow(k=8.0)
 
@@ -459,7 +459,7 @@ Here\'s our implementation.
 (It uses a function from SciPy called `quad` for numerical
 integration---a topic we will say more about later on.)
 
-```{execute}
+```{jupyter-execute}
 from scipy.integrate import quad
 
 class Market:
@@ -515,20 +515,20 @@ class Market:
 
 Here\'s a sample of usage
 
-```{execute}
+```{jupyter-execute}
 baseline_params = 15, .5, -2, .5, 3
 m = Market(*baseline_params)
 print("equilibrium price = ", m.price())
 ```
 
-```{execute}
+```{jupyter-execute}
 print("consumer surplus = ", m.consumer_surp())
 ```
 
 Here\'s a short program that uses this class to plot an inverse demand
 curve together with inverse supply curves with and without taxes
 
-```{execute}
+```{jupyter-execute}
 # Baseline ad, bd, az, bz, tax
 baseline_params = 15, .5, -2, .5, 3
 m = Market(*baseline_params)
@@ -555,7 +555,7 @@ The next program provides a function that
 -   takes an instance of `Market` as a parameter
 -   computes dead weight loss from the imposition of the tax
 
-```{execute}
+```{jupyter-execute}
 def deadw(m):
     "Computes deadweight loss for market m."
     # == Create analogous market with no tax == #
@@ -568,7 +568,7 @@ def deadw(m):
 
 Here\'s an example of usage
 
-```{execute}
+```{jupyter-execute}
 baseline_params = 15, .5, -2, .5, 3
 m = Market(*baseline_params)
 deadw(m)  # Show deadweight loss
@@ -596,7 +596,7 @@ Let\'s write a class for generating time series from this model.
 
 Here\'s one implementation
 
-```{execute}
+```{jupyter-execute}
 class Chaos:
   """
   Models the dynamical system with :math:`x_{t+1} = r x_t (1 - x_t)`
@@ -622,14 +622,14 @@ class Chaos:
 
 Here\'s an example of usage
 
-```{execute}
+```{jupyter-execute}
 ch = Chaos(0.1, 4.0)     # x0 = 0.1 and r = 0.4
 ch.generate_sequence(5)  # First 5 iterates
 ```
 
 This piece of code plots a longer trajectory
 
-```{execute}
+```{jupyter-execute}
 ch = Chaos(0.1, 4.0)
 ts_length = 250
 
@@ -643,7 +643,7 @@ plt.show()
 
 The next piece of code provides a bifurcation diagram
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 ch = Chaos(0.1, 4)
 r = 2.5
@@ -693,7 +693,7 @@ performed.
 For example, recall that lists and tuples have a notion of length and
 that this length can be queried via the `len` function
 
-```{execute}
+```{jupyter-execute}
 x = (10, 20)
 len(x)
 ```
@@ -701,7 +701,7 @@ len(x)
 If you want to provide a return value for the `len` function when
 applied to your user-defined object, use the `__len__` special method
 
-```{execute}
+```{jupyter-execute}
 class Foo:
 
     def __len__(self):
@@ -710,7 +710,7 @@ class Foo:
 
 Now we get
 
-```{execute}
+```{jupyter-execute}
 f = Foo()
 len(f)
 ```
@@ -722,7 +722,7 @@ A special method we will use regularly is the `__call__` method.
 This method can be used to make your instances callable, just like
 functions
 
-```{execute}
+```{jupyter-execute}
 class Foo:
 
     def __call__(self, x):
@@ -731,7 +731,7 @@ class Foo:
 
 After running we get
 
-```{execute}
+```{jupyter-execute}
 f = Foo()
 f(8)  # Exactly equivalent to f.__call__(8)
 ```
@@ -821,7 +821,7 @@ Avoid using any `import` statements.
 
 ### Exercise 1
 
-```{execute}
+```{jupyter-execute}
 class ECDF:
 
     def __init__(self, observations):
@@ -835,7 +835,7 @@ class ECDF:
         return counter / len(self.observations)
 ```
 
-```{execute}
+```{jupyter-execute}
 # == test == #
 
 from random import uniform
@@ -852,7 +852,7 @@ print(F(0.5))
 
 ### Exercise 2
 
-```{execute}
+```{jupyter-execute}
 class Polynomial:
 
     def __init__(self, coefficients):

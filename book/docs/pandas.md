@@ -3,7 +3,7 @@
 In addition to what's in Anaconda, this lecture will need the following
 libraries:
 
-```{execute}
+```{jupyter-execute}
 :hide-output:
 
 !pip install --upgrade pandas-datareader
@@ -43,7 +43,7 @@ This lecture will provide a basic introduction to pandas.
 Throughout the lecture, we will assume that the following imports have
 taken place
 
-```{execute}
+```{jupyter-execute}
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -62,7 +62,7 @@ A `DataFrame` is an object for storing related columns of data.
 
 Let\'s start with `Series`
 
-```{execute}
+```{jupyter-execute}
 s = pd.Series(np.random.randn(4), name='daily returns')
 s
 ```
@@ -73,11 +73,11 @@ companies, and the values being daily returns on their shares.
 Pandas `Series` are built on top of NumPy arrays and support many
 similar operations
 
-```{execute}
+```{jupyter-execute}
 s * 100
 ```
 
-```{execute}
+```{jupyter-execute}
 np.abs(s)
 ```
 
@@ -85,13 +85,13 @@ But `Series` provide more than NumPy arrays.
 
 Not only do they have some additional (statistically oriented) methods
 
-```{execute}
+```{jupyter-execute}
 s.describe()
 ```
 
 But their indices are more flexible
 
-```{execute}
+```{jupyter-execute}
 s.index = ['AMZN', 'AAPL', 'MSFT', 'GOOG']
 s
 ```
@@ -102,16 +102,16 @@ have the same type---in this case, floats).
 
 In fact, you can use much of the same syntax as Python dictionaries
 
-```{execute}
+```{jupyter-execute}
 s['AMZN']
 ```
 
-```{execute}
+```{jupyter-execute}
 s['AMZN'] = 0
 s
 ```
 
-```{execute}
+```{jupyter-execute}
 'AAPL' in s
 ```
 
@@ -157,40 +157,40 @@ Supposing you have this data saved as `test_pwt.csv` in the present
 working directory (type `%pwd` in Jupyter to see what this is), it can
 be read in as follows:
 
-```{execute}
+```{jupyter-execute}
 df = pd.read_csv('https://raw.githubusercontent.com/QuantEcon/lecture-source-py/master/source/_static/lecture_specific/pandas/data/test_pwt.csv')
 type(df)
 ```
 
-```{execute}
+```{jupyter-execute}
 df
 ```
 
 We can select particular rows using standard Python array slicing
 notation
 
-```{execute}
+```{jupyter-execute}
 df[2:5]
 ```
 
 To select columns, we can pass a list containing the names of the
 desired columns represented as strings
 
-```{execute}
+```{jupyter-execute}
 df[['country', 'tcgdp']]
 ```
 
 To select both rows and columns using integers, the `iloc` attribute
 should be used with the format `.iloc[rows, columns]`
 
-```{execute}
+```{jupyter-execute}
 df.iloc[2:5, 0:4]
 ```
 
 To select rows and columns using a mixture of integers and labels, the
 `loc` attribute can be used in a similar way
 
-```{execute}
+```{jupyter-execute}
 df.loc[df.index[2:5], ['country', 'tcgdp']]
 ```
 
@@ -200,7 +200,7 @@ total GDP (`tcgdp`).
 One way to strip the data frame `df` down to only these variables is to
 overwrite the dataframe using the selection method described above
 
-```{execute}
+```{jupyter-execute}
 df = df[['country', 'POP', 'tcgdp']]
 df
 ```
@@ -211,21 +211,21 @@ names as an index.
 To do this, we set the index to be the `country` variable in the
 dataframe
 
-```{execute}
+```{jupyter-execute}
 df = df.set_index('country')
 df
 ```
 
 Let\'s give the columns slightly better names
 
-```{execute}
+```{jupyter-execute}
 df.columns = 'population', 'total GDP'
 df
 ```
 
 Population is in thousands, let\'s revert to single units
 
-```{execute}
+```{jupyter-execute}
 df['population'] = df['population'] * 1e3
 df
 ```
@@ -233,7 +233,7 @@ df
 Next, we\'re going to add a column showing real GDP per capita,
 multiplying by 1,000,000 as we go because total GDP is in millions
 
-```{execute}
+```{jupyter-execute}
 df['GDP percap'] = df['total GDP'] * 1e6 / df['population']
 df
 ```
@@ -244,7 +244,7 @@ Matplotlib.
 
 For example, we can easily generate a bar plot of GDP per capita
 
-```{execute}
+```{jupyter-execute}
 ax = df['GDP percap'].plot(kind='bar')
 ax.set_xlabel('country', fontsize=12)
 ax.set_ylabel('GDP per capita', fontsize=12)
@@ -254,14 +254,14 @@ plt.show()
 At the moment the data frame is ordered alphabetically on the
 countries---let\'s change it to GDP per capita
 
-```{execute}
+```{jupyter-execute}
 df = df.sort_values(by='GDP percap', ascending=False)
 df
 ```
 
 Plotting as before now yields
 
-```{execute}
+```{jupyter-execute}
 ax = df['GDP percap'].plot(kind='bar')
 ax.set_xlabel('country', fontsize=12)
 ax.set_ylabel('GDP per capita', fontsize=12)
@@ -308,7 +308,7 @@ Python library for requesting data over the Internet.
 
 To begin, try the following code on your computer
 
-```{execute}
+```{jupyter-execute}
 r = requests.get('http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv')
 ```
 
@@ -331,17 +331,17 @@ Assuming that all is working, you can now proceed to use the `source`
 object returned by the call
 `requests.get('http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv')`
 
-```{execute}
+```{jupyter-execute}
 url = 'http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv'
 source = requests.get(url).content.decode().split("\n")
 source[0]
 ```
 
-```{execute}
+```{jupyter-execute}
 source[1]
 ```
 
-```{execute}
+```{jupyter-execute}
 source[2]
 ```
 
@@ -354,29 +354,29 @@ the task for us.
 We use `parse_dates=True` so that pandas recognizes our dates column,
 allowing for simple date filtering
 
-```{execute}
+```{jupyter-execute}
 data = pd.read_csv(url, index_col=0, parse_dates=True)
 ```
 
 The data has been read into a pandas DataFrame called `data` that we can
 now manipulate in the usual way
 
-```{execute}
+```{jupyter-execute}
 type(data)
 ```
 
-```{execute}
+```{jupyter-execute}
 data.head()  # A useful method to get a quick look at a data frame
 ```
 
-```{execute}
+```{jupyter-execute}
 pd.set_option('precision', 1)
 data.describe()  # Your output might differ slightly
 ```
 
 We can also plot the unemployment rate from 2006 to 2012 as follows
 
-```{execute}
+```{jupyter-execute}
 ax = data['2006':'2012'].plot(title='US Unemployment Rate', legend=False)
 ax.set_xlabel('year', fontsize=12)
 ax.set_ylabel('%', fontsize=12)
@@ -415,7 +415,7 @@ some data on government debt as a ratio to GDP.
 The next code example fetches the data for you and plots time series for
 the US and Australia
 
-```{execute}
+```{jupyter-execute}
 from pandas_datareader import wb
 
 govt_debt = wb.download(indicator='GC.DOD.TOTL.GD.ZS', country=['US', 'AU'], start=2005, end=2016).stack().unstack(0)
@@ -437,7 +437,7 @@ provides more details on how to access various data sources.
 
 With these imports:
 
-```{execute}
+```{jupyter-execute}
 import datetime as dt 
 from pandas_datareader import data
 ```
@@ -445,7 +445,7 @@ from pandas_datareader import data
 Write a program to calculate the percentage price change over 2019 for
 the following shares:
 
-```{execute}
+```{jupyter-execute}
 ticker_list = {'INTC': 'Intel',
                'MSFT': 'Microsoft',
                'IBM': 'IBM',
@@ -463,7 +463,7 @@ ticker_list = {'INTC': 'Intel',
 
 Here\'s the first part of the program
 
-```{execute}
+```{jupyter-execute}
 def read_data(ticker_list,
           start=dt.datetime(2019, 1, 2),
           end=dt.datetime(2019, 12, 31)): 
@@ -493,7 +493,7 @@ Using the method `read_data` introduced in
 {ref}`Exercise 1 <pd_ex1>`, write a program to
 obtain year-on-year percentage change for the following indices:
 
-```{execute}
+```{jupyter-execute}
 indices_list = {'^GSPC': 'S&P 500',
                '^IXIC': 'NASDAQ',
                '^DJI': 'Dow Jones',
@@ -514,7 +514,7 @@ the percentage change.
 
 First, you can extract the data and perform the calculation such as:
 
-```{execute}
+```{jupyter-execute}
 p1 = ticker.iloc[0]    #Get the first set of prices as a Series
 p2 = ticker.iloc[-1]   #Get the last set of prices as a Series
 price_change = (p2 - p1) / p1 * 100
@@ -524,7 +524,7 @@ price_change
 Alternatively you can use an inbuilt method `pct_change` and configure
 it to perform the correct calculation using `periods` argument.
 
-```{execute}
+```{jupyter-execute}
 change = ticker.pct_change(periods=len(ticker)-1, axis='rows')*100
 price_change = change.iloc[-1]
 price_change
@@ -532,7 +532,7 @@ price_change
 
 Then to plot the chart
 
-```{execute}
+```{jupyter-execute}
 price_change.sort_values(inplace=True)
 price_change = price_change.rename(index=ticker_list)
 fig, ax = plt.subplots(figsize=(10,8))
@@ -547,7 +547,7 @@ plt.show()
 Following the work you did in {ref}`Exercise 1 <pd_ex1>`, you can query the data using `read_data` by updating the
 start and end dates accordingly.
 
-```{execute}
+```{jupyter-execute}
 indices_data = read_data(
         indices_list,
         start=dt.datetime(1928, 1, 2),
@@ -558,7 +558,7 @@ indices_data = read_data(
 Then, extract the first and last set of prices per year as DataFrames
 and calculate the yearly returns such as:
 
-```{execute}
+```{jupyter-execute}
 yearly_returns = pd.DataFrame()
 
 for index, name in indices_list.items():
@@ -572,13 +572,13 @@ yearly_returns
 
 Next, you can obtain summary statistics by using the method `describe`.
 
-```{execute}
+```{jupyter-execute}
 yearly_returns.describe()
 ```
 
 Then, to plot the chart
 
-```{execute}
+```{jupyter-execute}
 fig, axes = plt.subplots(2, 2, figsize=(10, 6))
 
 for iter_, ax in enumerate(axes.flatten()):            # Flatten 2-D array to 1-D array

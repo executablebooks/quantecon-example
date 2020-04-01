@@ -21,7 +21,7 @@ Here we\'ll focus on Jupyter and leave you to explore other settings.
 
 We\'ll need the following imports
 
-```{execute}
+```{jupyter-execute}
 :hide-output:
 
 import numpy as np
@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt
 
 Let\'s consider a simple (and rather contrived) example
 
-```{execute}
+```{jupyter-execute}
 :raises: AttributeError
 
 def plot_log():
@@ -67,7 +67,7 @@ But let\'s pretend that we don\'t understand this for the moment.
 We might suspect there\'s something wrong with `ax` but when we try to
 investigate this object, we get the following exception:
 
-```{execute}
+```{jupyter-execute}
 :raises: NameError
 
 ax
@@ -80,7 +80,7 @@ Let\'s try doing it a different way.
 
 We run the first cell block again, generating the same error
 
-```{execute}
+```{jupyter-execute}
 :raises: AttributeError
 
 def plot_log():
@@ -155,7 +155,7 @@ The preceding approach is handy but sometimes insufficient.
 
 Consider the following modified version of our function above
 
-```{execute}
+```{jupyter-execute}
 def plot_log():
     fig, ax = plt.subplots()
     x = np.logspace(1, 2, 10)

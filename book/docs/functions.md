@@ -18,7 +18,7 @@ functions
 
 We will use the following imports.
 
-```{execute}
+```{jupyter-execute}
 :hide-output:
 
 import numpy as np
@@ -43,30 +43,30 @@ Python has a number of *built-in* functions that are available without
 
 We have already met some
 
-```{execute}
+```{jupyter-execute}
 max(19, 20)
 ```
 
-```{execute}
+```{jupyter-execute}
 print('foobar')
 ```
 
-```{execute}
+```{jupyter-execute}
 str(22)
 ```
 
-```{execute}
+```{jupyter-execute}
 type(22)
 ```
 
 Two more useful built-in functions are `any()` and `all()`
 
-```{execute}
+```{jupyter-execute}
 bools = False, True, True
 all(bools)  # True if all are True and False otherwise
 ```
 
-```{execute}
+```{jupyter-execute}
 any(bools)  # False if all are False and True otherwise
 ```
 
@@ -83,7 +83,7 @@ Examples of importing and using functions were given in the
 
 Here\'s another one, which tests whether a given year is a leap year:
 
-```{execute}
+```{jupyter-execute}
 import calendar
 
 calendar.isleap(2020)
@@ -102,7 +102,7 @@ Let\'s start by discussing how it\'s done.
 Here\'s a very simple Python function, that implements the mathematical
 function $f(x) = 2 x + 1$
 
-```{execute}
+```{jupyter-execute}
 def f(x):
     return 2 * x + 1
 ```
@@ -110,11 +110,11 @@ def f(x):
 Now that we\'ve *defined* this function, let\'s *call* it and check
 whether it does what we expect:
 
-```{execute}
+```{jupyter-execute}
 f(1)
 ```
 
-```{execute}
+```{jupyter-execute}
 f(10)
 ```
 
@@ -124,7 +124,7 @@ number.
 (Such a function already exists as a built-in, but let\'s write our own
 for the exercise.)
 
-```{execute}
+```{jupyter-execute}
 def new_abs_function(x):
 
     if x < 0:
@@ -149,7 +149,7 @@ stored in memory.
 
 Let\'s call it to check that it works:
 
-```{execute}
+```{jupyter-execute}
 print(new_abs_function(3))
 print(new_abs_function(-3))
 ```
@@ -175,7 +175,7 @@ We will say more about this
 Consider again this code from the
 {ref}`previous lecture <python_by_example>`
 
-```{execute}
+```{jupyter-execute}
 ts_length = 100
 ϵ_values = []   # empty list
 
@@ -198,7 +198,7 @@ This is accomplished in the next program
 
 (funcloopprog)=
 
-```{execute}
+```{jupyter-execute}
 def generate_data(n):
     ϵ_values = []
     for i in range(n):
@@ -229,7 +229,7 @@ This is achieved in the next piece of code.
 
 (funcloopprog2)=
 
-```{execute}
+```{jupyter-execute}
 def generate_data(n, generator_type):
     ϵ_values = []
     for i in range(n):
@@ -265,7 +265,7 @@ To understand this, consider the following version.
 
 (test_program_6)=
 
-```{execute}
+```{jupyter-execute}
 def generate_data(n, generator_type):
     ϵ_values = []
     for i in range(n):
@@ -294,11 +294,11 @@ the name `generator_type` \"bound\" to the function `np.random.uniform`.
 This principle works more generally---for example, consider the
 following piece of code
 
-```{execute}
+```{jupyter-execute}
 max(7, 2, 4)   # max() is a built-in Python function
 ```
 
-```{execute}
+```{jupyter-execute}
 m = max
 m(7, 2, 4)
 ```
@@ -361,7 +361,7 @@ Use no import besides `from numpy.random import uniform`.
 
 Here\'s one solution.
 
-```{execute}
+```{jupyter-execute}
 def factorial(n):
     k = 1
     for i in range(n):
@@ -373,7 +373,7 @@ factorial(4)
 
 ### Exercise 2
 
-```{execute}
+```{jupyter-execute}
 from numpy.random import uniform
 
 def binomial_rv(n, p):
@@ -391,7 +391,7 @@ binomial_rv(10, 0.5)
 
 Here\'s a function for the first random device.
 
-```{execute}
+```{jupyter-execute}
 from numpy.random import uniform
 
 def draw(k):  # pays if k consecutive successes in a sequence
@@ -413,7 +413,7 @@ draw(3)
 
 Here\'s another function for the second random device.
 
-```{execute}
+```{jupyter-execute}
 def draw_new(k):  # pays if k successes in a sequence
 
     payoff = 0

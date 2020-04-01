@@ -35,7 +35,7 @@ But first, let\'s discuss the difference.
 Here\'s the kind of easy example you might find in introductory
 treatments
 
-```{execute}
+```{jupyter-execute}
 import matplotlib.pyplot as plt
 %matplotlib inline
 import numpy as np
@@ -63,7 +63,7 @@ This leads us to the alternative, object-oriented Matplotlib API.
 Here\'s the code corresponding to the preceding figure using the
 object-oriented API
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 ax.plot(x, y, 'b-', linewidth=2)
 plt.show()
@@ -86,7 +86,7 @@ This will become more clear as we go along.
 
 Here we\'ve changed the line to red and added a legend
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 ax.plot(x, y, 'r-', linewidth=2, label='sine function', alpha=0.6)
 ax.legend()
@@ -99,7 +99,7 @@ makes it look smoother.
 The location of the legend can be changed by replacing `ax.legend()`
 with `ax.legend(loc='upper center')`.
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 ax.plot(x, y, 'r-', linewidth=2, label='sine function', alpha=0.6)
 ax.legend(loc='upper center')
@@ -108,7 +108,7 @@ plt.show()
 
 If everything is properly configured, then adding LaTeX is trivial
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 ax.plot(x, y, 'r-', linewidth=2, label='$y=\sin(x)$', alpha=0.6)
 ax.legend(loc='upper center')
@@ -117,7 +117,7 @@ plt.show()
 
 Controlling the ticks, adding titles and so on is also straightforward
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 ax.plot(x, y, 'r-', linewidth=2, label='$y=\sin(x)$', alpha=0.6)
 ax.legend(loc='upper center')
@@ -140,7 +140,7 @@ It\'s straightforward to generate multiple plots on the same axes.
 Here\'s an example that randomly generates three normal densities and
 adds a label with their mean
 
-```{execute}
+```{jupyter-execute}
 from scipy.stats import norm
 from random import uniform
 
@@ -161,7 +161,7 @@ Sometimes we want multiple subplots in one figure.
 
 Here\'s an example that generates 6 histograms
 
-```{execute}
+```{jupyter-execute}
 num_rows, num_cols = 3, 2
 fig, axes = plt.subplots(num_rows, num_cols, figsize=(10, 12))
 for i in range(num_rows):
@@ -178,7 +178,7 @@ plt.show()
 
 Matplotlib does a nice job of 3D plots --- here is one example
 
-```{execute}
+```{jupyter-execute}
 from mpl_toolkits.mplot3d.axes3d import Axes3D
 from matplotlib import cm
 
@@ -217,7 +217,7 @@ function that implements these changes.
 Read carefully through the code and see if you can follow what\'s going
 on
 
-```{execute}
+```{jupyter-execute}
 def subplots():
     "Custom subplots with axes through the origin"
     fig, ax = plt.subplots()
@@ -283,7 +283,7 @@ The output should look like this
 
 Here\'s one solution
 
-```{execute}
+```{jupyter-execute}
 def f(x, θ):
     return np.cos(np.pi * θ * x ) * np.exp(- x)
 

@@ -3,7 +3,7 @@
 In addition to what\'s in Anaconda, this lecture will need the following
 libraries:
 
-```{execute}
+```{jupyter-execute}
 :hide-output:
 
 !pip install --upgrade quantecon
@@ -40,7 +40,7 @@ with a focus on
 
 Let\'s start with some imports:
 
-```{execute}
+```{jupyter-execute}
 import numpy as np
 import quantecon as qe
 import matplotlib.pyplot as plt
@@ -123,7 +123,7 @@ randomly generated matrices.
 
 It takes a few seconds to run.
 
-```{execute}
+```{jupyter-execute}
 n = 20
 m = 1000
 for i in range(n):
@@ -149,7 +149,7 @@ multithreading out to more and more operations.
 For example, let\'s return to a maximization problem
 {ref}`discussed previously <ufuncs>`:
 
-```{execute}
+```{jupyter-execute}
 def f(x, y):
     return np.cos(x**2 + y**2) / (1 + x**2 + y**2)
 
@@ -157,7 +157,7 @@ grid = np.linspace(-3, 3, 5000)
 x, y = np.meshgrid(grid, grid)
 ```
 
-```{execute}
+```{jupyter-execute}
 %timeit np.max(f(x, y))
 ```
 
@@ -182,7 +182,7 @@ create custom {ref}`ufuncs <ufuncs>` with the
 [@vectorize](http://numba.pydata.org/numba-doc/dev/user/vectorize.html)
 decorator.
 
-```{execute}
+```{jupyter-execute}
 from numba import vectorize
 
 @vectorize
@@ -192,7 +192,7 @@ def f_vec(x, y):
 np.max(f_vec(x, y))  # Run once to compile
 ```
 
-```{execute}
+```{jupyter-execute}
 %timeit np.max(f_vec(x, y))
 ```
 
@@ -238,7 +238,7 @@ In other words, can we pair
 It turns out that we can, by adding some type information plus
 `target='parallel'`.
 
-```{execute}
+```{jupyter-execute}
 @vectorize('float64(float64, float64)', target='parallel')
 def f_vec(x, y):
     return np.cos(x**2 + y**2) / (1 + x**2 + y**2)
@@ -246,7 +246,7 @@ def f_vec(x, y):
 np.max(f_vec(x, y))  # Run once to compile
 ```
 
-```{execute}
+```{jupyter-execute}
 %timeit np.max(f_vec(x, y))
 ```
 
@@ -283,7 +283,7 @@ distribution.
 
 Here\'s the code:
 
-```{execute}
+```{jupyter-execute}
 from numpy.random import randn
 from numba import njit
 
@@ -304,7 +304,7 @@ def h(w, r=0.1, s=0.3, v1=0.1, v2=1.0):
 
 Let\'s have a look at how wealth evolves under this rule.
 
-```{execute}
+```{jupyter-execute}
 fig, ax = plt.subplots()
 
 T = 100
@@ -349,7 +349,7 @@ Then we\'ll calculate median wealth at the end period.
 
 Here\'s the code:
 
-```{execute}
+```{jupyter-execute}
 @njit
 def compute_long_run_median(w0=1, T=1000, num_reps=50_000):
 
@@ -365,7 +365,7 @@ def compute_long_run_median(w0=1, T=1000, num_reps=50_000):
 
 Let\'s see how fast this runs:
 
-```{execute}
+```{jupyter-execute}
 %%time
 compute_long_run_median()
 ```
@@ -375,7 +375,7 @@ To speed this up, we\'re going to parallelize it via multithreading.
 To do so, we add the `parallel=True` flag and change `range` to
 `prange`:
 
-```{execute}
+```{jupyter-execute}
 from numba import prange
 
 @njit(parallel=True)
@@ -393,7 +393,7 @@ def compute_long_run_median_parallel(w0=1, T=1000, num_reps=50_000):
 
 Let\'s look at the timing:
 
-```{execute}
+```{jupyter-execute}
 %%time
 compute_long_run_median_parallel()
 ```
@@ -451,7 +451,7 @@ such as `n = 100_000_000`.
 
 Here is one solution:
 
-```{execute}
+```{jupyter-execute}
 from random import uniform
 
 @njit(parallel=True)
@@ -469,11 +469,11 @@ def calculate_pi(n=1_000_000):
 
 Now let\'s see how fast it runs:
 
-```{execute}
+```{jupyter-execute}
 %time calculate_pi()
 ```
 
-```{execute}
+```{jupyter-execute}
 %time calculate_pi()
 ```
 

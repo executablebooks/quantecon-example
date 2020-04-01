@@ -3,7 +3,7 @@
 In addition to what\'s in Anaconda, this lecture will need the following
 libraries:
 
-```{execute}
+```{jupyter-execute}
 :hide-output:
 
 !pip install --upgrade quantecon
@@ -142,7 +142,7 @@ This will, in turn, help us figure out how to speed things up.
 
 Consider this Python operation
 
-```{execute}
+```{jupyter-execute}
 a, b = 10, 10
 a + b
 ```
@@ -155,14 +155,14 @@ operation to invoke.
 
 If `a` and `b` are strings, then `a + b` requires string concatenation
 
-```{execute}
+```{jupyter-execute}
 a, b = 'foo', 'bar'
 a + b
 ```
 
 If `a` and `b` are lists, then `a + b` requires list concatenation
 
-```{execute}
+```{jupyter-execute}
 a, b = ['foo'], ['bar']
 a + b
 ```
@@ -277,7 +277,7 @@ Let\'s see how vectorization works in Python, using NumPy.
 
 First, let\'s run some imports
 
-```{execute}
+```{jupyter-execute}
 import random
 import numpy as np
 import quantecon as qe
@@ -287,11 +287,11 @@ Next let\'s try some non-vectorized code, which uses a native Python
 loop to generate, square and then sum a large number of random
 variables:
 
-```{execute}
+```{jupyter-execute}
 n = 1_000_000
 ```
 
-```{execute}
+```{jupyter-execute}
 %%time
 
 y = 0      # Will accumulate and store sum
@@ -302,7 +302,7 @@ for i in range(n):
 
 The following vectorized code achieves the same thing.
 
-```{execute}
+```{jupyter-execute}
 %%time
 
 x = np.random.uniform(0, 1, n)
@@ -345,11 +345,11 @@ This means that they
 
 For example, `np.cos` is a ufunc:
 
-```{execute}
+```{jupyter-execute}
 np.cos(1.0)
 ```
 
-```{execute}
+```{jupyter-execute}
 np.cos(np.linspace(0, 1, 3))
 ```
 
@@ -368,7 +368,7 @@ $$
 
 Here\'s a plot of $f$
 
-```{execute}
+```{jupyter-execute}
 import matplotlib.pyplot as plt
 %matplotlib inline
 from mpl_toolkits.mplot3d.axes3d import Axes3D
@@ -403,13 +403,13 @@ To maximize it, we\'re going to use a naive grid search:
 
 The grid will be
 
-```{execute}
+```{jupyter-execute}
 grid = np.linspace(-3, 3, 1000)
 ```
 
 Here\'s a non-vectorized version that uses Python loops.
 
-```{execute}
+```{jupyter-execute}
 %%time
 
 m = -np.inf
@@ -423,7 +423,7 @@ for x in grid:
 
 And here\'s a vectorized version
 
-```{execute}
+```{jupyter-execute}
 %%time
 
 x, y = np.meshgrid(grid, grid)

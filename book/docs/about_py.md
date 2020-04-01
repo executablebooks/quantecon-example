@@ -71,7 +71,10 @@ in the fields of finance and banking.
 The following chart, produced using Stack Overflow Trends, shows one
 measure of the relative popularity of Python
 
-![](/_static/lecture_specific/about_py/python_vs_matlab.png)
+```{figure} /_static/lecture_specific/about_py/python_vs_matlab.png
+:align: center
+:scale: 75%
+```
 
 The figure indicates not only that Python is widely used but also that
 adoption of Python has accelerated significantly since 2012.
@@ -162,7 +165,7 @@ operations.
 
 For example, let\'s build some arrays
 
-```{execute}
+```{jupyter-execute}
 import numpy as np                     # Load the library
 
 a = np.linspace(-np.pi, np.pi, 100)    # Create even grid from -π to π
@@ -172,7 +175,7 @@ c = np.sin(a)                          # Apply sin to each element of a
 
 Now let\'s take the inner product
 
-```{execute}
+```{jupyter-execute}
 b @ c
 ```
 
@@ -189,7 +192,7 @@ provides additional functionality.
 For example, let\'s calculate $\int_{-2}^2 \phi(z) dz$ where $\phi$ is
 the standard normal density.
 
-```{execute}
+```{jupyter-execute}
 from scipy.stats import norm
 from scipy.integrate import quad
 
@@ -252,7 +255,7 @@ Mathematica or Maple.
 The [SymPy](http://www.sympy.org/) library provides this functionality
 from within the Python shell.
 
-```{execute}
+```{jupyter-execute}
 from sympy import Symbol
 
 x, y = Symbol('x'), Symbol('y')  # Treat 'x' and 'y' as algebraic symbols
@@ -261,14 +264,14 @@ x + x + x + y
 
 We can manipulate expressions
 
-```{execute}
+```{jupyter-execute}
 expression = (x + y)**2
 expression.expand()
 ```
 
 solve polynomials
 
-```{execute}
+```{jupyter-execute}
 from sympy import solve
 
 solve(x**2 + x + 2)
@@ -276,17 +279,17 @@ solve(x**2 + x + 2)
 
 and calculate limits, derivatives and integrals
 
-```{execute}
+```{jupyter-execute}
 from sympy import limit, sin, diff
 
 limit(1 / x, x, 0)
 ```
 
-```{execute}
+```{jupyter-execute}
 limit(sin(x) / x, x, 0)
 ```
 
-```{execute}
+```{jupyter-execute}
 diff(sin(x), x)
 ```
 
@@ -311,7 +314,7 @@ Pandas is fast, efficient, flexible and well designed.
 Here\'s a simple example, using some dummy data generated with Numpy\'s
 excellent `random` functionality.
 
-```{execute}
+```{jupyter-execute}
 import pandas as pd
 np.random.seed(1234)
 
@@ -322,7 +325,7 @@ df = pd.DataFrame(data, columns=('price', 'weight'), index=dates)
 print(df)
 ```
 
-```{execute}
+```{jupyter-execute}
 df.mean()
 ```
 
@@ -353,7 +356,7 @@ features include, among many other things:
 Here\'s some example code that generates and plots a random graph, with
 node color determined by shortest path length from a central node.
 
-```{execute}
+```{jupyter-execute}
 import networkx as nx
 import matplotlib.pyplot as plt
 %matplotlib inline

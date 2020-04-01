@@ -39,7 +39,7 @@ NumPy, using its array data type and related functionality.
 In fact, when we import SciPy we also get NumPy, as can be seen from
 this excerpt the SciPy initialization file:
 
-```{execute}
+```{jupyter-execute}
 # Import numpy symbols to scipy namespace
 from numpy import *
 from numpy.random import rand, randn
@@ -50,7 +50,7 @@ from numpy.lib.scimath import *
 However, it\'s more common and better practice to use NumPy
 functionality explicitly
 
-```{execute}
+```{jupyter-execute}
 import numpy as np
 
 a = np.identity(3)
@@ -76,7 +76,7 @@ The `scipy.stats` subpackage supplies
 Recall that `numpy.random` provides functions for generating random
 variables
 
-```{execute}
+```{jupyter-execute}
 np.random.beta(5, 5, size=3)
 ```
 
@@ -98,7 +98,7 @@ interface.
 
 Here\'s an example of usage
 
-```{execute}
+```{jupyter-execute}
 from scipy.stats import beta
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -116,15 +116,15 @@ plt.show()
 The object `q` that represents the distribution has additional useful
 methods, including
 
-```{execute}
+```{jupyter-execute}
 q.cdf(0.4)      # Cumulative distribution function
 ```
 
-```{execute}
+```{jupyter-execute}
 q.ppf(0.8)      # Quantile (inverse cdf) function
 ```
 
-```{execute}
+```{jupyter-execute}
 q.mean()
 ```
 
@@ -145,7 +145,7 @@ There is an alternative way of calling the methods described above.
 
 For example, the code that generates the figure above can be replaced by
 
-```{execute}
+```{jupyter-execute}
 obs = beta.rvs(5, 5, size=2000)
 grid = np.linspace(0.01, 0.99, 100)
 
@@ -162,7 +162,7 @@ There are a variety of statistical functions in `scipy.stats`.
 For example, `scipy.stats.linregress` implements simple linear
 regression
 
-```{execute}
+```{jupyter-execute}
 from scipy.stats import linregress
 
 x = np.random.randn(200)
@@ -190,7 +190,7 @@ f(x) = \sin(4 (x - 1/4)) + x + x^{20} - 1
 
 with $x \in [0,1]$ we get
 
-```{execute}
+```{jupyter-execute}
 f = lambda x: np.sin(4 * (x - 1/4)) + x + x**20 - 1
 x = np.linspace(0, 1, 100)
 
@@ -231,7 +231,7 @@ functions with $f(a) < 0 < f(b)$
 
 (bisect_func)=
 
-```{execute}
+```{jupyter-execute}
 def bisect(f, a, b, tol=10e-5):
     """
     Implements the bisection root finding algorithm, assuming that f is a
@@ -252,7 +252,7 @@ def bisect(f, a, b, tol=10e-5):
 Let\'s test it using the function $f$ defined in
 {math:numref}`root_f`
 
-```{execute}
+```{jupyter-execute}
 bisect(f, 0, 1)
 ```
 
@@ -261,7 +261,7 @@ Not surprisingly, SciPy provides its own bisection function.
 Let\'s test it using the same function $f$ defined in
 {math:numref}`root_f`
 
-```{execute}
+```{jupyter-execute}
 from scipy.optimize import bisect
 
 bisect(f, 0, 1)
@@ -281,7 +281,7 @@ Let\'s investigate this using the same function $f$ defined above.
 
 With a suitable initial condition for the search we get convergence:
 
-```{execute}
+```{jupyter-execute}
 from scipy.optimize import newton
 
 newton(f, 0.2)   # Start the search at initial condition x = 0.2
@@ -289,7 +289,7 @@ newton(f, 0.2)   # Start the search at initial condition x = 0.2
 
 But other initial conditions lead to failure of convergence:
 
-```{execute}
+```{jupyter-execute}
 newton(f, 0.7)   # Start the search at x = 0.7 instead
 ```
 
@@ -315,7 +315,7 @@ the following manner:
 In `scipy.optimize`, the function `brentq` is such a hybrid method and a
 good default
 
-```{execute}
+```{jupyter-execute}
 from scipy.optimize import brentq
 
 brentq(f, 0, 1)
@@ -324,11 +324,11 @@ brentq(f, 0, 1)
 Here the correct solution is found and the speed is better than
 bisection:
 
-```{execute}
+```{jupyter-execute}
 %timeit brentq(f, 0, 1)
 ```
 
-```{execute}
+```{jupyter-execute}
 %timeit bisect(f, 0, 1)
 ```
 
@@ -347,7 +347,7 @@ such that $f(x)=x$.
 
 SciPy has a function for finding (scalar) fixed points too
 
-```{execute}
+```{jupyter-execute}
 from scipy.optimize import fixed_point
 
 fixed_point(lambda x: x**2, 10.0)  # 10.0 is an initial guess
@@ -376,7 +376,7 @@ best to use hybrid methods.
 For constrained, univariate (i.e., scalar) minimization, a good hybrid
 option is `fminbound`
 
-```{execute}
+```{jupyter-execute}
 from scipy.optimize import fminbound
 
 fminbound(lambda x: x**2, -1, 2)  # Search in [-1, 2]
@@ -407,7 +407,7 @@ In SciPy, the relevant module for numerical integration is
 
 A good default for univariate integration is `quad`
 
-```{execute}
+```{jupyter-execute}
 from scipy.integrate import quad
 
 integral, error = quad(lambda x: x**2, 0, 1)
@@ -460,7 +460,7 @@ Test it on the function {math:numref}`root_f`.
 
 Here\'s a reasonable solution:
 
-```{execute}
+```{jupyter-execute}
 def bisect(f, a, b, tol=10e-5):
     """
     Implements the bisection root-finding algorithm, assuming that f is a
@@ -480,7 +480,7 @@ def bisect(f, a, b, tol=10e-5):
 
 We can test it as follows
 
-```{execute}
+```{jupyter-execute}
 f = lambda x: np.sin(4 * (x - 0.25)) + x + x**20 - 1
 bisect(f, 0, 1)
 ```

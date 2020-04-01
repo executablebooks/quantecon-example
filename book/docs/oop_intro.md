@@ -52,12 +52,12 @@ categories of data.
 
 For example
 
-```{execute}
+```{jupyter-execute}
 s = 'This is a string'
 type(s)
 ```
 
-```{execute}
+```{jupyter-execute}
 x = 42   # Now let's create an integer
 type(x)
 ```
@@ -67,19 +67,19 @@ The type of an object matters for many expressions.
 For example, the addition operator between two strings means
 concatenation
 
-```{execute}
+```{jupyter-execute}
 '300' + 'cc'
 ```
 
 On the other hand, between two numbers it means ordinary addition
 
-```{execute}
+```{jupyter-execute}
 300 + 400
 ```
 
 Consider the following expression
 
-```{execute}
+```{jupyter-execute}
 :raises: TypeError
 
 '300' + 400
@@ -100,7 +100,7 @@ To avoid the error, you need to clarify by changing the relevant type.
 
 For example,
 
-```{execute}
+```{jupyter-execute}
 int('300') + 400   # To add as numbers, change the string to an integer
 ```
 
@@ -111,13 +111,13 @@ us) keep track of the object.
 
 The identity of an object can be obtained via the `id()` function
 
-```{execute}
+```{jupyter-execute}
 y = 2.5
 z = 2.5
 id(y)
 ```
 
-```{execute}
+```{jupyter-execute}
 id(z)
 ```
 
@@ -134,16 +134,16 @@ the data `42`.
 
 In fact, it contains more, as the following example shows
 
-```{execute}
+```{jupyter-execute}
 x = 42
 x
 ```
 
-```{execute}
+```{jupyter-execute}
 x.imag
 ```
 
-```{execute}
+```{jupyter-execute}
 x.__class__
 ```
 
@@ -169,30 +169,30 @@ Methods are *functions that are bundled with objects*.
 Formally, methods are attributes of objects that are callable (i.e., can
 be called as functions)
 
-```{execute}
+```{jupyter-execute}
 x = ['foo', 'bar']
 callable(x.append)
 ```
 
-```{execute}
+```{jupyter-execute}
 callable(x.__doc__)
 ```
 
 Methods typically act on the data contained in the object they belong
 to, or combine that data with other data
 
-```{execute}
+```{jupyter-execute}
 x = ['a', 'b']
 x.append('c')
 s = 'This is a string'
 s.upper()
 ```
 
-```{execute}
+```{jupyter-execute}
 s.lower()
 ```
 
-```{execute}
+```{jupyter-execute}
 s.replace('This', 'That')
 ```
 
@@ -200,7 +200,7 @@ A great deal of Python functionality is organized around method calls.
 
 For example, consider the following piece of code
 
-```{execute}
+```{jupyter-execute}
 x = ['a', 'b']
 x[0] = 'aa'  # Item assignment using square bracket notation
 x
@@ -213,7 +213,7 @@ method call.
 What actually happens is that Python calls the `__setitem__` method, as
 follows
 
-```{execute}
+```{jupyter-execute}
 x = ['a', 'b']
 x.__setitem__(0, 'aa')  # Equivalent to x[0] = 'aa'
 x
@@ -241,20 +241,20 @@ object** and stores it in memory.
 
 The following code illustrates
 
-```{execute}
+```{jupyter-execute}
 def f(x): return x**2
 f
 ```
 
-```{execute}
+```{jupyter-execute}
 type(f)
 ```
 
-```{execute}
+```{jupyter-execute}
 id(f)
 ```
 
-```{execute}
+```{jupyter-execute}
 f.__name__
 ```
 
@@ -265,7 +265,7 @@ It also has methods.
 
 One example is the `__call__` method, which just evaluates the function
 
-```{execute}
+```{jupyter-execute}
 f.__call__(3)
 ```
 
@@ -273,7 +273,7 @@ Another is the `__dir__` method, which returns a list of attributes.
 
 Modules loaded into memory are also treated as objects
 
-```{execute}
+```{jupyter-execute}
 import math
 
 id(math)
