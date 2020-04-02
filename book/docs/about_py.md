@@ -1,4 +1,17 @@
-# (about_py)=About Python
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(about_py)=
+
+# About Python
 
 > \"Python has gotten sufficiently weapons grade that we don't descend
 > into R anymore. Sorry, R people. I used to be one of you but we no
@@ -73,7 +86,6 @@ measure of the relative popularity of Python
 
 ```{figure} /_static/lecture_specific/about_py/python_vs_matlab.png
 :align: center
-:scale: 75%
 ```
 
 The figure indicates not only that Python is widely used but also that
@@ -87,7 +99,10 @@ library for data analysis with Python has exploded, as seen here.
 
 (The corresponding time path for MATLAB is shown for comparison)
 
-![](/_static/lecture_specific/about_py/pandas_vs_matlab.png)
+```{figure} /_static/lecture_specific/about_py/pandas_vs_matlab.png
+:align: center
+:scale: 33%
+```
 
 Note that pandas takes off in 2012, which is the same year that we see
 Python\'s popularity begin to spike in the first figure.
@@ -165,7 +180,7 @@ operations.
 
 For example, let\'s build some arrays
 
-```{jupyter-execute}
+```{code-cell} ipython3
 import numpy as np                     # Load the library
 
 a = np.linspace(-np.pi, np.pi, 100)    # Create even grid from -π to π
@@ -175,7 +190,7 @@ c = np.sin(a)                          # Apply sin to each element of a
 
 Now let\'s take the inner product
 
-```{jupyter-execute}
+```{code-cell} ipython3
 b @ c
 ```
 
@@ -192,7 +207,7 @@ provides additional functionality.
 For example, let\'s calculate $\int_{-2}^2 \phi(z) dz$ where $\phi$ is
 the standard normal density.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 from scipy.stats import norm
 from scipy.integrate import quad
 
@@ -228,15 +243,24 @@ including
 
 Example 2D plot with embedded LaTeX annotations
 
-![](/_static/lecture_specific/about_py/qs.png)
+```{figure} /_static/lecture_specific/about_py/qs.png
+:align: center
+:scale: 95%
+```
 
 Example contour plot
 
-![](/_static/lecture_specific/about_py/bn_density1.png)
+```{figure} /_static/lecture_specific/about_py/bn_density1.png
+:align: center
+:scale: 95%
+```
 
 Example 3D plot
 
-![](/_static/lecture_specific/about_py/career_vf.png)
+```{figure} /_static/lecture_specific/about_py/career_vf.png
+:align: center
+:scale: 95%
+```
 
 More examples can be found in the [Matplotlib thumbnail
 gallery](http://matplotlib.org/gallery.html).
@@ -255,7 +279,7 @@ Mathematica or Maple.
 The [SymPy](http://www.sympy.org/) library provides this functionality
 from within the Python shell.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 from sympy import Symbol
 
 x, y = Symbol('x'), Symbol('y')  # Treat 'x' and 'y' as algebraic symbols
@@ -264,14 +288,14 @@ x + x + x + y
 
 We can manipulate expressions
 
-```{jupyter-execute}
+```{code-cell} ipython3
 expression = (x + y)**2
 expression.expand()
 ```
 
 solve polynomials
 
-```{jupyter-execute}
+```{code-cell} ipython3
 from sympy import solve
 
 solve(x**2 + x + 2)
@@ -279,17 +303,17 @@ solve(x**2 + x + 2)
 
 and calculate limits, derivatives and integrals
 
-```{jupyter-execute}
+```{code-cell} ipython3
 from sympy import limit, sin, diff
 
 limit(1 / x, x, 0)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 limit(sin(x) / x, x, 0)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 diff(sin(x), x)
 ```
 
@@ -314,7 +338,7 @@ Pandas is fast, efficient, flexible and well designed.
 Here\'s a simple example, using some dummy data generated with Numpy\'s
 excellent `random` functionality.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 import pandas as pd
 np.random.seed(1234)
 
@@ -325,7 +349,7 @@ df = pd.DataFrame(data, columns=('price', 'weight'), index=dates)
 print(df)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 df.mean()
 ```
 
@@ -356,7 +380,7 @@ features include, among many other things:
 Here\'s some example code that generates and plots a random graph, with
 node color determined by shortest path length from a central node.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 import networkx as nx
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -414,7 +438,9 @@ consider
     [PyOpenCL](https://mathema.tician.de/software/pyopencl/),
     [Theano](http://deeplearning.net/software/theano/) or similar.
 
-### (intfc)=Other Developments
+(intfc)=
+
+### Other Developments
 
 There are many other interesting developments with scientific
 programming in Python.

@@ -1,10 +1,23 @@
-# (speed)=Python for Scientific Computing
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(speed)=
+
+# Python for Scientific Computing
 
 In addition to what\'s in Anaconda, this lecture will need the following
 libraries:
 
-```{jupyter-execute}
-:hide-output:
+```{code-cell} ipython3
+:tags: [remove_output]
 
 !pip install --upgrade quantecon
 ```
@@ -142,7 +155,7 @@ This will, in turn, help us figure out how to speed things up.
 
 Consider this Python operation
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a, b = 10, 10
 a + b
 ```
@@ -155,14 +168,14 @@ operation to invoke.
 
 If `a` and `b` are strings, then `a + b` requires string concatenation
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a, b = 'foo', 'bar'
 a + b
 ```
 
 If `a` and `b` are lists, then `a + b` requires list concatenation
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a, b = ['foo'], ['bar']
 a + b
 ```
@@ -277,7 +290,7 @@ Let\'s see how vectorization works in Python, using NumPy.
 
 First, let\'s run some imports
 
-```{jupyter-execute}
+```{code-cell} ipython3
 import random
 import numpy as np
 import quantecon as qe
@@ -287,11 +300,11 @@ Next let\'s try some non-vectorized code, which uses a native Python
 loop to generate, square and then sum a large number of random
 variables:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 n = 1_000_000
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 %%time
 
 y = 0      # Will accumulate and store sum
@@ -302,7 +315,7 @@ for i in range(n):
 
 The following vectorized code achieves the same thing.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 %%time
 
 x = np.random.uniform(0, 1, n)
@@ -332,7 +345,9 @@ be vectorized.
 
 The next section illustrates this point.
 
-### (ufuncs)=Universal Functions
+(ufuncs)=
+
+### Universal Functions
 
 Many functions provided by NumPy are so-called *universal functions*
 --- also called
@@ -345,11 +360,11 @@ This means that they
 
 For example, `np.cos` is a ufunc:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 np.cos(1.0)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 np.cos(np.linspace(0, 1, 3))
 ```
 
@@ -368,7 +383,7 @@ $$
 
 Here\'s a plot of $f$
 
-```{jupyter-execute}
+```{code-cell} ipython3
 import matplotlib.pyplot as plt
 %matplotlib inline
 from mpl_toolkits.mplot3d.axes3d import Axes3D
@@ -403,13 +418,13 @@ To maximize it, we\'re going to use a naive grid search:
 
 The grid will be
 
-```{jupyter-execute}
+```{code-cell} ipython3
 grid = np.linspace(-3, 3, 1000)
 ```
 
 Here\'s a non-vectorized version that uses Python loops.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 %%time
 
 m = -np.inf
@@ -423,7 +438,7 @@ for x in grid:
 
 And here\'s a vectorized version
 
-```{jupyter-execute}
+```{code-cell} ipython3
 %%time
 
 x, y = np.meshgrid(grid, grid)
@@ -437,7 +452,9 @@ As you can see, the second version is **much** faster.
 (We\'ll make it even faster again later on, using more scientific
 programming tricks.)
 
-## (numba-p_c_vectorization)= Beyond Vectorization
+(numba-p_c_vectorization)=
+
+## Beyond Vectorization
 
 At its best, vectorization yields fast, simple code.
 

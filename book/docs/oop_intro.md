@@ -1,4 +1,17 @@
-# (oop_intro)=OOP I: Introduction to Object Oriented Programming
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(oop_intro)=
+
+# OOP I: Introduction to Object Oriented Programming
 
 ## Overview
 
@@ -52,12 +65,12 @@ categories of data.
 
 For example
 
-```{jupyter-execute}
+```{code-cell} ipython3
 s = 'This is a string'
 type(s)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = 42   # Now let's create an integer
 type(x)
 ```
@@ -67,20 +80,20 @@ The type of an object matters for many expressions.
 For example, the addition operator between two strings means
 concatenation
 
-```{jupyter-execute}
+```{code-cell} ipython3
 '300' + 'cc'
 ```
 
 On the other hand, between two numbers it means ordinary addition
 
-```{jupyter-execute}
+```{code-cell} ipython3
 300 + 400
 ```
 
 Consider the following expression
 
-```{jupyter-execute}
-:raises: TypeError
+```{code-cell} ipython3
+:tags: [raises-exception]
 
 '300' + 400
 ```
@@ -100,7 +113,7 @@ To avoid the error, you need to clarify by changing the relevant type.
 
 For example,
 
-```{jupyter-execute}
+```{code-cell} ipython3
 int('300') + 400   # To add as numbers, change the string to an integer
 ```
 
@@ -111,13 +124,13 @@ us) keep track of the object.
 
 The identity of an object can be obtained via the `id()` function
 
-```{jupyter-execute}
+```{code-cell} ipython3
 y = 2.5
 z = 2.5
 id(y)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 id(z)
 ```
 
@@ -134,16 +147,16 @@ the data `42`.
 
 In fact, it contains more, as the following example shows
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = 42
 x
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x.imag
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x.__class__
 ```
 
@@ -169,30 +182,30 @@ Methods are *functions that are bundled with objects*.
 Formally, methods are attributes of objects that are callable (i.e., can
 be called as functions)
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = ['foo', 'bar']
 callable(x.append)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 callable(x.__doc__)
 ```
 
 Methods typically act on the data contained in the object they belong
 to, or combine that data with other data
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = ['a', 'b']
 x.append('c')
 s = 'This is a string'
 s.upper()
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 s.lower()
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 s.replace('This', 'That')
 ```
 
@@ -200,7 +213,7 @@ A great deal of Python functionality is organized around method calls.
 
 For example, consider the following piece of code
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = ['a', 'b']
 x[0] = 'aa'  # Item assignment using square bracket notation
 x
@@ -213,7 +226,7 @@ method call.
 What actually happens is that Python calls the `__setitem__` method, as
 follows
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = ['a', 'b']
 x.__setitem__(0, 'aa')  # Equivalent to x[0] = 'aa'
 x
@@ -241,20 +254,20 @@ object** and stores it in memory.
 
 The following code illustrates
 
-```{jupyter-execute}
+```{code-cell} ipython3
 def f(x): return x**2
 f
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 type(f)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 id(f)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 f.__name__
 ```
 
@@ -265,7 +278,7 @@ It also has methods.
 
 One example is the `__call__` method, which just evaluates the function
 
-```{jupyter-execute}
+```{code-cell} ipython3
 f.__call__(3)
 ```
 
@@ -273,7 +286,7 @@ Another is the `__dir__` method, which returns a list of attributes.
 
 Modules loaded into memory are also treated as objects
 
-```{jupyter-execute}
+```{code-cell} ipython3
 import math
 
 id(math)

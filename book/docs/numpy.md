@@ -1,4 +1,17 @@
-# (np)=NumPy
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(np)=
+
+# NumPy
 
 > \"Let\'s be clear: the work of science has nothing whatever to do with
 > consensus. Consensus is the business of politics. Science, on the
@@ -27,7 +40,9 @@ In this lecture, we will start a more systematic discussion of both
 
 -   [The official NumPy documentation](http://docs.scipy.org/doc/numpy/reference/).
 
-## (numpy_array)=NumPy Arrays
+(numpy_array)=
+
+## NumPy Arrays
 
 The essential problem that NumPy solves is fast array processing.
 
@@ -40,19 +55,19 @@ ecosystem.
 
 Let\'s first import the library.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 import numpy as np
 ```
 
 To create a NumPy array containing only zeros we use
 [np.zeros](http://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html#numpy.zeros)
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.zeros(3)
 a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 type(a)
 ```
 
@@ -74,23 +89,25 @@ etc.
 
 On modern machines, the default dtype for arrays is `float64`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.zeros(3)
 type(a[0])
 ```
 
 If we want to use integers we can specify as follows:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.zeros(3, dtype=int)
 type(a[0])
 ```
 
-### (numpy_shape_dim)=Shape and Dimension
+(numpy_shape_dim)=
+
+### Shape and Dimension
 
 Consider the following assignment
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.zeros(10)
 ```
 
@@ -99,7 +116,7 @@ column vector.
 
 The dimension is recorded in the `shape` attribute, which is a tuple
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z.shape
 ```
 
@@ -108,12 +125,12 @@ array (tuples with one element end with a comma).
 
 To give it dimension, we can change the `shape` attribute
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z.shape = (10, 1)
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.zeros(4)
 z.shape = (2, 2)
 z
@@ -122,7 +139,9 @@ z
 In the last case, to make the 2 by 2 array, we could also pass a tuple
 to the `zeros()` function, as in `z = np.zeros((2, 2))`.
 
-### (creating_arrays)=Creating Arrays
+(creating_arrays)=
+
+### Creating Arrays
 
 As we\'ve seen, the `np.zeros` function creates an array of zeros.
 
@@ -131,7 +150,7 @@ You can probably guess what `np.ones` creates.
 Related is `np.empty`, which creates arrays in memory that can later be
 populated with data
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.empty(3)
 z
 ```
@@ -143,13 +162,13 @@ contents of those memory slots are interpreted as `float64` values)
 
 To set up a grid of evenly spaced numbers use `np.linspace`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.linspace(2, 4, 5)  # From 2 to 4, with 5 elements
 ```
 
 To create an identity matrix use either `np.identity` or `np.eye`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.identity(2)
 z
 ```
@@ -157,21 +176,21 @@ z
 In addition, NumPy arrays can be created from Python lists, tuples, etc.
 using `np.array`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.array([10, 20])                 # ndarray from Python list
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 type(z)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.array((10, 20), dtype=float)    # Here 'float' is equivalent to 'np.float64'
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.array([[1, 2], [3, 4]])         # 2D array from a list of lists
 z
 ```
@@ -179,12 +198,12 @@ z
 See also `np.asarray`, which performs a similar function, but does not
 make a distinct copy of data already in a NumPy array.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 na = np.linspace(10, 20, 2)
 na is np.asarray(na)   # Does not copy NumPy arrays
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 na is np.array(na)     # Does make a new copy --- perhaps unnecessarily
 ```
 
@@ -197,35 +216,35 @@ for details.
 
 For a flat array, indexing is the same as Python sequences:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.linspace(1, 2, 5)
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[0]
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[0:2]  # Two elements, starting at element 0
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[-1]
 ```
 
 For 2D arrays the index syntax is as follows:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.array([[1, 2], [3, 4]])
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[0, 0]
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[0, 1]
 ```
 
@@ -236,38 +255,38 @@ Python sequences.
 
 Columns and rows can be extracted as follows
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[0, :]
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[:, 1]
 ```
 
 NumPy arrays of integers can also be used to extract elements
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.linspace(2, 4, 5)
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 indices = np.array((0, 2, 3))
 z[indices]
 ```
 
 Finally, an array of `dtype bool` can be used to extract elements
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 d = np.array([0, 1, 1, 0, 0], dtype=bool)
 d
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[d]
 ```
 
@@ -276,12 +295,12 @@ We\'ll see why this is useful below.
 An aside: all elements of an array can be set equal to one number using
 slice notation
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.empty(3)
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[:] = 42
 z
 ```
@@ -290,49 +309,49 @@ z
 
 Arrays have useful methods, all of which are carefully optimized
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.array((4, 3, 2, 1))
 a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.sort()              # Sorts a in place
 a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.sum()               # Sum
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.mean()              # Mean
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.max()               # Max
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.argmax()            # Returns the index of the maximal element
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.cumsum()            # Cumulative sum of the elements of a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.cumprod()           # Cumulative product of the elements of a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.var()               # Variance
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.std()               # Standard deviation
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a.shape = (2, 2)
 a.T                   # Equivalent to a.transpose()
 ```
@@ -342,27 +361,27 @@ Another method worth knowing is `searchsorted()`.
 If `z` is a nondecreasing array, then `z.searchsorted(a)` returns the
 index of the first element of `z` that is `>= a`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.linspace(2, 4, 5)
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z.searchsorted(2.2)
 ```
 
 Many of the methods discussed above have equivalent functions in the
 NumPy namespace
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.array((4, 3, 2, 1))
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 np.sum(a)
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 np.mean(a)
 ```
 
@@ -373,41 +392,41 @@ np.mean(a)
 The operators `+`, `-`, `*`, `/` and `**` all act *elementwise* on
 arrays
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.array([1, 2, 3, 4])
 b = np.array([5, 6, 7, 8])
 a + b
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a * b
 ```
 
 We can add a scalar to each element as follows
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a + 10
 ```
 
 Scalar multiplication is similar
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a * 10
 ```
 
 The two-dimensional arrays follow the same general rules
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A = np.ones((2, 2))
 B = np.ones((2, 2))
 A + B
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A + 10
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A * B
 ```
 
@@ -421,7 +440,7 @@ element-wise product.
 With Anaconda\'s scientific Python package based around Python 3.5 and
 above, one can use the `@` symbol for matrix multiplication, as follows:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A = np.ones((2, 2))
 B = np.ones((2, 2))
 A @ B
@@ -433,7 +452,7 @@ function)
 
 We can also use `@` to take the inner product of two flat arrays
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A = np.array((1, 2))
 B = np.array((10, 20))
 A @ B
@@ -441,12 +460,12 @@ A @ B
 
 In fact, we can use `@` when one element is a Python list or tuple
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A = np.array(((1, 2), (3, 4)))
 A
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A @ (0, 1)
 ```
 
@@ -463,12 +482,12 @@ We already saw examples above.
 
 Here\'s another example:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.array([42, 44])
 a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a[-1] = 0  # Change last element to 0
 a
 ```
@@ -476,12 +495,12 @@ a
 Mutability leads to the following behavior (which can be shocking to
 MATLAB programmers...)
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.random.randn(3)
 a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 b = a
 b[0] = 0.0
 a
@@ -509,24 +528,24 @@ required.
 
 This can be done using `np.copy`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a = np.random.randn(3)
 a
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 b = np.copy(a)
 b
 ```
 
 Now `b` is an independent copy (called a *deep copy*)
 
-```{jupyter-execute}
+```{code-cell} ipython3
 b[:] = 1
 b
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 a
 ```
 
@@ -541,14 +560,14 @@ Let\'s look at some other useful things we can do with NumPy.
 NumPy provides versions of the standard functions `log`, `exp`, `sin`,
 etc. that act *element-wise* on arrays
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.array([1, 2, 3])
 np.sin(z)
 ```
 
 This eliminates the need for explicit element-by-element loops such as
 
-```{jupyter-execute}
+```{code-cell} ipython3
 n = len(z)
 y = np.empty(n)
 for i in range(n):
@@ -565,11 +584,11 @@ As we saw above, the usual arithmetic operations (`+`, `*`, etc.) also
 work element-wise, and combining these with the ufuncs gives a very
 large set of fast element-wise functions.
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 (1 / np.sqrt(2 * np.pi)) * np.exp(- 0.5 * z**2)
 ```
 
@@ -578,25 +597,25 @@ Not all user-defined functions will act element-wise.
 For example, passing the function `f` defined below a NumPy array causes
 a `ValueError`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 def f(x):
     return 1 if x > 0 else 0
 ```
 
 The NumPy function `np.where` provides a vectorized alternative:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = np.random.randn(4)
 x
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 np.where(x > 0, 1, 0)  # Insert 1 if x > 0 true, otherwise 0
 ```
 
 You can also use `np.vectorize` to vectorize a given function
 
-```{jupyter-execute}
+```{code-cell} ipython3
 f = np.vectorize(f)
 f(x)                # Passing the same vector x as in the previous example
 ```
@@ -608,18 +627,18 @@ carefully crafted vectorized function.
 
 As a rule, comparisons on arrays are done element-wise
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.array([2, 3])
 y = np.array([2, 3])
 z == y
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 y[0] = 5
 z == y
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z != y
 ```
 
@@ -627,29 +646,29 @@ The situation is similar for `>`, `<`, `>=` and `<=`.
 
 We can also do comparisons against scalars
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.linspace(0, 10, 5)
 z
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z > 3
 ```
 
 This is particularly useful for *conditional extraction*
 
-```{jupyter-execute}
+```{code-cell} ipython3
 b = z > 3
 b
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[b]
 ```
 
 Of course we can---and frequently do---perform this in one step
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z[z > 3]
 ```
 
@@ -661,7 +680,7 @@ programming through its sub-packages.
 We\'ve already seen how we can generate random variables using
 `np.random`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 z = np.random.randn(10000)  # Generate standard normals
 y = np.random.binomial(10, 0.5, size=1000)    # 1,000 draws from Bin(10, 0.5)
 y.mean()
@@ -669,13 +688,13 @@ y.mean()
 
 Another commonly used subpackage is `np.linalg`
 
-```{jupyter-execute}
+```{code-cell} ipython3
 A = np.array([[1, 2], [3, 4]])
 
 np.linalg.det(A)           # Compute the determinant
 ```
 
-```{jupyter-execute}
+```{code-cell} ipython3
 np.linalg.inv(A)           # Compute the inverse
 ```
 
@@ -691,7 +710,9 @@ documentation](https://docs.scipy.org/doc/numpy/reference/routines.html).
 
 ## Exercises
 
-### (np_ex1)=Exercise 1
+(np_ex1)=
+
+### Exercise 1
 
 Consider the polynomial expression
 
@@ -713,7 +734,9 @@ sake of the exercise don\'t use this class)
 
 -   Hint: Use `np.cumprod()`
 
-### (np_ex2)=Exercise 2
+(np_ex2)=
+
+### Exercise 2
 
 Let `q` be a NumPy array of length `n` with `q.sum() == 1`.
 
@@ -736,7 +759,7 @@ $q_i$.
 
 We can implement the algorithm as follows
 
-```{jupyter-execute}
+```{code-cell} ipython3
 from random import uniform
 
 def sample(q):
@@ -767,7 +790,9 @@ where
 If you can, write the method so that `draw(k)` returns `k` draws from
 `q`.
 
-### (np_ex3)=Exercise 3
+(np_ex3)=
+
+### Exercise 3
 
 Recall our {ref}`earlier discussion <oop_ex1>`
 of the empirical cumulative distribution function.
@@ -780,8 +805,8 @@ Your task is to
 
 ## Solutions
 
-```{jupyter-execute}
-:hide-output:
+```{code-cell} ipython3
+:tags: [remove_output]
 
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -791,7 +816,7 @@ import matplotlib.pyplot as plt
 
 This code does the job
 
-```{jupyter-execute}
+```{code-cell} ipython3
 def p(x, coef):
     X = np.ones_like(coef)
     X[1:] = x
@@ -801,7 +826,7 @@ def p(x, coef):
 
 Let\'s test it
 
-```{jupyter-execute}
+```{code-cell} ipython3
 x = 2
 coef = np.linspace(2, 4, 3)
 print(coef)
@@ -815,7 +840,7 @@ print(q(x))
 
 Here\'s our first pass at a solution:
 
-```{jupyter-execute}
+```{code-cell} ipython3
 from numpy import cumsum
 from numpy.random import uniform
 
@@ -849,7 +874,7 @@ There is a problem here, however.
 Suppose that `q` is altered after an instance of `discreteRV` is
 created, for example by
 
-```{jupyter-execute}
+```{code-cell} ipython3
 q = (0.1, 0.9)
 d = DiscreteRV(q)
 d.q = (0.5, 0.5)
@@ -876,7 +901,7 @@ An example solution is given below.
 In essence, we\'ve just taken [this code](https://github.com/QuantEcon/QuantEcon.py/blob/master/quantecon/ecdf.py)
 from QuantEcon and added in a plot method
 
-```{jupyter-execute}
+```{code-cell} ipython3
 """
 Modifies ecdf.py from QuantEcon to add in a plot method
 
@@ -947,7 +972,7 @@ class ECDF:
 
 Here\'s an example of usage
 
-```{jupyter-execute}
+```{code-cell} ipython3
 fig, ax = plt.subplots()
 X = np.random.randn(1000)
 F = ECDF(X)
