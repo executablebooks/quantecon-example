@@ -265,7 +265,7 @@
               <div>
                 
   <div class="section" id="about-python">
-<h1><span class="target" id="about-py"></span>About Python<a class="headerlink" href="#about-python" title="Permalink to this headline">¶</a></h1>
+<span id="about-py"></span><h1>About Python<a class="headerlink" href="#about-python" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>“Python has gotten sufficiently weapons grade that we don’t descend
 into R anymore. Sorry, R people. I used to be one of you but we no
@@ -329,7 +329,9 @@ in the fields of finance and banking.</p>
 <h3>Relative Popularity<a class="headerlink" href="#relative-popularity" title="Permalink to this headline">¶</a></h3>
 <p>The following chart, produced using Stack Overflow Trends, shows one
 measure of the relative popularity of Python</p>
-<p><img alt="" src="../_images/python_vs_matlab.png" /></p>
+<div class="figure align-center">
+<img alt="../_images/python_vs_matlab.png" src="../_images/python_vs_matlab.png" />
+</div>
 <p>The figure indicates not only that Python is widely used but also that
 adoption of Python has accelerated significantly since 2012.</p>
 <p>We suspect this is driven at least in part by uptake in the scientific
@@ -337,7 +339,9 @@ domain, particularly in rapidly growing fields like data science.</p>
 <p>For example, the popularity of <a class="reference external" href="http://pandas.pydata.org/">pandas</a>, a
 library for data analysis with Python has exploded, as seen here.</p>
 <p>(The corresponding time path for MATLAB is shown for comparison)</p>
-<p><img alt="" src="../_images/pandas_vs_matlab.png" /></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/pandas_vs_matlab.png"><img alt="../_images/pandas_vs_matlab.png" src="../_images/pandas_vs_matlab.png" style="width: 680.7900000000001px; height: 412.5px;" /></a>
+</div>
 <p>Note that pandas takes off in 2012, which is the same year that we see
 Python’s popularity begin to spike in the first figure.</p>
 <p>Overall, it’s clear that</p>
@@ -404,8 +408,9 @@ excellent <a class="reference external" href="http://www.numpy.org/">NumPy</a> l
 <p>NumPy provides the basic array data type plus some simple processing
 operations.</p>
 <p>For example, let’s build some arrays</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                     <span class="c1"># Load the library</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                     <span class="c1"># Load the library</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>    <span class="c1"># Create even grid from -π to π</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                          <span class="c1"># Apply cosine to each element of a</span>
@@ -413,13 +418,20 @@ operations.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Now let’s take the inner product</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">@</span> <span class="n">c</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">@</span> <span class="n">c</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.3306690738754696e-16
 </pre></div>
+</div>
 </div>
 </div>
 <p>The number you see here might vary slightly but it’s essentially zero.</p>
@@ -428,11 +440,11 @@ operations.</p>
 function)</p>
 <p>The <a class="reference external" href="http://www.scipy.org">SciPy</a> library is built on top of NumPy and
 provides additional functionality.</p>
-<p><span class="target" id="tuple-unpacking-example"></span>
-For example, let’s calculate <span class="math notranslate nohighlight">\(\int_{-2}^2 \phi(z) dz\)</span> where <span class="math notranslate nohighlight">\(\phi\)</span> is
+<p id="tuple-unpacking-example">For example, let’s calculate <span class="math notranslate nohighlight">\(\int_{-2}^2 \phi(z) dz\)</span> where <span class="math notranslate nohighlight">\(\phi\)</span> is
 the standard normal density.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
 
 <span class="n">ϕ</span> <span class="o">=</span> <span class="n">norm</span><span class="p">()</span>
@@ -440,8 +452,11 @@ the standard normal density.</p>
 <span class="n">value</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9544997361036417
 </pre></div>
+</div>
 </div>
 </div>
 <p>SciPy includes many of the standard routines used in</p>
@@ -470,11 +485,17 @@ including</p>
 <li><p>LaTeX integration</p></li>
 </ul>
 <p>Example 2D plot with embedded LaTeX annotations</p>
-<p><img alt="" src="../_images/qs.png" /></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/qs.png"><img alt="../_images/qs.png" src="../_images/qs.png" style="width: 771.4px; height: 581.4px;" /></a>
+</div>
 <p>Example contour plot</p>
-<p><img alt="" src="../_images/bn_density1.png" /></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/bn_density1.png"><img alt="../_images/bn_density1.png" src="../_images/bn_density1.png" style="width: 567.15px; height: 445.54999999999995px;" /></a>
+</div>
 <p>Example 3D plot</p>
-<p><img alt="" src="../_images/career_vf.png" /></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/career_vf.png"><img alt="../_images/career_vf.png" src="../_images/career_vf.png" style="width: 443.65px; height: 329.65px;" /></a>
+</div>
 <p>More examples can be found in the <a class="reference external" href="http://matplotlib.org/gallery.html">Matplotlib thumbnail
 gallery</a>.</p>
 <p>Other graphics libraries include</p>
@@ -490,59 +511,83 @@ gallery</a>.</p>
 Mathematica or Maple.</p>
 <p>The <a class="reference external" href="http://www.sympy.org/">SymPy</a> library provides this functionality
 from within the Python shell.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span>
 
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">),</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>  <span class="c1"># Treat &#39;x&#39; and &#39;y&#39; as algebraic symbols</span>
 <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle 3 x + y\]</div>
 </div>
+</div>
 <p>We can manipulate expressions</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">expression</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle x^{2} + 2 x y + y^{2}\]</div>
 </div>
+</div>
 <p>solve polynomials</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">solve</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">solve</span>
 
 <span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[-1/2 - sqrt(7)*I/2, -1/2 + sqrt(7)*I/2]
 </pre></div>
 </div>
 </div>
+</div>
 <p>and calculate limits, derivatives and integrals</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">limit</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">diff</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">limit</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">diff</span>
 
 <span class="n">limit</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \infty\]</div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle 1\]</div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \cos{\left(x \right)}\]</div>
+</div>
 </div>
 <p>The beauty of importing this functionality into Python is that we are
 working within a fully fledged programming language.</p>
@@ -560,8 +605,9 @@ rapidly over the last few years.</p>
 <p>Pandas is fast, efficient, flexible and well designed.</p>
 <p>Here’s a simple example, using some dummy data generated with Numpy’s
 excellent <code class="docutils literal notranslate"><span class="pre">random</span></code> functionality.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 5x2 matrix of N(0, 1) random draws</span>
@@ -571,6 +617,8 @@ excellent <code class="docutils literal notranslate"><span class="pre">random</s
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>               price    weight
 2010-12-28  0.471435 -1.190976
 2010-12-29  1.432707 -0.312652
@@ -580,14 +628,19 @@ excellent <code class="docutils literal notranslate"><span class="pre">random</s
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>price     0.411768
 weight   -0.699135
 dtype: float64
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -616,10 +669,11 @@ features include, among many other things:</p>
 </ul>
 <p>Here’s some example code that generates and plots a random graph, with
 node color determined by shortest path length from a central node.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
 
 <span class="c1"># Generate a random graph</span>
@@ -645,7 +699,10 @@ node color determined by shortest path length from a central node.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/about_py_11_0.png" src="../_images/about_py_11_0.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/about_py_20_0.png" src="../_images/about_py_20_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="cloud-computing">
@@ -678,7 +735,7 @@ Amazon’s EC2.</p></li>
 </ul>
 </div>
 <div class="section" id="other-developments">
-<h3><span class="target" id="intfc"></span>Other Developments<a class="headerlink" href="#other-developments" title="Permalink to this headline">¶</a></h3>
+<span id="intfc"></span><h3>Other Developments<a class="headerlink" href="#other-developments" title="Permalink to this headline">¶</a></h3>
 <p>There are many other interesting developments with scientific
 programming in Python.</p>
 <p>Some representative examples include</p>

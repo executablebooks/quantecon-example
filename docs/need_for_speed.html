@@ -220,7 +220,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#beyond-vectorization" class="nav-link"> Beyond Vectorization</a>
+            <a href="#beyond-vectorization" class="nav-link">Beyond Vectorization</a>
         </li>
     
     </ul>
@@ -257,12 +257,14 @@
               <div>
                 
   <div class="section" id="python-for-scientific-computing">
-<h1><span class="target" id="speed"></span>Python for Scientific Computing<a class="headerlink" href="#python-for-scientific-computing" title="Permalink to this headline">¶</a></h1>
+<span id="speed"></span><h1>Python for Scientific Computing<a class="headerlink" href="#python-for-scientific-computing" title="Permalink to this headline">¶</a></h1>
 <p>In addition to what’s in Anaconda, this lecture will need the following
 libraries:</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --upgrade quantecon
+<div class="cell tag_remove_output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install --upgrade quantecon
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="overview">
@@ -378,13 +380,17 @@ vanilla Python is slower than C or Fortran.</p>
 <div class="section" id="dynamic-typing">
 <h4>Dynamic Typing<a class="headerlink" href="#dynamic-typing" title="Permalink to this headline">¶</a></h4>
 <p>Consider this Python operation</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
 <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
+</div>
 </div>
 </div>
 <p>Even for this simple operation, the Python interpreter has a fair bit of
@@ -392,23 +398,31 @@ work to do.</p>
 <p>For example, in the statement <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, the interpreter has to know which
 operation to invoke.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are strings, then <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> requires string concatenation</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span>
 <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;foobar&#39;
 </pre></div>
 </div>
 </div>
+</div>
 <p>If <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are lists, then <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> requires list concatenation</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">]</span>
 <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;foo&#39;, &#39;bar&#39;]
 </pre></div>
+</div>
 </div>
 </div>
 <p>(We say that the operator <code class="docutils literal notranslate"><span class="pre">+</span></code> is <em>overloaded</em> — its action depends
@@ -502,23 +516,32 @@ not all, as we shall see).</p>
 <div class="section" id="operations-on-arrays">
 <h3>Operations on Arrays<a class="headerlink" href="#operations-on-arrays" title="Permalink to this headline">¶</a></h3>
 <p>First, let’s run some imports</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">quantecon</span> <span class="k">as</span> <span class="nn">qe</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Next let’s try some non-vectorized code, which uses a native Python
 loop to generate, square and then sum a large number of random
 variables:</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1_000_000</span>
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>      <span class="c1"># Will accumulate and store sum</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -526,22 +549,29 @@ variables:</p>
     <span class="n">y</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 363 ms, sys: 1.66 ms, total: 365 ms
-Wall time: 365 ms
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 320 ms, sys: 873 µs, total: 320 ms
+Wall time: 320 ms
 </pre></div>
 </div>
 </div>
+</div>
 <p>The following vectorized code achieves the same thing.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.2 ms, sys: 3.39 ms, total: 15.6 ms
-Wall time: 15.5 ms
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.6 ms, sys: 2.9 ms, total: 16.5 ms
+Wall time: 16.2 ms
 </pre></div>
+</div>
 </div>
 </div>
 <p>As you can see, the second code block runs much faster. Why?</p>
@@ -562,7 +592,7 @@ be vectorized.</p>
 <p>The next section illustrates this point.</p>
 </div>
 <div class="section" id="universal-functions">
-<h3><span class="target" id="ufuncs"></span>Universal Functions<a class="headerlink" href="#universal-functions" title="Permalink to this headline">¶</a></h3>
+<span id="ufuncs"></span><h3>Universal Functions<a class="headerlink" href="#universal-functions" title="Permalink to this headline">¶</a></h3>
 <p>Many functions provided by NumPy are so-called <em>universal functions</em>
 — also called
 <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html">ufuncs</a>.</p>
@@ -572,37 +602,45 @@ be vectorized.</p>
 <li><p>map arrays into arrays, acting element-wise</p></li>
 </ul>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">np.cos</span></code> is a ufunc:</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5403023058681398
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1.        , 0.87758256, 0.54030231])
 </pre></div>
+</div>
 </div>
 </div>
 <p>By exploiting ufuncs, many operations can be vectorized.</p>
 <p>For example, consider the problem of maximizing a function <span class="math notranslate nohighlight">\(f\)</span> of two
 variables <span class="math notranslate nohighlight">\((x,y)\)</span> over the square <span class="math notranslate nohighlight">\([-a, a] \times [-a, a]\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(a\)</span> let’s choose</p>
-<p><div class="math notranslate nohighlight">
+<div class="math notranslate nohighlight">
 \[
 f(x,y) = \frac{\cos(x^2 + y^2)}{1 + x^2 + y^2}
 \quad \text{and} \quad
 a = 3
 \]</div>
-</p>
 <p>Here’s a plot of <span class="math notranslate nohighlight">\(f\)</span></p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.axes3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
 
@@ -628,7 +666,10 @@ a = 3
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/need_for_speed_10_0.png" src="../_images/need_for_speed_10_0.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/need_for_speed_19_0.png" src="../_images/need_for_speed_19_0.png" />
+</div>
 </div>
 <p>To maximize it, we’re going to use a naive grid search:</p>
 <ol class="simple">
@@ -636,14 +677,19 @@ a = 3
 <li><p>Return the maximum of observed values.</p></li>
 </ol>
 <p>The grid will be</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Here’s a non-vectorized version that uses Python loops.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
 
@@ -654,25 +700,32 @@ a = 3
             <span class="n">m</span> <span class="o">=</span> <span class="n">z</span>
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.08 s, sys: 16.2 ms, total: 3.1 s
-Wall time: 2.86 s
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.24 s, sys: 2.96 ms, total: 3.24 s
+Wall time: 2.88 s
 </pre></div>
 </div>
 </div>
+</div>
 <p>And here’s a vectorized version</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 22.7 ms, sys: 5.41 ms, total: 28.1 ms
-Wall time: 28 ms
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 21.2 ms, sys: 4.38 ms, total: 25.6 ms
+Wall time: 25.3 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9999819641085747
 </pre></div>
+</div>
 </div>
 </div>
 <p>In the vectorized version, all the looping takes place in compiled code.</p>
@@ -682,7 +735,7 @@ programming tricks.)</p>
 </div>
 </div>
 <div class="section" id="beyond-vectorization">
-<h2><span class="target" id="numba-p-c-vectorization"></span> Beyond Vectorization<a class="headerlink" href="#beyond-vectorization" title="Permalink to this headline">¶</a></h2>
+<span id="numba-p-c-vectorization"></span><h2>Beyond Vectorization<a class="headerlink" href="#beyond-vectorization" title="Permalink to this headline">¶</a></h2>
 <p>At its best, vectorization yields fast, simple code.</p>
 <p>However, it’s not without disadvantages.</p>
 <p>One issue is that it can be highly memory-intensive.</p>

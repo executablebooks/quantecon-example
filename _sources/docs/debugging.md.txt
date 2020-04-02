@@ -1,4 +1,17 @@
-# (debugging)=Debugging
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(debugging)=
+
+# Debugging
 
 > \"Debugging is twice as hard as writing the code in the first place.
 > Therefore, if you write the code as cleverly as possible, you are, by
@@ -21,8 +34,8 @@ Here we\'ll focus on Jupyter and leave you to explore other settings.
 
 We\'ll need the following imports
 
-```{execute}
-:hide-output:
+```{code-cell} ipython3
+:tags: [remove_output]
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -35,8 +48,8 @@ import matplotlib.pyplot as plt
 
 Let\'s consider a simple (and rather contrived) example
 
-```{execute}
-:raises: AttributeError
+```{code-cell} ipython3
+:tags: [raises-exception]
 
 def plot_log():
     fig, ax = plt.subplots(2, 1)
@@ -67,8 +80,8 @@ But let\'s pretend that we don\'t understand this for the moment.
 We might suspect there\'s something wrong with `ax` but when we try to
 investigate this object, we get the following exception:
 
-```{execute}
-:raises: NameError
+```{code-cell} ipython3
+:tags: [raises-exception]
 
 ax
 ```
@@ -80,8 +93,8 @@ Let\'s try doing it a different way.
 
 We run the first cell block again, generating the same error
 
-```{execute}
-:raises: AttributeError
+```{code-cell} ipython3
+:tags: [raises-exception]
 
 def plot_log():
     fig, ax = plt.subplots(2, 1)
@@ -155,7 +168,7 @@ The preceding approach is handy but sometimes insufficient.
 
 Consider the following modified version of our function above
 
-```{execute}
+```{code-cell} ipython3
 def plot_log():
     fig, ax = plt.subplots()
     x = np.logspace(1, 2, 10)

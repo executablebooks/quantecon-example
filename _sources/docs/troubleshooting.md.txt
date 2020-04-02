@@ -1,4 +1,6 @@
-# (troubleshooting)=Troubleshooting
+(troubleshooting)=
+
+# Troubleshooting
 
 ```{note} This page is for readers experiencing errors when running the code from
 the lectures.

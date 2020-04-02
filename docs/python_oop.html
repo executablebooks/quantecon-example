@@ -273,7 +273,7 @@
               <div>
                 
   <div class="section" id="oop-ii-building-classes">
-<h1><span class="target" id="python-oop"></span>OOP II: Building Classes<a class="headerlink" href="#oop-ii-building-classes" title="Permalink to this headline">¶</a></h1>
+<span id="python-oop"></span><h1>OOP II: Building Classes<a class="headerlink" href="#oop-ii-building-classes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>In an <a class="reference internal" href="oop_intro.html#oop-intro"><span class="std std-ref">earlier lecture</span></a>, we
@@ -307,11 +307,15 @@ specifications.</p>
 <p>It takes a little while to get used to the syntax so we’ll provide
 plenty of examples.</p>
 <p>We’ll use the following imports:</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 </div>
 </div>
 </div>
@@ -332,14 +336,18 @@ on.</p></li>
 together</strong> into “objects”.</p>
 <p>An example is a Python list, which not only stores data but also knows
 how to sort itself, etc.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="n">x</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 4, 5]
 </pre></div>
+</div>
 </div>
 </div>
 <p>As we now know, <code class="docutils literal notranslate"><span class="pre">sort</span></code> is a function that is “part of” the list object
@@ -368,14 +376,18 @@ to as <em>attributes</em>.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">object_name.method_name()</span></code></p></li>
 </ul>
 <p>In the example</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
 </pre></div>
+</div>
 </div>
 </div>
 <ul class="simple">
@@ -386,7 +398,7 @@ lists, but with its own particular data.</p></li>
 </ul>
 </div>
 <div class="section" id="why-is-oop-useful">
-<h3><span class="target" id="why-oop"></span>Why is OOP Useful?<a class="headerlink" href="#why-is-oop-useful" title="Permalink to this headline">¶</a></h3>
+<span id="why-oop"></span><h3>Why is OOP Useful?<a class="headerlink" href="#why-is-oop-useful" title="Permalink to this headline">¶</a></h3>
 <p>OOP is useful for the same reason that abstraction is useful: for
 recognizing and exploiting the common structure.</p>
 <p>For example,</p>
@@ -414,7 +426,7 @@ with the Markov chain object.</p>
 <h2>Defining Your Own Classes<a class="headerlink" href="#defining-your-own-classes" title="Permalink to this headline">¶</a></h2>
 <p>Let’s build some simple classes to start off.</p>
 <div class="section" id="example-a-consumer-class">
-<h3><span class="target" id="oop-consumer-class"></span>Example: A Consumer Class<a class="headerlink" href="#example-a-consumer-class" title="Permalink to this headline">¶</a></h3>
+<span id="oop-consumer-class"></span><h3>Example: A Consumer Class<a class="headerlink" href="#example-a-consumer-class" title="Permalink to this headline">¶</a></h3>
 <p>First, we’ll build a <code class="docutils literal notranslate"><span class="pre">Consumer</span></code> class with</p>
 <ul class="simple">
 <li><p>a <code class="docutils literal notranslate"><span class="pre">wealth</span></code> attribute that stores the consumer’s wealth (data)</p></li>
@@ -426,8 +438,9 @@ returns an error if insufficient funds exist</p></li>
 <p>Admittedly a little contrived, this example of a class helps us
 internalize some new syntax.</p>
 <p>Here’s one implementation</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Consumer</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Consumer</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
         <span class="s2">&quot;Initialize consumer with w dollars of wealth&quot;</span>
@@ -445,6 +458,9 @@ internalize some new syntax.</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">=</span> <span class="n">new_wealth</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 </div>
 </div>
 <p>There’s some special syntax here so let’s step through carefully</p>
@@ -469,61 +485,85 @@ automatically.</p>
 <div class="section" id="usage">
 <h4>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h4>
 <p>Here’s an example of usage</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Create instance with initial wealth 10</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Create instance with initial wealth 10</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">spend</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">spend</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Insufficent funds
 </pre></div>
 </div>
 </div>
+</div>
 <p>We can of course create multiple instances each with its own data</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c2</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">c2</span><span class="o">.</span><span class="n">spend</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">c2</span><span class="o">.</span><span class="n">wealth</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
+</div>
 <p>In fact, each instance stores its data in a separate namespace
 dictionary</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="vm">__dict__</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="vm">__dict__</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 10}
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span><span class="o">.</span><span class="vm">__dict__</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span><span class="o">.</span><span class="vm">__dict__</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 8}
 </pre></div>
+</div>
 </div>
 </div>
 <p>When we access or set attributes we’re actually just modifying the
@@ -565,25 +605,33 @@ with more examples.</p></li>
 </ul>
 <p>Methods actually live inside a class object formed when the interpreter
 reads the class definition</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Consumer</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>  <span class="c1"># Show __dict__ attribute of class object</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Consumer</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>  <span class="c1"># Show __dict__ attribute of class object</span>
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Consumer.__init__ at 0x112e1bca0&gt;, &#39;earn&#39;: &lt;function Consumer.earn at 0x112e1bd30&gt;, &#39;spend&#39;: &lt;function Consumer.spend at 0x112e1bdc0&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__doc__&#39;: None}
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Consumer.__init__ at 0x1177ddca0&gt;, &#39;earn&#39;: &lt;function Consumer.earn at 0x1177ddd30&gt;, &#39;spend&#39;: &lt;function Consumer.spend at 0x1177dddc0&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__doc__&#39;: None}
 </pre></div>
+</div>
 </div>
 </div>
 <p>Note how the three methods <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">earn</span></code> and <code class="docutils literal notranslate"><span class="pre">spend</span></code> are stored in
 the class object.</p>
 <p>Consider the following code</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
+</div>
 </div>
 </div>
 <p>When you call <code class="docutils literal notranslate"><span class="pre">earn</span></code> via <code class="docutils literal notranslate"><span class="pre">c1.earn(10)</span></code> the interpreter passes the
@@ -597,11 +645,15 @@ instance <code class="docutils literal notranslate"><span class="pre">c1</span><
 argument.</p>
 <p>Recall that in the definition of the <code class="docutils literal notranslate"><span class="pre">earn</span></code> method, <code class="docutils literal notranslate"><span class="pre">self</span></code> is the first
 parameter</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">earn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">earn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
      <span class="s2">&quot;The consumer earns y dollars&quot;</span>
      <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">+=</span> <span class="n">y</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 </div>
 </div>
 <p>The end result is that <code class="docutils literal notranslate"><span class="pre">self</span></code> is bound to the instance <code class="docutils literal notranslate"><span class="pre">c1</span></code> inside the
@@ -611,7 +663,7 @@ modifying <code class="docutils literal notranslate"><span class="pre">c1.wealth
 </div>
 </div>
 <div class="section" id="example-the-solow-growth-model">
-<h3><span class="target" id="oop-solow-growth"></span>Example: The Solow Growth Model<a class="headerlink" href="#example-the-solow-growth-model" title="Permalink to this headline">¶</a></h3>
+<span id="oop-solow-growth"></span><h3>Example: The Solow Growth Model<a class="headerlink" href="#example-the-solow-growth-model" title="Permalink to this headline">¶</a></h3>
 <p>For our next example, let’s write a simple class to implement the Solow
 growth model.</p>
 <p>The Solow growth model is a neoclassical growth model where the amount
@@ -647,8 +699,9 @@ variable <code class="docutils literal notranslate"><span class="pre">self.k</sp
 </ul>
 <p>The methods <code class="docutils literal notranslate"><span class="pre">steady_state</span></code> and <code class="docutils literal notranslate"><span class="pre">generate_sequence</span></code> are fairly
 self-explanatory</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solow</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solow</span><span class="p">:</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Implements the Solow growth model with the update rule</span>
 
@@ -693,11 +746,15 @@ self-explanatory</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Here’s a little program that uses the class to compute time series from
 two different initial conditions.</p>
 <p>The common steady state is also plotted for comparison</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">()</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mf">8.0</span><span class="p">)</span>
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">60</span>
@@ -717,7 +774,10 @@ two different initial conditions.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/python_oop_14_0.png" src="../_images/python_oop_14_0.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_26_0.png" src="../_images/python_oop_26_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="example-a-market">
@@ -741,8 +801,9 @@ raised, consumer surplus and producer surplus.</p>
 <p>Here’s our implementation.</p>
 <p>(It uses a function from SciPy called <code class="docutils literal notranslate"><span class="pre">quad</span></code> for numerical
 integration—a topic we will say more about later on.)</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
 
 <span class="k">class</span> <span class="nc">Market</span><span class="p">:</span>
 
@@ -796,29 +857,41 @@ integration—a topic we will say more about later on.)</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Here’s a sample of usage</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="o">*</span><span class="n">baseline_params</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equilibrium price = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">price</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>equilibrium price =  18.5
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consumer surplus = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">consumer_surp</span><span class="p">())</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consumer surplus = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">consumer_surp</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>consumer surplus =  33.0625
 </pre></div>
 </div>
 </div>
+</div>
 <p>Here’s a short program that uses this class to plot an inverse demand
 curve together with inverse supply curves with and without taxes</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baseline ad, bd, az, bz, tax</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baseline ad, bd, az, bz, tax</span>
 <span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="o">*</span><span class="n">baseline_params</span><span class="p">)</span>
 
@@ -839,15 +912,19 @@ curve together with inverse supply curves with and without taxes</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/python_oop_18_0.png" src="../_images/python_oop_18_0.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_33_0.png" src="../_images/python_oop_33_0.png" />
+</div>
 </div>
 <p>The next program provides a function that</p>
 <ul class="simple">
 <li><p>takes an instance of <code class="docutils literal notranslate"><span class="pre">Market</span></code> as a parameter</p></li>
 <li><p>computes dead weight loss from the imposition of the tax</p></li>
 </ul>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deadw</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deadw</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
     <span class="s2">&quot;Computes deadweight loss for market m.&quot;</span>
     <span class="c1"># == Create analogous market with no tax == #</span>
     <span class="n">m_no_tax</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">ad</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">bd</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">az</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">bz</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -858,15 +935,22 @@ curve together with inverse supply curves with and without taxes</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Here’s an example of usage</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="o">*</span><span class="n">baseline_params</span><span class="p">)</span>
 <span class="n">deadw</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>  <span class="c1"># Show deadweight loss</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.125
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -882,8 +966,9 @@ logistic map</p>
 \quad r \in [0, 4]\]</div>
 <p>Let’s write a class for generating time series from this model.</p>
 <p>Here’s one implementation</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Chaos</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Chaos</span><span class="p">:</span>
   <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">  Models the dynamical system with :math:`x_{t+1} = r x_t (1 - x_t)`</span>
 <span class="sd">  &quot;&quot;&quot;</span>
@@ -907,19 +992,27 @@ logistic map</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Here’s an example of usage</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>     <span class="c1"># x0 = 0.1 and r = 0.4</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>     <span class="c1"># x0 = 0.1 and r = 0.4</span>
 <span class="n">ch</span><span class="o">.</span><span class="n">generate_sequence</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># First 5 iterates</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0.1, 0.36000000000000004, 0.9216, 0.28901376000000006, 0.8219392261226498]
 </pre></div>
 </div>
 </div>
+</div>
 <p>This piece of code plots a longer trajectory</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
 <span class="n">ts_length</span> <span class="o">=</span> <span class="mi">250</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -930,11 +1023,15 @@ logistic map</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/python_oop_23_0.png" src="../_images/python_oop_23_0.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_43_0.png" src="../_images/python_oop_43_0.png" />
+</div>
 </div>
 <p>The next piece of code provides a bifurcation diagram</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mf">2.5</span>
 <span class="k">while</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
@@ -948,7 +1045,10 @@ logistic map</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/python_oop_24_0.png" src="../_images/python_oop_24_0.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_45_0.png" src="../_images/python_oop_45_0.png" />
+</div>
 </div>
 <p>On the horizontal axis is the parameter <span class="math notranslate nohighlight">\(r\)</span> in
 <a class="reference internal" href="#equation-quadmap2">(3)</a>.</p>
@@ -976,54 +1076,74 @@ oscillating among three values.</p>
 performed.</p>
 <p>For example, recall that lists and tuples have a notion of length and
 that this length can be queried via the <code class="docutils literal notranslate"><span class="pre">len</span></code> function</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
+</div>
 <p>If you want to provide a return value for the <code class="docutils literal notranslate"><span class="pre">len</span></code> function when
 applied to your user-defined object, use the <code class="docutils literal notranslate"><span class="pre">__len__</span></code> special method</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">42</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Now we get</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
+</div>
 </div>
 </div>
 <p id="call-method">A special method we will use regularly is the <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method.</p>
 <p>This method can be used to make your instances callable, just like
 functions</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">42</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>After running we get</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
 <span class="n">f</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># Exactly equivalent to f.__call__(8)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>50
 </pre></div>
+</div>
 </div>
 </div>
 <p>Exercise 1 provides a more useful example.</p>
@@ -1031,7 +1151,7 @@ functions</p>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-1">
-<h3><span class="target" id="oop-ex1"></span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<span id="oop-ex1"></span><h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Empirical_distribution_function">empirical cumulative distribution function
 (ecdf)</a>
 corresponding to a sample <span class="math notranslate nohighlight">\(\{X_i\}_{i=1}^n\)</span> is defined as</p>
@@ -1065,7 +1185,7 @@ any <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 <p>Aim for clarity, not efficiency.</p>
 </div>
 <div class="section" id="exercise-2">
-<h3><span class="target" id="oop-ex2"></span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<span id="oop-ex2"></span><h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
 <p>In an <a class="reference internal" href="python_essentials.html#pyess-ex2"><span class="std std-ref">earlier exercise</span></a>, you
 wrote a function for evaluating polynomials.</p>
 <p>This exercise is an extension, where the task is to build a simple class
@@ -1091,8 +1211,9 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 <h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Exercise 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ECDF</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ECDF</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observations</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observations</span> <span class="o">=</span> <span class="n">observations</span>
@@ -1106,8 +1227,12 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># == test == #</span>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># == test == #</span>
 
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
 
@@ -1121,16 +1246,20 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 <span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.6
-0.48
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.4
+0.514
 </pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="id2">
 <h3>Exercise 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Polynomial</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Polynomial</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coefficients</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1160,6 +1289,9 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
         <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span> <span class="o">=</span> <span class="n">new_coefficients</span>
         <span class="k">return</span> <span class="n">new_coefficients</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 </div>
 </div>
 </div>
