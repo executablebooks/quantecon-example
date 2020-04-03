@@ -29,17 +29,16 @@ install but *not* what you should choose for these lectures.
 
 These lectures require the entire scientific programming ecosystem,
 which
+
 -   the core installation doesn\'t provide
 -   is painful to install one piece at a time.
 
-<br />
-
 Hence the best approach for our purposes is to install a Python
 distribution that contains
+
 1.  the core Python language **and**
 2.  compatible versions of the most popular scientific libraries.
 
-<br />
 
 The best such distribution is 
 [Anaconda](https://www.anaconda.com/what-is-anaconda/).
@@ -50,8 +49,6 @@ Anaconda is
 -   cross-platform
 -   comprehensive
 -   completely unrelated to the Nicki Minaj song of the same name
-
-<br />
 
 ```{note} 
 Anaconda also comes with a great package management system to organize
