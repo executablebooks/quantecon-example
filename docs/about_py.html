@@ -23,13 +23,14 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Setting up Your Python Environment" href="getting_started.html" />
-    <link rel="prev" title="Introduction to Python" href="index_learning_python.html" />
+    <link rel="prev" title="Programming for Quantitative Economics" href="index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -39,19 +40,12 @@
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
-<div class='top'>
-<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-    <i class="fas fa-bars"></i>
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-arrow-up"></i>
-</button>
-</div>
 
     <div class="container-fluid">
       <div class="row">
           
 
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
@@ -70,71 +64,65 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
   <ul class="nav sidenav_l1">
+<li class="sidebar-special">
+<p class="sidebar-caption">Introduction to Python</p>
+</li>
   <li class="active">
-    <a href="index_learning_python.html">Learning Python</a>
-  <ul class="nav sidenav_l2">
-    <li class="active">
-      <a href="">About Python</a>
-    </li>
-    <li class="">
-      <a href="getting_started.html">Setting up Your Python Environment</a>
-    </li>
-    <li class="">
-      <a href="python_by_example.html">An Introductory Example</a>
-    </li>
-    <li class="">
-      <a href="functions.html">Functions</a>
-    </li>
-    <li class="">
-      <a href="python_essentials.html">Python Essentials</a>
-    </li>
-    <li class="">
-      <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
-    </li>
-    <li class="">
-      <a href="python_oop.html">OOP II: Building Classes</a>
-    </li>
-  </ul>
+    <a href="">About Python</a>
   </li>
   <li class="">
-    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="need_for_speed.html">Python for Scientific Computing</a>
-    </li>
-    <li class="">
-      <a href="numpy.html">NumPy</a>
-    </li>
-    <li class="">
-      <a href="matplotlib.html">Matplotlib</a>
-    </li>
-    <li class="">
-      <a href="scipy.html">SciPy</a>
-    </li>
-    <li class="">
-      <a href="numba.html">Numba</a>
-    </li>
-    <li class="">
-      <a href="parallelization.html">Parallelization</a>
-    </li>
-    <li class="">
-      <a href="pandas.html">Pandas</a>
-    </li>
-  </ul>
+    <a href="getting_started.html">Setting up Your Python Environment</a>
   </li>
   <li class="">
-    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="writing_good_code.html">Writing Good Code</a>
-    </li>
-    <li class="">
-      <a href="python_advanced_features.html">More Language Features</a>
-    </li>
-    <li class="">
-      <a href="debugging.html">Debugging</a>
-    </li>
-  </ul>
+    <a href="python_by_example.html">An Introductory Example</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions</a>
+  </li>
+  <li class="">
+    <a href="python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
+    <a href="python_oop.html">OOP II: Building Classes</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Scientific Libraries</p>
+</li>
+  <li class="">
+    <a href="need_for_speed.html">Python for Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="numpy.html">NumPy</a>
+  </li>
+  <li class="">
+    <a href="matplotlib.html">Matplotlib</a>
+  </li>
+  <li class="">
+    <a href="scipy.html">SciPy</a>
+  </li>
+  <li class="">
+    <a href="numba.html">Numba</a>
+  </li>
+  <li class="">
+    <a href="parallelization.html">Parallelization</a>
+  </li>
+  <li class="">
+    <a href="pandas.html">Pandas</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Advanced Python</p>
+</li>
+  <li class="">
+    <a href="writing_good_code.html">Writing Good Code</a>
+  </li>
+  <li class="">
+    <a href="python_advanced_features.html">More Language Features</a>
+  </li>
+  <li class="">
+    <a href="debugging.html">Debugging</a>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -146,7 +134,34 @@
 
 
           
-<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+          
+<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
+    
+    
+      <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col topbar-main">
+        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <div class="download-buttons-dropdown">
+            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+            <div class="download-buttons">
+                <!-- Download raw file -->
+                <a class="download-buttons" href="../_sources/docs/about_py.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
 
 
 <div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
@@ -234,33 +249,11 @@
     </ul>
 </nav>
 
-</div>
-
-
-          
-<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
-    
-    
-      <div class="row topbar sticky-top">
-    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-arrow-left"></i>
-    </button>
-    <div class="download-buttons-dropdown">
-        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-        <div class="download-buttons">
-            <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/about_py.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
-            <!-- Download PDF via print -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
-        </div>
     </div>
-    
-    
 </div>
     
     <div id="main-content" class="row">
-        <div class="col-12 ">
+        <div class="col-12 col-md-9 col-xxl-7">
         
               <div>
                 
@@ -329,8 +322,8 @@ in the fields of finance and banking.</p>
 <h3>Relative Popularity<a class="headerlink" href="#relative-popularity" title="Permalink to this headline">¶</a></h3>
 <p>The following chart, produced using Stack Overflow Trends, shows one
 measure of the relative popularity of Python</p>
-<div class="figure align-center">
-<img alt="../_images/python_vs_matlab.png" src="../_images/python_vs_matlab.png" />
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/python_vs_matlab.png"><img alt="../_images/python_vs_matlab.png" src="../_images/python_vs_matlab.png" style="width: 457.2px; height: 288.0px;" /></a>
 </div>
 <p>The figure indicates not only that Python is widely used but also that
 adoption of Python has accelerated significantly since 2012.</p>
@@ -339,8 +332,8 @@ domain, particularly in rapidly growing fields like data science.</p>
 <p>For example, the popularity of <a class="reference external" href="http://pandas.pydata.org/">pandas</a>, a
 library for data analysis with Python has exploded, as seen here.</p>
 <p>(The corresponding time path for MATLAB is shown for comparison)</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/pandas_vs_matlab.png"><img alt="../_images/pandas_vs_matlab.png" src="../_images/pandas_vs_matlab.png" style="width: 680.7900000000001px; height: 412.5px;" /></a>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/pandas_vs_matlab.png"><img alt="../_images/pandas_vs_matlab.png" src="../_images/pandas_vs_matlab.png" style="width: 474.49px; height: 287.5px;" /></a>
 </div>
 <p>Note that pandas takes off in 2012, which is the same year that we see
 Python’s popularity begin to spike in the first figure.</p>
@@ -485,16 +478,16 @@ including</p>
 <li><p>LaTeX integration</p></li>
 </ul>
 <p>Example 2D plot with embedded LaTeX annotations</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/qs.png"><img alt="../_images/qs.png" src="../_images/qs.png" style="width: 771.4px; height: 581.4px;" /></a>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/qs.png"><img alt="../_images/qs.png" src="../_images/qs.png" style="width: 446.6px; height: 336.6px;" /></a>
 </div>
 <p>Example contour plot</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/bn_density1.png"><img alt="../_images/bn_density1.png" src="../_images/bn_density1.png" style="width: 567.15px; height: 445.54999999999995px;" /></a>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/bn_density1.png"><img alt="../_images/bn_density1.png" src="../_images/bn_density1.png" style="width: 328.35px; height: 257.95000000000005px;" /></a>
 </div>
 <p>Example 3D plot</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/career_vf.png"><img alt="../_images/career_vf.png" src="../_images/career_vf.png" style="width: 443.65px; height: 329.65px;" /></a>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/career_vf.png"><img alt="../_images/career_vf.png" src="../_images/career_vf.png" style="width: 373.6px; height: 277.6px;" /></a>
 </div>
 <p>More examples can be found in the <a class="reference external" href="http://matplotlib.org/gallery.html">Matplotlib thumbnail
 gallery</a>.</p>
@@ -779,7 +772,7 @@ the <a class="reference external" href="https://www.reddit.com:443/r/Python/">Py
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="index_learning_python.html" title="previous page">Introduction to Python</a>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Programming for Quantitative Economics</a>
     <a class='right-next' id="next-link" href="getting_started.html" title="next page">Setting up Your Python Environment</a>
 
     </div>

@@ -437,7 +437,7 @@ s1 = Solow()
 s2 = Solow(k=8.0)
 
 T = 60
-fig, ax = plt.subplots(figsize=(9, 6))
+fig, ax = plt.subplots()
 
 # Plot the common steady state value of capital
 ax.plot([s1.steady_state()]*T, 'k-', label='steady state')

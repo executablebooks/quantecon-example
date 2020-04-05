@@ -108,8 +108,9 @@ Here\'s an image showing execution of some code (borrowed from
 in a Jupyter notebook
 
 ```{figure} /_static/lecture_specific/getting_started/jp_demo.png
+:scale: 50%
 :align: center
-:scale: 90%
+:figclass: align-center
 ```
 
 While Jupyter isn\'t the only way to code in Python, it\'s great for
@@ -134,7 +135,9 @@ Either
 If you use the second option, you will see something like this
 
 ```{figure} /_static/lecture_specific/getting_started/starting_nb.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 The output tells us the notebook is running at `http://localhost:8888/`
@@ -151,7 +154,9 @@ Hopefully, your default browser has also opened up with a web page that
 looks something like this
 
 ```{figure} /_static/lecture_specific/getting_started/nb.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 What you see here is called the Jupyter *dashboard*.
@@ -165,7 +170,9 @@ right and select `Python 3` or similar.
 Here\'s what shows up on our machine:
 
 ```{figure} /_static/lecture_specific/getting_started/nb2.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 The notebook displays an *active cell*, into which you can type Python
@@ -189,7 +196,9 @@ When you\'re ready to execute the code in a cell, hit `Shift-Enter`
 instead of the usual `Enter`.
 
 ```{figure} /_static/lecture_specific/getting_started/nb3.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 (Note: There are also menu and button options for running code in a cell
@@ -288,7 +297,9 @@ We can explore these attributes of `np` using the `Tab` key.
 For example, here we type `np.ran` and hit Tab
 
 ```{figure} /_static/lecture_specific/getting_started/nb6.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 Jupyter offers up the two possible completions, `random` and `rank`.
@@ -305,7 +316,9 @@ To get help on `np.rank`, say, we can execute `np.rank?`.
 Documentation appears in a split window of the browser, like so
 
 ```{figure} /_static/lecture_specific/getting_started/nb6a.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 Clicking on the top right of the lower split closes the on-line help.
@@ -319,7 +332,9 @@ For example, here we enter a mixture of plain text and LaTeX instead of
 code
 
 ```{figure} /_static/lecture_specific/getting_started/nb7.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 Next we `Esc` to enter command mode and then type `m` to indicate that
@@ -332,7 +347,9 @@ drop-down box just below the list of menu items)
 Now we `Shift+Enter` to produce this
 
 ```{figure} /_static/lecture_specific/getting_started/nb8.png
-:scale: 90%
+:scale: 50%
+:align: center
+:figclass: align-center
 ```
 
 ### Sharing Notebooks

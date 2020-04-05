@@ -23,6 +23,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -39,19 +40,12 @@
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
-<div class='top'>
-<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-    <i class="fas fa-bars"></i>
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-arrow-up"></i>
-</button>
-</div>
 
     <div class="container-fluid">
       <div class="row">
           
 
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
@@ -70,71 +64,65 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
   <ul class="nav sidenav_l1">
+<li class="sidebar-special">
+<p class="sidebar-caption">Introduction to Python</p>
+</li>
   <li class="">
-    <a href="index_learning_python.html">Learning Python</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="about_py.html">About Python</a>
-    </li>
-    <li class="">
-      <a href="getting_started.html">Setting up Your Python Environment</a>
-    </li>
-    <li class="">
-      <a href="python_by_example.html">An Introductory Example</a>
-    </li>
-    <li class="">
-      <a href="functions.html">Functions</a>
-    </li>
-    <li class="">
-      <a href="python_essentials.html">Python Essentials</a>
-    </li>
-    <li class="">
-      <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
-    </li>
-    <li class="">
-      <a href="python_oop.html">OOP II: Building Classes</a>
-    </li>
-  </ul>
+    <a href="about_py.html">About Python</a>
+  </li>
+  <li class="">
+    <a href="getting_started.html">Setting up Your Python Environment</a>
+  </li>
+  <li class="">
+    <a href="python_by_example.html">An Introductory Example</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions</a>
+  </li>
+  <li class="">
+    <a href="python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
+    <a href="python_oop.html">OOP II: Building Classes</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Scientific Libraries</p>
+</li>
+  <li class="">
+    <a href="need_for_speed.html">Python for Scientific Computing</a>
   </li>
   <li class="active">
-    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="need_for_speed.html">Python for Scientific Computing</a>
-    </li>
-    <li class="active">
-      <a href="">NumPy</a>
-    </li>
-    <li class="">
-      <a href="matplotlib.html">Matplotlib</a>
-    </li>
-    <li class="">
-      <a href="scipy.html">SciPy</a>
-    </li>
-    <li class="">
-      <a href="numba.html">Numba</a>
-    </li>
-    <li class="">
-      <a href="parallelization.html">Parallelization</a>
-    </li>
-    <li class="">
-      <a href="pandas.html">Pandas</a>
-    </li>
-  </ul>
+    <a href="">NumPy</a>
   </li>
   <li class="">
-    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="writing_good_code.html">Writing Good Code</a>
-    </li>
-    <li class="">
-      <a href="python_advanced_features.html">More Language Features</a>
-    </li>
-    <li class="">
-      <a href="debugging.html">Debugging</a>
-    </li>
-  </ul>
+    <a href="matplotlib.html">Matplotlib</a>
+  </li>
+  <li class="">
+    <a href="scipy.html">SciPy</a>
+  </li>
+  <li class="">
+    <a href="numba.html">Numba</a>
+  </li>
+  <li class="">
+    <a href="parallelization.html">Parallelization</a>
+  </li>
+  <li class="">
+    <a href="pandas.html">Pandas</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Advanced Python</p>
+</li>
+  <li class="">
+    <a href="writing_good_code.html">Writing Good Code</a>
+  </li>
+  <li class="">
+    <a href="python_advanced_features.html">More Language Features</a>
+  </li>
+  <li class="">
+    <a href="debugging.html">Debugging</a>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -146,7 +134,34 @@
 
 
           
-<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+          
+<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
+    
+    
+      <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col topbar-main">
+        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <div class="download-buttons-dropdown">
+            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+            <div class="download-buttons">
+                <!-- Download raw file -->
+                <a class="download-buttons" href="../_sources/docs/numpy.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
 
 
 <div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
@@ -266,33 +281,11 @@
     </ul>
 </nav>
 
-</div>
-
-
-          
-<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
-    
-    
-      <div class="row topbar sticky-top">
-    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-arrow-left"></i>
-    </button>
-    <div class="download-buttons-dropdown">
-        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-        <div class="download-buttons">
-            <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/numpy.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
-            <!-- Download PDF via print -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
-        </div>
     </div>
-    
-    
 </div>
     
     <div id="main-content" class="row">
-        <div class="col-12 ">
+        <div class="col-12 col-md-9 col-xxl-7">
         
               <div>
                 
@@ -1249,7 +1242,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.40557469, 0.77803751, 0.67571102])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-1.46651339,  0.28002682,  1.07170524])
 </pre></div>
 </div>
 </div>
@@ -1263,7 +1256,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.77803751, 0.67571102])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.28002682, 1.07170524])
 </pre></div>
 </div>
 </div>
@@ -1290,7 +1283,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.0346573 ,  0.96471153, -0.54272162])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.00953284,  1.05465919, -0.7629521 ])
 </pre></div>
 </div>
 </div>
@@ -1303,7 +1296,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.0346573 ,  0.96471153, -0.54272162])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.00953284,  1.05465919, -0.7629521 ])
 </pre></div>
 </div>
 </div>
@@ -1329,7 +1322,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.0346573 ,  0.96471153, -0.54272162])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.00953284,  1.05465919, -0.7629521 ])
 </pre></div>
 </div>
 </div>
@@ -1424,7 +1417,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.90900894, -0.09079968, -0.71062651,  1.01198153])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.25129203,  0.50173678,  1.15717218, -0.328732  ])
 </pre></div>
 </div>
 </div>
@@ -1436,7 +1429,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 0, 0, 1])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 0])
 </pre></div>
 </div>
 </div>
@@ -1450,7 +1443,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 0, 0, 1])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 0])
 </pre></div>
 </div>
 </div>
@@ -1582,7 +1575,7 @@ programming through its sub-packages.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5.012
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4.992
 </pre></div>
 </div>
 </div>

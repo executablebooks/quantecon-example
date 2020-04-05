@@ -23,6 +23,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -39,19 +40,12 @@
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
-<div class='top'>
-<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-    <i class="fas fa-bars"></i>
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-arrow-up"></i>
-</button>
-</div>
 
     <div class="container-fluid">
       <div class="row">
           
 
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
@@ -70,71 +64,65 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
   <ul class="nav sidenav_l1">
+<li class="sidebar-special">
+<p class="sidebar-caption">Introduction to Python</p>
+</li>
   <li class="">
-    <a href="index_learning_python.html">Learning Python</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="about_py.html">About Python</a>
-    </li>
-    <li class="">
-      <a href="getting_started.html">Setting up Your Python Environment</a>
-    </li>
-    <li class="">
-      <a href="python_by_example.html">An Introductory Example</a>
-    </li>
-    <li class="">
-      <a href="functions.html">Functions</a>
-    </li>
-    <li class="">
-      <a href="python_essentials.html">Python Essentials</a>
-    </li>
-    <li class="">
-      <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
-    </li>
-    <li class="">
-      <a href="python_oop.html">OOP II: Building Classes</a>
-    </li>
-  </ul>
+    <a href="about_py.html">About Python</a>
+  </li>
+  <li class="">
+    <a href="getting_started.html">Setting up Your Python Environment</a>
+  </li>
+  <li class="">
+    <a href="python_by_example.html">An Introductory Example</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions</a>
+  </li>
+  <li class="">
+    <a href="python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
+    <a href="python_oop.html">OOP II: Building Classes</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Scientific Libraries</p>
+</li>
+  <li class="">
+    <a href="need_for_speed.html">Python for Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="numpy.html">NumPy</a>
+  </li>
+  <li class="">
+    <a href="matplotlib.html">Matplotlib</a>
+  </li>
+  <li class="">
+    <a href="scipy.html">SciPy</a>
+  </li>
+  <li class="">
+    <a href="numba.html">Numba</a>
   </li>
   <li class="active">
-    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="need_for_speed.html">Python for Scientific Computing</a>
-    </li>
-    <li class="">
-      <a href="numpy.html">NumPy</a>
-    </li>
-    <li class="">
-      <a href="matplotlib.html">Matplotlib</a>
-    </li>
-    <li class="">
-      <a href="scipy.html">SciPy</a>
-    </li>
-    <li class="">
-      <a href="numba.html">Numba</a>
-    </li>
-    <li class="active">
-      <a href="">Parallelization</a>
-    </li>
-    <li class="">
-      <a href="pandas.html">Pandas</a>
-    </li>
-  </ul>
+    <a href="">Parallelization</a>
   </li>
   <li class="">
-    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="writing_good_code.html">Writing Good Code</a>
-    </li>
-    <li class="">
-      <a href="python_advanced_features.html">More Language Features</a>
-    </li>
-    <li class="">
-      <a href="debugging.html">Debugging</a>
-    </li>
-  </ul>
+    <a href="pandas.html">Pandas</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Advanced Python</p>
+</li>
+  <li class="">
+    <a href="writing_good_code.html">Writing Good Code</a>
+  </li>
+  <li class="">
+    <a href="python_advanced_features.html">More Language Features</a>
+  </li>
+  <li class="">
+    <a href="debugging.html">Debugging</a>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -146,7 +134,34 @@
 
 
           
-<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+          
+<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
+    
+    
+      <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col topbar-main">
+        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <div class="download-buttons-dropdown">
+            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+            <div class="download-buttons">
+                <!-- Download raw file -->
+                <a class="download-buttons" href="../_sources/docs/parallelization.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
 
 
 <div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
@@ -230,33 +245,11 @@
     </ul>
 </nav>
 
-</div>
-
-
-          
-<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
-    
-    
-      <div class="row topbar sticky-top">
-    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-arrow-left"></i>
-    </button>
-    <div class="download-buttons-dropdown">
-        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-        <div class="download-buttons">
-            <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/parallelization.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
-            <!-- Download PDF via print -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
-        </div>
     </div>
-    
-    
 </div>
     
     <div id="main-content" class="row">
-        <div class="col-12 ">
+        <div class="col-12 col-md-9 col-xxl-7">
         
               <div>
                 
@@ -383,8 +376,8 @@ randomly generated matrices.</p>
 </div>
 <p>Now, let’s look at the output of the <code class="docutils literal notranslate"><span class="pre">htop</span></code> system monitor
 on our machine while this code is running:</p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../_images/htop_parallel_npmat.png"><img alt="../_images/htop_parallel_npmat.png" src="../_images/htop_parallel_npmat.png" style="width: 563.4px; height: 350.1px;" /></a>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/htop_parallel_npmat.png"><img alt="../_images/htop_parallel_npmat.png" src="../_images/htop_parallel_npmat.png" style="width: 406.90000000000003px; height: 252.85000000000002px;" /></a>
 </div>
 <p>We can see that 4 of the 8 CPUs are running at full speed.</p>
 <p>This is because NumPy’s <code class="docutils literal notranslate"><span class="pre">eigvals</span></code> routine neatly splits up the tasks
@@ -416,7 +409,7 @@ multithreading out to more and more operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>901 ms ± 17.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>920 ms ± 27.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -462,7 +455,7 @@ decorator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>352 ms ± 16.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>346 ms ± 12.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -521,7 +514,7 @@ multithreading?</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>116 ms ± 2.54 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>117 ms ± 828 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -650,11 +643,11 @@ conditions don’t matter.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.7 s, sys: 29.7 ms, total: 4.73 s
-Wall time: 4.76 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 5.42 s, sys: 47.4 ms, total: 5.47 s
+Wall time: 5.82 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8342043094069234
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8375184557336282
 </pre></div>
 </div>
 </div>
@@ -692,11 +685,11 @@ Wall time: 4.76 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 6.63 s, sys: 9.52 ms, total: 6.64 s
-Wall time: 1.22 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.33 s, sys: 37.7 ms, total: 7.36 s
+Wall time: 2.08 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8419240259637109
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.856568352677891
 </pre></div>
 </div>
 </div>
@@ -773,11 +766,11 @@ such as <code class="docutils literal notranslate"><span class="pre">n</span> <s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 346 ms, sys: 1.91 ms, total: 348 ms
-Wall time: 335 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 320 ms, sys: 3.63 ms, total: 324 ms
+Wall time: 309 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.143788
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142756
 </pre></div>
 </div>
 </div>
@@ -789,11 +782,11 @@ Wall time: 335 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 24.5 ms, sys: 248 µs, total: 24.8 ms
-Wall time: 3.28 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 24.1 ms, sys: 1.35 ms, total: 25.4 ms
+Wall time: 5.55 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.14324
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.140864
 </pre></div>
 </div>
 </div>

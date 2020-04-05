@@ -23,6 +23,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -39,19 +40,12 @@
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
-<div class='top'>
-<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-    <i class="fas fa-bars"></i>
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-arrow-up"></i>
-</button>
-</div>
 
     <div class="container-fluid">
       <div class="row">
           
 
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
@@ -70,71 +64,65 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
   <ul class="nav sidenav_l1">
+<li class="sidebar-special">
+<p class="sidebar-caption">Introduction to Python</p>
+</li>
   <li class="">
-    <a href="index_learning_python.html">Learning Python</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="about_py.html">About Python</a>
-    </li>
-    <li class="">
-      <a href="getting_started.html">Setting up Your Python Environment</a>
-    </li>
-    <li class="">
-      <a href="python_by_example.html">An Introductory Example</a>
-    </li>
-    <li class="">
-      <a href="functions.html">Functions</a>
-    </li>
-    <li class="">
-      <a href="python_essentials.html">Python Essentials</a>
-    </li>
-    <li class="">
-      <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
-    </li>
-    <li class="">
-      <a href="python_oop.html">OOP II: Building Classes</a>
-    </li>
-  </ul>
+    <a href="about_py.html">About Python</a>
   </li>
   <li class="">
-    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="need_for_speed.html">Python for Scientific Computing</a>
-    </li>
-    <li class="">
-      <a href="numpy.html">NumPy</a>
-    </li>
-    <li class="">
-      <a href="matplotlib.html">Matplotlib</a>
-    </li>
-    <li class="">
-      <a href="scipy.html">SciPy</a>
-    </li>
-    <li class="">
-      <a href="numba.html">Numba</a>
-    </li>
-    <li class="">
-      <a href="parallelization.html">Parallelization</a>
-    </li>
-    <li class="">
-      <a href="pandas.html">Pandas</a>
-    </li>
-  </ul>
+    <a href="getting_started.html">Setting up Your Python Environment</a>
+  </li>
+  <li class="">
+    <a href="python_by_example.html">An Introductory Example</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions</a>
+  </li>
+  <li class="">
+    <a href="python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
+    <a href="python_oop.html">OOP II: Building Classes</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Scientific Libraries</p>
+</li>
+  <li class="">
+    <a href="need_for_speed.html">Python for Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="numpy.html">NumPy</a>
+  </li>
+  <li class="">
+    <a href="matplotlib.html">Matplotlib</a>
+  </li>
+  <li class="">
+    <a href="scipy.html">SciPy</a>
+  </li>
+  <li class="">
+    <a href="numba.html">Numba</a>
+  </li>
+  <li class="">
+    <a href="parallelization.html">Parallelization</a>
+  </li>
+  <li class="">
+    <a href="pandas.html">Pandas</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Advanced Python</p>
+</li>
+  <li class="">
+    <a href="writing_good_code.html">Writing Good Code</a>
   </li>
   <li class="active">
-    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="writing_good_code.html">Writing Good Code</a>
-    </li>
-    <li class="active">
-      <a href="">More Language Features</a>
-    </li>
-    <li class="">
-      <a href="debugging.html">Debugging</a>
-    </li>
-  </ul>
+    <a href="">More Language Features</a>
+  </li>
+  <li class="">
+    <a href="debugging.html">Debugging</a>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -146,7 +134,34 @@
 
 
           
-<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+          
+<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
+    
+    
+      <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col topbar-main">
+        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <div class="download-buttons-dropdown">
+            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+            <div class="download-buttons">
+                <!-- Download raw file -->
+                <a class="download-buttons" href="../_sources/docs/python_advanced_features.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
 
 
 <div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
@@ -354,33 +369,11 @@
     </ul>
 </nav>
 
-</div>
-
-
-          
-<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
-    
-    
-      <div class="row topbar sticky-top">
-    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-arrow-left"></i>
-    </button>
-    <div class="download-buttons-dropdown">
-        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-        <div class="download-buttons">
-            <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/python_advanced_features.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
-            <!-- Download PDF via print -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
-        </div>
     </div>
-    
-    
 </div>
     
     <div id="main-content" class="row">
-        <div class="col-12 ">
+        <div class="col-12 col-md-9 col-xxl-7">
         
               <div>
                 
@@ -415,59 +408,41 @@ collection.</p>
 build our own.</p>
 <p>Formally, an <em>iterator</em> is an object with a <code class="docutils literal notranslate"><span class="pre">__next__</span></code> method.</p>
 <p>For example, file objects are iterators .</p>
-<p>To see this, let’s have another look at the
-<a class="reference internal" href="python_essentials.html#us-cities-data"><span class="std std-ref">US cities data</span></a>, which
-is written to the present working directory in the following cell</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">us_cities</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">new</span> <span class="n">york</span><span class="p">:</span> <span class="mi">8244910</span>
-<span class="n">los</span> <span class="n">angeles</span><span class="p">:</span> <span class="mi">3819702</span>
-<span class="n">chicago</span><span class="p">:</span> <span class="mi">2707120</span>
-<span class="n">houston</span><span class="p">:</span> <span class="mi">2145146</span>
-<span class="n">philadelphia</span><span class="p">:</span> <span class="mi">1536471</span>
-<span class="n">phoenix</span><span class="p">:</span> <span class="mi">1469471</span>
-<span class="n">san</span> <span class="n">antonio</span><span class="p">:</span> <span class="mi">1359758</span>
-<span class="n">san</span> <span class="n">diego</span><span class="p">:</span> <span class="mi">1326179</span>
-<span class="n">dallas</span><span class="p">:</span> <span class="mi">1223229</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;us_cities.txt&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>We see that file objects do indeed have a <code class="docutils literal notranslate"><span class="pre">__next__</span></code> method, and that
-calling this method returns the next line in the file.</p>
-<p>The next method can also be accessed via the builtin function <code class="docutils literal notranslate"><span class="pre">next()</span></code>,
-which directly calls this method</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
+<!-- To see this, let\'s have another look at the
+{ref}`US cities data <us_cities_data>`, which
+is written to the present working directory in the following cell
+
+```{code-cell} ipython3
+%%file us_cities.txt
+new york: 8244910
+los angeles: 3819702
+chicago: 2707120
+houston: 2145146
+philadelphia: 1536471
+phoenix: 1469471
+san antonio: 1359758
+san diego: 1326179
+dallas: 1223229 
+```
+
+```{code-cell} ipython3
+f = open('us_cities.txt')
+f.__next__()
+```
+
+```{code-cell} ipython3
+f.__next__()
+```
+
+We see that file objects do indeed have a `__next__` method, and that
+calling this method returns the next line in the file.
+
+The next method can also be accessed via the builtin function `next()`,
+which directly calls this method
+
+```{code-cell} ipython3
+next(f)
+``` -->
 <p>The objects returned by <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> are also iterators</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,6 +452,9 @@ which directly calls this method</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0, &#39;foo&#39;)
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -486,52 +464,39 @@ which directly calls this method</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(1, &#39;bar&#39;)
+</pre></div>
+</div>
 </div>
 </div>
 <p>as are the reader objects from the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module .</p>
 <p>Let’s create a small csv file that contains data from the NIKKEI index</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">test_table</span><span class="o">.</span><span class="n">csv</span>
-<span class="n">Date</span><span class="p">,</span><span class="n">Open</span><span class="p">,</span><span class="n">High</span><span class="p">,</span><span class="n">Low</span><span class="p">,</span><span class="n">Close</span><span class="p">,</span><span class="n">Volume</span><span class="p">,</span><span class="n">Adj</span> <span class="n">Close</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span><span class="mf">9280.35</span><span class="p">,</span><span class="mf">9286.35</span><span class="p">,</span><span class="mf">9189.92</span><span class="p">,</span><span class="mf">9264.15</span><span class="p">,</span><span class="mi">133200</span><span class="p">,</span><span class="mf">9264.15</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mf">9372.72</span><span class="p">,</span><span class="mf">9399.40</span><span class="p">,</span><span class="mf">9311.61</span><span class="p">,</span><span class="mf">9344.64</span><span class="p">,</span><span class="mi">143200</span><span class="p">,</span><span class="mf">9344.64</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">19</span><span class="p">,</span><span class="mf">9172.56</span><span class="p">,</span><span class="mf">9326.75</span><span class="p">,</span><span class="mf">9166.97</span><span class="p">,</span><span class="mf">9290.29</span><span class="p">,</span><span class="mi">167000</span><span class="p">,</span><span class="mf">9290.29</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mf">9167.05</span><span class="p">,</span><span class="mf">9167.82</span><span class="p">,</span><span class="mf">8997.74</span><span class="p">,</span><span class="mf">9038.69</span><span class="p">,</span><span class="mi">147800</span><span class="p">,</span><span class="mf">9038.69</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mf">9150.21</span><span class="p">,</span><span class="mf">9272.08</span><span class="p">,</span><span class="mf">9140.90</span><span class="p">,</span><span class="mf">9265.02</span><span class="p">,</span><span class="mi">172000</span><span class="p">,</span><span class="mf">9265.02</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span><span class="mf">9212.30</span><span class="p">,</span><span class="mf">9223.77</span><span class="p">,</span><span class="mf">9052.41</span><span class="p">,</span><span class="mf">9093.73</span><span class="p">,</span><span class="mi">169400</span><span class="p">,</span><span class="mf">9093.73</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">13</span><span class="p">,</span><span class="mf">9305.79</span><span class="p">,</span><span class="mf">9379.47</span><span class="p">,</span><span class="mf">9278.89</span><span class="p">,</span><span class="mf">9340.49</span><span class="p">,</span><span class="mi">176000</span><span class="p">,</span><span class="mf">9340.49</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="mf">9358.25</span><span class="p">,</span><span class="mf">9389.61</span><span class="p">,</span><span class="mf">9298.61</span><span class="p">,</span><span class="mf">9298.61</span><span class="p">,</span><span class="mi">188400</span><span class="p">,</span><span class="mf">9298.61</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="mf">9460.72</span><span class="p">,</span><span class="mf">9503.91</span><span class="p">,</span><span class="mf">9342.75</span><span class="p">,</span><span class="mf">9451.98</span><span class="p">,</span><span class="mi">230800</span><span class="p">,</span><span class="mf">9451.98</span>
-<span class="mi">2009</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">08</span><span class="p">,</span><span class="mf">9351.40</span><span class="p">,</span><span class="mf">9464.43</span><span class="p">,</span><span class="mf">9349.57</span><span class="p">,</span><span class="mf">9432.83</span><span class="p">,</span><span class="mi">220200</span><span class="p">,</span><span class="mf">9432.83</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
+<!-- ```{code-cell} ipython3
+%%file test_table.csv
+Date,Open,High,Low,Close,Volume,Adj Close
+2009-05-21,9280.35,9286.35,9189.92,9264.15,133200,9264.15
+2009-05-20,9372.72,9399.40,9311.61,9344.64,143200,9344.64
+2009-05-19,9172.56,9326.75,9166.97,9290.29,167000,9290.29
+2009-05-18,9167.05,9167.82,8997.74,9038.69,147800,9038.69
+2009-05-15,9150.21,9272.08,9140.90,9265.02,172000,9265.02
+2009-05-14,9212.30,9223.77,9052.41,9093.73,169400,9093.73
+2009-05-13,9305.79,9379.47,9278.89,9340.49,176000,9340.49
+2009-05-12,9358.25,9389.61,9298.61,9298.61,188400,9298.61
+2009-05-11,9460.72,9503.91,9342.75,9451.98,230800,9451.98
+2009-05-08,9351.40,9464.43,9349.57,9432.83,220200,9432.83
+```
 
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_table.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>  
-<span class="n">nikkei_data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
-<span class="nb">next</span><span class="p">(</span><span class="n">nikkei_data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">nikkei_data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
+```{code-cell} ipython3
+from csv import reader
+
+f = open('test_table.csv', 'r')  
+nikkei_data = reader(f) 
+next(nikkei_data)
+```
+
+```{code-cell} ipython3
+next(nikkei_data)
+``` -->
 </div>
 <div class="section" id="iterators-in-for-loops">
 <h3>Iterators in For Loops<a class="headerlink" href="#iterators-in-for-loops" title="Permalink to this headline">¶</a></h3>
@@ -573,6 +538,10 @@ loop statements.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>spam
+eggs
+</pre></div>
+</div>
 </div>
 </div>
 <p>So does that mean that a list is an iterator?</p>
@@ -585,6 +554,9 @@ loop statements.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
@@ -594,6 +566,14 @@ loop statements.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">92</span><span class="n">de4e9f6b1e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;list&#39; object is not an iterator
+</pre></div>
+</div>
 </div>
 </div>
 <p>So why can we iterate over a list in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop?</p>
@@ -609,6 +589,9 @@ using the built-in function <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -619,6 +602,9 @@ using the built-in function <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list_iterator
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -628,6 +614,9 @@ using the built-in function <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;foo&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -637,6 +626,9 @@ using the built-in function <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;bar&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
@@ -646,6 +638,14 @@ using the built-in function <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mf">81e57198612</span><span class="n">b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="ne">StopIteration</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <p>Many other objects are iterable, such as dictionaries and tuples.</p>
@@ -657,6 +657,14 @@ using the built-in function <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">ef50b48e4398</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">iter</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;int&#39; object is not iterable
+</pre></div>
+</div>
 </div>
 </div>
 <p>To conclude our discussion of <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p>
@@ -681,6 +689,9 @@ before the loop starts.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -691,6 +702,9 @@ before the loop starts.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list_iterator
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -700,6 +714,9 @@ before the loop starts.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
 </div>
 </div>
 <p>One thing to remember about iterators is that they are depleted by use</p>
@@ -712,6 +729,9 @@ before the loop starts.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
@@ -721,6 +741,14 @@ before the loop starts.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mf">062424e6</span><span class="n">ec08</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: max() arg is an empty sequence
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -763,6 +791,9 @@ regardless of what that object is</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -772,6 +803,9 @@ regardless of what that object is</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>test
+</pre></div>
+</div>
 </div>
 </div>
 <p>In the first step, a function object is created, and the name <code class="docutils literal notranslate"><span class="pre">f</span></code> is
@@ -789,6 +823,9 @@ to one object and then rebound to another</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4491819248
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -827,150 +864,93 @@ in memory.</p>
 for that module.</p>
 <p>To see this in action, suppose we write a script <code class="docutils literal notranslate"><span class="pre">math2.py</span></code> with a
 single line</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">math2</span><span class="o">.</span><span class="n">py</span>
-<span class="n">pi</span> <span class="o">=</span> <span class="s1">&#39;foobar&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>Now we start the Python interpreter and import it</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>Next let’s import the <code class="docutils literal notranslate"><span class="pre">math</span></code> module from the standard library</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>Both of these modules have an attribute called <code class="docutils literal notranslate"><span class="pre">pi</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math2</span><span class="o">.</span><span class="n">pi</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>These two different bindings of <code class="docutils literal notranslate"><span class="pre">pi</span></code> exist in different namespaces, each
-one implemented as a dictionary.</p>
-<p>We can look at the dictionary directly, using <code class="docutils literal notranslate"><span class="pre">module_name.__dict__</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<!-- ```{code-cell} ipython3
+%%file math2.py
+pi = 'foobar'
+```
 
-<span class="n">math</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math2</span>
+Now we start the Python interpreter and import it
 
-<span class="n">math2</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>As you know, we access elements of the namespace using the dotted
-attribute notation</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>In fact this is entirely equivalent to <code class="docutils literal notranslate"><span class="pre">math.__dict__['pi']</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;pi&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
+```{code-cell} ipython3
+import math2
+```
+
+Next let\'s import the `math` module from the standard library
+
+```{code-cell} ipython3
+import math
+```
+
+Both of these modules have an attribute called `pi`
+
+```{code-cell} ipython3
+math.pi
+```
+
+```{code-cell} ipython3
+math2.pi
+```
+
+These two different bindings of `pi` exist in different namespaces, each
+one implemented as a dictionary.
+
+We can look at the dictionary directly, using `module_name.__dict__`
+
+```{code-cell} ipython3
+import math
+
+math.__dict__.items()
+```
+
+```{code-cell} ipython3
+import math2
+
+math2.__dict__.items()
+```
+
+As you know, we access elements of the namespace using the dotted
+attribute notation
+
+```{code-cell} ipython3
+math.pi
+```
+
+In fact this is entirely equivalent to `math.__dict__['pi']`
+
+```{code-cell} ipython3
+math.__dict__['pi'] == math.pi
+```
+ -->
 </div>
 <div class="section" id="viewing-namespaces">
 <h3>Viewing Namespaces<a class="headerlink" href="#viewing-namespaces" title="Permalink to this headline">¶</a></h3>
 <p>As we saw above, the <code class="docutils literal notranslate"><span class="pre">math</span></code> namespace can be printed by typing
 <code class="docutils literal notranslate"><span class="pre">math.__dict__</span></code>.</p>
 <p>Another way to see its contents is to type <code class="docutils literal notranslate"><span class="pre">vars(math)</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">vars</span><span class="p">(</span><span class="n">math</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>If you just want to see the names, you can type</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>Notice the special names <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> and <code class="docutils literal notranslate"><span class="pre">__name__</span></code>.</p>
-<p>These are initialized in the namespace when any module is imported</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">__doc__</span></code> is the doc string of the module</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> is the name of the module</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="vm">__name__</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
+<!-- ```{code-cell} ipython3
+vars(math).items()
+```
+
+If you just want to see the names, you can type
+
+```{code-cell} ipython3
+dir(math)[0:10]
+```
+
+Notice the special names `__doc__` and `__name__`.
+
+These are initialized in the namespace when any module is imported
+
+-   `__doc__` is the doc string of the module
+-   `__name__` is the name of the module
+
+```{code-cell} ipython3
+print(math.__doc__)
+```
+
+```{code-cell} ipython3
+math.__name__
+``` -->
 </div>
 <div class="section" id="interactive-sessions">
 <h3>Interactive Sessions<a class="headerlink" href="#interactive-sessions" title="Permalink to this headline">¶</a></h3>
@@ -987,62 +967,49 @@ case, a module called <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>__main__
+</pre></div>
+</div>
 </div>
 </div>
 <p>When we run a script using IPython’s <code class="docutils literal notranslate"><span class="pre">run</span></code> command, the contents of the
 file are executed as part of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> too.</p>
 <p>To see this, let’s create a file <code class="docutils literal notranslate"><span class="pre">mod.py</span></code> that prints its own
 <code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">mod</span><span class="o">.</span><span class="n">py</span>
-<span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>Now let’s look at two different ways of running it in IPython</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mod</span>  <span class="c1"># Standard import</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">mod</span><span class="o">.</span><span class="n">py</span>  <span class="c1"># Run interactively</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>In the second case, the code is executed as part of <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, so
-<code class="docutils literal notranslate"><span class="pre">__name__</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</p>
-<p>To see the contents of the namespace of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> we use <code class="docutils literal notranslate"><span class="pre">vars()</span></code>
-rather than <code class="docutils literal notranslate"><span class="pre">vars(__main__)</span></code> .</p>
-<p>If you do this in IPython, you will see a whole lot of variables that
-IPython needs, and has initialized when you started up your session.</p>
-<p>If you prefer to see only the variables you have initialized, use <code class="docutils literal notranslate"><span class="pre">whos</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<!-- ```{code-cell} ipython3
+%%file mod.py
+print(__name__)
+```
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+Now let\'s look at two different ways of running it in IPython
 
-<span class="o">%</span><span class="n">whos</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
+```{code-cell} ipython3
+import mod  # Standard import
+```
+
+```{code-cell} ipython3
+%run mod.py  # Run interactively
+```
+
+In the second case, the code is executed as part of `__main__`, so
+`__name__` is equal to `__main__`.
+
+To see the contents of the namespace of `__main__` we use `vars()`
+rather than `vars(__main__)` .
+
+If you do this in IPython, you will see a whole lot of variables that
+IPython needs, and has initialized when you started up your session.
+
+If you prefer to see only the variables you have initialized, use `whos`
+
+```{code-cell} ipython3
+x = 2
+y = 3
+
+import numpy as np
+
+%whos
+``` -->
 </div>
 <div class="section" id="the-global-namespace">
 <h3>The Global Namespace<a class="headerlink" href="#the-global-namespace" title="Permalink to this headline">¶</a></h3>
@@ -1097,6 +1064,12 @@ namespace with <code class="docutils literal notranslate"><span class="pre">loca
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 1, &#39;a&#39;: 2}
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
 </div>
 </div>
 <p>You can see the local namespace of <code class="docutils literal notranslate"><span class="pre">f</span></code> before it is destroyed.</p>
@@ -1117,6 +1090,9 @@ namespace with <code class="docutils literal notranslate"><span class="pre">loca
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;In&#39;, &#39;Out&#39;, &#39;_&#39;, &#39;_1&#39;, &#39;_12&#39;, &#39;_13&#39;, &#39;_14&#39;, &#39;_15&#39;, &#39;_18&#39;, &#39;_2&#39;]
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1126,6 +1102,18 @@ namespace with <code class="docutils literal notranslate"><span class="pre">loca
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;ArithmeticError&#39;,
+ &#39;AssertionError&#39;,
+ &#39;AttributeError&#39;,
+ &#39;BaseException&#39;,
+ &#39;BlockingIOError&#39;,
+ &#39;BrokenPipeError&#39;,
+ &#39;BufferError&#39;,
+ &#39;BytesWarning&#39;,
+ &#39;ChildProcessError&#39;,
+ &#39;ConnectionAbortedError&#39;]
+</pre></div>
+</div>
 </div>
 </div>
 <p>We can access elements of the namespace as follows</p>
@@ -1136,6 +1124,9 @@ namespace with <code class="docutils literal notranslate"><span class="pre">loca
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;function max&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <p>But <code class="docutils literal notranslate"><span class="pre">__builtins__</span></code> is special, because we can always access them
@@ -1147,6 +1138,9 @@ directly as well</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;function max&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1156,6 +1150,9 @@ directly as well</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
 </div>
 </div>
 <p>The next section explains how this works …</p>
@@ -1213,36 +1210,27 @@ own namespaces.</p>
 <p>This is called the <strong>LEGB rule</strong> (local, enclosing, global, builtin).</p>
 <p>Here’s an example that helps to illustrate .</p>
 <p>Consider a script <code class="docutils literal notranslate"><span class="pre">test.py</span></code> that looks as follows</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">x</span>
+<!-- ```{code-cell} ipython3
+%%file test.py
+def g(x):
+    a = 1
+    x = x + a
+    return x
 
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<p>What happens when we run this script?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
-</pre></div>
-</div>
+a = 0
+y = g(10)
+print("a = ", a, "y = ", y)
+```
+
+What happens when we run this script?
+
+```{code-cell} ipython3
+%run test.py
+```
+
+```python
+x
+``` -->
 <p>First,</p>
 <ul class="simple">
 <li><p>The global namespace <code class="docutils literal notranslate"><span class="pre">{}</span></code> is created.</p></li>
@@ -1282,6 +1270,9 @@ objects.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>2 1
+</pre></div>
+</div>
 </div>
 </div>
 <p>We now understand what will happen here: The code prints <code class="docutils literal notranslate"><span class="pre">2</span></code> as the
@@ -1306,6 +1297,9 @@ such as a list</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[2] [2]
+</pre></div>
+</div>
 </div>
 </div>
 <p>This prints <code class="docutils literal notranslate"><span class="pre">[2]</span></code> as the value of <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> and <em>same</em> for <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
@@ -1404,6 +1398,14 @@ execution of the program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="n">bc757c3fda29</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
 </div>
 </div>
 <p>Here’s another</p>
@@ -1414,6 +1416,14 @@ execution of the program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="n">a7b8d65e9e45</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">y1</span>
+
+<span class="ne">NameError</span>: name &#39;y1&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>And another</p>
@@ -1424,6 +1434,14 @@ execution of the program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">216809</span><span class="n">d6e6fe</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;foo&#39;</span> <span class="o">+</span> <span class="mi">6</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
 </div>
 </div>
 <p>And another</p>
@@ -1435,6 +1453,15 @@ execution of the program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">38</span><span class="o">-</span><span class="mi">082</span><span class="n">a18d7a0aa</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">x</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
 </div>
 </div>
 <p>On each occasion, the interpreter informs us of the error type</p>
@@ -1469,6 +1496,9 @@ execution of the program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1478,6 +1508,9 @@ execution of the program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Error: division by zero.  Returned None
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1487,6 +1520,9 @@ execution of the program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Error: division by zero.  Returned None
+</pre></div>
+</div>
 </div>
 </div>
 <p>The error is caught and execution of the program is not terminated.</p>
@@ -1517,6 +1553,9 @@ error too</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1526,6 +1565,9 @@ error too</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Error: Division by zero.  Returned None
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1535,6 +1577,9 @@ error too</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Error: Unsupported operation.  Returned None
+</pre></div>
+</div>
 </div>
 </div>
 <p>If we feel lazy we can catch these errors together</p>
@@ -1560,6 +1605,9 @@ error too</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1569,6 +1617,9 @@ error too</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Error: Unsupported operation.  Returned None
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1578,6 +1629,9 @@ error too</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Error: Unsupported operation.  Returned None
+</pre></div>
+</div>
 </div>
 </div>
 <p>If we feel extra lazy we can catch all error types as follows</p>
@@ -1805,6 +1859,9 @@ these variables but not the other</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1000
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1814,6 +1871,9 @@ these variables but not the other</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1610.0
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1824,6 +1884,9 @@ these variables but not the other</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1610.0
+</pre></div>
+</div>
 </div>
 </div>
 <p>In the last two lines we see that <code class="docutils literal notranslate"><span class="pre">miles</span></code> and <code class="docutils literal notranslate"><span class="pre">kms</span></code> are out of sync.</p>
@@ -1876,6 +1939,9 @@ attribute notation.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1000
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1886,6 +1952,9 @@ attribute notation.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>9660.0
+</pre></div>
+</div>
 </div>
 </div>
 <p>Yep, that’s what we want — <code class="docutils literal notranslate"><span class="pre">car.kms</span></code> is automatically updated.</p>
@@ -1969,6 +2038,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1979,6 +2051,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;dogs&#39;, &#39;cats&#39;, &#39;birds&#39;]
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1988,6 +2063,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
 </div>
 </div>
 <p>And here is the generator expression</p>
@@ -2000,6 +2078,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>generator
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2009,6 +2090,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;dogs&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2018,6 +2102,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;cats&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2027,6 +2114,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;birds&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">sum()</span></code> can be called on iterators, we can do this</p>
@@ -2037,6 +2127,9 @@ generator functions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>285
+</pre></div>
+</div>
 </div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">sum()</span></code> calls <code class="docutils literal notranslate"><span class="pre">next()</span></code> to get the items, adds successive
@@ -2049,6 +2142,9 @@ terms.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>285
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -2082,6 +2178,9 @@ met before.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>function
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2092,6 +2191,9 @@ met before.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;generator object f at 0x10ff31580&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2101,6 +2203,9 @@ met before.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;start&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2110,6 +2215,9 @@ met before.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;middle&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2119,6 +2227,9 @@ met before.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;end&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
@@ -2128,6 +2239,14 @@ met before.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">81</span><span class="o">-</span><span class="mf">6e72</span><span class="n">e47198db</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+
+<span class="ne">StopIteration</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <p>The generator function <code class="docutils literal notranslate"><span class="pre">f()</span></code> is used to create generator objects (in
@@ -2180,6 +2299,9 @@ statement.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.g(x)&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2190,6 +2312,9 @@ statement.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>generator
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2199,6 +2324,9 @@ statement.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2208,6 +2336,9 @@ statement.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2217,6 +2348,9 @@ statement.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
@@ -2226,6 +2360,14 @@ statement.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">89</span><span class="o">-</span><span class="mf">6e72</span><span class="n">e47198db</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+
+<span class="ne">StopIteration</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <p>The call <code class="docutils literal notranslate"><span class="pre">gen</span> <span class="pre">=</span> <span class="pre">g(2)</span></code> binds <code class="docutils literal notranslate"><span class="pre">gen</span></code> to a generator.</p>
@@ -2281,6 +2423,9 @@ off</em></p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5002478
+</pre></div>
+</div>
 </div>
 </div>
 <p>But we are creating two huge lists here, <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> and <code class="docutils literal notranslate"><span class="pre">draws</span></code>.</p>
@@ -2315,6 +2460,9 @@ off</em></p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;generator object f at 0x10ff31820&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2324,6 +2472,9 @@ off</em></p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5001083
+</pre></div>
+</div>
 </div>
 </div>
 <p>In summary, iterables</p>
@@ -2465,80 +2616,66 @@ file and sum the numbers, ignoring lines without numbers.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+</pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="id2">
 <h3>Exercise 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>One solution is as follows</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">column_iterator</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">column_number</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A generator function for CSV files.</span>
-<span class="sd">    When called with a file name target_file (string) and column number </span>
-<span class="sd">    column_number (integer), the generator function returns a generator </span>
-<span class="sd">    which steps through the elements of column column_number in file</span>
-<span class="sd">    target_file.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="n">column_number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<!-- ```{code-cell} ipython3
+def column_iterator(target_file, column_number):
+    """A generator function for CSV files.
+    When called with a file name target_file (string) and column number 
+    column_number (integer), the generator function returns a generator 
+    which steps through the elements of column column_number in file
+    target_file.
+    """
+    f = open(target_file, 'r')
+    for line in f:
+        yield line.split(',')[column_number - 1]
+    f.close()
 
-<span class="n">dates</span> <span class="o">=</span> <span class="n">column_iterator</span><span class="p">(</span><span class="s1">&#39;test_table.csv&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+dates = column_iterator('test_table.csv', 1) 
 
-<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
+i = 1
+for date in dates:
+    print(date)
+    if i == 10:
+        break
+    i += 1
+``` -->
 </div>
 <div class="section" id="id3">
 <h3>Exercise 3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Let’s save the data first</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">numbers</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">prices</span>
-<span class="mi">3</span>
-<span class="mi">8</span>
+<!-- Let\'s save the data first
 
-<span class="mi">7</span>
-<span class="mi">21</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;numbers.txt&#39;</span><span class="p">)</span>
+```{code-cell} ipython3
+%%file numbers.txt
+prices
+3
+8
 
-<span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span> 
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">pass</span>
+7
+21
+```
 
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+```{code-cell} ipython3
+f = open('numbers.txt')
 
-<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
-</div>
+total = 0.0 
+for line in f:
+    try:
+        total += float(line)
+    except ValueError:
+        pass
+
+f.close()
+
+print(total)
+``` --></div>
 </div>
 </div>
 

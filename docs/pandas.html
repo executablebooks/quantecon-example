@@ -23,12 +23,13 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Advanced Python Programming" href="index_advanced_python_programming.html" />
+    <link rel="next" title="Writing Good Code" href="writing_good_code.html" />
     <link rel="prev" title="Parallelization" href="parallelization.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,19 +40,12 @@
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
-<div class='top'>
-<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-    <i class="fas fa-bars"></i>
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-arrow-up"></i>
-</button>
-</div>
 
     <div class="container-fluid">
       <div class="row">
           
 
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
@@ -70,71 +64,65 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
   <ul class="nav sidenav_l1">
+<li class="sidebar-special">
+<p class="sidebar-caption">Introduction to Python</p>
+</li>
   <li class="">
-    <a href="index_learning_python.html">Learning Python</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="about_py.html">About Python</a>
-    </li>
-    <li class="">
-      <a href="getting_started.html">Setting up Your Python Environment</a>
-    </li>
-    <li class="">
-      <a href="python_by_example.html">An Introductory Example</a>
-    </li>
-    <li class="">
-      <a href="functions.html">Functions</a>
-    </li>
-    <li class="">
-      <a href="python_essentials.html">Python Essentials</a>
-    </li>
-    <li class="">
-      <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
-    </li>
-    <li class="">
-      <a href="python_oop.html">OOP II: Building Classes</a>
-    </li>
-  </ul>
+    <a href="about_py.html">About Python</a>
+  </li>
+  <li class="">
+    <a href="getting_started.html">Setting up Your Python Environment</a>
+  </li>
+  <li class="">
+    <a href="python_by_example.html">An Introductory Example</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions</a>
+  </li>
+  <li class="">
+    <a href="python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
+    <a href="python_oop.html">OOP II: Building Classes</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Scientific Libraries</p>
+</li>
+  <li class="">
+    <a href="need_for_speed.html">Python for Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="numpy.html">NumPy</a>
+  </li>
+  <li class="">
+    <a href="matplotlib.html">Matplotlib</a>
+  </li>
+  <li class="">
+    <a href="scipy.html">SciPy</a>
+  </li>
+  <li class="">
+    <a href="numba.html">Numba</a>
+  </li>
+  <li class="">
+    <a href="parallelization.html">Parallelization</a>
   </li>
   <li class="active">
-    <a href="index_python_scientific_libraries.html">The Scientific Libraries</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="need_for_speed.html">Python for Scientific Computing</a>
-    </li>
-    <li class="">
-      <a href="numpy.html">NumPy</a>
-    </li>
-    <li class="">
-      <a href="matplotlib.html">Matplotlib</a>
-    </li>
-    <li class="">
-      <a href="scipy.html">SciPy</a>
-    </li>
-    <li class="">
-      <a href="numba.html">Numba</a>
-    </li>
-    <li class="">
-      <a href="parallelization.html">Parallelization</a>
-    </li>
-    <li class="active">
-      <a href="">Pandas</a>
-    </li>
-  </ul>
+    <a href="">Pandas</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Advanced Python</p>
+</li>
+  <li class="">
+    <a href="writing_good_code.html">Writing Good Code</a>
   </li>
   <li class="">
-    <a href="index_advanced_python_programming.html">Advanced Python Programming</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="writing_good_code.html">Writing Good Code</a>
-    </li>
-    <li class="">
-      <a href="python_advanced_features.html">More Language Features</a>
-    </li>
-    <li class="">
-      <a href="debugging.html">Debugging</a>
-    </li>
-  </ul>
+    <a href="python_advanced_features.html">More Language Features</a>
+  </li>
+  <li class="">
+    <a href="debugging.html">Debugging</a>
   </li>
   <li class="">
     <a href="troubleshooting.html">Troubleshooting</a>
@@ -146,7 +134,34 @@
 
 
           
-<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+          
+<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
+    
+    
+      <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col topbar-main">
+        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <div class="download-buttons-dropdown">
+            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+            <div class="download-buttons">
+                <!-- Download raw file -->
+                <a class="download-buttons" href="../_sources/docs/pandas.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
 
 
 <div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
@@ -210,33 +225,11 @@
     </ul>
 </nav>
 
-</div>
-
-
-          
-<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
-    
-    
-      <div class="row topbar sticky-top">
-    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-arrow-left"></i>
-    </button>
-    <div class="download-buttons-dropdown">
-        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-        <div class="download-buttons">
-            <!-- Download raw file -->
-            <a class="download-buttons" href="../_sources/docs/pandas.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
-            <!-- Download PDF via print -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
-        </div>
     </div>
-    
-    
 </div>
     
     <div id="main-content" class="row">
-        <div class="col-12 ">
+        <div class="col-12 col-md-9 col-xxl-7">
         
               <div>
                 
@@ -259,8 +252,8 @@ analysis tools for Python.</p>
 fields such as data science and machine learning.</p>
 <p>Here’s a popularity comparison over time against STATA, SAS, and
 <a class="reference external" href="https://dplyr.tidyverse.org/">dplyr</a> courtesy of Stack Overflow Trends</p>
-<div class="figure align-default">
-<img alt="../_images/pandas_vs_rest.png" src="../_images/pandas_vs_rest.png" />
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/pandas_vs_rest.png"><img alt="../_images/pandas_vs_rest.png" src="../_images/pandas_vs_rest.png" style="width: 474.49px; height: 287.5px;" /></a>
 </div>
 <p>Just as <a class="reference external" href="http://www.numpy.org/">NumPy</a> provides the basic array data
 type plus core array operations, pandas</p>
@@ -311,10 +304,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -1.725536
-1   -1.465944
-2    0.484858
-3   -0.902814
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.541530
+1   -0.266436
+2   -0.051300
+3    0.975447
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -331,10 +324,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -172.553629
-1   -146.594426
-2     48.485828
-3    -90.281440
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    54.153002
+1   -26.643641
+2    -5.129979
+3    97.544691
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -347,10 +340,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.725536
-1    1.465944
-2    0.484858
-3    0.902814
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.541530
+1    0.266436
+2    0.051300
+3    0.975447
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -366,13 +359,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -0.902359
-std      0.986513
-min     -1.725536
-25%     -1.530842
-50%     -1.184379
-75%     -0.555896
-max      0.484858
+mean     0.299810
+std      0.565340
+min     -0.266436
+25%     -0.105084
+50%      0.245115
+75%      0.650009
+max      0.975447
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -387,10 +380,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -1.725536
-AAPL   -1.465944
-MSFT    0.484858
-GOOG   -0.902814
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.541530
+AAPL   -0.266436
+MSFT   -0.051300
+GOOG    0.975447
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -407,7 +400,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1.7255362901545366
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5415300165456306
 </pre></div>
 </div>
 </div>
@@ -421,9 +414,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -1.465944
-MSFT    0.484858
-GOOG   -0.902814
+AAPL   -0.266436
+MSFT   -0.051300
+GOOG    0.975447
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -1631,7 +1624,7 @@ now manipulate in the usual way</p>
   <tbody>
     <tr>
       <th>count</th>
-      <td>866.0</td>
+      <td>867.0</td>
     </tr>
     <tr>
       <th>mean</th>
@@ -1797,8 +1790,8 @@ the following shares:</p>
 </div>
 </div>
 <p>Complete the program to plot the result as a bar graph like this one:</p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../_images/pandas_share_prices.png"><img alt="../_images/pandas_share_prices.png" src="../_images/pandas_share_prices.png" style="width: 648.0px; height: 518.4px;" /></a>
+<div class="align-center figure">
+<img alt="../_images/pandas_share_prices.png" src="../_images/pandas_share_prices.png" />
 </div>
 </div>
 <div class="section" id="exercise-2">
@@ -1820,8 +1813,8 @@ obtain year-on-year percentage change for the following indices:</p>
 </div>
 <p>Complete the program to show summary statistics and plot the result as a
 time series graph like this one:</p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../_images/pandas_indices_pctchange.png"><img alt="../_images/pandas_indices_pctchange.png" src="../_images/pandas_indices_pctchange.png" style="width: 648.0px; height: 388.8px;" /></a>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/pandas_indices_pctchange.png"><img alt="../_images/pandas_indices_pctchange.png" src="../_images/pandas_indices_pctchange.png" style="width: 468.0px; height: 280.8px;" /></a>
 </div>
 </div>
 </div>
@@ -1894,7 +1887,7 @@ Name: 2019-12-31 00:00:00, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">price_change</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">price_change</span> <span class="o">=</span> <span class="n">price_change</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">ticker_list</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;stock&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;percentage change in price&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">price_change</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
@@ -2045,10 +2038,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-2.2e-01</td>
-      <td>-1.8e-01</td>
-      <td>-2.6e-01</td>
-      <td>-2.2e-01</td>
+      <td>-2.4e-01</td>
+      <td>-1.9e-01</td>
+      <td>-2.7e-01</td>
+      <td>-2.3e-01</td>
     </tr>
   </tbody>
 </table>
@@ -2099,7 +2092,7 @@ and calculate the yearly returns such as:</p>
       <th>mean</th>
       <td>7.2e-02</td>
       <td>1.2e-01</td>
-      <td>8.8e-02</td>
+      <td>8.7e-02</td>
       <td>7.3e-02</td>
     </tr>
     <tr>
@@ -2151,7 +2144,7 @@ and calculate the yearly returns such as:</p>
 <p>Then, to plot the chart</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">iter_</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>            <span class="c1"># Flatten 2-D array to 1-D array</span>
     <span class="n">index_name</span> <span class="o">=</span> <span class="n">yearly_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">iter_</span><span class="p">]</span>         <span class="c1"># Get index name per iteration</span>
@@ -2188,7 +2181,7 @@ and calculate the yearly returns such as:</p>
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="parallelization.html" title="previous page">Parallelization</a>
-    <a class='right-next' id="next-link" href="index_advanced_python_programming.html" title="next page">Advanced Python Programming</a>
+    <a class='right-next' id="next-link" href="writing_good_code.html" title="next page">Writing Good Code</a>
 
     </div>
     <footer class="footer">
