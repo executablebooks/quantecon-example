@@ -504,9 +504,7 @@ ticker = read_data(ticker_list)
 
 Complete the program to plot the result as a bar graph like this one:
 
-```{figure} /_static/lecture_specific/pandas/pandas_share_prices.png
-:align: center
-:figclass: align-center
+```{glue:} pandas_share_prices
 ```
 
 (pd_ex2)=
@@ -527,10 +525,7 @@ indices_list = {'^GSPC': 'S&P 500',
 Complete the program to show summary statistics and plot the result as a
 time series graph like this one:
 
-```{figure} /_static/lecture_specific/pandas/pandas_indices_pctchange.png
-:scale: 65%
-:align: center
-:figclass: align-center
+```{glue:} pandas_indices_pctchange
 ```
 
 ## Solutions
@@ -568,6 +563,13 @@ ax.set_xlabel('stock', fontsize=12)
 ax.set_ylabel('percentage change in price', fontsize=12)
 price_change.plot(kind='bar', ax=ax)
 plt.show()
+```
+
+```{code-cell} ipython3
+:tags: [remove_cell]
+
+from myst_nb import glue
+glue("pandas_share_prices", fig, display=False)
 ```
 
 ### Exercise 2
@@ -616,6 +618,13 @@ for iter_, ax in enumerate(axes.flatten()):            # Flatten 2-D array to 1-
     ax.set_title(index_name)
 
 plt.tight_layout() 
+```
+
+```{code-cell} ipython3
+:tags: [remove_cell]
+
+from myst_nb import glue
+glue("pandas_indices_pctchange", fig, display=False)
 ```
 
 **Footnotes**

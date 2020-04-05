@@ -288,9 +288,7 @@ Place all the curves in the same figure.
 
 The output should look like this
 
-```{figure} /_static/lecture_specific/matplotlib/matplotlib_ex1.png
-:align: center
-:figclass: align-center
+```{glue:} matplotlib_ex1
 ```
 
 ## Solutions
@@ -311,4 +309,11 @@ for θ in θ_vals:
     ax.plot(x, f(x, θ))
 
 plt.show()
+```
+
+```{code-cell} ipython3
+:tags: [remove_cell]
+
+from myst_nb import glue
+glue("matplotlib_ex1", fig, display=False)
 ```
