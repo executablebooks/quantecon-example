@@ -60,7 +60,7 @@ in the notebook if you run it on your own machine.
 
 Here are a few lines of code that perform the task we set
 
-```{code-cell} python3
+```{code-cell} ipython3
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -71,7 +71,9 @@ plt.show()
 
 Let\'s break this program down and see how it works.
 
-### (import)=Imports
+(import)=
+
+### Imports
 
 The first two lines of the program import functionality from external
 code libraries.
