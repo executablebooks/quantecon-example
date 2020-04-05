@@ -1,36 +1,27 @@
 # - file: README
 - file: docs/index
 
-- header: test
-- file: docs/index_learning_python
-  expand_sections: true
-  title: Learning Python
-  pages:
-    - file: docs/about_py
-    - file: docs/getting_started
-    - file: docs/python_by_example
-    - file: docs/functions
-    - file: docs/python_essentials
-    - file: docs/oop_intro
-    - file: docs/python_oop
+- header: Introduction to Python
+- file: docs/about_py
+- file: docs/getting_started
+- file: docs/python_by_example
+- file: docs/functions
+- file: docs/python_essentials
+- file: docs/oop_intro
+- file: docs/python_oop
 
-- file: docs/index_python_scientific_libraries
-  expand_sections: true
-  pages:
-    - file: docs/need_for_speed
-    - file: docs/numpy
-    - file: docs/matplotlib
-    - file: docs/scipy
-    - file: docs/numba
-    - file: docs/parallelization
-    - file: docs/pandas
+- header: Scientific Libraries #The Scientific Libraries
+- file: docs/need_for_speed
+- file: docs/numpy
+- file: docs/matplotlib
+- file: docs/scipy
+- file: docs/numba
+- file: docs/parallelization
+- file: docs/pandas
 
-- file: docs/index_advanced_python_programming
-  expand_sections: true
-  pages:
-    - file: docs/writing_good_code
-    - file: docs/python_advanced_features
-    - file: docs/debugging
+- header: Advanced Python # Programming
+- file: docs/writing_good_code
+- file: docs/python_advanced_features
+- file: docs/debugging
 
-- divider: true
 - file: docs/troubleshooting
