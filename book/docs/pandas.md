@@ -34,6 +34,9 @@ Here\'s a popularity comparison over time against STATA, SAS, and
 [dplyr](https://dplyr.tidyverse.org/) courtesy of Stack Overflow Trends
 
 ```{figure} /_static/lecture_specific/pandas/pandas_vs_rest.png
+:scale: 23%
+:align: center
+:figclass: align-center
 ```
 
 Just as [NumPy](http://www.numpy.org/) provides the basic array data
@@ -502,7 +505,8 @@ ticker = read_data(ticker_list)
 Complete the program to plot the result as a bar graph like this one:
 
 ```{figure} /_static/lecture_specific/pandas/pandas_share_prices.png
-:scale: 90%
+:align: center
+:figclass: align-center
 ```
 
 (pd_ex2)=
@@ -524,7 +528,9 @@ Complete the program to show summary statistics and plot the result as a
 time series graph like this one:
 
 ```{figure} /_static/lecture_specific/pandas/pandas_indices_pctchange.png
-:scale: 90%
+:scale: 65%
+:align: center
+:figclass: align-center
 ```
 
 ## Solutions
@@ -557,7 +563,7 @@ Then to plot the chart
 ```{code-cell} ipython3
 price_change.sort_values(inplace=True)
 price_change = price_change.rename(index=ticker_list)
-fig, ax = plt.subplots(figsize=(10,8))
+fig, ax = plt.subplots()
 ax.set_xlabel('stock', fontsize=12)
 ax.set_ylabel('percentage change in price', fontsize=12)
 price_change.plot(kind='bar', ax=ax)
@@ -601,7 +607,7 @@ yearly_returns.describe()
 Then, to plot the chart
 
 ```{code-cell} ipython3
-fig, axes = plt.subplots(2, 2, figsize=(10, 6))
+fig, axes = plt.subplots(2, 2)
 
 for iter_, ax in enumerate(axes.flatten()):            # Flatten 2-D array to 1-D array
     index_name = yearly_returns.columns[iter_]         # Get index name per iteration

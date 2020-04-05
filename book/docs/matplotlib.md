@@ -176,7 +176,7 @@ Here\'s an example that generates 6 histograms
 
 ```{code-cell} ipython3
 num_rows, num_cols = 3, 2
-fig, axes = plt.subplots(num_rows, num_cols, figsize=(10, 12))
+fig, axes = plt.subplots(num_rows, num_cols)
 for i in range(num_rows):
     for j in range(num_cols):
         m, s = uniform(-1, 1), uniform(1, 2)
@@ -203,7 +203,7 @@ xgrid = np.linspace(-3, 3, 50)
 ygrid = xgrid
 x, y = np.meshgrid(xgrid, ygrid)
 
-fig = plt.figure(figsize=(8, 6))
+fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.plot_surface(x,
                 y,
@@ -289,6 +289,8 @@ Place all the curves in the same figure.
 The output should look like this
 
 ```{figure} /_static/lecture_specific/matplotlib/matplotlib_ex1.png
+:align: center
+:figclass: align-center
 ```
 
 ## Solutions

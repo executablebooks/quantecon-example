@@ -37,6 +37,8 @@ In other words, we want to generate figures that look something like
 this:
 
 ```{figure} /_static/lecture_specific/python_by_example/test_program_1_updated.png
+:align: center
+:figclass: align-center
 ```
 
 (Here $t$ is on the horizontal axis and $\epsilon_t$ is on the vertical

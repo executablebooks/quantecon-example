@@ -48,7 +48,7 @@ Formally, an *iterator* is an object with a `__next__` method.
 
 For example, file objects are iterators .
 
-To see this, let\'s have another look at the
+<!-- To see this, let\'s have another look at the
 {ref}`US cities data <us_cities_data>`, which
 is written to the present working directory in the following cell
 
@@ -82,7 +82,7 @@ which directly calls this method
 
 ```{code-cell} ipython3
 next(f)
-```
+``` -->
 
 The objects returned by `enumerate()` are also iterators
 
@@ -99,7 +99,7 @@ as are the reader objects from the `csv` module .
 
 Let\'s create a small csv file that contains data from the NIKKEI index
 
-```{code-cell} ipython3
+<!-- ```{code-cell} ipython3
 %%file test_table.csv
 Date,Open,High,Low,Close,Volume,Adj Close
 2009-05-21,9280.35,9286.35,9189.92,9264.15,133200,9264.15
@@ -124,7 +124,7 @@ next(nikkei_data)
 
 ```{code-cell} ipython3
 next(nikkei_data)
-```
+``` -->
 
 ### Iterators in For Loops
 
@@ -361,7 +361,7 @@ for that module.
 To see this in action, suppose we write a script `math2.py` with a
 single line
 
-```{code-cell} ipython3
+<!-- ```{code-cell} ipython3
 %%file math2.py
 pi = 'foobar'
 ```
@@ -417,7 +417,7 @@ In fact this is entirely equivalent to `math.__dict__['pi']`
 ```{code-cell} ipython3
 math.__dict__['pi'] == math.pi
 ```
-
+ -->
 ### Viewing Namespaces
 
 As we saw above, the `math` namespace can be printed by typing
@@ -425,7 +425,7 @@ As we saw above, the `math` namespace can be printed by typing
 
 Another way to see its contents is to type `vars(math)`
 
-```{code-cell} ipython3
+<!-- ```{code-cell} ipython3
 vars(math).items()
 ```
 
@@ -448,7 +448,7 @@ print(math.__doc__)
 
 ```{code-cell} ipython3
 math.__name__
-```
+``` -->
 
 ### Interactive Sessions
 
@@ -472,7 +472,7 @@ file are executed as part of `__main__` too.
 To see this, let\'s create a file `mod.py` that prints its own
 `__name__` attribute
 
-```{code-cell} ipython3
+<!-- ```{code-cell} ipython3
 %%file mod.py
 print(__name__)
 ```
@@ -505,7 +505,7 @@ y = 3
 import numpy as np
 
 %whos
-```
+``` -->
 
 ### The Global Namespace
 
@@ -667,7 +667,7 @@ Here\'s an example that helps to illustrate .
 
 Consider a script `test.py` that looks as follows
 
-```{code-cell} ipython3
+<!-- ```{code-cell} ipython3
 %%file test.py
 def g(x):
     a = 1
@@ -687,7 +687,7 @@ What happens when we run this script?
 
 ```python
 x
-```
+``` -->
 
 First,
 
@@ -1720,7 +1720,7 @@ print([x(i) for i in range(10)])
 
 One solution is as follows
 
-```{code-cell} ipython3
+<!-- ```{code-cell} ipython3
 def column_iterator(target_file, column_number):
     """A generator function for CSV files.
     When called with a file name target_file (string) and column number 
@@ -1741,11 +1741,11 @@ for date in dates:
     if i == 10:
         break
     i += 1
-```
+``` -->
 
 ### Exercise 3
 
-Let\'s save the data first
+<!-- Let\'s save the data first
 
 ```{code-cell} ipython3
 %%file numbers.txt
@@ -1770,4 +1770,4 @@ for line in f:
 f.close()
 
 print(total)
-```
+``` -->
