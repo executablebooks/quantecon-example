@@ -125,10 +125,64 @@
     <a href="debugging.html">Debugging</a>
   </li>
 <li class="sidebar-special">
-<p class="sidebar-caption">Troubleshooting</p>
+<p class="sidebar-caption">Introduction to Python</p>
 </li>
   <li class="">
-    <a href="troubleshooting.html">Troubleshooting</a>
+    <a href="about_py.html">About Python</a>
+  </li>
+  <li class="">
+    <a href="getting_started.html">Setting up Your Python Environment</a>
+  </li>
+  <li class="">
+    <a href="python_by_example.html">An Introductory Example</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions</a>
+  </li>
+  <li class="">
+    <a href="python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
+    <a href="python_oop.html">OOP II: Building Classes</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Scientific Libraries</p>
+</li>
+  <li class="">
+    <a href="need_for_speed.html">Python for Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="numpy.html">NumPy</a>
+  </li>
+  <li class="">
+    <a href="matplotlib.html">Matplotlib</a>
+  </li>
+  <li class="">
+    <a href="scipy.html">SciPy</a>
+  </li>
+  <li class="">
+    <a href="numba.html">Numba</a>
+  </li>
+  <li class="">
+    <a href="parallelization.html">Parallelization</a>
+  </li>
+  <li class="active">
+    <a href="">Pandas</a>
+  </li>
+<li class="sidebar-special">
+<p class="sidebar-caption">Advanced Python</p>
+</li>
+  <li class="">
+    <a href="writing_good_code.html">Writing Good Code</a>
+  </li>
+  <li class="">
+    <a href="python_advanced_features.html">More Language Features</a>
+  </li>
+  <li class="">
+    <a href="debugging.html">Debugging</a>
   </li>
 </ul>
 </nav>
@@ -255,7 +309,7 @@ analysis tools for Python.</p>
 fields such as data science and machine learning.</p>
 <p>Here’s a popularity comparison over time against STATA, SAS, and
 <a class="reference external" href="https://dplyr.tidyverse.org/">dplyr</a> courtesy of Stack Overflow Trends</p>
-<div class="align-center figure">
+<div class="align-center figure align-default">
 <a class="reference internal image-reference" href="../_images/pandas_vs_rest.png"><img alt="../_images/pandas_vs_rest.png" src="../_images/pandas_vs_rest.png" style="width: 474.49px; height: 287.5px;" /></a>
 </div>
 <p>Just as <a class="reference external" href="http://www.numpy.org/">NumPy</a> provides the basic array data
@@ -307,10 +361,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.848809
-1   -0.489090
-2    1.266743
-3    0.506550
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.235135
+1   -0.923108
+2    1.038487
+3   -0.332634
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -327,10 +381,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     84.880918
-1    -48.908985
-2    126.674273
-3     50.655045
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     23.513497
+1    -92.310781
+2    103.848698
+3    -33.263389
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -343,10 +397,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.848809
-1    0.489090
-2    1.266743
-3    0.506550
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.235135
+1    0.923108
+2    1.038487
+3    0.332634
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -362,13 +416,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.533253
-std      0.749106
-min     -0.489090
-25%      0.257640
-50%      0.677680
-75%      0.953293
-max      1.266743
+mean     0.004470
+std      0.835950
+min     -0.923108
+25%     -0.480252
+50%     -0.048749
+75%      0.435973
+max      1.038487
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -383,10 +437,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.848809
-AAPL   -0.489090
-MSFT    1.266743
-GOOG    0.506550
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.235135
+AAPL   -0.923108
+MSFT    1.038487
+GOOG   -0.332634
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -403,7 +457,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.848809181353533
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.23513496883085844
 </pre></div>
 </div>
 </div>
@@ -417,9 +471,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.489090
-MSFT    1.266743
-GOOG    0.506550
+AAPL   -0.923108
+MSFT    1.038487
+GOOG   -0.332634
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -683,7 +737,7 @@ notation</p>
 </div>
 <p>To select columns, we can pass a list containing the names of the
 desired columns represented as strings</p>
-<div class="cell docutils container">
+<div class="cell tag_align_center docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;tcgdp&#39;</span><span class="p">]]</span>
 </pre></div>
@@ -2041,9 +2095,9 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-2.4e-01</td>
-      <td>-1.9e-01</td>
-      <td>-2.7e-01</td>
+      <td>-1.8e-01</td>
+      <td>-1.3e-01</td>
+      <td>-2.1e-01</td>
       <td>-2.3e-01</td>
     </tr>
   </tbody>
@@ -2093,9 +2147,9 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>mean</th>
-      <td>7.2e-02</td>
+      <td>7.3e-02</td>
       <td>1.2e-01</td>
-      <td>8.7e-02</td>
+      <td>8.9e-02</td>
       <td>7.3e-02</td>
     </tr>
     <tr>

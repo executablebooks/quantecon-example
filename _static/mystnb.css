@@ -35,6 +35,7 @@ div.cell_input > div, div.cell_output div.output > div.highlight {
   padding-left: 1em;
   padding-right: 0em;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 /* Outputs from jupyter_sphinx overrides to remove extra CSS */
@@ -80,8 +81,6 @@ div.cell_output table {
     color: black;
     font-size: 1em;
     table-layout: fixed;
-    margin-left:auto;
-    margin-right:auto;
   }
   div.cell_output thead {
     border-bottom: 1px solid black;
@@ -117,4 +116,30 @@ span.pasted-text {
 
 span.pasted-inline img {
   max-height: 2em;
+}
+
+/* Align figures */
+
+div.figure.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.figure.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* Float figures */
+
+div.figure.float-left {
+  clear: left;
+  float: left;
+  margin-left: 1em;
+}
+
+div.figure.float-right {
+  clear: right;
+  float: right;
+  margin-right: 1em;
 }
