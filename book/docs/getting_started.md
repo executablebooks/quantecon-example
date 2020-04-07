@@ -109,7 +109,6 @@ in a Jupyter notebook
 
 ```{figure} /_static/lecture_specific/getting_started/jp_demo.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -136,7 +135,6 @@ If you use the second option, you will see something like this
 
 ```{figure} /_static/lecture_specific/getting_started/starting_nb.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -155,7 +153,6 @@ looks something like this
 
 ```{figure} /_static/lecture_specific/getting_started/nb.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -171,7 +168,6 @@ Here\'s what shows up on our machine:
 
 ```{figure} /_static/lecture_specific/getting_started/nb2.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -197,7 +193,6 @@ instead of the usual `Enter`.
 
 ```{figure} /_static/lecture_specific/getting_started/nb3.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -298,7 +293,6 @@ For example, here we type `np.ran` and hit Tab
 
 ```{figure} /_static/lecture_specific/getting_started/nb6.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -317,7 +311,6 @@ Documentation appears in a split window of the browser, like so
 
 ```{figure} /_static/lecture_specific/getting_started/nb6a.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -333,7 +326,6 @@ code
 
 ```{figure} /_static/lecture_specific/getting_started/nb7.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 
@@ -348,7 +340,6 @@ Now we `Shift+Enter` to produce this
 
 ```{figure} /_static/lecture_specific/getting_started/nb8.png
 :scale: 50%
-:align: center
 :figclass: align-center
 ```
 

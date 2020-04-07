@@ -149,7 +149,6 @@ on our machine while this code is running:
 
 ```{figure} /_static/lecture_specific/parallelization/htop_parallel_npmat.png
 :scale: 65%
-:align: center
 :figclass: align-center
 ```
 

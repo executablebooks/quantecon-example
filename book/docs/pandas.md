@@ -35,7 +35,6 @@ Here\'s a popularity comparison over time against STATA, SAS, and
 
 ```{figure} /_static/lecture_specific/pandas/pandas_vs_rest.png
 :scale: 23%
-:align: center
 :figclass: align-center
 ```
 
@@ -194,6 +193,8 @@ To select columns, we can pass a list containing the names of the
 desired columns represented as strings
 
 ```{code-cell} ipython3
+:tags: [align_center]
+
 df[['country', 'tcgdp']]
 ```
 
