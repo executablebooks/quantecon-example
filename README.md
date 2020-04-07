@@ -29,11 +29,19 @@ def get_contents_depth(string):
 		string = string.replace(oldSyntax, newSyntax)
 ```
 
+### Creating an environment
+
+1. Clone the following repositories: [cli](https://github.com/ExecutableBookProject/cli), [MyST-NB](https://github.com/ExecutableBookProject/MyST-NB), [sphinx-book-theme](https://github.com/ExecutableBookProject/sphinx-book-theme)
+2. `conda create -n venv_name pip matplotlib numpy scipy sympy pandas networkx`
+3. Activate conda environment
+4. Find anaconda directory and fin the venv folder. It could look something like this: `/anaconda3/envs/venv_name/`
+5. For each of the cloned repositories run the following: `/anaconda3/envs/venv_name/bin/pip install -e.`
+
 ### Building a Jupyter Book
 
-Follow [these](https://beta.jupyterbook.org/intro.html) instructions closely.
+Run the following command in your terminal: `jb build book/`. Currently you will see the following errors during build:
 
-
-## To do:
-- [ ] numbered equation submit issue
-- [ ] check numpy eq label np_polynom
+```
+raise TimeoutError("Cell execution timed out")
+TimeoutError: Cell execution timed out
+```
