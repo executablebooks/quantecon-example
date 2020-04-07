@@ -39,9 +39,4 @@ def get_contents_depth(string):
 
 ### Building a Jupyter Book
 
-Run the following command in your terminal: `jb build book/`. Currently you will see the following errors during build:
-
-```
-raise TimeoutError("Cell execution timed out")
-TimeoutError: Cell execution timed out
-```
+Run the following command in your terminal: `jb build book/`.
