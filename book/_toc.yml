@@ -2,7 +2,6 @@
 - file: docs/index
 
 - header: Introduction to Python
-
 - file: docs/about_py
 - file: docs/getting_started
 - file: docs/python_by_example
@@ -11,7 +10,7 @@
 - file: docs/oop_intro
 - file: docs/python_oop
 
-- header: Scientific Libraries #The Scientific Libraries
+- header: Scientific Libraries
 - file: docs/need_for_speed
 - file: docs/numpy
 - file: docs/matplotlib
@@ -20,10 +19,7 @@
 - file: docs/parallelization
 - file: docs/pandas
 
-- header: Advanced Python # Programming
+- header: Advanced Python
 - file: docs/writing_good_code
 - file: docs/python_advanced_features
 - file: docs/debugging
-
-- header: Troubleshooting
-- file: docs/troubleshooting
