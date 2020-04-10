@@ -1,14 +1,20 @@
 # Programming for Quantitative Economics
 
 ```{note}
-This collection of lectures was built using [Jupyter Book](https://beta.jupyterbook.org/intro.html) which is an early prototype.
+This collection of lectures was built using [Jupyter
+Book](https://beta.jupyterbook.org/intro.html), as part of the
+[ExecutableBookProject](https://ebp.jupyterbook.org/en/latest/).  These tools
+are still at an early stage of development and breaking changes may occur.
+Feedback and participation is very welcome.
 ```
 
-This book presents a set of lectures on python programming for quantitative economics, designed and written by **[Thomas J. Sargent](http://www.tomsargent.com/)** and **[John Stachurski](https://johnstachurski.net/)**.
+These notes present a set of lectures on Python programming for quantitative economics, designed and written by **[Thomas J. Sargent](http://www.tomsargent.com/)** and **[John Stachurski](https://johnstachurski.net/)**.
 
-## About Lectures
+They are one part of a larger set of lectures on open source computing,
+economics and finance backed by [QuantEcon](https://quantecon.org).
 
-This is one of a series of online texts on modern quantitative economics and programming with Python. This is the first text in the series, which focuses on programming in Python.
+## Table of Contents
+
 
 ### Introduction to Python
 
@@ -48,6 +54,8 @@ python_advanced_features
 debugging
 ```
 
+
+
 (troubleshooting)=
 
 ## Troubleshooting
@@ -56,8 +64,6 @@ debugging
 the lectures.
 ```
 
-### Fixing Your Local Environment
-
 The basic assumption of the lectures is that code in a lecture should
 execute whenever
 
@@ -65,14 +71,12 @@ execute whenever
 2.  the notebook is running on a machine with the latest version of
     Anaconda Python.
 
-You have installed Anaconda, haven\'t you, following the instructions in
-{ref}`this lecture <getting_started>`?
+To install Anaconda, follow the instructions in {ref}`this lecture <getting_started>`.
 
-Assuming that you have, the most common source of problems for our
+The most common source of problems for our
 readers is that their Anaconda distribution is not up to date.
 
-[Here\'s a useful
-article](https://www.anaconda.com/keeping-anaconda-date/) on how to
+[Here\'s a useful article](https://www.anaconda.com/keeping-anaconda-date/) on how to
 update Anaconda.
 
 Another option is to simply remove Anaconda and reinstall.
@@ -83,29 +87,12 @@ For this task you can either
 
 -   use `pip install --upgrade quantecon` on the command
     line, or
--   execute `!pip install \--upgrade quantecon` within a
+-   execute `!pip install --upgrade quantecon` within a
     Jupyter notebook.
 
-If your local environment is still not working you can do two things.
+## Feedback
 
-First, you can use a remote machine instead, by clicking on the `Launch
-Notebook` icon available for each lecture
+To provide feedback on these lectures you can 
 
-![image](../_static/lecture_specific/troubleshooting/launch.png)
-
-Second, you can report an issue, so we can try to fix your local set up.
-
-We like getting feedback on the lectures so please don\'t hesitate to
-get in touch.
-
-### Reporting an Issue
-
-One way to give feedback is to raise an issue through our [issue tracker](https://github.com/QuantEcon/lecture-source-py/issues).
-
-Please be as specific as possible. Tell us where the problem is and as
-much detail about your local set up as you can provide.
-
-Another feedback option is to use our [discourse
-forum](https://discourse.quantecon.org/).
-
-Finally, you can provide direct feedback to <contact@quantecon.org>
+- use our [discourse forum](https://discourse.quantecon.org/) or
+- provide direct feedback to <contact@quantecon.org>.
