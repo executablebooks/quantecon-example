@@ -184,6 +184,8 @@ for i in range(num_rows):
         axes[i, j].hist(x, alpha=0.6, bins=20)
         t = f'$\mu = {m:.2}, \quad \sigma = {s:.2}$'
         axes[i, j].set(title=t, xticks=[-4, 0, 4], yticks=[])
+
+plt.tight_layout()
 plt.show()
 ```
 
