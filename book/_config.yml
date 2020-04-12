@@ -6,7 +6,7 @@ logo: 'qe-logo-large.png'
 
 # Information about where the book exists on the web
 description: >-
-  This book presents a set of lectures on python programming for quantitative economics, designed and written by **Thomas J. Sargent** and **John Stachurski**.
+  This book presents a set of lectures on Python programming for quantitative economics, designed and written by **Thomas J. Sargent** and **John Stachurski**.
 
 execute_notebooks           : cache
 
@@ -15,8 +15,8 @@ execute_notebooks           : cache
 notebook_interface          : "notebook"
 
 repository:
-  url                       : https://github.com/ExecutableBookProject/quantecon-example/tree/master/book/docs
-  path_to_book              : "book/"
+  url                       : https://github.com/ExecutableBookProject/quantecon-example/tree/master/qe_book/docs
+  path_to_book              : "qe_book/"
 
 binder:
   binderhub_url             : "https://mybinder.org"
