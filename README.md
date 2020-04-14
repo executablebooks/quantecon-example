@@ -23,3 +23,7 @@ MyST-syntax markdown, then build the book by following the instructions in the
 ### Building a Jupyter Book
 
 Run the following command in your terminal: `jb build book/`.
+
+### Publishing this Jupyter Book
+
+Run `ghp-import -n -p -f book/_build/html`
