@@ -149,7 +149,6 @@ on our machine while this code is running:
 
 ```{figure} /_static/lecture_specific/parallelization/htop_parallel_npmat.png
 :scale: 65%
-:figclass: align-center
 ```
 
 We can see that 4 of the 8 CPUs are running at full speed.

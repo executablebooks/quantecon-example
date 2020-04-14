@@ -532,7 +532,6 @@ The transition probabilities across states are as follows
 
 ```{figure} /_static/lecture_specific/sci_libs/nfs_ex1.png
 :align: center
-:figclass: align-center
 ```
 
 For example, let the period length be one day, and suppose the current

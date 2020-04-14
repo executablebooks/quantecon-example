@@ -70,9 +70,9 @@ plt.show()
 ```{code-cell} ipython3
 :tags: [remove-cell]
 
-// This is duplicated as a way to use glue functionality
+# This is duplicated as a way to use glue functionality
+fig, ax = plt.subplots()
 plt.plot(ϵ_values)
-fig = plt.gcf()
 plt.show()
 ```
 
