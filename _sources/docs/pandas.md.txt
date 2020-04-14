@@ -35,7 +35,6 @@ Here\'s a popularity comparison over time against STATA, SAS, and
 
 ```{figure} /_static/lecture_specific/pandas/pandas_vs_rest.png
 :scale: 23%
-:figclass: align-center
 ```
 
 Just as [NumPy](http://www.numpy.org/) provides the basic array data

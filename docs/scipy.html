@@ -217,6 +217,17 @@
 
         <!-- Launch buttons -->
         
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath={ui_pre}/{path_rel_repo}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
 
@@ -371,8 +382,6 @@ this excerpt the SciPy initialization file:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>However, it’s more common and better practice to use NumPy
 functionality explicitly</p>
@@ -383,8 +392,6 @@ functionality explicitly</p>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>What is useful in SciPy is the functionality in its sub-packages</p>
@@ -413,7 +420,7 @@ variables</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.24303804, 0.54225076, 0.75415018])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.52742954, 0.76202407, 0.3858594 ])
 </pre></div>
 </div>
 </div>
@@ -539,7 +546,7 @@ regression</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(2.0021996147827146, 0.004944580862214304)
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(2.01057012269331, -0.0016659093450922535)
 </pre></div>
 </div>
 </div>
@@ -617,8 +624,6 @@ functions with <span class="math notranslate nohighlight">\(f(a) &lt; 0 &lt; f(b
     <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Let’s test it using the function <span class="math notranslate nohighlight">\(f\)</span> defined in
@@ -733,7 +738,7 @@ bisection:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>17.3 µs ± 198 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>16.4 µs ± 769 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -745,7 +750,7 @@ bisection:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>66.5 µs ± 1.37 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>61.4 µs ± 1.71 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -900,8 +905,6 @@ routines</a>.</p>
             <span class="k">return</span> <span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">middle</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>We can test it as follows</p>

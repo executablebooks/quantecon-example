@@ -217,6 +217,17 @@
 
         <!-- Launch buttons -->
         
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath={ui_pre}/{path_rel_repo}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
 
@@ -365,8 +376,6 @@ plenty of examples.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 </div>
 <div class="section" id="oop-review">
@@ -509,8 +518,6 @@ internalize some new syntax.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">=</span> <span class="n">new_wealth</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>There’s some special syntax here so let’s step through carefully</p>
@@ -662,7 +669,7 @@ reads the class definition</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Consumer.__init__ at 0x11f9edca0&gt;, &#39;earn&#39;: &lt;function Consumer.earn at 0x11f9edd30&gt;, &#39;spend&#39;: &lt;function Consumer.spend at 0x11f9eddc0&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__doc__&#39;: None}
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Consumer.__init__ at 0x11d6dbca0&gt;, &#39;earn&#39;: &lt;function Consumer.earn at 0x11d6dbd30&gt;, &#39;spend&#39;: &lt;function Consumer.spend at 0x11d6dbdc0&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__doc__&#39;: None}
 </pre></div>
 </div>
 </div>
@@ -702,8 +709,6 @@ parameter</p>
      <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">+=</span> <span class="n">y</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>The end result is that <code class="docutils literal notranslate"><span class="pre">self</span></code> is bound to the instance <code class="docutils literal notranslate"><span class="pre">c1</span></code> inside the
@@ -795,8 +800,6 @@ self-explanatory</p>
         <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Here’s a little program that uses the class to compute time series from
@@ -907,8 +910,6 @@ integration—a topic we will say more about later on.)</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Here’s a sample of usage</p>
 <div class="cell docutils container">
@@ -985,8 +986,6 @@ curve together with inverse supply curves with and without taxes</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Here’s an example of usage</p>
 <div class="cell docutils container">
@@ -1041,8 +1040,6 @@ logistic map</p>
       <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Here’s an example of usage</p>
@@ -1150,8 +1147,6 @@ applied to your user-defined object, use the <code class="docutils literal notra
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Now we get</p>
 <div class="cell docutils container">
@@ -1178,8 +1173,6 @@ functions</p>
         <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">42</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>After running we get</p>
@@ -1277,8 +1270,6 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1298,8 +1289,8 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.3
-0.497
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.5
+0.519
 </pre></div>
 </div>
 </div>
@@ -1340,8 +1331,6 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
         <span class="k">return</span> <span class="n">new_coefficients</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 </div>

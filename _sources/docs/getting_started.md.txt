@@ -109,7 +109,6 @@ in a Jupyter notebook
 
 ```{figure} /_static/lecture_specific/getting_started/jp_demo.png
 :scale: 50%
-:figclass: align-center
 ```
 
 While Jupyter isn\'t the only way to code in Python, it\'s great for
@@ -135,7 +134,6 @@ If you use the second option, you will see something like this
 
 ```{figure} /_static/lecture_specific/getting_started/starting_nb.png
 :scale: 50%
-:figclass: align-center
 ```
 
 The output tells us the notebook is running at `http://localhost:8888/`
@@ -153,7 +151,6 @@ looks something like this
 
 ```{figure} /_static/lecture_specific/getting_started/nb.png
 :scale: 50%
-:figclass: align-center
 ```
 
 What you see here is called the Jupyter *dashboard*.
@@ -168,7 +165,6 @@ Here\'s what shows up on our machine:
 
 ```{figure} /_static/lecture_specific/getting_started/nb2.png
 :scale: 50%
-:figclass: align-center
 ```
 
 The notebook displays an *active cell*, into which you can type Python
@@ -193,7 +189,6 @@ instead of the usual `Enter`.
 
 ```{figure} /_static/lecture_specific/getting_started/nb3.png
 :scale: 50%
-:figclass: align-center
 ```
 
 (Note: There are also menu and button options for running code in a cell
@@ -293,7 +288,6 @@ For example, here we type `np.ran` and hit Tab
 
 ```{figure} /_static/lecture_specific/getting_started/nb6.png
 :scale: 50%
-:figclass: align-center
 ```
 
 Jupyter offers up the two possible completions, `random` and `rank`.
@@ -311,7 +305,6 @@ Documentation appears in a split window of the browser, like so
 
 ```{figure} /_static/lecture_specific/getting_started/nb6a.png
 :scale: 50%
-:figclass: align-center
 ```
 
 Clicking on the top right of the lower split closes the on-line help.
@@ -326,7 +319,6 @@ code
 
 ```{figure} /_static/lecture_specific/getting_started/nb7.png
 :scale: 50%
-:figclass: align-center
 ```
 
 Next we `Esc` to enter command mode and then type `m` to indicate that
@@ -340,7 +332,6 @@ Now we `Shift+Enter` to produce this
 
 ```{figure} /_static/lecture_specific/getting_started/nb8.png
 :scale: 50%
-:figclass: align-center
 ```
 
 ### Sharing Notebooks

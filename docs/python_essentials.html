@@ -217,6 +217,17 @@
 
         <!-- Launch buttons -->
         
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath={ui_pre}/{path_rel_repo}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
 
@@ -837,8 +848,6 @@ writing</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Here</p>
 <ul class="simple">
@@ -855,7 +864,7 @@ writing</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;/private/var/folders/fl/tzzj87tx0lz_33w1952jnlxc0000gn/T/tmpadt01k5v&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;/private/var/folders/fl/tzzj87tx0lz_33w1952jnlxc0000gn/T/tmpiuwjx5zu&#39;
 </pre></div>
 </div>
 </div>
@@ -1356,8 +1365,6 @@ allowing code like the following example</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Functions without a return statement automatically return the special
 Python object <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -1377,8 +1384,6 @@ called <em>docstrings</em>.</p>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>After running this code, the docstring is available</p>
@@ -1421,8 +1426,6 @@ the source code as well.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>and</p>
 <div class="cell docutils container">
@@ -1430,8 +1433,6 @@ the source code as well.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>are entirely equivalent.</p>
@@ -1485,8 +1486,6 @@ difficulty.</p>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>The keyword argument values we supplied in the definition of <code class="docutils literal notranslate"><span class="pre">f</span></code> become
@@ -1617,8 +1616,6 @@ following code.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 </div>
 </div>
@@ -1740,8 +1737,6 @@ flexibility of list comprehensions are</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1829,8 +1824,6 @@ False
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 </div>
 <div class="section" id="id5">
@@ -1874,8 +1867,6 @@ False
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 </div>
 <div class="section" id="id6">
@@ -1887,8 +1878,6 @@ False
 <span class="n">ϵ_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 </div>

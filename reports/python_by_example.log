@@ -11,16 +11,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, out)
 nbconvert.preprocessors.execute.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from myst_nb import glue
-glue("test_program_1_updated", fig, display=False)
+// This is duplicated as a way to use glue functionality
+fig, ax = plt.subplots()
+plt.plot(ϵ_values)
+plt.show()
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-3-643e5444ec0c>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;32mfrom[0m [0mmyst_nb[0m [0;32mimport[0m [0mglue[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mglue[0m[0;34m([0m[0;34m"test_program_1_updated"[0m[0;34m,[0m [0mfig[0m[0;34m,[0m [0mdisplay[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mNameError[0m: name 'fig' is not defined
-NameError: name 'fig' is not defined
+[0;36m  File [0;32m"<ipython-input-3-3aca4e5dd00b>"[0;36m, line [0;32m1[0m
+[0;31m    // This is duplicated as a way to use glue functionality[0m
+[0m    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (<ipython-input-3-3aca4e5dd00b>, line 1)
 

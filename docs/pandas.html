@@ -86,6 +86,9 @@
     <a href="python_essentials.html">Python Essentials</a>
   </li>
   <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
   </li>
 <li class="sidebar-special">
@@ -141,6 +144,9 @@
   </li>
   <li class="">
     <a href="python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
   </li>
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
@@ -320,7 +326,7 @@ analysis tools for Python.</p>
 fields such as data science and machine learning.</p>
 <p>Here’s a popularity comparison over time against STATA, SAS, and
 <a class="reference external" href="https://dplyr.tidyverse.org/">dplyr</a> courtesy of Stack Overflow Trends</p>
-<div class="align-center figure align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/pandas_vs_rest.png"><img alt="../_images/pandas_vs_rest.png" src="../_images/pandas_vs_rest.png" style="width: 474.49px; height: 287.5px;" /></a>
 </div>
 <p>Just as <a class="reference external" href="http://www.numpy.org/">NumPy</a> provides the basic array data
@@ -370,10 +376,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -0.015517
-1    0.489540
-2   -1.497976
-3   -0.764402
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -0.353947
+1   -0.332431
+2    0.364823
+3    0.023646
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -390,10 +396,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     -1.551705
-1     48.953957
-2   -149.797554
-3    -76.440161
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -35.394714
+1   -33.243081
+2    36.482283
+3     2.364600
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -406,10 +412,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.015517
-1    0.489540
-2    1.497976
-3    0.764402
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.353947
+1    0.332431
+2    0.364823
+3    0.023646
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -425,13 +431,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -0.447089
-std      0.869593
-min     -1.497976
-25%     -0.947795
-50%     -0.389959
-75%      0.110747
-max      0.489540
+mean    -0.074477
+std      0.340224
+min     -0.353947
+25%     -0.337810
+50%     -0.154392
+75%      0.108940
+max      0.364823
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -446,10 +452,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -0.015517
-AAPL    0.489540
-MSFT   -1.497976
-GOOG   -0.764402
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -0.353947
+AAPL   -0.332431
+MSFT    0.364823
+GOOG    0.023646
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -466,7 +472,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-0.015517047683356336
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-0.3539471411439416
 </pre></div>
 </div>
 </div>
@@ -480,9 +486,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL    0.489540
-MSFT   -1.497976
-GOOG   -0.764402
+AAPL   -0.332431
+MSFT    0.364823
+GOOG    0.023646
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2093,7 +2099,7 @@ and calculate the yearly returns such as:</p>
       <td>-1.5e-01</td>
       <td>-9.9e-02</td>
       <td>-1.9e-01</td>
-      <td>-1.7e-01</td>
+      <td>-1.8e-01</td>
     </tr>
   </tbody>
 </table>
