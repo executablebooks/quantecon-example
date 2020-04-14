@@ -17,7 +17,7 @@ In addition to what's in Anaconda, this lecture will need the following
 libraries:
 
 ```{code-cell} ipython3
-:tags: [remove_output]
+:tags: [remove-output]
 
 !pip install --upgrade pandas-datareader
 ```
@@ -193,8 +193,6 @@ To select columns, we can pass a list containing the names of the
 desired columns represented as strings
 
 ```{code-cell} ipython3
-:tags: [align_center]
-
 df[['country', 'tcgdp']]
 ```
 
@@ -567,7 +565,7 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
-:tags: [remove_cell]
+:tags: [remove-cell]
 
 from myst_nb import glue
 glue("pandas_share_prices", fig, display=False)
@@ -622,7 +620,7 @@ plt.tight_layout()
 ```
 
 ```{code-cell} ipython3
-:tags: [remove_cell]
+:tags: [remove-cell]
 
 from myst_nb import glue
 glue("pandas_indices_pctchange", fig, display=False)

@@ -314,7 +314,7 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
-:tags: [remove_cell]
+:tags: [remove-cell]
 
 from myst_nb import glue
 glue("matplotlib_ex1", fig, display=False)
