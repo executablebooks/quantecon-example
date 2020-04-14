@@ -26,7 +26,6 @@ getting_started
 python_by_example
 functions
 python_essentials
-oop_intro
 python_oop
 ```
 
