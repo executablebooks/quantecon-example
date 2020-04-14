@@ -8,7 +8,7 @@
     <title>Numba &#8212; Programming for Quantitative Economics</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../_static/jupyterbook.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <link href="../_static/css/index.css" rel="stylesheet">
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -24,7 +25,8 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/mystnb.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,6 +60,7 @@
 </div>
 
 <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
 
@@ -81,9 +84,6 @@
   </li>
   <li class="">
     <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
   </li>
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
@@ -141,9 +141,6 @@
   </li>
   <li class="">
     <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
   </li>
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
@@ -186,7 +183,7 @@
   </li>
 </ul>
 </nav>
-<p class="sidebar_footer">Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></p>
+<p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
 </div>
 
 
@@ -206,16 +203,30 @@
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
-        <div class="download-buttons-dropdown">
-            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-            <div class="download-buttons">
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="dropdown-trigger-text">Download</span></button>
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
                 <!-- Download raw file -->
-                <a class="download-buttons" href="../_sources/docs/numba.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <a class="dropdown-buttons" href="../_sources/docs/numba.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
             </div>
         </div>
+
+        <!-- Launch buttons -->
         
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath={ui_pre}/{path_rel_repo}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -333,7 +344,7 @@
 <h1>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">¶</a></h1>
 <p>In addition to what’s in Anaconda, this lecture will need the following
 libraries:</p>
-<div class="cell tag_remove_output docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install --upgrade quantecon
 </pre></div>
@@ -353,8 +364,6 @@ since old versions are a
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <div class="section" id="overview">
@@ -404,8 +413,6 @@ x_{t+1} = \alpha x_t (1 - x_t)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Here’s the plot of a typical trajectory, starting from <span class="math notranslate nohighlight">\(x_0 = 0.1\)</span>,
 with <span class="math notranslate nohighlight">\(t\)</span> on the x-axis</p>
@@ -441,8 +448,6 @@ with <span class="math notranslate nohighlight">\(t\)</span> on the x-axis</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">qm_numba</span></code> is a version of <code class="docutils literal notranslate"><span class="pre">qm</span></code> that is “targeted” for
 JIT-compilation.</p>
@@ -460,7 +465,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:7.07
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:6.67
 </pre></div>
 </div>
 </div>
@@ -475,7 +480,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.09
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.10
 </pre></div>
 </div>
 </div>
@@ -504,7 +509,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>265.41152686710024
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>245.69091563641473
 </pre></div>
 </div>
 </div>
@@ -549,8 +554,6 @@ this moment, and <em>then</em> compile the function.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>In practice this would typically be done using an alternative
 <em>decorator</em> syntax.</p>
@@ -574,8 +577,6 @@ function definition.</p>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">qm</span> <span class="pre">=</span> <span class="pre">jit(qm)</span></code>.</p>
@@ -629,8 +630,6 @@ effective compilation is failing.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 </div>
 </div>
@@ -650,8 +649,6 @@ growth model we created in <a class="reference internal" href="python_oop.html#p
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jitclass</span><span class="p">,</span> <span class="n">float64</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Notice that we also imported something called <code class="docutils literal notranslate"><span class="pre">float64</span></code>.</p>
@@ -715,8 +712,6 @@ types when it trys to deal with classes.</p>
         <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>First we specified the types of the instance data for the class in
@@ -914,8 +909,6 @@ in the low state.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Now let’s see how fast it runs:</p>
 <div class="cell docutils container">
@@ -925,11 +918,11 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 136 ms, sys: 1.22 ms, total: 138 ms
-Wall time: 137 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 137 ms, sys: 1.95 ms, total: 139 ms
+Wall time: 142 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142776
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139764
 </pre></div>
 </div>
 </div>
@@ -941,11 +934,11 @@ Wall time: 137 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.4 ms, sys: 47 µs, total: 12.4 ms
-Wall time: 12.4 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.6 ms, sys: 67 µs, total: 12.7 ms
+Wall time: 12.7 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142604
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.143052
 </pre></div>
 </div>
 </div>
@@ -968,8 +961,6 @@ adding four characters.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Here’s a pure Python version of the function</p>
 <div class="cell docutils container">
@@ -988,8 +979,6 @@ adding four characters.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Let’s run this code and check that the fraction of time spent in the
 low state is about 0.666</p>
@@ -1002,7 +991,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.664832
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667587
 </pre></div>
 </div>
 </div>
@@ -1018,10 +1007,10 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.73
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.63
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.7379028797149658
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.6396439075469971
 </pre></div>
 </div>
 </div>
@@ -1035,8 +1024,6 @@ low state is about 0.666</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Let’s check we still get the right numbers</p>
 <div class="cell docutils container">
@@ -1047,7 +1034,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665518
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665921
 </pre></div>
 </div>
 </div>
@@ -1065,7 +1052,7 @@ low state is about 0.666</p>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.00
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.008892059326171875
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.008774042129516602
 </pre></div>
 </div>
 </div>

@@ -36,8 +36,7 @@ $\epsilon_t$ is independent standard normal.
 In other words, we want to generate figures that look something like
 this:
 
-```{figure} /_static/lecture_specific/python_by_example/test_program_1_updated.png
-:figclass: align-center
+```{glue:} test_program_1_updated
 ```
 
 (Here $t$ is on the horizontal axis and $\epsilon_t$ is on the vertical
@@ -49,7 +48,7 @@ more about Python.
 We run the following command first, which helps ensure that plots appear
 in the notebook if you run it on your own machine.
 
-```{code-cell} python3
+```{code-cell} ipython3
 %matplotlib inline
 ```
 
@@ -59,13 +58,21 @@ in the notebook if you run it on your own machine.
 
 Here are a few lines of code that perform the task we set
 
-```{code-cell} ipython3
+```{code-cell} python3
 import numpy as np
 import matplotlib.pyplot as plt
 
+fig, ax = plt.subplots()
 ϵ_values = np.random.randn(100)
 plt.plot(ϵ_values)
 plt.show()
+```
+
+```{code-cell} python3
+:tags: [remove-cell]
+
+from myst_nb import glue
+glue("test_program_1_updated", fig, display=False)
 ```
 
 Let\'s break this program down and see how it works.
@@ -90,17 +97,17 @@ syntax `np.attribute`.
 
 Here\'s two more examples
 
-```{code-cell} python3
+```{code-cell} ipython3
 np.sqrt(4)
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
 np.log(4)
 ```
 
 We could also use the following syntax:
 
-```{code-cell} python3
+```{code-cell} ipython3
 import numpy
 
 numpy.sqrt(4)
@@ -156,7 +163,7 @@ package.
 
 Recall this code that we saw above
 
-```{code-cell} python3
+```{code-cell} ipython3
 import numpy as np
 
 np.sqrt(4)
@@ -164,7 +171,7 @@ np.sqrt(4)
 
 Here\'s another way to access NumPy\'s square root function
 
-```{code-cell} python3
+```{code-cell} ipython3
 from numpy import sqrt
 
 sqrt(4)
@@ -185,7 +192,7 @@ they wish to.
 Returning to our program that plots white noise, the remaining three
 lines after the import statements are
 
-```{code-cell} python3
+```{code-cell} ipython3
 ϵ_values = np.random.randn(100)
 plt.plot(ϵ_values)
 plt.show()
@@ -217,7 +224,7 @@ Here\'s a version that illustrates `for` loops and Python lists.
 
 (firstloopprog)=
 
-```{code-cell} python3
+```{code-cell} ipython3
 ts_length = 100
 ϵ_values = []   # empty list
 
@@ -254,7 +261,7 @@ objects.
 
 For example, try
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = [10, 'foo', False]  
 type(x)
 ```
@@ -269,11 +276,11 @@ value](https://en.wikipedia.org/wiki/Boolean_data_type).
 When adding a value to a list, we can use the syntax
 `list_name.append(some_value)`
 
-```{code-cell} python3
+```{code-cell} ipython3
 x
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
 x.append(2.5)
 x
 ```
@@ -293,26 +300,26 @@ We\'ll learn all about methods later on, but just to give you some idea,
 
 Another useful list method is `pop()`
 
-```{code-cell} python3
+```{code-cell} ipython3
 x
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
 x.pop()
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
 x
 ```
 
 Lists in Python are zero-based (as in C, Java or Go), so the first
 element is referenced by `x[0]`
 
-```{code-cell} python3
+```{code-cell} ipython3
 x[0]   # first element of x
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
 x[1]   # second element of x
 ```
 
@@ -322,7 +329,7 @@ Now let\'s consider the `for` loop from
 {ref}`the program above <firstloopprog>`, which
 was
 
-```{code-cell} python3
+```{code-cell} ipython3
 for i in range(ts_length):
     e = np.random.randn()
     ϵ_values.append(e)
@@ -343,7 +350,7 @@ telling Python that this line marks the lower limit of the code block.
 More on indentation below---for now, let\'s look at another example of
 a `for` loop
 
-```{code-cell} python3
+```{code-cell} ipython3
 animals = ['dog', 'cat', 'bird']
 for animal in animals:
     print("The plural of " + animal + " is " + animal + "s")
@@ -408,7 +415,7 @@ a `while` loop instead.
 
 (whileloopprog)=
 
-```{code-cell} python3
+```{code-cell} ipython3
 ts_length = 100
 ϵ_values = []
 i = 0
@@ -445,7 +452,7 @@ $b_0, b_1, \ldots, b_T$.
 Instead of using a Python list to store this sequence, we will use a
 NumPy array.
 
-```{code-cell} python3
+```{code-cell} ipython3
 r = 0.025         # interest rate 
 T = 50            # end date
 b = np.empty(T+1) # an empty NumPy array, to store all b_t
@@ -492,7 +499,7 @@ standard normal.
 
 In your solution, restrict your import statements to
 
-```{code-cell} python3
+```{code-cell} ipython3
 import numpy as np
 import matplotlib.pyplot as plt
 ```
@@ -544,11 +551,11 @@ In Python, conditions are usually implemented with if--else syntax.
 Here\'s an example, that prints -1 for each negative number in an array
 and 1 for each nonnegative number
 
-```{code-cell} python3
+```{code-cell} ipython3
 numbers = [-9, 2.3, -11, 0]
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
 for x in numbers:
     if x < 0:
         print(-1)
@@ -572,7 +579,7 @@ Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method).
 
 Use no imports besides
 
-```{code-cell} python3
+```{code-cell} ipython3
 import numpy as np
 ```
 
@@ -592,7 +599,7 @@ Your hints are as follows:
 
 Here\'s one solution.
 
-```{code-cell} python3
+```{code-cell} ipython3
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -607,7 +614,7 @@ plt.show()
 
 ### Exercise 2
 
-```{code-cell} python3
+```{code-cell} ipython3
 α_values = [0.0, 0.8, 0.98]
 T = 200
 x = np.empty(T+1) 
@@ -626,7 +633,7 @@ plt.show()
 
 Here\'s one solution:
 
-```{code-cell} python3
+```{code-cell} ipython3
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -643,7 +650,7 @@ plt.show()
 
 Here\'s one way:
 
-```{code-cell} python3
+```{code-cell} ipython3
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -662,7 +669,7 @@ plt.show()
 
 Here\'s a shorter way to write the same thing:
 
-```{code-cell} python3
+```{code-cell} ipython3
 α = 0.9
 T = 200
 x = np.empty(T+1) 
@@ -693,7 +700,7 @@ dividing by $r^2 = (1/2)^2 = 1/4$ gives an estimate of $\pi$.
 We estimate the area by sampling bivariate uniforms and looking at the
 fraction that falls into the circle.
 
-```{code-cell} python3
+```{code-cell} ipython3
 n = 100000
 
 count = 0

@@ -8,7 +8,7 @@
     <title>More Language Features &#8212; Programming for Quantitative Economics</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../_static/jupyterbook.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <link href="../_static/css/index.css" rel="stylesheet">
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -24,7 +25,8 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/mystnb.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,6 +60,7 @@
 </div>
 
 <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
 
@@ -81,9 +84,6 @@
   </li>
   <li class="">
     <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
   </li>
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
@@ -141,9 +141,6 @@
   </li>
   <li class="">
     <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
   </li>
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
@@ -186,7 +183,7 @@
   </li>
 </ul>
 </nav>
-<p class="sidebar_footer">Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></p>
+<p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
 </div>
 
 
@@ -206,16 +203,30 @@
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
-        <div class="download-buttons-dropdown">
-            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-            <div class="download-buttons">
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="dropdown-trigger-text">Download</span></button>
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
                 <!-- Download raw file -->
-                <a class="download-buttons" href="../_sources/docs/python_advanced_features.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <a class="dropdown-buttons" href="../_sources/docs/python_advanced_features.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
             </div>
         </div>
+
+        <!-- Launch buttons -->
         
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath={ui_pre}/{path_rel_repo}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -821,8 +832,6 @@ before the loop starts.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>We now know that when this statement is executed, Python creates an
 object of type <code class="docutils literal notranslate"><span class="pre">int</span></code> in your computer’s memory, containing</p>
@@ -891,8 +900,6 @@ to one object and then rebound to another</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>What happens here is that the first object is garbage collected.</p>
 <p>In other words, the memory slot that stores that object is deallocated,
@@ -906,8 +913,6 @@ and returned to the operating system.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>binds the name <code class="docutils literal notranslate"><span class="pre">x</span></code> to the integer object on the right-hand side.</p>
@@ -1110,8 +1115,6 @@ namespace with <code class="docutils literal notranslate"><span class="pre">loca
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Now let’s call the function</p>
 <div class="cell docutils container">
@@ -1248,8 +1251,6 @@ namespaces are</p>
     <span class="n">g</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">f</span></code> is the <em>enclosing function</em> for <code class="docutils literal notranslate"><span class="pre">g</span></code>, and each function gets its
@@ -1418,8 +1419,6 @@ exist and we need to write our own</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>If we run this with an array of length one, the program will terminate
 and print our error message</p>
@@ -1542,8 +1541,6 @@ execution of the program.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>When we call <code class="docutils literal notranslate"><span class="pre">f</span></code> we get the following output</p>
 <div class="cell docutils container">
@@ -1599,8 +1596,6 @@ error too</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Here’s what happens</p>
 <div class="cell docutils container">
@@ -1650,8 +1645,6 @@ error too</p>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Here’s what happens</p>
@@ -1703,8 +1696,6 @@ error too</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>In general it’s better to be specific.</p>
 </div>
@@ -1742,8 +1733,6 @@ use them.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Now suppose there’s a problem: occasionally negative numbers get fed to
 <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> in the calculations that follow.</p>
@@ -1771,8 +1760,6 @@ happens, with a sensible error message.</p>
 <span class="c1"># Program continues with various calculations using f and g</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Notice however that there is some repetition here, in the form of two
@@ -1809,8 +1796,6 @@ complicated.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>This looks complicated so let’s work through it slowly.</p>
 <p>To unravel the logic, consider what happens when we say
@@ -1836,8 +1821,6 @@ works, they will be looking for the function definition, which is</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>They may well miss the line <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">check_nonneg(f)</span></code>.</p>
 <p>For this and other reasons, decorators were introduced to Python.</p>
@@ -1855,8 +1838,6 @@ works, they will be looking for the function definition, which is</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>with</p>
 <div class="cell docutils container">
@@ -1870,8 +1851,6 @@ works, they will be looking for the function definition, which is</p>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>These two pieces of code do exactly the same thing.</p>
@@ -1902,8 +1881,6 @@ give the distance traveled in miles and kilometers respectively.</p>
     <span class="c1"># Some other functionality, details omitted</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>One potential problem we might have here is that a user alters one of
@@ -1983,8 +1960,6 @@ attribute notation.</p>
     <span class="n">kms</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_kms</span><span class="p">,</span> <span class="n">set_kms</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>First let’s check that we get the desired behavior</p>
@@ -2067,8 +2042,6 @@ uses decorators to set up the properties</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">_miles</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="mf">1.61</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>We won’t go through all the details here.</p>
@@ -2222,8 +2195,6 @@ functions.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>It looks like a function, but uses a keyword <code class="docutils literal notranslate"><span class="pre">yield</span></code> that we haven’t
 met before.</p>
@@ -2325,8 +2296,6 @@ statement.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>and continues until the next <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement.</p>
 <p>At that point it returns the value following <code class="docutils literal notranslate"><span class="pre">yield</span></code> to the caller of
@@ -2344,8 +2313,6 @@ statement.</p></li>
         <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Let’s see how it works</p>
@@ -2446,8 +2413,6 @@ off</em></p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>When <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code> fails, the generator throws a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error.</p>
 <p>Incidentally, the loop inside the generator can be infinite</p>
@@ -2459,8 +2424,6 @@ off</em></p>
         <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 </div>
@@ -2503,8 +2466,6 @@ off</em></p>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Now let’s do the sum</p>
@@ -2564,8 +2525,6 @@ x_{t+1} = 2 x_t, \quad x_0 = 1
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>We can also use a recursive solution, as follows</p>
 <div class="cell docutils container">
@@ -2577,8 +2536,6 @@ x_{t+1} = 2 x_t, \quad x_0 = 1
         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>What happens here is that each successive call uses it’s own <em>frame</em> in
@@ -2661,8 +2618,6 @@ file and sum the numbers, ignoring lines without numbers.</p>
         <span class="k">return</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Let’s test it</p>

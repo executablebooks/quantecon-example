@@ -1,6 +1,7 @@
 /* Whole cell */
 div.container.cell {
   padding-left: 0;
+  margin-bottom: 1em;
 }
 
 /* Removing all background formatting so we can control at the div level */
@@ -34,7 +35,6 @@ div.cell_input > div, div.cell_output div.output > div.highlight {
 .cell_output {
   padding-left: 1em;
   padding-right: 0em;
-  margin-bottom: 1em;
   margin-top: 1em;
 }
 
@@ -116,30 +116,4 @@ span.pasted-text {
 
 span.pasted-inline img {
   max-height: 2em;
-}
-
-/* Align figures */
-
-div.figure.align-right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-div.figure.align-center {
-  display: flex;
-  justify-content: center;
-}
-
-/* Float figures */
-
-div.figure.float-left {
-  clear: left;
-  float: left;
-  margin-left: 1em;
-}
-
-div.figure.float-right {
-  clear: right;
-  float: right;
-  margin-right: 1em;
 }

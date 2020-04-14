@@ -806,7 +806,7 @@ Your task is to
 ## Solutions
 
 ```{code-cell} ipython3
-:tags: [remove_output]
+:tags: [remove-output]
 
 import matplotlib.pyplot as plt
 %matplotlib inline

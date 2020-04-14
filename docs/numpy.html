@@ -8,7 +8,7 @@
     <title>NumPy &#8212; Programming for Quantitative Economics</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../_static/jupyterbook.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <link href="../_static/css/index.css" rel="stylesheet">
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -24,7 +25,8 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/mystnb.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,6 +60,7 @@
 </div>
 
 <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
 
@@ -81,9 +84,6 @@
   </li>
   <li class="">
     <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
   </li>
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
@@ -141,9 +141,6 @@
   </li>
   <li class="">
     <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
   </li>
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
@@ -186,7 +183,7 @@
   </li>
 </ul>
 </nav>
-<p class="sidebar_footer">Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></p>
+<p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
 </div>
 
 
@@ -206,16 +203,30 @@
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
-        <div class="download-buttons-dropdown">
-            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-            <div class="download-buttons">
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="dropdown-trigger-text">Download</span></button>
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
                 <!-- Download raw file -->
-                <a class="download-buttons" href="../_sources/docs/numpy.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <a class="dropdown-buttons" href="../_sources/docs/numpy.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
             </div>
         </div>
+
+        <!-- Launch buttons -->
         
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath={ui_pre}/{path_rel_repo}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -393,8 +404,6 @@ ecosystem.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>To create a NumPy array containing only zeros we use
 <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html#numpy.zeros">np.zeros</a></p>
@@ -474,8 +483,6 @@ etc.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">z</span></code> is a <em>flat</em> array with no dimension — neither row nor
@@ -564,8 +571,6 @@ contents of those memory slots are interpreted as <code class="docutils literal 
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># From 2 to 4, with 5 elements</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>To create an identity matrix use either <code class="docutils literal notranslate"><span class="pre">np.identity</span></code> or <code class="docutils literal notranslate"><span class="pre">np.eye</span></code></p>
@@ -1058,8 +1063,6 @@ NumPy namespace</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1299,7 +1302,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-1.46651339,  0.28002682,  1.07170524])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.45675998,  1.19811033,  0.81078428])
 </pre></div>
 </div>
 </div>
@@ -1313,7 +1316,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.28002682, 1.07170524])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.        , 1.19811033, 0.81078428])
 </pre></div>
 </div>
 </div>
@@ -1340,7 +1343,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.00953284,  1.05465919, -0.7629521 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.68514095, -0.97310894,  0.50976907])
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1356,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.00953284,  1.05465919, -0.7629521 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.68514095, -0.97310894,  0.50976907])
 </pre></div>
 </div>
 </div>
@@ -1379,7 +1382,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.00953284,  1.05465919, -0.7629521 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.68514095, -0.97310894,  0.50976907])
 </pre></div>
 </div>
 </div>
@@ -1417,8 +1420,6 @@ etc. that act <em>element-wise</em> on arrays</p>
     <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Because they act element-wise on arrays, these functions are called
@@ -1462,8 +1463,6 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>The NumPy function <code class="docutils literal notranslate"><span class="pre">np.where</span></code> provides a vectorized alternative:</p>
 <div class="cell docutils container">
@@ -1474,7 +1473,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.25129203,  0.50173678,  1.15717218, -0.328732  ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.3859375 , -0.98725108,  1.37946598, -1.68085878])
 </pre></div>
 </div>
 </div>
@@ -1486,7 +1485,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 0])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 0])
 </pre></div>
 </div>
 </div>
@@ -1500,7 +1499,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 0])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 0])
 </pre></div>
 </div>
 </div>
@@ -1632,7 +1631,7 @@ programming through its sub-packages.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4.992
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5.041
 </pre></div>
 </div>
 </div>
@@ -1723,8 +1722,6 @@ probability <code class="docutils literal notranslate"><span class="pre">q[i]</s
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>If you can’t see how this works, try thinking through the flow for a
 simple example, such as <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">[0.25,</span> <span class="pre">0.75]</span></code> It helps to sketch the
@@ -1758,7 +1755,7 @@ are method parameters.</p></li>
 </div>
 <div class="section" id="solutions">
 <h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
-<div class="cell tag_remove_output docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -1778,8 +1775,6 @@ are method parameters.</p></li>
     <span class="k">return</span> <span class="n">coef</span> <span class="o">@</span> <span class="n">y</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Let’s test it</p>
@@ -1835,8 +1830,6 @@ are method parameters.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>The logic is not obvious, but if you take your time and read it slowly,
 you will understand.</p>
@@ -1850,8 +1843,6 @@ created, for example by</p>
 <span class="n">d</span><span class="o">.</span><span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>The problem is that <code class="docutils literal notranslate"><span class="pre">Q</span></code> does not change accordingly, and <code class="docutils literal notranslate"><span class="pre">Q</span></code> is the data
@@ -1939,8 +1930,6 @@ from QuantEcon and added in a plot method</p>
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>Here’s an example of usage</p>

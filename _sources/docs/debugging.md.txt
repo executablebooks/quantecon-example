@@ -35,7 +35,7 @@ Here we\'ll focus on Jupyter and leave you to explore other settings.
 We\'ll need the following imports
 
 ```{code-cell} ipython3
-:tags: [remove_output]
+:tags: [remove-output]
 
 import numpy as np
 import matplotlib.pyplot as plt

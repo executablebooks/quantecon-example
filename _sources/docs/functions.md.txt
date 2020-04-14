@@ -32,7 +32,7 @@ functions
 We will use the following imports.
 
 ```{code-cell} ipython3
-:tags: [remove_output]
+:tags: [remove-output]
 
 import numpy as np
 import matplotlib.pyplot as plt

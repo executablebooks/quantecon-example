@@ -184,6 +184,8 @@ for i in range(num_rows):
         axes[i, j].hist(x, alpha=0.6, bins=20)
         t = f'$\mu = {m:.2}, \quad \sigma = {s:.2}$'
         axes[i, j].set(title=t, xticks=[-4, 0, 4], yticks=[])
+
+plt.tight_layout()
 plt.show()
 ```
 
@@ -312,7 +314,7 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
-:tags: [remove_cell]
+:tags: [remove-cell]
 
 from myst_nb import glue
 glue("matplotlib_ex1", fig, display=False)
