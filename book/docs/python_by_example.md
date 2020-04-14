@@ -58,17 +58,25 @@ in the notebook if you run it on your own machine.
 
 Here are a few lines of code that perform the task we set
 
-```{code-cell} python3
+```{code-cell} ipython3
 import numpy as np
 import matplotlib.pyplot as plt
 
-fig, ax = plt.subplots()
 ϵ_values = np.random.randn(100)
 plt.plot(ϵ_values)
 plt.show()
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
+:tags: [remove-cell]
+
+// This is duplicated as a way to use glue functionality
+plt.plot(ϵ_values)
+fig = plt.gcf()
+plt.show()
+```
+
+```{code-cell} ipython3
 :tags: [remove-cell]
 
 from myst_nb import glue
