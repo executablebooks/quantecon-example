@@ -14,11 +14,8 @@ MyST-syntax markdown, then build the book by following the instructions in the
 
 ### Creating an environment
 
-1. Clone the following repositories: [cli](https://github.com/ExecutableBookProject/cli), [MyST-NB](https://github.com/ExecutableBookProject/MyST-NB), [sphinx-book-theme](https://github.com/ExecutableBookProject/sphinx-book-theme)
-2. `conda create -n venv_name pip matplotlib numpy scipy sympy pandas networkx`
-3. Activate conda environment
-4. Find anaconda directory and fin the venv folder. It could look something like this: `/anaconda3/envs/venv_name/`
-5. For each of the cloned repositories run the following: `/anaconda3/envs/venv_name/bin/pip install -e.`
+1. `conda env create -f environment.yml`
+2.  `conda activte edp`
 
 ### Building a Jupyter Book
 
