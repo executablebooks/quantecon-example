@@ -1,4 +1,4 @@
-name: ebp
+name: qe-example
 channels:
   - conda-forge
   - defaults
@@ -17,9 +17,5 @@ dependencies:
   - numba
   - pip
   - pip:
-    - git+https://github.com/ExecutableBookProject/MyST-NB.git
-    - jupyter-cache[cli]
-    - git+https://github.com/mwouts/jupytext.git
     - git+https://github.com/ExecutableBookProject/jupyter-book
-    - git+https://github.com/ExecutableBookProject/sphinx-book-theme
 
