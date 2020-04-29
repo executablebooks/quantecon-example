@@ -13,48 +13,6 @@ These notes present a set of lectures on Python programming for quantitative eco
 They are one part of a larger set of lectures on open source computing,
 economics and finance backed by [QuantEcon](https://quantecon.org).
 
-## Table of Contents
-
-
-### Introduction to Python
-
-```{toctree}
-:maxdepth: 1
-
-about_py
-getting_started
-python_by_example
-functions
-python_essentials
-oop_intro
-python_oop
-```
-
-### Scientific Libraries
-
-```{toctree}
-:maxdepth: 1
-
-need_for_speed
-numpy
-matplotlib
-scipy
-numba
-parallelization
-pandas
-```
-
-### Advanced Python
-
-```{toctree}
-:maxdepth: 1
-
-writing_good_code
-python_advanced_features
-debugging
-```
-
-
 
 (troubleshooting)=
 
@@ -92,7 +50,7 @@ For this task you can either
 
 ## Feedback
 
-To provide feedback on these lectures you can 
+To provide feedback on these lectures you can
 
 - use our [discourse forum](https://discourse.quantecon.org/) or
 - provide direct feedback to <contact@quantecon.org>.
