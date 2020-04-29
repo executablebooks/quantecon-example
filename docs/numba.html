@@ -34,11 +34,18 @@
     <link rel="next" title="Parallelization" href="parallelization.html" />
     <link rel="prev" title="SciPy" href="scipy.html" />
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Put requirejs at the end so it's always after bootstrap -->
+<!-- TODO: remove this once https://github.com/pandas-dev/pydata-sphinx-theme/pull/149 is merged -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
@@ -61,14 +68,17 @@
 
 <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   
   <ul class="nav sidenav_l1">
-<li class="sidebar-special">
-<p class="sidebar-caption">Introduction to Python</p>
+  <li class="">
+    <a href="index.html">Programming for Quantitative Economics</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Introduction to Python</p>
 </li>
   <li class="">
     <a href="about_py.html">About Python</a>
@@ -91,8 +101,8 @@
   <li class="">
     <a href="python_oop.html">OOP II: Building Classes</a>
   </li>
-<li class="sidebar-special">
-<p class="sidebar-caption">Scientific Libraries</p>
+<li class="navbar-special">
+<p class="margin-caption">Scientific Libraries</p>
 </li>
   <li class="">
     <a href="need_for_speed.html">Python for Scientific Computing</a>
@@ -115,68 +125,8 @@
   <li class="">
     <a href="pandas.html">Pandas</a>
   </li>
-<li class="sidebar-special">
-<p class="sidebar-caption">Advanced Python</p>
-</li>
-  <li class="">
-    <a href="writing_good_code.html">Writing Good Code</a>
-  </li>
-  <li class="">
-    <a href="python_advanced_features.html">More Language Features</a>
-  </li>
-  <li class="">
-    <a href="debugging.html">Debugging</a>
-  </li>
-<li class="sidebar-special">
-<p class="sidebar-caption">Introduction to Python</p>
-</li>
-  <li class="">
-    <a href="about_py.html">About Python</a>
-  </li>
-  <li class="">
-    <a href="getting_started.html">Setting up Your Python Environment</a>
-  </li>
-  <li class="">
-    <a href="python_by_example.html">An Introductory Example</a>
-  </li>
-  <li class="">
-    <a href="functions.html">Functions</a>
-  </li>
-  <li class="">
-    <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
-  </li>
-  <li class="">
-    <a href="python_oop.html">OOP II: Building Classes</a>
-  </li>
-<li class="sidebar-special">
-<p class="sidebar-caption">Scientific Libraries</p>
-</li>
-  <li class="">
-    <a href="need_for_speed.html">Python for Scientific Computing</a>
-  </li>
-  <li class="">
-    <a href="numpy.html">NumPy</a>
-  </li>
-  <li class="">
-    <a href="matplotlib.html">Matplotlib</a>
-  </li>
-  <li class="">
-    <a href="scipy.html">SciPy</a>
-  </li>
-  <li class="active">
-    <a href="">Numba</a>
-  </li>
-  <li class="">
-    <a href="parallelization.html">Parallelization</a>
-  </li>
-  <li class="">
-    <a href="pandas.html">Pandas</a>
-  </li>
-<li class="sidebar-special">
-<p class="sidebar-caption">Advanced Python</p>
+<li class="navbar-special">
+<p class="margin-caption">Advanced Python</p>
 </li>
   <li class="">
     <a href="writing_good_code.html">Writing Good Code</a>
@@ -189,7 +139,7 @@
   </li>
 </ul>
 </nav>
-<p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+<p class="navbar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
 </div>
 
 
@@ -197,42 +147,53 @@
 
 
           
-<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    
-      <div class="row topbar fixed-top container-xl">
+    <div class="row topbar fixed-top container-xl">
     <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
     </div>
-    <div class="col topbar-main">
-        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="dropdown-trigger-text">Download</span></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
                 
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../_sources/docs/numba.md.txt"><button type="button" class="btn btn-secondary topbarbtn">.md</button></a>
+                <a class="dropdown-buttons" href="../_sources/docs/numba.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
+            
         </div>
+
+        <!-- Edit this page -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
             <div class="dropdown-buttons">
                 
-                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath={ui_pre}/{path_rel_repo}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath=tree/qe_book/docs/numba.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
                 
                 
                 
             </div>
         </div>
+        
+
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -336,12 +297,10 @@
     
     </ul>
 </nav>
-
     </div>
 </div>
-    
     <div id="main-content" class="row">
-        <div class="col-12 col-md-9 col-xxl-7">
+        <div class="col-12 col-md-9 col-xxl-7 pl-md-3 pr-md-0">
         
               <div>
                 
@@ -471,7 +430,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:7.61
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:8.02
 </pre></div>
 </div>
 </div>
@@ -486,7 +445,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.09
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.26
 </pre></div>
 </div>
 </div>
@@ -503,7 +462,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.02
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.04
 </pre></div>
 </div>
 </div>
@@ -515,7 +474,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>257.9859891951257
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>198.03973245012853
 </pre></div>
 </div>
 </div>
@@ -924,11 +883,11 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 140 ms, sys: 1.49 ms, total: 142 ms
-Wall time: 141 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 201 ms, sys: 4.39 ms, total: 206 ms
+Wall time: 208 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.13828
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142516
 </pre></div>
 </div>
 </div>
@@ -940,11 +899,11 @@ Wall time: 141 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.7 ms, sys: 54 µs, total: 12.7 ms
-Wall time: 12.8 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 27.6 ms, sys: 508 µs, total: 28.1 ms
+Wall time: 31.9 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141016
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.140912
 </pre></div>
 </div>
 </div>
@@ -997,7 +956,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.664891
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665049
 </pre></div>
 </div>
 </div>
@@ -1013,10 +972,10 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.77
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:1.08
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.7702782154083252
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.0843050479888916
 </pre></div>
 </div>
 </div>
@@ -1040,7 +999,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.666294
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667566
 </pre></div>
 </div>
 </div>
@@ -1055,10 +1014,10 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.01
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.00
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.011529922485351562
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.009956121444702148
 </pre></div>
 </div>
 </div>
