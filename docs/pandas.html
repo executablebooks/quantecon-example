@@ -332,10 +332,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.545188
-1    0.846219
-2    0.674437
-3   -0.797827
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -2.021645
+1    0.092205
+2   -0.244400
+3    0.900141
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -352,10 +352,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    54.518802
-1    84.621850
-2    67.443698
-3   -79.782689
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -202.164480
+1      9.220531
+2    -24.439976
+3     90.014060
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -368,10 +368,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.545188
-1    0.846219
-2    0.674437
-3    0.797827
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    2.021645
+1    0.092205
+2    0.244400
+3    0.900141
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -387,13 +387,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.317004
-std      0.753380
-min     -0.797827
-25%      0.209434
-50%      0.609812
-75%      0.717382
-max      0.846219
+mean    -0.318425
+std      1.232877
+min     -2.021645
+25%     -0.688711
+50%     -0.076097
+75%      0.294189
+max      0.900141
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -408,10 +408,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.545188
-AAPL    0.846219
-MSFT    0.674437
-GOOG   -0.797827
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -2.021645
+AAPL    0.092205
+MSFT   -0.244400
+GOOG    0.900141
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -428,7 +428,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.5451880176026505
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-2.021644801664054
 </pre></div>
 </div>
 </div>
@@ -442,9 +442,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL    0.846219
-MSFT    0.674437
-GOOG   -0.797827
+AAPL    0.092205
+MSFT   -0.244400
+GOOG    0.900141
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -1737,7 +1737,7 @@ the US and Australia</p>
 </div>
 <div class="cell_output docutils container">
 <div class="stderr docutils container">
-<pre class="stderr literal-block">/Users/junaluzi/opt/anaconda3/envs/qe-example/lib/python3.7/site-packages/pandas_datareader/compat/__init__.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+<pre class="stderr literal-block">/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/pandas_datareader/compat/__init__.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
   from pandas.util.testing import assert_frame_equal
 </pre>
 </div>
@@ -2052,10 +2052,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-1.2e-01</td>
-      <td>-5.3e-02</td>
-      <td>-1.7e-01</td>
-      <td>-1.5e-01</td>
+      <td>-1.1e-01</td>
+      <td>-2.2e-02</td>
+      <td>-1.6e-01</td>
+      <td>-1.3e-01</td>
     </tr>
   </tbody>
 </table>
@@ -2104,10 +2104,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>mean</th>
-      <td>7.3e-02</td>
+      <td>7.4e-02</td>
       <td>1.2e-01</td>
       <td>9.0e-02</td>
-      <td>7.4e-02</td>
+      <td>7.5e-02</td>
     </tr>
     <tr>
       <th>std</th>
@@ -2126,7 +2126,7 @@ and calculate the yearly returns such as:</p>
     <tr>
       <th>25%</th>
       <td>-6.5e-02</td>
-      <td>-3.0e-02</td>
+      <td>-2.4e-02</td>
       <td>4.2e-03</td>
       <td>-1.0e-01</td>
     </tr>
@@ -2201,7 +2201,7 @@ and calculate the yearly returns such as:</p>
     <footer class="footer">
   <div class="container">
     <p>
-          &copy; Copyright .<br/>
+          &copy; Copyright 2020.<br/>
         Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
     </p>
   </div>
