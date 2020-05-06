@@ -40,9 +40,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- Put requirejs at the end so it's always after bootstrap -->
-<!-- TODO: remove this once https://github.com/pandas-dev/pydata-sphinx-theme/pull/149 is merged -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 
 
 
@@ -332,10 +329,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.122523
-1   -0.393280
-2    1.298015
-3    0.993069
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -1.911251
+1    1.176609
+2   -0.359767
+3    1.422724
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -352,10 +349,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     12.252309
-1    -39.328021
-2    129.801549
-3     99.306947
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -191.125051
+1    117.660870
+2    -35.976693
+3    142.272411
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -368,10 +365,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.122523
-1    0.393280
-2    1.298015
-3    0.993069
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.911251
+1    1.176609
+2    0.359767
+3    1.422724
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -387,13 +384,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.505082
-std      0.778948
-min     -0.393280
-25%     -0.006428
-50%      0.557796
-75%      1.069306
-max      1.298015
+mean     0.082079
+std      1.545306
+min     -1.911251
+25%     -0.747638
+50%      0.408421
+75%      1.238138
+max      1.422724
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -408,10 +405,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.122523
-AAPL   -0.393280
-MSFT    1.298015
-GOOG    0.993069
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -1.911251
+AAPL    1.176609
+MSFT   -0.359767
+GOOG    1.422724
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -428,7 +425,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.12252309110385548
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1.9112505071073673
 </pre></div>
 </div>
 </div>
@@ -442,9 +439,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.393280
-MSFT    1.298015
-GOOG    0.993069
+AAPL    1.176609
+MSFT   -0.359767
+GOOG    1.422724
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2052,9 +2049,9 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-1.3e-01</td>
-      <td>-4.2e-02</td>
-      <td>-1.8e-01</td>
+      <td>-1.2e-01</td>
+      <td>-3.1e-02</td>
+      <td>-1.7e-01</td>
       <td>-1.5e-01</td>
     </tr>
   </tbody>
@@ -2126,7 +2123,7 @@ and calculate the yearly returns such as:</p>
     <tr>
       <th>25%</th>
       <td>-6.5e-02</td>
-      <td>-3.0e-02</td>
+      <td>-2.9e-02</td>
       <td>4.2e-03</td>
       <td>-1.0e-01</td>
     </tr>
