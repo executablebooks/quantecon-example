@@ -27,7 +27,8 @@
     <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -329,10 +330,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -1.788760
-1   -0.261683
-2   -1.866484
-3   -0.554880
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.037611
+1   -1.039479
+2    0.788043
+3   -0.155765
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -349,10 +350,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -178.876042
-1    -26.168326
-2   -186.648449
-3    -55.487969
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    103.761143
+1   -103.947936
+2     78.804331
+3    -15.576500
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -365,10 +366,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.788760
-1    0.261683
-2    1.866484
-3    0.554880
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.037611
+1    1.039479
+2    0.788043
+3    0.155765
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -384,13 +385,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -1.117952
-std      0.828760
-min     -1.866484
-25%     -1.808191
-50%     -1.171820
-75%     -0.481581
-max     -0.261683
+mean     0.157603
+std      0.949223
+min     -1.039479
+25%     -0.376694
+50%      0.316139
+75%      0.850435
+max      1.037611
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -405,10 +406,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -1.788760
-AAPL   -0.261683
-MSFT   -1.866484
-GOOG   -0.554880
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    1.037611
+AAPL   -1.039479
+MSFT    0.788043
+GOOG   -0.155765
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -425,7 +426,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1.7887604187396156
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.0376114264537126
 </pre></div>
 </div>
 </div>
@@ -439,9 +440,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.261683
-MSFT   -1.866484
-GOOG   -0.554880
+AAPL   -1.039479
+MSFT    0.788043
+GOOG   -0.155765
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2049,9 +2050,9 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-1.3e-01</td>
-      <td>-2.6e-02</td>
-      <td>-1.8e-01</td>
+      <td>-1.2e-01</td>
+      <td>-1.2e-02</td>
+      <td>-1.7e-01</td>
       <td>-1.5e-01</td>
     </tr>
   </tbody>
@@ -2123,7 +2124,7 @@ and calculate the yearly returns such as:</p>
     <tr>
       <th>25%</th>
       <td>-6.5e-02</td>
-      <td>-2.6e-02</td>
+      <td>-2.1e-02</td>
       <td>4.2e-03</td>
       <td>-1.0e-01</td>
     </tr>
