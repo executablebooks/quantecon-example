@@ -6,15 +6,14 @@
   <head>
     <meta charset="utf-8" />
     <title>Pandas &#8212; Programming for Quantitative Economics</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
-    <link href="../_static/css/index.css" rel="stylesheet">
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -35,20 +34,16 @@
     <link rel="next" title="Writing Good Code" href="writing_good_code.html" />
     <link rel="prev" title="Parallelization" href="parallelization.html" />
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
 
-    <div class="container-fluid">
+    <div class="container-xl">
       <div class="row">
           
 
@@ -192,9 +187,10 @@
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
-
-<div class="tocsection onthispage"><i class="fas fa-list"></i> On this page</div>
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
     
@@ -254,10 +250,12 @@
     
     </ul>
 </nav>
+
+
     </div>
 </div>
     <div id="main-content" class="row">
-        <div class="col-12 col-md-9 col-xxl-7 pl-md-3 pr-md-0">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
                 
@@ -330,10 +328,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.037611
-1   -1.039479
-2    0.788043
-3   -0.155765
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -2.310107
+1    0.564316
+2   -0.897902
+3    0.712453
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -350,10 +348,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    103.761143
-1   -103.947936
-2     78.804331
-3    -15.576500
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -231.010683
+1     56.431609
+2    -89.790214
+3     71.245338
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -366,10 +364,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.037611
-1    1.039479
-2    0.788043
-3    0.155765
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    2.310107
+1    0.564316
+2    0.897902
+3    0.712453
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -385,13 +383,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.157603
-std      0.949223
-min     -1.039479
-25%     -0.376694
-50%      0.316139
-75%      0.850435
-max      1.037611
+mean    -0.482810
+std      1.418502
+min     -2.310107
+25%     -1.250953
+50%     -0.166793
+75%      0.601350
+max      0.712453
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -406,10 +404,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    1.037611
-AAPL   -1.039479
-MSFT    0.788043
-GOOG   -0.155765
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -2.310107
+AAPL    0.564316
+MSFT   -0.897902
+GOOG    0.712453
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -426,7 +424,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.0376114264537126
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-2.3101068332958072
 </pre></div>
 </div>
 </div>
@@ -440,9 +438,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -1.039479
-MSFT    0.788043
-GOOG   -0.155765
+AAPL    0.564316
+MSFT   -0.897902
+GOOG    0.712453
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -1646,7 +1644,7 @@ now manipulate in the usual way</p>
   <tbody>
     <tr>
       <th>count</th>
-      <td>867.0</td>
+      <td>868.0</td>
     </tr>
     <tr>
       <th>mean</th>
@@ -1654,7 +1652,7 @@ now manipulate in the usual way</p>
     </tr>
     <tr>
       <th>std</th>
-      <td>1.6</td>
+      <td>1.7</td>
     </tr>
     <tr>
       <th>min</th>
@@ -1674,7 +1672,7 @@ now manipulate in the usual way</p>
     </tr>
     <tr>
       <th>max</th>
-      <td>10.8</td>
+      <td>14.7</td>
     </tr>
   </tbody>
 </table>
@@ -2050,10 +2048,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-1.2e-01</td>
-      <td>-1.2e-02</td>
-      <td>-1.7e-01</td>
-      <td>-1.5e-01</td>
+      <td>-1.0e-01</td>
+      <td>3.2e-03</td>
+      <td>-1.6e-01</td>
+      <td>-1.3e-01</td>
     </tr>
   </tbody>
 </table>
@@ -2102,10 +2100,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>mean</th>
-      <td>7.3e-02</td>
+      <td>7.4e-02</td>
       <td>1.2e-01</td>
       <td>9.0e-02</td>
-      <td>7.4e-02</td>
+      <td>7.5e-02</td>
     </tr>
     <tr>
       <th>std</th>
@@ -2124,7 +2122,7 @@ and calculate the yearly returns such as:</p>
     <tr>
       <th>25%</th>
       <td>-6.5e-02</td>
-      <td>-2.1e-02</td>
+      <td>-1.7e-02</td>
       <td>4.2e-03</td>
       <td>-1.0e-01</td>
     </tr>
@@ -2196,14 +2194,16 @@ and calculate the yearly returns such as:</p>
     <a class='right-next' id="next-link" href="writing_good_code.html" title="next page">Writing Good Code</a>
 
     </div>
-    <footer class="footer">
-  <div class="container">
-    <p>
-          &copy; Copyright 2020.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
-    </p>
-  </div>
-</footer>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas J. Sargent and John Stachurski<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
