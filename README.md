@@ -15,7 +15,7 @@ MyST-syntax markdown, then build the book by following the instructions in the
 
 
 1. `conda env create -f environment.yml`
-2.  `conda activate edp`
+2. `conda activate qe-example`
 
 
 ### Building a Jupyter Book
