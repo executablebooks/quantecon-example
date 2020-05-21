@@ -129,7 +129,13 @@
   </li>
 </ul>
 </nav>
-<p class="navbar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -327,10 +333,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -0.982753
-1   -0.546131
-2    1.258369
-3   -1.286265
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -0.780193
+1   -0.417807
+2    0.534054
+3   -1.241932
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -347,10 +353,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    -98.275270
-1    -54.613132
-2    125.836869
-3   -128.626453
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    -78.019252
+1    -41.780730
+2     53.405371
+3   -124.193197
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -363,10 +369,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.982753
-1    0.546131
-2    1.258369
-3    1.286265
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.780193
+1    0.417807
+2    0.534054
+3    1.241932
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -382,13 +388,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -0.389195
-std      1.139611
-min     -1.286265
-25%     -1.058631
-50%     -0.764442
-75%     -0.095006
-max      1.258369
+mean    -0.476470
+std      0.753388
+min     -1.241932
+25%     -0.895627
+50%     -0.599000
+75%     -0.179842
+max      0.534054
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -403,10 +409,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -0.982753
-AAPL   -0.546131
-MSFT    1.258369
-GOOG   -1.286265
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -0.780193
+AAPL   -0.417807
+MSFT    0.534054
+GOOG   -1.241932
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -423,7 +429,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-0.9827527010799357
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-0.7801925180405789
 </pre></div>
 </div>
 </div>
@@ -437,9 +443,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.546131
-MSFT    1.258369
-GOOG   -1.286265
+AAPL   -0.417807
+MSFT    0.534054
+GOOG   -1.241932
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2047,10 +2053,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-1.0e-01</td>
-      <td>1.0e-02</td>
-      <td>-1.6e-01</td>
-      <td>-1.3e-01</td>
+      <td>-8.8e-02</td>
+      <td>3.1e-02</td>
+      <td>-1.5e-01</td>
+      <td>-1.2e-01</td>
     </tr>
   </tbody>
 </table>
@@ -2101,13 +2107,13 @@ and calculate the yearly returns such as:</p>
       <th>mean</th>
       <td>7.4e-02</td>
       <td>1.2e-01</td>
-      <td>9.0e-02</td>
+      <td>9.1e-02</td>
       <td>7.5e-02</td>
     </tr>
     <tr>
       <th>std</th>
       <td>1.9e-01</td>
-      <td>2.5e-01</td>
+      <td>2.4e-01</td>
       <td>1.5e-01</td>
       <td>2.4e-01</td>
     </tr>
@@ -2121,7 +2127,7 @@ and calculate the yearly returns such as:</p>
     <tr>
       <th>25%</th>
       <td>-6.5e-02</td>
-      <td>-1.6e-02</td>
+      <td>-1.2e-02</td>
       <td>4.2e-03</td>
       <td>-1.0e-01</td>
     </tr>
