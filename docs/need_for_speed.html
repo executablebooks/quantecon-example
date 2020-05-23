@@ -548,6 +548,13 @@ not all, as we shall see).</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/numba/np/ufunc/parallel.py:355: NumbaWarning: [1mThe TBB threading layer requires TBB version 2019.5 or later i.e., TBB_INTERFACE_VERSION &gt;= 11005. Found TBB_INTERFACE_VERSION = 9107. The TBB threading layer is disabled.[0m
+  warnings.warn(problem)
+</pre>
+</div>
+</div>
 </div>
 <p>Next let’s try some non-vectorized code, which uses a native Python
 loop to generate, square and then sum a large number of random
@@ -571,8 +578,8 @@ variables:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 513 ms, sys: 0 ns, total: 513 ms
-Wall time: 513 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 540 ms, sys: 0 ns, total: 540 ms
+Wall time: 539 ms
 </pre></div>
 </div>
 </div>
@@ -588,8 +595,8 @@ Wall time: 513 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 14.3 ms, sys: 3.91 ms, total: 18.2 ms
-Wall time: 17.9 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.4 ms, sys: 4.28 ms, total: 15.7 ms
+Wall time: 15.4 ms
 </pre></div>
 </div>
 </div>
@@ -720,8 +727,8 @@ a = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.27 s, sys: 141 µs, total: 4.27 s
-Wall time: 4.27 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.78 s, sys: 2.72 ms, total: 3.78 s
+Wall time: 3.78 s
 </pre></div>
 </div>
 </div>
@@ -737,8 +744,8 @@ Wall time: 4.27 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 39.2 ms, sys: 12 ms, total: 51.2 ms
-Wall time: 50.9 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 21 ms, sys: 20 ms, total: 41 ms
+Wall time: 40.8 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9999819641085747

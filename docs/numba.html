@@ -328,6 +328,13 @@ since old versions are a
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/numba/np/ufunc/parallel.py:355: NumbaWarning: [1mThe TBB threading layer requires TBB version 2019.5 or later i.e., TBB_INTERFACE_VERSION &gt;= 11005. Found TBB_INTERFACE_VERSION = 9107. The TBB threading layer is disabled.[0m
+  warnings.warn(problem)
+</pre>
+</div>
+</div>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -428,7 +435,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:11.87
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:9.05
 </pre></div>
 </div>
 </div>
@@ -443,7 +450,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.16
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.15
 </pre></div>
 </div>
 </div>
@@ -472,7 +479,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>246.45957629927142
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>220.4030843015323
 </pre></div>
 </div>
 </div>
@@ -674,6 +681,13 @@ types when it trys to deal with classes.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">path</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/ipykernel_launcher.py:10: NumbaDeprecationWarning: [1mThe 'numba.jitclass' decorator has moved to 'numba.experimental.jitclass' to better reflect the experimental nature of the functionality. Please update your imports to accommodate this change and see http://numba.pydata.org/numba-doc/latest/reference/deprecation.html#change-of-jitclass-location for the time frame.[0m
+  # Remove the CWD from sys.path while we load stuff.
+</pre>
 </div>
 </div>
 </div>
@@ -881,11 +895,11 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 227 ms, sys: 36 µs, total: 227 ms
-Wall time: 226 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 225 ms, sys: 3.94 ms, total: 229 ms
+Wall time: 228 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.1401
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.140596
 </pre></div>
 </div>
 </div>
@@ -897,11 +911,11 @@ Wall time: 226 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 20.3 ms, sys: 0 ns, total: 20.3 ms
-Wall time: 20.1 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 16.3 ms, sys: 4 µs, total: 16.3 ms
+Wall time: 16.2 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.143232
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142288
 </pre></div>
 </div>
 </div>
@@ -954,7 +968,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665178
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665996
 </pre></div>
 </div>
 </div>
@@ -970,10 +984,10 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:1.28
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.94
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.2855703830718994
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9438912868499756
 </pre></div>
 </div>
 </div>
@@ -997,7 +1011,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665175
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667102
 </pre></div>
 </div>
 </div>
@@ -1015,7 +1029,7 @@ low state is about 0.666</p>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.01
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.01345205307006836
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.011696338653564453
 </pre></div>
 </div>
 </div>
