@@ -132,10 +132,6 @@
 
  <!-- To handle the deprecated key -->
 
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
@@ -164,7 +160,7 @@
                 <!-- ipynb file if we had a myst markdown file -->
                 
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../_sources/docs/numpy.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <a class="dropdown-buttons" href="../_sources/docs/numpy.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
@@ -178,17 +174,6 @@
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-            <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath=tree/qe_book/docs/numpy.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
-                
-                
-                
-            </div>
-        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -1265,7 +1250,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-2.00842607, -0.52597192,  0.77007174])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-2.18954405, -0.11512225, -0.54284755])
 </pre></div>
 </div>
 </div>
@@ -1279,7 +1264,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.52597192,  0.77007174])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.11512225, -0.54284755])
 </pre></div>
 </div>
 </div>
@@ -1306,7 +1291,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.56227006, 0.89055552, 1.2284447 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.10820305, -1.85516732,  0.74263355])
 </pre></div>
 </div>
 </div>
@@ -1319,7 +1304,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.56227006, 0.89055552, 1.2284447 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.10820305, -1.85516732,  0.74263355])
 </pre></div>
 </div>
 </div>
@@ -1345,7 +1330,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.56227006, 0.89055552, 1.2284447 ])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.10820305, -1.85516732,  0.74263355])
 </pre></div>
 </div>
 </div>
@@ -1436,7 +1421,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.45944458,  0.40288735,  1.17552276, -0.36560384])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-2.22444867,  0.07980174,  1.10763023,  0.79388946])
 </pre></div>
 </div>
 </div>
@@ -1448,7 +1433,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 0])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 1])
 </pre></div>
 </div>
 </div>
@@ -1462,7 +1447,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 0])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 1])
 </pre></div>
 </div>
 </div>
@@ -1594,7 +1579,7 @@ programming through its sub-packages.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5.022
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4.85
 </pre></div>
 </div>
 </div>

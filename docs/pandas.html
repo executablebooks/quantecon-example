@@ -132,10 +132,6 @@
 
  <!-- To handle the deprecated key -->
 
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
@@ -164,7 +160,7 @@
                 <!-- ipynb file if we had a myst markdown file -->
                 
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../_sources/docs/pandas.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <a class="dropdown-buttons" href="../_sources/docs/pandas.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
@@ -178,17 +174,6 @@
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-            <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/ExecutableBookProject/quantecon-example/master?urlpath=tree/qe_book/docs/pandas.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
-                
-                
-                
-            </div>
-        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -333,10 +318,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.704803
-1   -0.899349
-2    0.199195
-3    0.993131
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.248200
+1    0.077421
+2   -0.118053
+3   -1.837466
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -353,10 +338,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    70.480336
-1   -89.934891
-2    19.919475
-3    99.313145
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     24.819961
+1      7.742098
+2    -11.805272
+3   -183.746626
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -369,10 +354,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.704803
-1    0.899349
-2    0.199195
-3    0.993131
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.248200
+1    0.077421
+2    0.118053
+3    1.837466
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -388,13 +373,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.249445
-std      0.833201
-min     -0.899349
-25%     -0.075441
-50%      0.451999
-75%      0.776885
-max      0.993131
+mean    -0.407475
+std      0.965000
+min     -1.837466
+25%     -0.547906
+50%     -0.020316
+75%      0.120116
+max      0.248200
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -409,10 +394,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.704803
-AAPL   -0.899349
-MSFT    0.199195
-GOOG    0.993131
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.248200
+AAPL    0.077421
+MSFT   -0.118053
+GOOG   -1.837466
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -429,7 +414,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.7048033619577134
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.24819960873465013
 </pre></div>
 </div>
 </div>
@@ -443,9 +428,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.899349
-MSFT    0.199195
-GOOG    0.993131
+AAPL    0.077421
+MSFT   -0.118053
+GOOG   -1.837466
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2053,10 +2038,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-7.0e-02</td>
-      <td>3.0e-02</td>
+      <td>-6.6e-02</td>
+      <td>4.4e-02</td>
       <td>-1.2e-01</td>
-      <td>-7.7e-02</td>
+      <td>-5.7e-02</td>
     </tr>
   </tbody>
 </table>
@@ -2129,7 +2114,7 @@ and calculate the yearly returns such as:</p>
       <td>-6.5e-02</td>
       <td>-1.2e-02</td>
       <td>4.2e-03</td>
-      <td>-8.2e-02</td>
+      <td>-8.1e-02</td>
     </tr>
     <tr>
       <th>50%</th>
