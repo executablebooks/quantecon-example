@@ -167,7 +167,16 @@
             
         </div>
 
-        <!-- Edit this page -->
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/ExecutableBookProject/quantecon-example/tree/master/qe_book/docs"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/ExecutableBookProject/quantecon-example/tree/master/qe_book/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/parallelization.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                
+            </div>
+        </div>
         
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -426,7 +435,7 @@ multithreading out to more and more operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1.04 s ± 14.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1.04 s ± 13.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -472,7 +481,7 @@ decorator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>647 ms ± 10.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>701 ms ± 12.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -531,7 +540,7 @@ multithreading?</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>340 ms ± 4.66 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>368 ms ± 10.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -656,11 +665,11 @@ conditions don’t matter.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.37 s, sys: 20.5 ms, total: 9.39 s
-Wall time: 9.36 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.29 s, sys: 10.1 ms, total: 7.3 s
+Wall time: 7.28 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8297984289808968
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8344761542450645
 </pre></div>
 </div>
 </div>
@@ -696,11 +705,11 @@ Wall time: 9.36 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 8.49 s, sys: 13.7 ms, total: 8.51 s
-Wall time: 4.59 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 6.54 s, sys: 2.99 ms, total: 6.54 s
+Wall time: 3.56 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.828208393350443
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8430264811094885
 </pre></div>
 </div>
 </div>
@@ -775,11 +784,11 @@ such as <code class="docutils literal notranslate"><span class="pre">n</span> <s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 512 ms, sys: 0 ns, total: 512 ms
-Wall time: 502 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 435 ms, sys: 3.6 ms, total: 438 ms
+Wall time: 435 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.143464
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141112
 </pre></div>
 </div>
 </div>
@@ -791,11 +800,11 @@ Wall time: 502 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 16.8 ms, sys: 159 µs, total: 17 ms
-Wall time: 10.8 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.4 ms, sys: 0 ns, total: 12.4 ms
+Wall time: 6.32 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141436
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142036
 </pre></div>
 </div>
 </div>

@@ -167,7 +167,16 @@
             
         </div>
 
-        <!-- Edit this page -->
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/ExecutableBookProject/quantecon-example/tree/master/qe_book/docs"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/ExecutableBookProject/quantecon-example/tree/master/qe_book/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/pandas.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                
+            </div>
+        </div>
         
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -318,10 +327,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.088513
-1    0.537960
-2    1.181383
-3    0.311570
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -0.578966
+1    0.446486
+2   -0.038825
+3   -0.060901
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -338,10 +347,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0      8.851343
-1     53.796035
-2    118.138326
-3     31.156977
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -57.896573
+1    44.648579
+2    -3.882470
+3    -6.090054
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -354,10 +363,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.088513
-1    0.537960
-2    1.181383
-3    0.311570
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.578966
+1    0.446486
+2    0.038825
+3    0.060901
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -373,13 +382,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.529857
-std      0.471517
-min      0.088513
-25%      0.255806
-50%      0.424765
-75%      0.698816
-max      1.181383
+mean    -0.058051
+std      0.418843
+min     -0.578966
+25%     -0.190417
+50%     -0.049863
+75%      0.082503
+max      0.446486
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -394,10 +403,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.088513
-AAPL    0.537960
-MSFT    1.181383
-GOOG    0.311570
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -0.578966
+AAPL    0.446486
+MSFT   -0.038825
+GOOG   -0.060901
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -414,7 +423,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.08851342665030462
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-0.5789657270141597
 </pre></div>
 </div>
 </div>
@@ -428,9 +437,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL    0.537960
-MSFT    1.181383
-GOOG    0.311570
+AAPL    0.446486
+MSFT   -0.038825
+GOOG   -0.060901
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2038,10 +2047,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-6.2e-02</td>
-      <td>5.1e-02</td>
-      <td>-1.2e-01</td>
-      <td>-5.7e-02</td>
+      <td>-5.4e-02</td>
+      <td>5.7e-02</td>
+      <td>-1.1e-01</td>
+      <td>-4.9e-02</td>
     </tr>
   </tbody>
 </table>
@@ -2111,7 +2120,7 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>25%</th>
-      <td>-6.2e-02</td>
+      <td>-6.0e-02</td>
       <td>-1.2e-02</td>
       <td>4.2e-03</td>
       <td>-8.1e-02</td>
