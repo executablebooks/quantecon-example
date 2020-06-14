@@ -316,7 +316,7 @@ since old versions are a
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>In an <span class="xref myst">earlier lecture</span>
+<p>In an <a class="reference internal" href="need_for_speed.html"><span class="doc std std-doc">earlier lecture</span></a>
 we learned about vectorization, which is one method to improve speed and
 efficiency in numerical work.</p>
 <p>Vectorization involves sending array processing operations in batch to
@@ -413,7 +413,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:9.07
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:9.33
 </pre></div>
 </div>
 </div>
@@ -457,7 +457,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>171.20400131338073
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>171.77193113312683
 </pre></div>
 </div>
 </div>
@@ -470,7 +470,7 @@ implementation is.</p>
 <p>Numba attempts to generate fast machine code using the infrastructure
 provided by the <a class="reference external" href="http://llvm.org/">LLVM Project</a>.</p>
 <p>It does this by inferring type information on the fly.</p>
-<p>(See our <span class="xref myst">earlier lecture</span> on scientific computing for a discussion of types.)</p>
+<p>(See our <a class="reference internal" href="need_for_speed.html"><span class="doc std std-doc">earlier lecture</span></a> on scientific computing for a discussion of types.)</p>
 <p>The basic idea is this:</p>
 <ul class="simple">
 <li><p>Python is very flexible and hence we could call the function
@@ -703,7 +703,7 @@ like functions.</p>
 <p>If you prefer, you can safely skip this section.</p>
 <div class="section" id="cython">
 <h3>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h3>
-<p>Like <span class="xref myst">Numba</span>,
+<p>Like <a class="reference internal" href="#"><span class="doc std std-doc">Numba</span></a>,
 <a class="reference external" href="http://cython.org/">Cython</a> provides an approach to generating fast
 compiled code that can be used from Python.</p>
 <p>As was the case with Numba, a key problem is the fact that Python is
@@ -866,11 +866,11 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 197 ms, sys: 0 ns, total: 197 ms
-Wall time: 196 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 186 ms, sys: 27 µs, total: 186 ms
+Wall time: 186 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.140092
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139576
 </pre></div>
 </div>
 </div>
@@ -882,11 +882,11 @@ Wall time: 196 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 16.6 ms, sys: 12 µs, total: 16.6 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 16.8 ms, sys: 0 ns, total: 16.8 ms
 Wall time: 16.7 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.144168
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.136744
 </pre></div>
 </div>
 </div>
@@ -939,7 +939,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.666712
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667032
 </pre></div>
 </div>
 </div>
@@ -955,10 +955,10 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:1.02
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.94
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.0252478122711182
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9424896240234375
 </pre></div>
 </div>
 </div>
@@ -982,7 +982,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667028
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.666644
 </pre></div>
 </div>
 </div>
@@ -1000,7 +1000,7 @@ low state is about 0.666</p>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.01
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.013524055480957031
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.013173103332519531
 </pre></div>
 </div>
 </div>
