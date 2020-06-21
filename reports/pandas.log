@@ -23,7 +23,72 @@ plt.show()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
+[0;31mSSLCertVerificationError[0m                  Traceback (most recent call last)
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/urllib3/connectionpool.py[0m in [0;36murlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    676[0m                 [0mheaders[0m[0;34m=[0m[0mheaders[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 677[0;31m                 [0mchunked[0m[0;34m=[0m[0mchunked[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    678[0m             )
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/urllib3/connectionpool.py[0m in [0;36m_make_request[0;34m(self, conn, method, url, timeout, chunked, **httplib_request_kw)[0m
+[1;32m    380[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 381[0;31m             [0mself[0m[0;34m.[0m[0m_validate_conn[0m[0;34m([0m[0mconn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    382[0m         [0;32mexcept[0m [0;34m([0m[0mSocketTimeout[0m[0;34m,[0m [0mBaseSSLError[0m[0;34m)[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/urllib3/connectionpool.py[0m in [0;36m_validate_conn[0;34m(self, conn)[0m
+[1;32m    975[0m         [0;32mif[0m [0;32mnot[0m [0mgetattr[0m[0;34m([0m[0mconn[0m[0;34m,[0m [0;34m"sock"[0m[0;34m,[0m [0;32mNone[0m[0;34m)[0m[0;34m:[0m  [0;31m# AppEngine might not have  `.sock`[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 976[0;31m             [0mconn[0m[0;34m.[0m[0mconnect[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    977[0m [0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/urllib3/connection.py[0m in [0;36mconnect[0;34m(self)[0m
+[1;32m    369[0m             [0mserver_hostname[0m[0;34m=[0m[0mserver_hostname[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 370[0;31m             [0mssl_context[0m[0;34m=[0m[0mcontext[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    371[0m         )
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/urllib3/util/ssl_.py[0m in [0;36mssl_wrap_socket[0;34m(sock, keyfile, certfile, cert_reqs, ca_certs, server_hostname, ssl_version, ciphers, ssl_context, ca_cert_dir, key_password, ca_cert_data)[0m
+[1;32m    376[0m         [0;32mif[0m [0mHAS_SNI[0m [0;32mand[0m [0mserver_hostname[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 377[0;31m             [0;32mreturn[0m [0mcontext[0m[0;34m.[0m[0mwrap_socket[0m[0;34m([0m[0msock[0m[0;34m,[0m [0mserver_hostname[0m[0;34m=[0m[0mserver_hostname[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    378[0m [0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/ssl.py[0m in [0;36mwrap_socket[0;34m(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)[0m
+[1;32m    422[0m             [0mcontext[0m[0;34m=[0m[0mself[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 423[0;31m             [0msession[0m[0;34m=[0m[0msession[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    424[0m         )
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/ssl.py[0m in [0;36m_create[0;34m(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)[0m
+[1;32m    869[0m                         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"do_handshake_on_connect should not be specified for non-blocking sockets"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 870[0;31m                     [0mself[0m[0;34m.[0m[0mdo_handshake[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    871[0m             [0;32mexcept[0m [0;34m([0m[0mOSError[0m[0;34m,[0m [0mValueError[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/ssl.py[0m in [0;36mdo_handshake[0;34m(self, block)[0m
+[1;32m   1138[0m                 [0mself[0m[0;34m.[0m[0msettimeout[0m[0;34m([0m[0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1139[0;31m             [0mself[0m[0;34m.[0m[0m_sslobj[0m[0;34m.[0m[0mdo_handshake[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1140[0m         [0;32mfinally[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mSSLCertVerificationError[0m: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1076)
+
+During handling of the above exception, another exception occurred:
+
+[0;31mMaxRetryError[0m                             Traceback (most recent call last)
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/requests/adapters.py[0m in [0;36msend[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    448[0m                     [0mretries[0m[0;34m=[0m[0mself[0m[0;34m.[0m[0mmax_retries[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 449[0;31m                     [0mtimeout[0m[0;34m=[0m[0mtimeout[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    450[0m                 )
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/urllib3/connectionpool.py[0m in [0;36murlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    724[0m             retries = retries.increment(
+[0;32m--> 725[0;31m                 [0mmethod[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m[0;34m=[0m[0me[0m[0;34m,[0m [0m_pool[0m[0;34m=[0m[0mself[0m[0;34m,[0m [0m_stacktrace[0m[0;34m=[0m[0msys[0m[0;34m.[0m[0mexc_info[0m[0;34m([0m[0;34m)[0m[0;34m[[0m[0;36m2[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    726[0m             )
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/urllib3/util/retry.py[0m in [0;36mincrement[0;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[1;32m    438[0m         [0;32mif[0m [0mnew_retry[0m[0;34m.[0m[0mis_exhausted[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 439[0;31m             [0;32mraise[0m [0mMaxRetryError[0m[0;34m([0m[0m_pool[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m [0;32mor[0m [0mResponseError[0m[0;34m([0m[0mcause[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    440[0m [0;34m[0m[0m
+
+[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='api.worldbank.org', port=443): Max retries exceeded with url: /v2/countries/US;AU/indicators/GC.DOD.TOTL.GD.ZS?date=2005%3A2016&per_page=25000&format=json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1076)')))
+
+During handling of the above exception, another exception occurred:
+
+[0;31mSSLError[0m                                  Traceback (most recent call last)
 [0;32m<ipython-input-34-4cec978cdea1>[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;32mfrom[0m [0mpandas_datareader[0m [0;32mimport[0m [0mwb[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0;34m[0m[0m
@@ -46,12 +111,54 @@ plt.show()
 [1;32m    643[0m             [0mself[0m[0;34m.[0m[0mclose[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/pandas_datareader/wb.py[0m in [0;36m_read[0;34m(self)[0m
-[1;32m    669[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    670[0m             [0mmsg[0m [0;34m=[0m [0;34m"No indicators returned data."[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 671[0;31m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0mmsg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    672[0m [0;34m[0m[0m
-[1;32m    673[0m     [0;32mdef[0m [0m_read_lines[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mout[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    648[0m             [0;31m# Build URL for api call[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    649[0m             [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 650[0;31m                 [0mdf[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_read_one_data[0m[0;34m([0m[0mself[0m[0;34m.[0m[0murl[0m [0;34m+[0m [0mindicator[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mparams[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    651[0m                 [0mdf[0m[0;34m.[0m[0mcolumns[0m [0;34m=[0m [0;34m[[0m[0;34m"country"[0m[0;34m,[0m [0;34m"iso_code"[0m[0;34m,[0m [0;34m"year"[0m[0;34m,[0m [0mindicator[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    652[0m                 [0mdata[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mdf[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mValueError[0m: No indicators returned data.
-ValueError: No indicators returned data.
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/pandas_datareader/base.py[0m in [0;36m_read_one_data[0;34m(self, url, params)[0m
+[1;32m    107[0m             [0mout[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_read_url_as_StringIO[0m[0;34m([0m[0murl[0m[0;34m,[0m [0mparams[0m[0;34m=[0m[0mparams[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    108[0m         [0;32melif[0m [0mself[0m[0;34m.[0m[0m_format[0m [0;34m==[0m [0;34m"json"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 109[0;31m             [0mout[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_get_response[0m[0;34m([0m[0murl[0m[0;34m,[0m [0mparams[0m[0;34m=[0m[0mparams[0m[0;34m)[0m[0;34m.[0m[0mjson[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    110[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    111[0m             [0;32mraise[0m [0mNotImplementedError[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_format[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/pandas_datareader/base.py[0m in [0;36m_get_response[0;34m(self, url, params, headers)[0m
+[1;32m    153[0m         [0mlast_response_text[0m [0;34m=[0m [0;34m""[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    154[0m         [0;32mfor[0m [0m_[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mretry_count[0m [0;34m+[0m [0;36m1[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 155[0;31m             [0mresponse[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0msession[0m[0;34m.[0m[0mget[0m[0;34m([0m[0murl[0m[0;34m,[0m [0mparams[0m[0;34m=[0m[0mparams[0m[0;34m,[0m [0mheaders[0m[0;34m=[0m[0mheaders[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    156[0m             [0;32mif[0m [0mresponse[0m[0;34m.[0m[0mstatus_code[0m [0;34m==[0m [0mrequests[0m[0;34m.[0m[0mcodes[0m[0;34m.[0m[0mok[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    157[0m                 [0;32mreturn[0m [0mresponse[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/requests/sessions.py[0m in [0;36mget[0;34m(self, url, **kwargs)[0m
+[1;32m    541[0m [0;34m[0m[0m
+[1;32m    542[0m         [0mkwargs[0m[0;34m.[0m[0msetdefault[0m[0;34m([0m[0;34m'allow_redirects'[0m[0;34m,[0m [0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 543[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mrequest[0m[0;34m([0m[0;34m'GET'[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    544[0m [0;34m[0m[0m
+[1;32m    545[0m     [0;32mdef[0m [0moptions[0m[0;34m([0m[0mself[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/requests/sessions.py[0m in [0;36mrequest[0;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[1;32m    528[0m         }
+[1;32m    529[0m         [0msend_kwargs[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0msettings[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 530[0;31m         [0mresp[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mprep[0m[0;34m,[0m [0;34m**[0m[0msend_kwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    531[0m [0;34m[0m[0m
+[1;32m    532[0m         [0;32mreturn[0m [0mresp[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/requests/sessions.py[0m in [0;36msend[0;34m(self, request, **kwargs)[0m
+[1;32m    641[0m [0;34m[0m[0m
+[1;32m    642[0m         [0;31m# Send the request[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 643[0;31m         [0mr[0m [0;34m=[0m [0madapter[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mrequest[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    644[0m [0;34m[0m[0m
+[1;32m    645[0m         [0;31m# Total elapsed time of the request (approximately)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/requests/adapters.py[0m in [0;36msend[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    512[0m             [0;32mif[0m [0misinstance[0m[0;34m([0m[0me[0m[0;34m.[0m[0mreason[0m[0;34m,[0m [0m_SSLError[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    513[0m                 [0;31m# This branch is for urllib3 v1.22 and later.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 514[0;31m                 [0;32mraise[0m [0mSSLError[0m[0;34m([0m[0me[0m[0;34m,[0m [0mrequest[0m[0;34m=[0m[0mrequest[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    515[0m [0;34m[0m[0m
+[1;32m    516[0m             [0;32mraise[0m [0mConnectionError[0m[0;34m([0m[0me[0m[0;34m,[0m [0mrequest[0m[0;34m=[0m[0mrequest[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mSSLError[0m: HTTPSConnectionPool(host='api.worldbank.org', port=443): Max retries exceeded with url: /v2/countries/US;AU/indicators/GC.DOD.TOTL.GD.ZS?date=2005%3A2016&per_page=25000&format=json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1076)')))
+SSLError: HTTPSConnectionPool(host='api.worldbank.org', port=443): Max retries exceeded with url: /v2/countries/US;AU/indicators/GC.DOD.TOTL.GD.ZS?date=2005%3A2016&per_page=25000&format=json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1076)')))
 
