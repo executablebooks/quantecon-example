@@ -156,26 +156,25 @@
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-                    class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../_sources/docs/parallelization.md"><button type="button"
-                        class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                        data-placement="left">.md</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                    onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
-        <!-- Source interaction buttons -->
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/parallelization.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -183,7 +182,7 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
+
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
 <div class="tocsection onthispage pt-5 pb-3">
@@ -428,7 +427,7 @@ multithreading out to more and more operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1.02 s ± 9.32 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1.05 s ± 8.65 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -474,7 +473,7 @@ decorator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>636 ms ± 7.36 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>652 ms ± 8.36 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -533,7 +532,7 @@ multithreading?</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>337 ms ± 3.72 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>348 ms ± 5.57 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -658,11 +657,11 @@ conditions don’t matter.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.4 s, sys: 26.2 ms, total: 11.4 s
-Wall time: 11.4 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.3 s, sys: 24.4 ms, total: 11.3 s
+Wall time: 11.3 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8334836654046964
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8364464432601482
 </pre></div>
 </div>
 </div>
@@ -698,11 +697,11 @@ Wall time: 11.4 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.41 s, sys: 48.8 ms, total: 9.46 s
-Wall time: 5.5 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.54 s, sys: 9.46 ms, total: 9.55 s
+Wall time: 5.53 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8193046995175362
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8364863147243005
 </pre></div>
 </div>
 </div>
@@ -777,11 +776,11 @@ such as <code class="docutils literal notranslate"><span class="pre">n</span> <s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 383 ms, sys: 2.51 ms, total: 386 ms
-Wall time: 376 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 374 ms, sys: 782 µs, total: 375 ms
+Wall time: 362 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.140544
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139156
 </pre></div>
 </div>
 </div>
@@ -793,11 +792,11 @@ Wall time: 376 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 17.5 ms, sys: 62 µs, total: 17.6 ms
-Wall time: 8.85 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 17.4 ms, sys: 0 ns, total: 17.4 ms
+Wall time: 8.72 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141776
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141276
 </pre></div>
 </div>
 </div>
