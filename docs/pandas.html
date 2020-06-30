@@ -325,6 +325,15 @@ collection of observations on a single variable.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.723578
+1   -0.296025
+2   -1.412119
+3    0.866247
+Name: daily returns, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Here you can imagine the indices <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3</span></code> as indexing four listed
 companies, and the values being daily returns on their shares.</p>
@@ -336,10 +345,28 @@ similar operations</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    172.357826
+1    -29.602538
+2   -141.211922
+3     86.624679
+Name: daily returns, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.723578
+1    0.296025
+2    1.412119
+3    0.866247
+Name: daily returns, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -352,12 +379,34 @@ similar operations</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
+mean     0.220420
+std      1.367294
+min     -1.412119
+25%     -0.575049
+50%      0.285111
+75%      1.080580
+max      1.723578
+Name: daily returns, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>But their indices are more flexible</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMZN&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;MSFT&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">]</span>
 <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    1.723578
+AAPL   -0.296025
+MSFT   -1.412119
+GOOG    0.866247
+Name: daily returns, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -372,6 +421,11 @@ have the same type—in this case, floats).</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.7235782607664984
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -380,10 +434,24 @@ have the same type—in this case, floats).</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
+AAPL   -0.296025
+MSFT   -1.412119
+GOOG    0.866247
+Name: daily returns, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;AAPL&#39;</span> <span class="ow">in</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -423,6 +491,11 @@ be read in as follows:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -430,6 +503,127 @@ be read in as follows:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>country isocode</th>
+      <th>year</th>
+      <th>POP</th>
+      <th>XRAT</th>
+      <th>tcgdp</th>
+      <th>cc</th>
+      <th>cg</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>ARG</td>
+      <td>2000</td>
+      <td>37335.653</td>
+      <td>0.999500</td>
+      <td>2.950722e+05</td>
+      <td>75.716805</td>
+      <td>5.578804</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Australia</td>
+      <td>AUS</td>
+      <td>2000</td>
+      <td>19053.186</td>
+      <td>1.724830</td>
+      <td>5.418047e+05</td>
+      <td>67.759026</td>
+      <td>6.720098</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>IND</td>
+      <td>2000</td>
+      <td>1006300.297</td>
+      <td>44.941600</td>
+      <td>1.728144e+06</td>
+      <td>64.575551</td>
+      <td>14.072206</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Israel</td>
+      <td>ISR</td>
+      <td>2000</td>
+      <td>6114.570</td>
+      <td>4.077330</td>
+      <td>1.292539e+05</td>
+      <td>64.436451</td>
+      <td>10.266688</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Malawi</td>
+      <td>MWI</td>
+      <td>2000</td>
+      <td>11801.505</td>
+      <td>59.543808</td>
+      <td>5.026222e+03</td>
+      <td>74.707624</td>
+      <td>11.658954</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>South Africa</td>
+      <td>ZAF</td>
+      <td>2000</td>
+      <td>45064.098</td>
+      <td>6.939830</td>
+      <td>2.272424e+05</td>
+      <td>72.718710</td>
+      <td>5.726546</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>United States</td>
+      <td>USA</td>
+      <td>2000</td>
+      <td>282171.957</td>
+      <td>1.000000</td>
+      <td>9.898700e+06</td>
+      <td>72.347054</td>
+      <td>6.032454</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Uruguay</td>
+      <td>URY</td>
+      <td>2000</td>
+      <td>3219.793</td>
+      <td>12.099592</td>
+      <td>2.525596e+04</td>
+      <td>78.978740</td>
+      <td>5.108068</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can select particular rows using standard Python array slicing
 notation</p>
@@ -439,6 +633,72 @@ notation</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>country isocode</th>
+      <th>year</th>
+      <th>POP</th>
+      <th>XRAT</th>
+      <th>tcgdp</th>
+      <th>cc</th>
+      <th>cg</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>IND</td>
+      <td>2000</td>
+      <td>1006300.297</td>
+      <td>44.941600</td>
+      <td>1.728144e+06</td>
+      <td>64.575551</td>
+      <td>14.072206</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Israel</td>
+      <td>ISR</td>
+      <td>2000</td>
+      <td>6114.570</td>
+      <td>4.077330</td>
+      <td>1.292539e+05</td>
+      <td>64.436451</td>
+      <td>10.266688</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Malawi</td>
+      <td>MWI</td>
+      <td>2000</td>
+      <td>11801.505</td>
+      <td>59.543808</td>
+      <td>5.026222e+03</td>
+      <td>74.707624</td>
+      <td>11.658954</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>To select columns, we can pass a list containing the names of the
 desired columns represented as strings</p>
@@ -448,6 +708,73 @@ desired columns represented as strings</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>tcgdp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>2.950722e+05</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Australia</td>
+      <td>5.418047e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>1.728144e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Israel</td>
+      <td>1.292539e+05</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Malawi</td>
+      <td>5.026222e+03</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>South Africa</td>
+      <td>2.272424e+05</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>United States</td>
+      <td>9.898700e+06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Uruguay</td>
+      <td>2.525596e+04</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>To select both rows and columns using integers, the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> attribute
 should be used with the format <code class="docutils literal notranslate"><span class="pre">.iloc[rows,</span> <span class="pre">columns]</span></code></p>
@@ -457,6 +784,56 @@ should be used with the format <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>country isocode</th>
+      <th>year</th>
+      <th>POP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>IND</td>
+      <td>2000</td>
+      <td>1006300.297</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Israel</td>
+      <td>ISR</td>
+      <td>2000</td>
+      <td>6114.570</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Malawi</td>
+      <td>MWI</td>
+      <td>2000</td>
+      <td>11801.505</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>To select rows and columns using a mixture of integers and labels, the
 <code class="docutils literal notranslate"><span class="pre">loc</span></code> attribute can be used in a similar way</p>
@@ -466,6 +843,48 @@ should be used with the format <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>tcgdp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>1.728144e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Israel</td>
+      <td>1.292539e+05</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Malawi</td>
+      <td>5.026222e+03</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Let’s imagine that we’re only interested in population (<code class="docutils literal notranslate"><span class="pre">POP</span></code>) and
 total GDP (<code class="docutils literal notranslate"><span class="pre">tcgdp</span></code>).</p>
@@ -478,6 +897,82 @@ overwrite the dataframe using the selection method described above</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>POP</th>
+      <th>tcgdp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>37335.653</td>
+      <td>2.950722e+05</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Australia</td>
+      <td>19053.186</td>
+      <td>5.418047e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>1006300.297</td>
+      <td>1.728144e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Israel</td>
+      <td>6114.570</td>
+      <td>1.292539e+05</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Malawi</td>
+      <td>11801.505</td>
+      <td>5.026222e+03</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>South Africa</td>
+      <td>45064.098</td>
+      <td>2.272424e+05</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>United States</td>
+      <td>282171.957</td>
+      <td>9.898700e+06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Uruguay</td>
+      <td>3219.793</td>
+      <td>2.525596e+04</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Here the index <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,...,</span> <span class="pre">7</span></code> is redundant because we can use the country
 names as an index.</p>
@@ -490,6 +985,78 @@ dataframe</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>POP</th>
+      <th>tcgdp</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Argentina</th>
+      <td>37335.653</td>
+      <td>2.950722e+05</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>19053.186</td>
+      <td>5.418047e+05</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>1006300.297</td>
+      <td>1.728144e+06</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>6114.570</td>
+      <td>1.292539e+05</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>11801.505</td>
+      <td>5.026222e+03</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>45064.098</td>
+      <td>2.272424e+05</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>282171.957</td>
+      <td>9.898700e+06</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>3219.793</td>
+      <td>2.525596e+04</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Let’s give the columns slightly better names</p>
 <div class="cell docutils container">
@@ -499,6 +1066,78 @@ dataframe</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+      <th>total GDP</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Argentina</th>
+      <td>37335.653</td>
+      <td>2.950722e+05</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>19053.186</td>
+      <td>5.418047e+05</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>1006300.297</td>
+      <td>1.728144e+06</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>6114.570</td>
+      <td>1.292539e+05</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>11801.505</td>
+      <td>5.026222e+03</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>45064.098</td>
+      <td>2.272424e+05</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>282171.957</td>
+      <td>9.898700e+06</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>3219.793</td>
+      <td>2.525596e+04</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Population is in thousands, let’s revert to single units</p>
 <div class="cell docutils container">
@@ -508,6 +1147,78 @@ dataframe</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+      <th>total GDP</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Argentina</th>
+      <td>3.733565e+07</td>
+      <td>2.950722e+05</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>1.905319e+07</td>
+      <td>5.418047e+05</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>1.006300e+09</td>
+      <td>1.728144e+06</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>6.114570e+06</td>
+      <td>1.292539e+05</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>1.180150e+07</td>
+      <td>5.026222e+03</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>4.506410e+07</td>
+      <td>2.272424e+05</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.821720e+08</td>
+      <td>9.898700e+06</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>3.219793e+06</td>
+      <td>2.525596e+04</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Next, we’re going to add a column showing real GDP per capita,
 multiplying by 1,000,000 as we go because total GDP is in millions</p>
@@ -518,6 +1229,88 @@ multiplying by 1,000,000 as we go because total GDP is in millions</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+      <th>total GDP</th>
+      <th>GDP percap</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Argentina</th>
+      <td>3.733565e+07</td>
+      <td>2.950722e+05</td>
+      <td>7903.229085</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>1.905319e+07</td>
+      <td>5.418047e+05</td>
+      <td>28436.433261</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>1.006300e+09</td>
+      <td>1.728144e+06</td>
+      <td>1717.324719</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>6.114570e+06</td>
+      <td>1.292539e+05</td>
+      <td>21138.672749</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>1.180150e+07</td>
+      <td>5.026222e+03</td>
+      <td>425.896679</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>4.506410e+07</td>
+      <td>2.272424e+05</td>
+      <td>5042.647686</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.821720e+08</td>
+      <td>9.898700e+06</td>
+      <td>35080.381854</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>3.219793e+06</td>
+      <td>2.525596e+04</td>
+      <td>7843.970620</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>One of the nice things about pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects is
 that they have methods for plotting and visualization that work through
@@ -532,6 +1325,9 @@ Matplotlib.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/pandas_39_0.png" src="../_images/pandas_39_0.png" />
+</div>
 </div>
 <p>At the moment the data frame is ordered alphabetically on the
 countries—let’s change it to GDP per capita</p>
@@ -542,6 +1338,88 @@ countries—let’s change it to GDP per capita</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+      <th>total GDP</th>
+      <th>GDP percap</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United States</th>
+      <td>2.821720e+08</td>
+      <td>9.898700e+06</td>
+      <td>35080.381854</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>1.905319e+07</td>
+      <td>5.418047e+05</td>
+      <td>28436.433261</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>6.114570e+06</td>
+      <td>1.292539e+05</td>
+      <td>21138.672749</td>
+    </tr>
+    <tr>
+      <th>Argentina</th>
+      <td>3.733565e+07</td>
+      <td>2.950722e+05</td>
+      <td>7903.229085</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>3.219793e+06</td>
+      <td>2.525596e+04</td>
+      <td>7843.970620</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>4.506410e+07</td>
+      <td>2.272424e+05</td>
+      <td>5042.647686</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>1.006300e+09</td>
+      <td>1.728144e+06</td>
+      <td>1717.324719</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>1.180150e+07</td>
+      <td>5.026222e+03</td>
+      <td>425.896679</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Plotting as before now yields</p>
 <div class="cell docutils container">
@@ -552,6 +1430,9 @@ countries—let’s change it to GDP per capita</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/pandas_43_0.png" src="../_images/pandas_43_0.png" />
 </div>
 </div>
 </div>
@@ -615,6 +1496,11 @@ object returned by the call
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;DATE,VALUE\r&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,10 +1508,20 @@ object returned by the call
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;1948-01-01,3.4\r&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;1948-02-01,3.8\r&#39;
 </pre></div>
 </div>
 </div>
@@ -651,6 +1547,11 @@ now manipulate in the usual way</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,6 +1559,56 @@ now manipulate in the usual way</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VALUE</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1948-01-01</th>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <th>1948-02-01</th>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>1948-03-01</th>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1948-04-01</th>
+      <td>3.9</td>
+    </tr>
+    <tr>
+      <th>1948-05-01</th>
+      <td>3.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -666,6 +1617,64 @@ now manipulate in the usual way</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VALUE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>869.0</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>14.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can also plot the unemployment rate from 2006 to 2012 as follows</p>
 <div class="cell docutils container">
@@ -676,6 +1685,9 @@ now manipulate in the usual way</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/pandas_57_0.png" src="../_images/pandas_57_0.png" />
 </div>
 </div>
 <p>Note that pandas offers many other file type alternatives.</p>
@@ -716,6 +1728,14 @@ the US and Australia</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/pandas_datareader/compat/__init__.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+</pre>
+</div>
+<img alt="../_images/pandas_59_1.png" src="../_images/pandas_59_1.png" />
 </div>
 </div>
 <p>The
@@ -782,6 +1802,9 @@ the following shares:</p>
 </div>
 </div>
 <p>Complete the program to plot the result as a bar graph like this one:</p>
+<div class="cell_output docutils container">
+<img alt="../_images/pandas_74_0.png" src="../_images/pandas_74_0.png" />
+</div>
 </div>
 <div class="section" id="exercise-2">
 <span id="pd-ex2"></span><h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
@@ -800,6 +1823,9 @@ obtain year-on-year percentage change for the following indices:</p>
 </div>
 <p>Complete the program to show summary statistics and plot the result as a
 time series graph like this one:</p>
+<div class="cell_output docutils container">
+<img alt="../_images/pandas_83_0.png" src="../_images/pandas_83_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="solutions">
@@ -818,6 +1844,24 @@ the percentage change.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>INTC    27.1
+MSFT    56.0
+IBM     16.3
+BHP     14.3
+TM      20.9
+AAPL    85.9
+AMZN    20.1
+BA       0.6
+QCOM    53.7
+KO      17.9
+GOOG    27.8
+SNE     39.6
+PTR    -17.4
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Alternatively you can use an inbuilt method <code class="docutils literal notranslate"><span class="pre">pct_change</span></code> and configure
 it to perform the correct calculation using <code class="docutils literal notranslate"><span class="pre">periods</span></code> argument.</p>
@@ -826,6 +1870,24 @@ it to perform the correct calculation using <code class="docutils literal notran
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">change</span> <span class="o">=</span> <span class="n">ticker</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
 <span class="n">price_change</span> <span class="o">=</span> <span class="n">change</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">price_change</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>INTC    27.1
+MSFT    56.0
+IBM     16.3
+BHP     14.3
+TM      20.9
+AAPL    85.9
+AMZN    20.1
+BA       0.6
+QCOM    53.7
+KO      17.9
+GOOG    27.8
+SNE     39.6
+PTR    -17.4
+Name: 2019-12-31 00:00:00, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -842,6 +1904,9 @@ it to perform the correct calculation using <code class="docutils literal notran
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/pandas_73_0.png" src="../_images/pandas_73_0.png" />
 </div>
 </div>
 </div>
@@ -876,6 +1941,120 @@ and calculate the yearly returns such as:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>S&amp;P 500</th>
+      <th>NASDAQ</th>
+      <th>Dow Jones</th>
+      <th>Nikkei</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1928</th>
+      <td>3.7e-01</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1929</th>
+      <td>-1.4e-01</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1930</th>
+      <td>-2.8e-01</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1931</th>
+      <td>-4.9e-01</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1932</th>
+      <td>-8.5e-02</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>1.1e-01</td>
+      <td>9.8e-02</td>
+      <td>1.5e-01</td>
+      <td>3.6e-02</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>1.8e-01</td>
+      <td>2.7e-01</td>
+      <td>2.4e-01</td>
+      <td>1.6e-01</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>-7.0e-02</td>
+      <td>-5.3e-02</td>
+      <td>-6.0e-02</td>
+      <td>-1.5e-01</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>2.9e-01</td>
+      <td>3.5e-01</td>
+      <td>2.2e-01</td>
+      <td>2.1e-01</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>-6.3e-02</td>
+      <td>8.6e-02</td>
+      <td>-1.1e-01</td>
+      <td>-3.0e-02</td>
+    </tr>
+  </tbody>
+</table>
+<p>93 rows × 4 columns</p>
+</div></div></div>
 </div>
 <p>Next, you can obtain summary statistics by using the method <code class="docutils literal notranslate"><span class="pre">describe</span></code>.</p>
 <div class="cell docutils container">
@@ -884,6 +2063,91 @@ and calculate the yearly returns such as:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>S&amp;P 500</th>
+      <th>NASDAQ</th>
+      <th>Dow Jones</th>
+      <th>Nikkei</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>9.3e+01</td>
+      <td>5.0e+01</td>
+      <td>3.6e+01</td>
+      <td>5.6e+01</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>7.4e-02</td>
+      <td>1.2e-01</td>
+      <td>9.2e-02</td>
+      <td>7.7e-02</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.9e-01</td>
+      <td>2.4e-01</td>
+      <td>1.4e-01</td>
+      <td>2.4e-01</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-4.9e-01</td>
+      <td>-4.0e-01</td>
+      <td>-3.3e-01</td>
+      <td>-4.0e-01</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-6.3e-02</td>
+      <td>-1.2e-02</td>
+      <td>4.2e-03</td>
+      <td>-8.1e-02</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>9.9e-02</td>
+      <td>1.4e-01</td>
+      <td>8.9e-02</td>
+      <td>7.5e-02</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2.0e-01</td>
+      <td>2.7e-01</td>
+      <td>2.2e-01</td>
+      <td>2.1e-01</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>4.6e-01</td>
+      <td>8.4e-01</td>
+      <td>3.3e-01</td>
+      <td>9.2e-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Then, to plot the chart</p>
 <div class="cell docutils container">
@@ -899,6 +2163,9 @@ and calculate the yearly returns such as:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> 
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/pandas_82_0.png" src="../_images/pandas_82_0.png" />
 </div>
 </div>
 <p><strong>Footnotes</strong></p>
