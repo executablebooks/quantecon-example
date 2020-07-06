@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
@@ -29,6 +30,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/thebelab.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Matplotlib" href="matplotlib.html" />
@@ -1258,7 +1266,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.92413483, -0.19783934,  0.34825074])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-2.11510037, -0.89499307,  1.15754974])
 </pre></div>
 </div>
 </div>
@@ -1272,7 +1280,7 @@ MATLAB programmers…)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.19783934,  0.34825074])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.89499307,  1.15754974])
 </pre></div>
 </div>
 </div>
@@ -1299,7 +1307,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.96667553,  0.4492701 , -0.44258855])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.5171706 , -1.64953531,  1.00913221])
 </pre></div>
 </div>
 </div>
@@ -1312,7 +1320,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.96667553,  0.4492701 , -0.44258855])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.5171706 , -1.64953531,  1.00913221])
 </pre></div>
 </div>
 </div>
@@ -1338,7 +1346,7 @@ required.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.96667553,  0.4492701 , -0.44258855])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.5171706 , -1.64953531,  1.00913221])
 </pre></div>
 </div>
 </div>
@@ -1429,7 +1437,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 1.75895681, -0.16295838,  1.10921695, -0.36644778])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-0.32675216, -0.13280871, -1.44800309, -1.12423408])
 </pre></div>
 </div>
 </div>
@@ -1441,7 +1449,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 0])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0])
 </pre></div>
 </div>
 </div>
@@ -1455,7 +1463,7 @@ a <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 0])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0])
 </pre></div>
 </div>
 </div>
@@ -1587,7 +1595,7 @@ programming through its sub-packages.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5.025
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4.914
 </pre></div>
 </div>
 </div>
@@ -1906,6 +1914,25 @@ from QuantEcon and added in a plot method</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
@@ -29,6 +30,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/thebelab.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Writing Good Code" href="writing_good_code.html" />
@@ -326,10 +334,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -1.380699
-1   -0.224664
-2    0.257957
-3   -0.798343
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -1.513845
+1    1.180876
+2   -0.662980
+3   -0.829947
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -346,10 +354,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -138.069887
-1    -22.466445
-2     25.795660
-3    -79.834254
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -151.384509
+1    118.087640
+2    -66.297999
+3    -82.994663
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -362,10 +370,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.380699
-1    0.224664
-2    0.257957
-3    0.798343
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.513845
+1    1.180876
+2    0.662980
+3    0.829947
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -381,13 +389,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -0.536437
-std      0.709374
-min     -1.380699
-25%     -0.943932
-50%     -0.511503
-75%     -0.104009
-max      0.257957
+mean    -0.456474
+std      1.151966
+min     -1.513845
+25%     -1.000921
+50%     -0.746463
+75%     -0.202016
+max      1.180876
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -402,10 +410,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -1.380699
-AAPL   -0.224664
-MSFT    0.257957
-GOOG   -0.798343
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -1.513845
+AAPL    1.180876
+MSFT   -0.662980
+GOOG   -0.829947
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -422,7 +430,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1.3806988669243567
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1.513845088241924
 </pre></div>
 </div>
 </div>
@@ -436,9 +444,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.224664
-MSFT    0.257957
-GOOG   -0.798343
+AAPL    1.180876
+MSFT   -0.662980
+GOOG   -0.829947
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2179,6 +2187,25 @@ and calculate the yearly returns such as:</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

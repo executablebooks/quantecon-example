@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
@@ -29,6 +30,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/thebelab.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Parallelization" href="parallelization.html" />
@@ -421,7 +429,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:10.33
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:10.43
 </pre></div>
 </div>
 </div>
@@ -436,7 +444,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.20
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.15
 </pre></div>
 </div>
 </div>
@@ -453,7 +461,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.05
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.04
 </pre></div>
 </div>
 </div>
@@ -465,7 +473,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>186.35537197187216
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>220.9909632015509
 </pre></div>
 </div>
 </div>
@@ -874,11 +882,11 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 188 ms, sys: 8.01 ms, total: 196 ms
-Wall time: 196 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 205 ms, sys: 4.03 ms, total: 209 ms
+Wall time: 209 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139844
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141816
 </pre></div>
 </div>
 </div>
@@ -890,11 +898,11 @@ Wall time: 196 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 20 ms, sys: 0 ns, total: 20 ms
-Wall time: 19.7 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 17.9 ms, sys: 0 ns, total: 17.9 ms
+Wall time: 17.8 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142032
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139592
 </pre></div>
 </div>
 </div>
@@ -947,7 +955,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.666727
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.666923
 </pre></div>
 </div>
 </div>
@@ -963,10 +971,10 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:1.04
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:1.09
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.0487637519836426
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.0923914909362793
 </pre></div>
 </div>
 </div>
@@ -990,7 +998,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665735
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.666747
 </pre></div>
 </div>
 </div>
@@ -1008,7 +1016,7 @@ low state is about 0.666</p>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.01
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.013549089431762695
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.012581825256347656
 </pre></div>
 </div>
 </div>
@@ -1024,6 +1032,25 @@ low state is about 0.666</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
