@@ -331,6 +331,13 @@ with a focus on</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/numba/np/ufunc/parallel.py:355: NumbaWarning: [1mThe TBB threading layer requires TBB version 2019.5 or later i.e., TBB_INTERFACE_VERSION &gt;= 11005. Found TBB_INTERFACE_VERSION = 9107. The TBB threading layer is disabled.[0m
+  warnings.warn(problem)
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="types-of-parallelization">
@@ -435,7 +442,7 @@ multithreading out to more and more operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1.25 s ± 21.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1.01 s ± 23.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -481,7 +488,7 @@ decorator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>738 ms ± 12.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>638 ms ± 7.93 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -540,7 +547,7 @@ multithreading?</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>400 ms ± 5.69 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>332 ms ± 10.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -665,11 +672,11 @@ conditions don’t matter.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 10.6 s, sys: 29.6 ms, total: 10.7 s
-Wall time: 10.7 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.34 s, sys: 19.8 ms, total: 9.36 s
+Wall time: 9.34 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8349990488819614
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8271352060365937
 </pre></div>
 </div>
 </div>
@@ -705,11 +712,11 @@ Wall time: 10.7 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 8.75 s, sys: 9.11 ms, total: 8.76 s
-Wall time: 5.08 s
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.95 s, sys: 0 ns, total: 7.95 s
+Wall time: 4.25 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.847243215264093
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.8332741424613919
 </pre></div>
 </div>
 </div>
@@ -784,11 +791,11 @@ such as <code class="docutils literal notranslate"><span class="pre">n</span> <s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 389 ms, sys: 4.36 ms, total: 393 ms
-Wall time: 388 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 405 ms, sys: 0 ns, total: 405 ms
+Wall time: 401 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139416
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142916
 </pre></div>
 </div>
 </div>
@@ -800,11 +807,11 @@ Wall time: 388 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 21.1 ms, sys: 0 ns, total: 21.1 ms
-Wall time: 10.6 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 15.9 ms, sys: 0 ns, total: 15.9 ms
+Wall time: 8.09 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.14448
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.142136
 </pre></div>
 </div>
 </div>
