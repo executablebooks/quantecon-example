@@ -73,69 +73,113 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Introduction to Python</p>
-</li>
-  <li class="">
-    <a href="about_py.html">About Python</a>
-  </li>
-  <li class="">
-    <a href="getting_started.html">Setting up Your Python Environment</a>
-  </li>
-  <li class="">
-    <a href="python_by_example.html">An Introductory Example</a>
-  </li>
-  <li class="">
-    <a href="functions.html">Functions</a>
-  </li>
-  <li class="">
-    <a href="python_essentials.html">Python Essentials</a>
-  </li>
-  <li class="">
-    <a href="oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
-  </li>
-  <li class="">
-    <a href="python_oop.html">OOP II: Building Classes</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Scientific Libraries</p>
-</li>
-  <li class="">
-    <a href="need_for_speed.html">Python for Scientific Computing</a>
-  </li>
-  <li class="">
-    <a href="numpy.html">NumPy</a>
-  </li>
-  <li class="">
-    <a href="matplotlib.html">Matplotlib</a>
-  </li>
-  <li class="">
-    <a href="scipy.html">SciPy</a>
-  </li>
-  <li class="active">
-    <a href="">Numba</a>
-  </li>
-  <li class="">
-    <a href="parallelization.html">Parallelization</a>
-  </li>
-  <li class="">
-    <a href="pandas.html">Pandas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Advanced Python</p>
-</li>
-  <li class="">
-    <a href="writing_good_code.html">Writing Good Code</a>
-  </li>
-  <li class="">
-    <a href="python_advanced_features.html">More Language Features</a>
-  </li>
-  <li class="">
-    <a href="debugging.html">Debugging</a>
-  </li>
+  <p class="caption">
+ <span class="caption-text">
+  Introduction to Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about_py.html">
+   About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Setting up Your Python Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_by_example.html">
+   An Introductory Example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_essentials.html">
+   Python Essentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="oop_intro.html">
+   OOP I: Introduction to Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_oop.html">
+   OOP II: Building Classes
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Scientific Libraries
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="need_for_speed.html">
+   Python for Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scipy.html">
+   SciPy
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Numba
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parallelization.html">
+   Parallelization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Advanced Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="writing_good_code.html">
+   Writing Good Code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_advanced_features.html">
+   More Language Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging.html">
+   Debugging
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -192,110 +236,129 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compiling-functions">
+   Compiling Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example">
+     An Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-and-when-it-works">
+     How and When it Works
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decorators-and-nopython-mode">
+   Decorators and “nopython” Mode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decorator-notation">
+     Decorator Notation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#type-inference-and-nopython-mode">
+     Type Inference and “nopython” Mode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compiling-classes">
+   Compiling Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternatives-to-numba">
+   Alternatives to Numba
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cython">
+     Cython
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interfacing-with-fortran-via-f2py">
+     Interfacing with Fortran via F2Py
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-and-comments">
+   Summary and Comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitations">
+     Limitations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-gotcha-global-variables">
+     A Gotcha: Global Variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions">
+   Solutions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercise 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#overview" class="nav-link">Overview</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#compiling-functions" class="nav-link">Compiling Functions</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#an-example" class="nav-link">An Example</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#how-and-when-it-works" class="nav-link">How and When it Works</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#decorators-and-nopython-mode" class="nav-link">Decorators and “nopython” Mode</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#decorator-notation" class="nav-link">Decorator Notation</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#type-inference-and-nopython-mode" class="nav-link">Type Inference and “nopython” Mode</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#compiling-classes" class="nav-link">Compiling Classes</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#alternatives-to-numba" class="nav-link">Alternatives to Numba</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#cython" class="nav-link">Cython</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#interfacing-with-fortran-via-f2py" class="nav-link">Interfacing with Fortran via F2Py</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#summary-and-comments" class="nav-link">Summary and Comments</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#limitations" class="nav-link">Limitations</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#a-gotcha-global-variables" class="nav-link">A Gotcha: Global Variables</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercises" class="nav-link">Exercises</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#exercise-1" class="nav-link">Exercise 1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#exercise-2" class="nav-link">Exercise 2</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#solutions" class="nav-link">Solutions</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id2" class="nav-link">Exercise 1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id3" class="nav-link">Exercise 2</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -436,7 +499,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:9.65
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:9.19
 </pre></div>
 </div>
 </div>
@@ -451,7 +514,7 @@ versions, starting with the original function <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.17
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.16
 </pre></div>
 </div>
 </div>
@@ -468,7 +531,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.04
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.05
 </pre></div>
 </div>
 </div>
@@ -480,7 +543,7 @@ the function has been compiled and is in memory:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>204.67266403449793
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>174.10274325252016
 </pre></div>
 </div>
 </div>
@@ -896,11 +959,11 @@ in the low state.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 239 ms, sys: 67 µs, total: 239 ms
-Wall time: 239 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 221 ms, sys: 0 ns, total: 221 ms
+Wall time: 220 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.14236
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139352
 </pre></div>
 </div>
 </div>
@@ -912,11 +975,11 @@ Wall time: 239 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 15.2 ms, sys: 84 µs, total: 15.3 ms
-Wall time: 15.4 ms
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CPU times: user 16.3 ms, sys: 5 µs, total: 16.4 ms
+Wall time: 16.3 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.141512
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.139012
 </pre></div>
 </div>
 </div>
@@ -969,7 +1032,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667364
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667462
 </pre></div>
 </div>
 </div>
@@ -985,10 +1048,10 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.95
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.97
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9576132297515869
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.9707744121551514
 </pre></div>
 </div>
 </div>
@@ -1012,7 +1075,7 @@ low state is about 0.666</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.667321
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.665706
 </pre></div>
 </div>
 </div>
@@ -1030,7 +1093,7 @@ low state is about 0.666</p>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>TOC: Elapsed: 0:00:0.01
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.013906240463256836
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.013140439987182617
 </pre></div>
 </div>
 </div>
