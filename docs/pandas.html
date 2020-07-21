@@ -389,10 +389,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.281970
-1   -0.542015
-2    1.023623
-3   -0.616693
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0   -0.093417
+1    0.515925
+2    0.839954
+3    0.198151
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -409,10 +409,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    128.197040
-1    -54.201500
-2    102.362327
-3    -61.669274
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    -9.341722
+1    51.592525
+2    83.995392
+3    19.815112
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -425,10 +425,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    1.281970
-1    0.542015
-2    1.023623
-3    0.616693
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.093417
+1    0.515925
+2    0.839954
+3    0.198151
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -444,13 +444,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.286721
-std      1.006066
-min     -0.616693
-25%     -0.560684
-50%      0.240804
-75%      1.088210
-max      1.281970
+mean     0.365153
+std      0.402635
+min     -0.093417
+25%      0.125259
+50%      0.357038
+75%      0.596932
+max      0.839954
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -465,10 +465,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    1.281970
-AAPL   -0.542015
-MSFT    1.023623
-GOOG   -0.616693
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN   -0.093417
+AAPL    0.515925
+MSFT    0.839954
+GOOG    0.198151
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -485,7 +485,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.2819703988361333
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-0.09341721893079605
 </pre></div>
 </div>
 </div>
@@ -499,9 +499,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.542015
-MSFT    1.023623
-GOOG   -0.616693
+AAPL    0.515925
+MSFT    0.839954
+GOOG    0.198151
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -1793,7 +1793,12 @@ the US and Australia</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pandas_59_0.png" src="../_images/pandas_59_0.png" />
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/pandas/plotting/_matplotlib/core.py:1192: UserWarning: FixedFormatter should only be used together with FixedLocator
+  ax.set_xticklabels(xticklabels)
+</pre>
+</div>
+<img alt="../_images/pandas_59_1.png" src="../_images/pandas_59_1.png" />
 </div>
 </div>
 <p>The
@@ -2104,8 +2109,8 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>-1.0e-02</td>
-      <td>1.6e-01</td>
+      <td>-1.8e-03</td>
+      <td>1.8e-01</td>
       <td>-7.6e-02</td>
       <td>-2.2e-02</td>
     </tr>
