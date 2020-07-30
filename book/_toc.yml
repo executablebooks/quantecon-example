@@ -1,24 +1,27 @@
 - file: docs/index
 
-- header: Introduction to Python
-- file: docs/about_py
-- file: docs/getting_started
-- file: docs/python_by_example
-- file: docs/functions
-- file: docs/python_essentials
-- file: docs/oop_intro
-- file: docs/python_oop
+- chapter: Introduction to Python
+  sections:
+  - file: docs/about_py
+  - file: docs/getting_started
+  - file: docs/python_by_example
+  - file: docs/functions
+  - file: docs/python_essentials
+  - file: docs/oop_intro
+  - file: docs/python_oop
 
-- header: Scientific Libraries
-- file: docs/need_for_speed
-- file: docs/numpy
-- file: docs/matplotlib
-- file: docs/scipy
-- file: docs/numba
-- file: docs/parallelization
-- file: docs/pandas
+- chapter: Scientific Libraries
+  sections:
+  - file: docs/need_for_speed
+  - file: docs/numpy
+  - file: docs/matplotlib
+  - file: docs/scipy
+  - file: docs/numba
+  - file: docs/parallelization
+  - file: docs/pandas
 
-- header: Advanced Python
-- file: docs/writing_good_code
-- file: docs/python_advanced_features
-- file: docs/debugging
+- chapter: Advanced Python
+  sections:
+  - file: docs/writing_good_code
+  - file: docs/python_advanced_features
+  - file: docs/debugging
