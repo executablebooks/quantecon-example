@@ -37,6 +37,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/qe-logo-large.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Writing Good Code" href="writing_good_code.html" />
@@ -227,6 +228,21 @@
 </div>
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/quantecon-example/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        <a class="edit-button" href="https://github.com/executablebooks/quantecon-example/edit/master/book/docs/pandas.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -372,6 +388,12 @@ taken place</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">Matplotlib is building the font cache; this may take a moment.
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="series">
@@ -389,10 +411,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.395740
-1   -0.323808
-2   -0.700085
-3    1.253048
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.279339
+1   -0.323787
+2    1.359207
+3   -0.565613
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -409,10 +431,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     39.573991
-1    -32.380754
-2    -70.008469
-3    125.304767
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0     27.933922
+1    -32.378655
+2    135.920671
+3    -56.561331
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -425,10 +447,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.395740
-1    0.323808
-2    0.700085
-3    1.253048
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0    0.279339
+1    0.323787
+2    1.359207
+3    0.565613
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -444,13 +466,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.156224
-std      0.861024
-min     -0.700085
-25%     -0.417877
-50%      0.035966
-75%      0.610067
-max      1.253048
+mean     0.187287
+std      0.858278
+min     -0.565613
+25%     -0.384243
+50%     -0.022224
+75%      0.549306
+max      1.359207
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -465,10 +487,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.395740
-AAPL   -0.323808
-MSFT   -0.700085
-GOOG    1.253048
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.279339
+AAPL   -0.323787
+MSFT    1.359207
+GOOG   -0.565613
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -485,7 +507,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.3957399129186162
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.27933922420791946
 </pre></div>
 </div>
 </div>
@@ -499,9 +521,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.323808
-MSFT   -0.700085
-GOOG    1.253048
+AAPL   -0.323787
+MSFT    1.359207
+GOOG   -0.565613
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
