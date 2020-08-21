@@ -23,8 +23,6 @@ latex:
   latex_engine                : 'xelatex'
   latex_documents:
     targetname                : book.tex
-  latex_elements:
-    preamble                  : '\usepackage[utf8x,utf8]{inputenc}'
 
 repository:
   url                         : https://github.com/executablebooks/quantecon-example/
