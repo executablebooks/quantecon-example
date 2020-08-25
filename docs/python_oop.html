@@ -24,12 +24,12 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -412,9 +412,9 @@ plenty of examples.</p>
 <p>We’ll use the following imports:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -439,14 +439,14 @@ together</strong> into “objects”.</p>
 how to sort itself, etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="n">x</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 4, 5]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 5]
 </pre></div>
 </div>
 </div>
@@ -479,14 +479,14 @@ to as <em>attributes</em>.</p>
 <p>In the example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
 </pre></div>
 </div>
 </div>
@@ -541,7 +541,7 @@ internalize some new syntax.</p>
 <p>Here’s one implementation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Consumer</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Consumer</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
         <span class="s2">&quot;Initialize consumer with w dollars of wealth&quot;</span>
@@ -586,27 +586,27 @@ automatically.</p>
 <p>Here’s an example of usage</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Create instance with initial wealth 10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Create instance with initial wealth 10</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">spend</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">spend</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Insufficent funds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Insufficent funds
 </pre></div>
 </div>
 </div>
@@ -614,7 +614,7 @@ automatically.</p>
 <p>We can of course create multiple instances each with its own data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c2</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">c2</span><span class="o">.</span><span class="n">spend</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">c2</span><span class="o">.</span><span class="n">wealth</span>
@@ -622,19 +622,19 @@ automatically.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -643,24 +643,24 @@ automatically.</p>
 dictionary</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="vm">__dict__</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="vm">__dict__</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 10}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 10}
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span><span class="o">.</span><span class="vm">__dict__</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span><span class="o">.</span><span class="vm">__dict__</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 8}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 8}
 </pre></div>
 </div>
 </div>
@@ -706,12 +706,12 @@ with more examples.</p></li>
 reads the class definition</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Consumer</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>  <span class="c1"># Show __dict__ attribute of class object</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Consumer</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>  <span class="c1"># Show __dict__ attribute of class object</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Consumer.__init__ at 0x7f3faf56eb00&gt;, &#39;earn&#39;: &lt;function Consumer.earn at 0x7f3faf56eb90&gt;, &#39;spend&#39;: &lt;function Consumer.spend at 0x7f3faf56ec20&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__doc__&#39;: None}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Consumer.__init__ at 0x7f6a019c2b00&gt;, &#39;earn&#39;: &lt;function Consumer.earn at 0x7f6a019c2b90&gt;, &#39;spend&#39;: &lt;function Consumer.spend at 0x7f6a019c2c20&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__doc__&#39;: None}
 </pre></div>
 </div>
 </div>
@@ -721,14 +721,14 @@ the class object.</p>
 <p>Consider the following code</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
 </div>
@@ -746,7 +746,7 @@ argument.</p>
 parameter</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">earn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">earn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
      <span class="s2">&quot;The consumer earns y dollars&quot;</span>
      <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">+=</span> <span class="n">y</span>
 </pre></div>
@@ -798,7 +798,7 @@ variable <code class="docutils literal notranslate"><span class="pre">self.k</sp
 self-explanatory</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solow</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solow</span><span class="p">:</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Implements the Solow growth model with the update rule</span>
 
@@ -849,7 +849,7 @@ two different initial conditions.</p>
 <p>The common steady state is also plotted for comparison</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">()</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">Solow</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mf">8.0</span><span class="p">)</span>
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">60</span>
@@ -898,7 +898,7 @@ raised, consumer surplus and producer surplus.</p>
 integration—a topic we will say more about later on.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
 
 <span class="k">class</span> <span class="nc">Market</span><span class="p">:</span>
 
@@ -956,26 +956,26 @@ integration—a topic we will say more about later on.)</p>
 <p>Here’s a sample of usage</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="o">*</span><span class="n">baseline_params</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equilibrium price = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">price</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>equilibrium price =  18.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>equilibrium price =  18.5
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consumer surplus = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">consumer_surp</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consumer surplus = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">consumer_surp</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>consumer surplus =  33.0625
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>consumer surplus =  33.0625
 </pre></div>
 </div>
 </div>
@@ -984,7 +984,7 @@ integration—a topic we will say more about later on.)</p>
 curve together with inverse supply curves with and without taxes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baseline ad, bd, az, bz, tax</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baseline ad, bd, az, bz, tax</span>
 <span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="o">*</span><span class="n">baseline_params</span><span class="p">)</span>
 
@@ -1017,7 +1017,7 @@ curve together with inverse supply curves with and without taxes</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deadw</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deadw</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
     <span class="s2">&quot;Computes deadweight loss for market m.&quot;</span>
     <span class="c1"># == Create analogous market with no tax == #</span>
     <span class="n">m_no_tax</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">ad</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">bd</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">az</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">bz</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1032,14 +1032,14 @@ curve together with inverse supply curves with and without taxes</p>
 <p>Here’s an example of usage</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="o">*</span><span class="n">baseline_params</span><span class="p">)</span>
 <span class="n">deadw</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>  <span class="c1"># Show deadweight loss</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.125
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.125
 </pre></div>
 </div>
 </div>
@@ -1059,7 +1059,7 @@ logistic map</p>
 <p>Here’s one implementation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Chaos</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Chaos</span><span class="p">:</span>
   <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">  Models the dynamical system with :math:`x_{t+1} = r x_t (1 - x_t)`</span>
 <span class="sd">  &quot;&quot;&quot;</span>
@@ -1087,13 +1087,13 @@ logistic map</p>
 <p>Here’s an example of usage</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>     <span class="c1"># x0 = 0.1 and r = 0.4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>     <span class="c1"># x0 = 0.1 and r = 0.4</span>
 <span class="n">ch</span><span class="o">.</span><span class="n">generate_sequence</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># First 5 iterates</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0.1, 0.36000000000000004, 0.9216, 0.28901376000000006, 0.8219392261226498]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.1, 0.36000000000000004, 0.9216, 0.28901376000000006, 0.8219392261226498]
 </pre></div>
 </div>
 </div>
@@ -1101,7 +1101,7 @@ logistic map</p>
 <p>This piece of code plots a longer trajectory</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
 <span class="n">ts_length</span> <span class="o">=</span> <span class="mi">250</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -1120,7 +1120,7 @@ logistic map</p>
 <p>The next piece of code provides a bifurcation diagram</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ch</span> <span class="o">=</span> <span class="n">Chaos</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mf">2.5</span>
 <span class="k">while</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
@@ -1167,13 +1167,13 @@ performed.</p>
 that this length can be queried via the <code class="docutils literal notranslate"><span class="pre">len</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -1182,7 +1182,7 @@ that this length can be queried via the <code class="docutils literal notranslat
 applied to your user-defined object, use the <code class="docutils literal notranslate"><span class="pre">__len__</span></code> special method</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">42</span>
@@ -1193,13 +1193,13 @@ applied to your user-defined object, use the <code class="docutils literal notra
 <p>Now we get</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -1209,7 +1209,7 @@ applied to your user-defined object, use the <code class="docutils literal notra
 functions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">42</span>
@@ -1220,13 +1220,13 @@ functions</p>
 <p>After running we get</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
 <span class="n">f</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># Exactly equivalent to f.__call__(8)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>50
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
 </pre></div>
 </div>
 </div>
@@ -1298,7 +1298,7 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 <h3>Exercise 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ECDF</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ECDF</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observations</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observations</span> <span class="o">=</span> <span class="n">observations</span>
@@ -1315,7 +1315,7 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># == test == #</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># == test == #</span>
 
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
 
@@ -1331,8 +1331,8 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.7
-0.497
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+0.513
 </pre></div>
 </div>
 </div>
@@ -1342,7 +1342,7 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 <h3>Exercise 2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Polynomial</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Polynomial</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coefficients</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
