@@ -427,10 +427,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -0.704881
-1    0.324993
-2   -0.062268
-3    2.700614
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -0.214858
+1   -0.825715
+2    0.609148
+3   -0.134717
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -447,10 +447,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    -70.488074
-1     32.499329
-2     -6.226811
-3    270.061389
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -21.485834
+1   -82.571466
+2    60.914754
+3   -13.471665
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -463,10 +463,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.704881
-1    0.324993
-2    0.062268
-3    2.700614
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.214858
+1    0.825715
+2    0.609148
+3    0.134717
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -482,13 +482,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean     0.564615
-std      1.485991
-min     -0.704881
-25%     -0.222921
-50%      0.131363
-75%      0.918898
-max      2.700614
+mean    -0.141536
+std      0.587948
+min     -0.825715
+25%     -0.367572
+50%     -0.174787
+75%      0.051249
+max      0.609148
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -503,10 +503,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN   -0.704881
-AAPL    0.324993
-MSFT   -0.062268
-GOOG    2.700614
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN   -0.214858
+AAPL   -0.825715
+MSFT    0.609148
+GOOG   -0.134717
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -523,7 +523,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.7048807442590028
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.21485833586183314
 </pre></div>
 </div>
 </div>
@@ -537,9 +537,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL    0.324993
-MSFT   -0.062268
-GOOG    2.700614
+AAPL   -0.825715
+MSFT    0.609148
+GOOG   -0.134717
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -1831,11 +1831,7 @@ the US and Australia</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/qe-example/lib/python3.7/site-packages/pandas/plotting/_matplotlib/core.py:1235: UserWarning: FixedFormatter should only be used together with FixedLocator
-  ax.set_xticklabels(xticklabels)
-</pre></div>
-</div>
-<img alt="../_images/pandas_59_1.png" src="../_images/pandas_59_1.png" />
+<img alt="../_images/pandas_59_0.png" src="../_images/pandas_59_0.png" />
 </div>
 </div>
 <p>The
@@ -2065,13 +2061,6 @@ and calculate the yearly returns such as:</p>
       <th>Dow Jones</th>
       <th>Nikkei</th>
     </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
   </thead>
   <tbody>
     <tr>
@@ -2146,10 +2135,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>5.2e-02</td>
-      <td>2.4e-01</td>
-      <td>-2.5e-02</td>
-      <td>1.1e-02</td>
+      <td>2.3e-02</td>
+      <td>1.9e-01</td>
+      <td>-4.7e-02</td>
+      <td>2.5e-05</td>
     </tr>
   </tbody>
 </table>
@@ -2199,14 +2188,14 @@ and calculate the yearly returns such as:</p>
     <tr>
       <th>mean</th>
       <td>7.5e-02</td>
-      <td>1.3e-01</td>
-      <td>9.4e-02</td>
+      <td>1.2e-01</td>
+      <td>9.3e-02</td>
       <td>7.7e-02</td>
     </tr>
     <tr>
       <th>std</th>
       <td>1.9e-01</td>
-      <td>2.5e-01</td>
+      <td>2.4e-01</td>
       <td>1.4e-01</td>
       <td>2.4e-01</td>
     </tr>
