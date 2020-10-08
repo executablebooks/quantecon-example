@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>Pandas &#8212; Programming for Quantitative Economics</title>
     
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -24,7 +24,7 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -270,7 +270,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -448,10 +449,10 @@ collection of observations on a single variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.042800
-1   -0.515992
-2   -1.685911
-3    0.487354
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.890359
+1   -1.482275
+2    0.684438
+3    0.795751
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -468,10 +469,10 @@ similar operations</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    104.280007
-1    -51.599222
-2   -168.591091
-3     48.735396
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     89.035895
+1   -148.227488
+2     68.443823
+3     79.575078
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -484,10 +485,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.042800
-1    0.515992
-2    1.685911
-3    0.487354
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.890359
+1    1.482275
+2    0.684438
+3    0.795751
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -503,13 +504,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -0.167937
-std      1.200094
-min     -1.685911
-25%     -0.808472
-50%     -0.014319
-75%      0.626215
-max      1.042800
+mean     0.222068
+std      1.139341
+min     -1.482275
+25%      0.142760
+50%      0.740095
+75%      0.819403
+max      0.890359
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -524,10 +525,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    1.042800
-AAPL   -0.515992
-MSFT   -1.685911
-GOOG    0.487354
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.890359
+AAPL   -1.482275
+MSFT    0.684438
+GOOG    0.795751
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -544,7 +545,7 @@ have the same type—in this case, floats).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0428000689600954
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8903589492579169
 </pre></div>
 </div>
 </div>
@@ -558,9 +559,9 @@ have the same type—in this case, floats).</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.515992
-MSFT   -1.685911
-GOOG    0.487354
+AAPL   -1.482275
+MSFT    0.684438
+GOOG    0.795751
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -2163,10 +2164,10 @@ and calculate the yearly returns such as:</p>
     </tr>
     <tr>
       <th>2020</th>
-      <td>3.2e-02</td>
-      <td>2.3e-01</td>
-      <td>-3.8e-02</td>
-      <td>4.6e-03</td>
+      <td>5.0e-02</td>
+      <td>2.5e-01</td>
+      <td>-2.0e-02</td>
+      <td>9.9e-03</td>
     </tr>
   </tbody>
 </table>
@@ -2216,7 +2217,7 @@ and calculate the yearly returns such as:</p>
     <tr>
       <th>mean</th>
       <td>7.5e-02</td>
-      <td>1.2e-01</td>
+      <td>1.3e-01</td>
       <td>9.4e-02</td>
       <td>7.7e-02</td>
     </tr>
@@ -2345,7 +2346,7 @@ and calculate the yearly returns such as:</p>
     </div>
 
     
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     
